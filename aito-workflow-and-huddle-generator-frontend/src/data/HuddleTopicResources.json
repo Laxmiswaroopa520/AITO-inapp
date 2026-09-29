@@ -1,0 +1,117 @@
+[
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-OPP-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-OPP-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-PLAN-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-PLAN-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-POLICY-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-POLICY-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 3
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "ResourceExternalId": "RES-GLOBAL-02",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "ResourceExternalId": "RES-GLOBAL-02",
+    "DisplayOrder": 2
+  },
+  {
+    "TopicExternalId": "WF-X-PROOF-01",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "TopicExternalId": "WF-X-PROOF-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 2
+  }
+]

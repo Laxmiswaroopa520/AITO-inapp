@@ -1,0 +1,772 @@
+[
+  {
+    "ActivityExternalId": "AE-01-P01",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT02",
+    "ResourceExternalId": "RES-CSAM-IMPACT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-INTEL-01",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-NARR-01",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-NARR-02",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-01-P04",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P01",
+    "ResourceExternalId": "RES-008",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P02",
+    "ResourceExternalId": "RES-008",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P03",
+    "ResourceExternalId": "RES-008",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P04",
+    "ResourceExternalId": "RES-008",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-03-ALT-02",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-06-ALT-02",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-07-P02",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P01",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P02",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P03",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-HEALTH-P02",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-PARTNER-P01",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P01",
+    "ResourceExternalId": "RES-CSAM-CSP",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P02",
+    "ResourceExternalId": "RES-CSAM-CSP",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT01",
+    "ResourceExternalId": "RES-CSAM-CSP",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT02",
+    "ResourceExternalId": "RES-CSAM-CSP",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P01",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P02",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-ALT01",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-ALT02",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P01",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P02",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-ALT01",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-ALT02",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P01",
+    "ResourceExternalId": "RES-CSAM-RSG",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P02",
+    "ResourceExternalId": "RES-CSAM-RSG",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT01",
+    "ResourceExternalId": "RES-CSAM-RSG",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT02",
+    "ResourceExternalId": "RES-CSAM-RSG",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-P01",
+    "ResourceExternalId": "RES-CSAM-IMPACT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-P02",
+    "ResourceExternalId": "RES-CSAM-IMPACT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT01",
+    "ResourceExternalId": "RES-CSAM-IMPACT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-P01",
+    "ResourceExternalId": "RES-CSAM-PERSONA",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-P02",
+    "ResourceExternalId": "RES-CSAM-PERSONA",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-ALT01",
+    "ResourceExternalId": "RES-CSAM-PERSONA",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-ALT02",
+    "ResourceExternalId": "RES-CSAM-PERSONA",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-P01",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-P02",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-ALT01",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-ALT02",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P01",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P02",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-ALT01",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-ALT02",
+    "ResourceExternalId": "RES-CSAM-AIINNOV",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-02",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-03",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-03",
+    "ResourceExternalId": "RES-DA-03",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-05-DEAL-01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-DEAL-01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-05-P01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-P01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-CE-RENEW-01-P-CE-01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-RENEW-01-P-CE-01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-02-DEAL-01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-02-DEAL-01",
+    "ResourceExternalId": "RES-DA-02",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-05-QUOTE-01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-QUOTE-01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-02-BYOD-01",
+    "ResourceExternalId": "RES-DA-06",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-02-BYOD-01",
+    "ResourceExternalId": "RES-DA-02",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-07-P01",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-P01",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-P06",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-INVEST-01-P04",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P05",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P05",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P05",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-03-P02",
+    "ResourceExternalId": "RES-SK-BRIEF",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-P03",
+    "ResourceExternalId": "RES-SK-QUAL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-OPP-SCOUT-01",
+    "ResourceExternalId": "RES-SK-OUT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-OPP-SCOUT-01",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-PIPE-SCOUT-01",
+    "ResourceExternalId": "RES-SK-CHART",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-03-ALT-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-05-ALT-02",
+    "ResourceExternalId": "RES-SK-TALK",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-06-ALT-02",
+    "ResourceExternalId": "RES-SK-VOICE",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-INTEL-SCOUT-01",
+    "ResourceExternalId": "RES-SK-KNOW",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-TEAM-P05",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-TEAM-P05",
+    "ResourceExternalId": "RES-SK-REMIND",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-06-SCOUT-01",
+    "ResourceExternalId": "RES-SK-BRIEF",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-POLICY-SCOUT-01",
+    "ResourceExternalId": "RES-SK-REG",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-POLICY-SCOUT-01",
+    "ResourceExternalId": "RES-SK-CONTRACT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSA-01-ALT-02",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-02-ALT-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-03-ALT-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-04-ALT-02",
+    "ResourceExternalId": "RES-SK-MEET",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-05-ALT-02",
+    "ResourceExternalId": "RES-SK-CHART",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-05-SCOUT-01",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-06-ALT-02",
+    "ResourceExternalId": "RES-SK-UCASE",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-07-ALT-02",
+    "ResourceExternalId": "RES-SK-QUAL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-VALUE-SCOUT-01",
+    "ResourceExternalId": "RES-SK-QUAL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-ALT02",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P02",
+    "ResourceExternalId": "RES-SK-PANEL",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P02",
+    "ResourceExternalId": "RES-SK-TALK",
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-ALT02",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P02",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT01",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT01",
+    "ResourceExternalId": "RES-SK-REMIND",
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P01",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P01",
+    "ResourceExternalId": "RES-SK-REMIND",
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P02",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P02",
+    "ResourceExternalId": "RES-SK-REMIND",
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT02",
+    "ResourceExternalId": "RES-SK-BRIEF",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P01",
+    "ResourceExternalId": "RES-SK-BRIEF",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P02",
+    "ResourceExternalId": "RES-SK-BRIEF",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-SCOUT-01",
+    "ResourceExternalId": "RES-SK-BRIEF",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT02",
+    "ResourceExternalId": "RES-SK-CASE",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SE-01-ALT-02",
+    "ResourceExternalId": "RES-SK-MEET",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-02-ALT-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-03-ALT-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-04-ALT-02",
+    "ResourceExternalId": "RES-SK-QUAL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-05-ALT-02",
+    "ResourceExternalId": "RES-SK-PANEL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-06-ALT-02",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-07-ALT-02",
+    "ResourceExternalId": "RES-SK-KNOW",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-07-ALT-02",
+    "ResourceExternalId": "RES-SK-CASE",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SE-HEALTH-SCOUT-01",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-COMP-SCOUT-01",
+    "ResourceExternalId": "RES-SK-VOICE",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-LEAD-SCOUT-01",
+    "ResourceExternalId": "RES-SK-OUT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-LEAD-SCOUT-01",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-ARCH-01-P-CSA-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-POLICY-01-P-CE-01",
+    "ResourceExternalId": "RES-SK-REG",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-POLICY-01-P-CE-01",
+    "ResourceExternalId": "RES-SK-CONTRACT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-01",
+    "ResourceExternalId": "RES-SK-OUT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-01",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-OPT-01-P-CSA-02",
+    "ResourceExternalId": "RES-SK-UCASE",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-01",
+    "ResourceExternalId": "RES-SK-KNOW",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-01",
+    "ResourceExternalId": "RES-SK-CASE",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-02",
+    "ResourceExternalId": "RES-SK-KNOW",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-02",
+    "ResourceExternalId": "RES-SK-CASE",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEMO-01-P-SE-01",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-POC-01-P-SE-01",
+    "ResourceExternalId": "RES-SK-QUAL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-QA-01-P-SE-02",
+    "ResourceExternalId": "RES-SK-PANEL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-TECH-01-P-CSA-02",
+    "ResourceExternalId": "RES-SK-QUAL",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-04",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-ATS-STRAT03",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-CSA-02",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-01",
+    "ResourceExternalId": "RES-SK-TALK",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-02",
+    "ResourceExternalId": "RES-SK-VOICE",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-EBC-02",
+    "ResourceExternalId": "RES-SK-TALK",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-NARR-02",
+    "ResourceExternalId": "RES-SK-PANEL",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-01",
+    "ResourceExternalId": "RES-SK-PROCESS",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-INTEL-01",
+    "ResourceExternalId": "RES-SK-KNOW",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-PARTNER-P04",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-ORCH-01-P03",
+    "ResourceExternalId": "RES-SK-AWAIT",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-HEALTH-P02",
+    "ResourceExternalId": "RES-SK-RADAR",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-VALUE-01-P02",
+    "ResourceExternalId": "RES-SK-UCASE",
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P03",
+    "ResourceExternalId": "RES-SK-UCASE",
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "AE-01-P01",
+    "ResourceExternalId": "RES-007",
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P01",
+    "ResourceExternalId": "RES-CSAM-PERSONA",
+    "DisplayOrder": 2
+  }
+]

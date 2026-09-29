@@ -1,0 +1,522 @@
+[
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-PLAN-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-PIPE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-PIPE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-OPP-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-AE",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-RENEW-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-PLAN-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-PLAN-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-ATS",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-OPP-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-PLAN-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SSP",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-DISC-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-SE",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-ASSET-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-RENEW-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CE",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-POLICY-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-CONSUME-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSA",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-PLAN-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-RENEW-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-ENT-CSAM",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-SIGNAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-PARTNER-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-TERRITORY-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-RENEW-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DAE",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-RENEW-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-SIGNAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-TERRITORY-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-DISC-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-PROOF-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-PARTNER-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 1,
+    "TopicExternalId": "WF-ORIENT-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 4,
+    "TopicExternalId": "WF-X-OPP-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-VALUE-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 5,
+    "TopicExternalId": "WF-X-POLICY-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-CE",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 6,
+    "TopicExternalId": "WF-X-ARCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-RENEW-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-ASSET-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-DEAL-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSS",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-ORCH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 7,
+    "TopicExternalId": "WF-X-HEALTH-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 8,
+    "TopicExternalId": "WF-X-CONV-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DCSA",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-CONSUME-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 2,
+    "TopicExternalId": "WF-X-TERRITORY-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-PSS",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-PARTNER-01"
+  },
+  {
+    "SegmentRoleExternalId": "SR-SMEC-DSE",
+    "WeekPosition": 3,
+    "TopicExternalId": "WF-X-ARCH-01"
+  }
+]

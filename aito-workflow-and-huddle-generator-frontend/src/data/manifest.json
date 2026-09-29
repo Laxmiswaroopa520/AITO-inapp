@@ -1,0 +1,317 @@
+{
+  "Roles": {
+    "columns": [
+      "ExternalId",
+      "Name",
+      "Abbreviation",
+      "Segment",
+      "Description",
+      "SortOrder",
+      "IsActive"
+    ],
+    "source": "10_Workflow_Roles.sql",
+    "count": 9,
+    "reconciledFrom": [
+      "10_Workflow_Roles.sql",
+      "20_Huddle_Reference_Data.sql"
+    ]
+  },
+  "AiTools": {
+    "columns": [
+      "ExternalId",
+      "Name",
+      "Description",
+      "Color",
+      "IconKey",
+      "SortOrder",
+      "IsActive"
+    ],
+    "source": "11_Workflow_AiTools.sql",
+    "count": 14
+  },
+  "WorkflowBuckets": {
+    "columns": [
+      "ExternalId",
+      "Name",
+      "Description",
+      "SortOrder",
+      "IsActive"
+    ],
+    "source": "12_Workflow_Buckets.sql",
+    "count": 9
+  },
+  "Activities": {
+    "columns": [
+      "ExternalId",
+      "Title",
+      "Description",
+      "RoleExternalId",
+      "BucketExternalId",
+      "Category",
+      "Frequency",
+      "Priority",
+      "ToolCoverageLevel",
+      "TriggerContext",
+      "McemStage",
+      "DurationMinutes",
+      "BusinessOutcome",
+      "BeginnerPrompt",
+      "AdvancedPrompt",
+      "SuggestedOutputs",
+      "SortOrder",
+      "IsActive"
+    ],
+    "source": "13_Workflow_Activities.sql",
+    "count": 186
+  },
+  "ActivityAiTools": {
+    "columns": [
+      "ActivityExternalId",
+      "ToolExternalId",
+      "SortOrder",
+      "IsPrimary"
+    ],
+    "source": "14_Workflow_Activity_AiTools.sql",
+    "count": 215
+  },
+  "HuddleSegments": {
+    "columns": [
+      "ExternalId",
+      "Name"
+    ],
+    "source": "20_Huddle_Reference_Data.sql",
+    "count": 1
+  },
+  "HuddleSegmentRoles": {
+    "columns": [
+      "ExternalId",
+      "SegmentExternalId",
+      "RoleAbbreviation",
+      "DisplayName"
+    ],
+    "source": "20_Huddle_Reference_Data.sql",
+    "count": 8
+  },
+  "HuddleFocusAreas": {
+    "columns": [
+      "ExternalId",
+      "Name"
+    ],
+    "source": "20_Huddle_Reference_Data.sql",
+    "count": 8
+  },
+  "HuddleMcemStages": {
+    "columns": [
+      "ExternalId",
+      "Name",
+      "Description",
+      "StageNumber"
+    ],
+    "source": "20_Huddle_Reference_Data.sql",
+    "count": 5
+  },
+  "HuddleTopics": {
+    "columns": [
+      "ExternalId",
+      "Name",
+      "Description",
+      "Type",
+      "PublicationStatus",
+      "FocusAreaExternalId",
+      "DurationMinutes",
+      "WhyItMatters",
+      "DesiredOutcome",
+      "KeyTakeaway"
+    ],
+    "source": "21_Huddle_Topics.sql",
+    "count": 16
+  },
+  "HuddleTopicRoles": {
+    "columns": [
+      "TopicExternalId",
+      "RoleAbbreviation"
+    ],
+    "source": "21_Huddle_Topics.sql",
+    "count": 57
+  },
+  "HuddlePlacements": {
+    "columns": [
+      "ExternalId",
+      "SegmentRoleExternalId",
+      "TopicExternalId",
+      "PathSection",
+      "Sequence",
+      "RoleTopicName",
+      "RoleTopicDescription",
+      "TodayObjective",
+      "Wiifm",
+      "DesiredOutcome",
+      "IsActive"
+    ],
+    "source": "22_Huddle_Placements.sql",
+    "count": 70
+  },
+  "HuddleRolePathItems": {
+    "columns": [
+      "SegmentRoleExternalId",
+      "WeekPosition",
+      "TopicExternalId"
+    ],
+    "source": "22_Huddle_Placements.sql",
+    "count": 56
+  },
+  "HuddlePhases": {
+    "columns": [
+      "ExternalId",
+      "TopicExternalId",
+      "PlacementExternalId",
+      "DisplayOrder",
+      "Name"
+    ],
+    "source": "23_Huddle_Phases.sql",
+    "count": 210
+  },
+  "HuddleFacilitatorGuides": {
+    "columns": [
+      "ExternalId",
+      "TopicExternalId",
+      "PlacementExternalId",
+      "SessionIntroduction",
+      "KeyTalkingPoints",
+      "DiscussionQuestions",
+      "PreparationChecklist",
+      "FacilitatorQuestions",
+      "ListenFor",
+      "SuggestedTransitions",
+      "FallbackGuidance",
+      "WrapUpGuidance",
+      "ReflectPrompt",
+      "CommitPrompt",
+      "BringBackEvidence"
+    ],
+    "source": "24_Huddle_Facilitator_Guides.sql",
+    "count": 70
+  },
+  "HuddleAgents": {
+    "columns": [
+      "ExternalId",
+      "Name",
+      "ShortDescription",
+      "WhatItIs",
+      "WhatItHelpsYouDo",
+      "WhenToUseIt",
+      "WhenNotToUseIt",
+      "StepsToGetStarted",
+      "KeyBenefits",
+      "AccessUrl",
+      "AccessLinkLabel"
+    ],
+    "source": "25_Huddle_Agents.sql",
+    "count": 18
+  },
+  "HuddleResources": {
+    "columns": [
+      "ExternalId",
+      "Title",
+      "Description",
+      "Url",
+      "Type",
+      "LinkLabel",
+      "IsGlobal"
+    ],
+    "source": "26_Huddle_Resources.sql",
+    "count": 49
+  },
+  "HuddleActivities": {
+    "columns": [
+      "ExternalId",
+      "TopicExternalId",
+      "PlacementExternalId",
+      "PhaseExternalId",
+      "DisplayOrder",
+      "Name",
+      "Description",
+      "PracticeTier",
+      "ExecutionMethod",
+      "Prompt",
+      "ActivitySteps",
+      "RequiredContext",
+      "ExpectedOutput",
+      "HumanCheckpoint",
+      "BestFitJob",
+      "WhyThisMatters",
+      "LaunchUrl",
+      "LaunchLabel"
+    ],
+    "source": "27_Huddle_Activities.sql",
+    "count": 281
+  },
+  "HuddleActivityPrerequisites": {
+    "columns": [
+      "ActivityExternalId",
+      "PrerequisiteExternalId"
+    ],
+    "source": "28_Huddle_Activity_Prerequisites.sql",
+    "count": 65
+  },
+  "HuddleTopicMcemStages": {
+    "columns": [
+      "TopicExternalId",
+      "McemExternalId",
+      "DisplayOrder"
+    ],
+    "source": "29_Huddle_Topic_And_Agent_Joins.sql",
+    "count": 23
+  },
+  "HuddleTopicAgents": {
+    "columns": [
+      "TopicExternalId",
+      "AgentExternalId",
+      "UsageType",
+      "DisplayLabel",
+      "ShowAgentAccessLink",
+      "DisplayOrder"
+    ],
+    "source": "29_Huddle_Topic_And_Agent_Joins.sql",
+    "count": 63
+  },
+  "HuddleTopicResources": {
+    "columns": [
+      "TopicExternalId",
+      "ResourceExternalId",
+      "DisplayOrder"
+    ],
+    "source": "29_Huddle_Topic_And_Agent_Joins.sql",
+    "count": 19
+  },
+  "HuddleAgentResources": {
+    "columns": [
+      "AgentExternalId",
+      "ResourceExternalId",
+      "DisplayOrder"
+    ],
+    "source": "29_Huddle_Topic_And_Agent_Joins.sql",
+    "count": 22
+  },
+  "HuddleActivityAgents": {
+    "columns": [
+      "ActivityExternalId",
+      "AgentExternalId",
+      "UsageType",
+      "DisplayLabel",
+      "ShowAgentAccessLink",
+      "DisplayOrder"
+    ],
+    "source": "30_Huddle_Activity_Joins.sql",
+    "count": 317
+  },
+  "HuddleActivityResources": {
+    "columns": [
+      "ActivityExternalId",
+      "ResourceExternalId",
+      "DisplayOrder"
+    ],
+    "source": "30_Huddle_Activity_Joins.sql",
+    "count": 152
+  }
+}

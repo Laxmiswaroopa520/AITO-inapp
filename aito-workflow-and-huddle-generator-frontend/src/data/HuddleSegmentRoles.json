@@ -1,0 +1,92 @@
+[
+  {
+    "ExternalId": "SR-ENT-AE",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "AE",
+    "DisplayName": "Account Executive"
+  },
+  {
+    "ExternalId": "SR-ENT-ATS",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "ATS",
+    "DisplayName": "Account Technology Strategist"
+  },
+  {
+    "ExternalId": "SR-ENT-SSP",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "SSP",
+    "DisplayName": "Solution Sales Professional"
+  },
+  {
+    "ExternalId": "SR-ENT-SE",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "SE",
+    "DisplayName": "Solution Engineer"
+  },
+  {
+    "ExternalId": "SR-ENT-CE",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "CE",
+    "DisplayName": "Commercial Executive"
+  },
+  {
+    "ExternalId": "SR-ENT-CSA",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "CSA",
+    "DisplayName": "Cloud Solution Architect"
+  },
+  {
+    "ExternalId": "SR-ENT-CSAM",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "CSAM",
+    "DisplayName": "Customer Success Account Manager"
+  },
+  {
+    "ExternalId": "SR-ENT-ALL",
+    "SegmentExternalId": "SEG-ENT",
+    "RoleAbbreviation": "ALL",
+    "DisplayName": "All Roles"
+  },
+  {
+    "ExternalId": "SR-SMEC-DAE",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "DAE",
+    "DisplayName": "Digital Account Executive"
+  },
+  {
+    "ExternalId": "SR-SMEC-CE",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "CE",
+    "DisplayName": "Commercial Executive"
+  },
+  {
+    "ExternalId": "SR-SMEC-DSS",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "DSS",
+    "DisplayName": "Digital Solution Area Specialist"
+  },
+  {
+    "ExternalId": "SR-SMEC-DSE",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "DSE",
+    "DisplayName": "Digital Solution Engineer"
+  },
+  {
+    "ExternalId": "SR-SMEC-DCSA",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "DCSA",
+    "DisplayName": "Digital Cloud Solution Architect"
+  },
+  {
+    "ExternalId": "SR-SMEC-PSS",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "PSS",
+    "DisplayName": "Partner Solution Sales"
+  },
+  {
+    "ExternalId": "SR-SMEC-ALL",
+    "SegmentExternalId": "SEG-SMEC",
+    "RoleAbbreviation": "ALL",
+    "DisplayName": "All Roles"
+  }
+]

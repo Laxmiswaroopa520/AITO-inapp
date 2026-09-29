@@ -1,0 +1,10 @@
+[
+  {
+    "ExternalId": "SEG-ENT",
+    "Name": "Enterprise"
+  },
+  {
+    "ExternalId": "SEG-SMEC",
+    "Name": "SME&C"
+  }
+]

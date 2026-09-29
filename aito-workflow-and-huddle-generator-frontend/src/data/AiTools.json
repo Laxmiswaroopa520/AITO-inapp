@@ -1,0 +1,128 @@
+[
+  {
+    "ExternalId": "sales-agent",
+    "Name": "Sales Agent",
+    "Description": "Go-to sales workflows across MSX, email, meetings, and content to analyze, act, and move deals.",
+    "Color": "#107C10",
+    "IconKey": "sales-agent",
+    "SortOrder": 1,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "msxi-copilot",
+    "Name": "MSXI Copilot",
+    "Description": "Native Copilot in MSX/MSXI for CRM workflows, forecasting, and pipeline Q&A.",
+    "Color": "#8764B8",
+    "IconKey": "msxi-copilot",
+    "SortOrder": 2,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "m365-copilot",
+    "Name": "M365 Copilot",
+    "Description": "Everyday productivity across Outlook, Teams, Office and enterprise content.",
+    "Color": "#0078D4",
+    "IconKey": "m365-copilot",
+    "SortOrder": 3,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "ecif-agent",
+    "Name": "ECIF Agent",
+    "Description": "ECIF eligibility, submissions, and status support (via Sales Agent).",
+    "Color": "#F7630C",
+    "IconKey": "ecif-agent",
+    "SortOrder": 4,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "research-canvas",
+    "Name": "Research Canvas in MSXI",
+    "Description": "AI research workspace in MSXI for competitive and account intelligence.",
+    "Color": "#00B7C3",
+    "IconKey": "research-canvas",
+    "SortOrder": 5,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "sales-agent-auto-fix-pipeline-agent",
+    "Name": "Auto-Fix Pipeline Agent",
+    "Description": "Pipeline hygiene and risk management-detects issues, recommends fixes, and helps keep opportunities on track.",
+    "Color": "#2E8B57",
+    "IconKey": "sales-agent-auto-fix-pipeline-agent",
+    "SortOrder": 6,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "deal-making-capabilities-in-sales-agent",
+    "Name": "Deal Making Capabilities in Sales Agent",
+    "Description": "Deal execution and progression support - status, risks, and next steps (via Sales Agent).",
+    "Color": "#E74856",
+    "IconKey": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 7,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "intelligent-snapshots-msxi",
+    "Name": "Intelligent Snapshots in MSXI",
+    "Description": "Fabric-powered trend analysis replacing manual snapshotting.",
+    "Color": "#FFC83D",
+    "IconKey": "intelligent-snapshots-msxi",
+    "SortOrder": 8,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "proactive-insights-in-msxi",
+    "Name": "Proactive Insights in MSXI",
+    "Description": "Signal-based insights surfaced inside MSXI.",
+    "Color": "#8A2BE2",
+    "IconKey": "proactive-insights-in-msxi",
+    "SortOrder": 9,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "cowork",
+    "Name": "Cowork",
+    "Description": "Builder & automation workspace - create, organize, and scale AI-driven workflows and assets.",
+    "Color": "#6264A7",
+    "IconKey": "cowork",
+    "SortOrder": 10,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "scout",
+    "Name": "Scout",
+    "Description": "Agent for renewal/forecast setup and hygiene tasks (Manager use cases).",
+    "Color": "#C239B3",
+    "IconKey": "scout",
+    "SortOrder": 11,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "researcher",
+    "Name": "Researcher",
+    "Description": "Deep customer discovery and research, pulling insights from multiple sources.",
+    "Color": "#00A2A0",
+    "IconKey": "researcher",
+    "SortOrder": 12,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "analyst",
+    "Name": "Analyst",
+    "Description": "Turns data into clear insights, trends, and recommendations.",
+    "Color": "#B4009E",
+    "IconKey": "analyst",
+    "SortOrder": 13,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "viva-learning-ms-learn",
+    "Name": "Viva Learning / MS Learn",
+    "Description": "Skilling and learning content referenced for enablement activities.",
+    "Color": "#5C2D91",
+    "IconKey": "viva-learning-ms-learn",
+    "SortOrder": 14,
+    "IsActive": true
+  }
+]

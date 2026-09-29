@@ -1,0 +1,822 @@
+[
+  {
+    "ActivityExternalId": "AE-02-ALT-01",
+    "PrerequisiteExternalId": "AE-02-P01"
+  },
+  {
+    "ActivityExternalId": "AE-02-ALT-02",
+    "PrerequisiteExternalId": "AE-02-P01"
+  },
+  {
+    "ActivityExternalId": "AE-02-P02",
+    "PrerequisiteExternalId": "AE-02-P01"
+  },
+  {
+    "ActivityExternalId": "AE-03-ALT-01",
+    "PrerequisiteExternalId": "AE-03-P01"
+  },
+  {
+    "ActivityExternalId": "AE-03-ALT-02",
+    "PrerequisiteExternalId": "AE-03-P01"
+  },
+  {
+    "ActivityExternalId": "AE-04-ALT-01",
+    "PrerequisiteExternalId": "AE-04-P02"
+  },
+  {
+    "ActivityExternalId": "AE-04-ALT-02",
+    "PrerequisiteExternalId": "AE-04-P02"
+  },
+  {
+    "ActivityExternalId": "AE-05-ALT-01",
+    "PrerequisiteExternalId": "AE-05-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "AE-05-ALT-02",
+    "PrerequisiteExternalId": "AE-05-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "AE-05-P02",
+    "PrerequisiteExternalId": "AE-05-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "AE-06-ALT-01",
+    "PrerequisiteExternalId": "AE-06-P-AE01"
+  },
+  {
+    "ActivityExternalId": "AE-07-ALT-01",
+    "PrerequisiteExternalId": "AE-07-P01"
+  },
+  {
+    "ActivityExternalId": "AE-07-ALT-02",
+    "PrerequisiteExternalId": "AE-07-P01"
+  },
+  {
+    "ActivityExternalId": "AE-07-P02",
+    "PrerequisiteExternalId": "AE-07-P01"
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P03",
+    "PrerequisiteExternalId": "ATS-INVEST-01-P01"
+  },
+  {
+    "ActivityExternalId": "CE-01-ALT-01",
+    "PrerequisiteExternalId": "WF-CE-RISK-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-01-ALT-02",
+    "PrerequisiteExternalId": "WF-CE-RISK-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-02-ALT-01",
+    "PrerequisiteExternalId": "WF-CE-STRUCT-01-P-CE-02"
+  },
+  {
+    "ActivityExternalId": "CE-02-ALT-02",
+    "PrerequisiteExternalId": "WF-CE-STRUCT-01-P-CE-02"
+  },
+  {
+    "ActivityExternalId": "CE-03-ALT-01",
+    "PrerequisiteExternalId": "WF-CE-POLICY-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-03-ALT-02",
+    "PrerequisiteExternalId": "WF-CE-POLICY-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-04-ALT-01",
+    "PrerequisiteExternalId": "WF-CE-NEG-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-04-ALT-02",
+    "PrerequisiteExternalId": "WF-CE-NEG-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-05-ALT-01",
+    "PrerequisiteExternalId": "CE-05-ORCH-01"
+  },
+  {
+    "ActivityExternalId": "CE-05-ALT-02",
+    "PrerequisiteExternalId": "CE-05-ALT-01"
+  },
+  {
+    "ActivityExternalId": "CE-06-ALT-01",
+    "PrerequisiteExternalId": "WF-CE-RENEW-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-06-ALT-02",
+    "PrerequisiteExternalId": "WF-CE-RENEW-01-P-CE-01"
+  },
+  {
+    "ActivityExternalId": "CE-07-ALT-01",
+    "PrerequisiteExternalId": "WF-CE-TRANS-01-P-CE-02"
+  },
+  {
+    "ActivityExternalId": "CE-07-ALT-02",
+    "PrerequisiteExternalId": "CE-07-ALT-01"
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P05",
+    "PrerequisiteExternalId": "CE-INVEST-01-P04"
+  },
+  {
+    "ActivityExternalId": "CSA-01-ALT-01",
+    "PrerequisiteExternalId": "WF-X-HEALTH-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-01-ALT-02",
+    "PrerequisiteExternalId": "WF-X-HEALTH-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-02-ALT-01",
+    "PrerequisiteExternalId": "WF-ARCH-01-P-CSA-02"
+  },
+  {
+    "ActivityExternalId": "CSA-02-ALT-02",
+    "PrerequisiteExternalId": "CSA-02-ALT-01"
+  },
+  {
+    "ActivityExternalId": "CSA-03-ALT-01",
+    "PrerequisiteExternalId": "WF-X-ARCH-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-03-ALT-02",
+    "PrerequisiteExternalId": "WF-X-ARCH-01-P-CSA-02"
+  },
+  {
+    "ActivityExternalId": "CSA-04-ALT-01",
+    "PrerequisiteExternalId": "WF-TECH-CONV-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-04-ALT-02",
+    "PrerequisiteExternalId": "WF-TECH-CONV-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-05-ALT-01",
+    "PrerequisiteExternalId": "WF-CONSUME-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-05-ALT-02",
+    "PrerequisiteExternalId": "WF-CONSUME-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-06-ALT-01",
+    "PrerequisiteExternalId": "WF-OPT-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-06-ALT-02",
+    "PrerequisiteExternalId": "WF-OPT-01-P-CSA-02"
+  },
+  {
+    "ActivityExternalId": "CSA-07-ALT-01",
+    "PrerequisiteExternalId": "WF-VALUE-TECH-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSA-07-ALT-02",
+    "PrerequisiteExternalId": "WF-VALUE-TECH-01-P-CSA-01"
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P05",
+    "PrerequisiteExternalId": "CSAM-INVEST-P01"
+  },
+  {
+    "ActivityExternalId": "SE-01-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-DISC-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-01-ALT-02",
+    "PrerequisiteExternalId": "WF-SE-DISC-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-02-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-ARCH-01-P-SE-02"
+  },
+  {
+    "ActivityExternalId": "SE-02-ALT-02",
+    "PrerequisiteExternalId": "WF-SE-ARCH-01-P-SE-02"
+  },
+  {
+    "ActivityExternalId": "SE-03-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-DEMO-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-03-ALT-02",
+    "PrerequisiteExternalId": "WF-SE-DEMO-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-04-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-POC-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-04-ALT-02",
+    "PrerequisiteExternalId": "WF-SE-POC-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-05-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-QA-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-05-ALT-02",
+    "PrerequisiteExternalId": "WF-SE-QA-01-P-SE-02"
+  },
+  {
+    "ActivityExternalId": "SE-06-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-DEAL-01-P-SE-02"
+  },
+  {
+    "ActivityExternalId": "SE-06-ALT-02",
+    "PrerequisiteExternalId": "WF-SE-DEAL-01-P-SE-02"
+  },
+  {
+    "ActivityExternalId": "SE-07-ALT-01",
+    "PrerequisiteExternalId": "WF-SE-ASSET-01-P-SE-01"
+  },
+  {
+    "ActivityExternalId": "SE-07-ALT-02",
+    "PrerequisiteExternalId": "SE-07-ALT-01"
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P02",
+    "PrerequisiteExternalId": "SSP-INVEST-01-P01"
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P05",
+    "PrerequisiteExternalId": "SSP-INVEST-P06"
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-P06",
+    "PrerequisiteExternalId": "SSP-INVEST-01-P02"
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-03",
+    "PrerequisiteExternalId": "WF-DEAL-01-P-SSP-01"
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-04",
+    "PrerequisiteExternalId": "WF-DEAL-01-P-SSP-02"
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-03",
+    "PrerequisiteExternalId": "WF-LEAD-01-P-SSP-01"
+  },
+  {
+    "ActivityExternalId": "WF-SOLUTION-01-P-SSP-04",
+    "PrerequisiteExternalId": "WF-SOLUTION-01-P-SSP-02"
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-03",
+    "PrerequisiteExternalId": "WF-VALUE-01-P-SSP-01"
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-04",
+    "PrerequisiteExternalId": "WF-VALUE-01-P-SSP-01"
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-03",
+    "PrerequisiteExternalId": "WF-VTEAM-01-P-SSP-01"
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-04",
+    "PrerequisiteExternalId": "WF-VTEAM-01-P-SSP-01"
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-ALT-01",
+    "PrerequisiteExternalId": "AE-HEALTH-P01"
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-ALT-02",
+    "PrerequisiteExternalId": "AE-HEALTH-P02"
+  },
+  {
+    "ActivityExternalId": "AE-07-CXV-01",
+    "PrerequisiteExternalId": "AE-07-P01"
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-CXV-01",
+    "PrerequisiteExternalId": "CSAM-HEALTH-P01"
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-02",
+    "PrerequisiteExternalId": "ALL-TRANS-01"
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-03",
+    "PrerequisiteExternalId": "ALL-TRANS-02"
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-ALT-01",
+    "PrerequisiteExternalId": "ALL-TRANS-01"
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-ALT-02",
+    "PrerequisiteExternalId": "ALL-TRANS-03"
+  },
+  {
+    "ActivityExternalId": "ALL-HANDOFF-02",
+    "PrerequisiteExternalId": "ALL-HANDOFF-01"
+  },
+  {
+    "ActivityExternalId": "ALL-HANDOFF-ALT-01",
+    "PrerequisiteExternalId": "ALL-HANDOFF-02"
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-02",
+    "PrerequisiteExternalId": "ATS-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-03",
+    "PrerequisiteExternalId": "ATS-CONSUME-02"
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-ALT-01",
+    "PrerequisiteExternalId": "ATS-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-02",
+    "PrerequisiteExternalId": "ALL-SPONSOR-01"
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-03",
+    "PrerequisiteExternalId": "ALL-SPONSOR-02"
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-ALT-01",
+    "PrerequisiteExternalId": "ALL-SPONSOR-01"
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-02",
+    "PrerequisiteExternalId": "ALL-FYPLAN-01"
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-03",
+    "PrerequisiteExternalId": "ALL-FYPLAN-02"
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-ALT-01",
+    "PrerequisiteExternalId": "ALL-FYPLAN-01"
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-02",
+    "PrerequisiteExternalId": "ALL-ASSET-01"
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-03",
+    "PrerequisiteExternalId": "ALL-ASSET-02"
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-ALT-01",
+    "PrerequisiteExternalId": "ALL-ASSET-01"
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-02",
+    "PrerequisiteExternalId": "CSAM-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-03",
+    "PrerequisiteExternalId": "CSAM-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-ALT-01",
+    "PrerequisiteExternalId": "CSAM-CONSUME-02"
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-02",
+    "PrerequisiteExternalId": "SSP-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-03",
+    "PrerequisiteExternalId": "SSP-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-ALT-01",
+    "PrerequisiteExternalId": "SSP-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-02",
+    "PrerequisiteExternalId": "SE-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-03",
+    "PrerequisiteExternalId": "SE-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-ALT-01",
+    "PrerequisiteExternalId": "SE-CONSUME-02"
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSE-ALT-01",
+    "PrerequisiteExternalId": "ALL-CLOSE-01"
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-02",
+    "PrerequisiteExternalId": "DAE-SIGNAL-01"
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-03",
+    "PrerequisiteExternalId": "DAE-SIGNAL-02"
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-ALT-01",
+    "PrerequisiteExternalId": "DAE-SIGNAL-01"
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-02",
+    "PrerequisiteExternalId": "DSS-SIGNAL-01"
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-03",
+    "PrerequisiteExternalId": "DSS-SIGNAL-01"
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-ALT-01",
+    "PrerequisiteExternalId": "DSS-SIGNAL-01"
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-02",
+    "PrerequisiteExternalId": "DAE-PARTNER-01"
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-03",
+    "PrerequisiteExternalId": "DAE-PARTNER-02"
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-ALT-01",
+    "PrerequisiteExternalId": "DAE-PARTNER-03"
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-02",
+    "PrerequisiteExternalId": "PSS-PARTNER-01"
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-03",
+    "PrerequisiteExternalId": "PSS-PARTNER-02"
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-ALT-01",
+    "PrerequisiteExternalId": "PSS-PARTNER-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-02",
+    "PrerequisiteExternalId": "DCSA-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-03",
+    "PrerequisiteExternalId": "DCSA-CONSUME-02"
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-ALT-01",
+    "PrerequisiteExternalId": "DCSA-CONSUME-01"
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-02",
+    "PrerequisiteExternalId": "DSE-ARCH-01"
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-ALT-01",
+    "PrerequisiteExternalId": "DSE-ARCH-02"
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-02",
+    "PrerequisiteExternalId": "DAE-TERR-01"
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-03",
+    "PrerequisiteExternalId": "DAE-TERR-01"
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-04",
+    "PrerequisiteExternalId": "DAE-TERR-01"
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-02",
+    "PrerequisiteExternalId": "DSS-TERR-01"
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-03",
+    "PrerequisiteExternalId": "DSS-TERR-01"
+  },
+  {
+    "ActivityExternalId": "PSS-JP-02",
+    "PrerequisiteExternalId": "PSS-JP-01"
+  },
+  {
+    "ActivityExternalId": "PSS-JP-03",
+    "PrerequisiteExternalId": "PSS-JP-01"
+  },
+  {
+    "ActivityExternalId": "PSS-JP-04",
+    "PrerequisiteExternalId": "PSS-JP-02"
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-02",
+    "PrerequisiteExternalId": "DAE-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-03",
+    "PrerequisiteExternalId": "DAE-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-04",
+    "PrerequisiteExternalId": "DAE-CONV-03"
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-02",
+    "PrerequisiteExternalId": "DAE-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-03",
+    "PrerequisiteExternalId": "DAE-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-04",
+    "PrerequisiteExternalId": "DAE-DEAL-02"
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-02",
+    "PrerequisiteExternalId": "DAE-RENEW-01"
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-03",
+    "PrerequisiteExternalId": "DAE-RENEW-02"
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-04",
+    "PrerequisiteExternalId": "DAE-RENEW-01"
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-02",
+    "PrerequisiteExternalId": "DAE-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-03",
+    "PrerequisiteExternalId": "DAE-HEALTH-02"
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-04",
+    "PrerequisiteExternalId": "DAE-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-02",
+    "PrerequisiteExternalId": "SMEC-CE-RENEW-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-03",
+    "PrerequisiteExternalId": "SMEC-CE-RENEW-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-04",
+    "PrerequisiteExternalId": "SMEC-CE-RENEW-02"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-02",
+    "PrerequisiteExternalId": "SMEC-CE-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-03",
+    "PrerequisiteExternalId": "SMEC-CE-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-04",
+    "PrerequisiteExternalId": "SMEC-CE-DEAL-02"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-02",
+    "PrerequisiteExternalId": "SMEC-CE-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-03",
+    "PrerequisiteExternalId": "SMEC-CE-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-04",
+    "PrerequisiteExternalId": "SMEC-CE-HEALTH-02"
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-02",
+    "PrerequisiteExternalId": "DSS-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-03",
+    "PrerequisiteExternalId": "DSS-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-02",
+    "PrerequisiteExternalId": "DSS-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-03",
+    "PrerequisiteExternalId": "DSS-DEAL-01"
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-02",
+    "PrerequisiteExternalId": "DSS-VALUE-01"
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-03",
+    "PrerequisiteExternalId": "DSS-VALUE-01"
+  },
+  {
+    "ActivityExternalId": "DSE-DISC-02",
+    "PrerequisiteExternalId": "DSE-DISC-01"
+  },
+  {
+    "ActivityExternalId": "DSE-DISC-03",
+    "PrerequisiteExternalId": "DSE-DISC-01"
+  },
+  {
+    "ActivityExternalId": "DSE-PROOF-02",
+    "PrerequisiteExternalId": "DSE-PROOF-01"
+  },
+  {
+    "ActivityExternalId": "DSE-PROOF-03",
+    "PrerequisiteExternalId": "DSE-PROOF-02"
+  },
+  {
+    "ActivityExternalId": "DSE-CONV-02",
+    "PrerequisiteExternalId": "DSE-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DSE-CONV-03",
+    "PrerequisiteExternalId": "DSE-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DSE-HEALTH-02",
+    "PrerequisiteExternalId": "DSE-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "DSE-HEALTH-03",
+    "PrerequisiteExternalId": "DSE-HEALTH-02"
+  },
+  {
+    "ActivityExternalId": "DCSA-PART-02",
+    "PrerequisiteExternalId": "DCSA-PART-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-PART-03",
+    "PrerequisiteExternalId": "DCSA-PART-02"
+  },
+  {
+    "ActivityExternalId": "DCSA-CONV-02",
+    "PrerequisiteExternalId": "DCSA-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-CONV-03",
+    "PrerequisiteExternalId": "DCSA-CONV-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-VALUE-02",
+    "PrerequisiteExternalId": "DCSA-VALUE-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-VALUE-03",
+    "PrerequisiteExternalId": "DCSA-VALUE-02"
+  },
+  {
+    "ActivityExternalId": "PSS-DEM-02",
+    "PrerequisiteExternalId": "PSS-DEM-01"
+  },
+  {
+    "ActivityExternalId": "PSS-ORCH-02",
+    "PrerequisiteExternalId": "PSS-ORCH-01"
+  },
+  {
+    "ActivityExternalId": "PSS-VAL-02",
+    "PrerequisiteExternalId": "PSS-VAL-01"
+  },
+  {
+    "ActivityExternalId": "PSS-VAL-03",
+    "PrerequisiteExternalId": "PSS-VAL-02"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-POL-02",
+    "PrerequisiteExternalId": "SMEC-CE-POL-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-POL-03",
+    "PrerequisiteExternalId": "SMEC-CE-POL-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-NEG-02",
+    "PrerequisiteExternalId": "SMEC-CE-NEG-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-NEG-03",
+    "PrerequisiteExternalId": "SMEC-CE-NEG-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-ORCH-02",
+    "PrerequisiteExternalId": "SMEC-CE-ORCH-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL2-02",
+    "PrerequisiteExternalId": "SMEC-CE-DEAL2-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL2-03",
+    "PrerequisiteExternalId": "SMEC-CE-DEAL2-02"
+  },
+  {
+    "ActivityExternalId": "DCSA-ARCH-02",
+    "PrerequisiteExternalId": "DCSA-ARCH-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-ARCH-03",
+    "PrerequisiteExternalId": "DCSA-ARCH-02"
+  },
+  {
+    "ActivityExternalId": "DCSA-HEALTH-02",
+    "PrerequisiteExternalId": "DCSA-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-EXPAND-02",
+    "PrerequisiteExternalId": "DCSA-EXPAND-01"
+  },
+  {
+    "ActivityExternalId": "DCSA-EXPAND-03",
+    "PrerequisiteExternalId": "DCSA-EXPAND-02"
+  },
+  {
+    "ActivityExternalId": "DSE-ASSET-02",
+    "PrerequisiteExternalId": "DSE-ASSET-01"
+  },
+  {
+    "ActivityExternalId": "DSE-PARTNER-02",
+    "PrerequisiteExternalId": "DSE-PARTNER-01"
+  },
+  {
+    "ActivityExternalId": "DSE-PARTNER-03",
+    "PrerequisiteExternalId": "DSE-PARTNER-02"
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-02",
+    "PrerequisiteExternalId": "DSS-COMP-01"
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-03",
+    "PrerequisiteExternalId": "DSS-COMP-02"
+  },
+  {
+    "ActivityExternalId": "DSS-ORCH-02",
+    "PrerequisiteExternalId": "DSS-ORCH-01"
+  },
+  {
+    "ActivityExternalId": "DSS-ORCH-03",
+    "PrerequisiteExternalId": "DSS-ORCH-02"
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-02",
+    "PrerequisiteExternalId": "PSS-CAP-01"
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-03",
+    "PrerequisiteExternalId": "PSS-CAP-02"
+  },
+  {
+    "ActivityExternalId": "PSS-CONV-02",
+    "PrerequisiteExternalId": "PSS-CONV-01"
+  },
+  {
+    "ActivityExternalId": "PSS-CONV-03",
+    "PrerequisiteExternalId": "PSS-CONV-02"
+  },
+  {
+    "ActivityExternalId": "DSS-INV-02",
+    "PrerequisiteExternalId": "DSS-INV-01"
+  },
+  {
+    "ActivityExternalId": "DSS-INV-03",
+    "PrerequisiteExternalId": "DSS-INV-02"
+  },
+  {
+    "ActivityExternalId": "PSS-INV-02",
+    "PrerequisiteExternalId": "PSS-INV-01"
+  },
+  {
+    "ActivityExternalId": "PSS-INV-03",
+    "PrerequisiteExternalId": "PSS-INV-02"
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-04",
+    "PrerequisiteExternalId": "DSS-COMP-03"
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-04",
+    "PrerequisiteExternalId": "PSS-CAP-02"
+  },
+  {
+    "ActivityExternalId": "DCSA-HEALTH-04",
+    "PrerequisiteExternalId": "DCSA-HEALTH-01"
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-05",
+    "PrerequisiteExternalId": "SMEC-CE-RENEW-01"
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSEDWON-02",
+    "PrerequisiteExternalId": "ALL-CLOSEDWON-01"
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-JAI",
+    "PrerequisiteExternalId": "CSAM-ESCALATE-P02"
+  }
+]

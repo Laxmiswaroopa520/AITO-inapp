@@ -1,0 +1,5186 @@
+[
+  {
+    "ActivityExternalId": "WF-SE-DISC-01-P-SE-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-DISC-01-P-SE-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-01-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-01-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-01-ECIF-01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEAL-01-P-SE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEAL-01-P-SE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-06-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-06-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-02",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-07-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-07-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-QA-01-P-SE-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-QA-01-P-SE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-05-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-05-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-INVEST-01-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-INVEST-01-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ARCH-01-P-SE-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ARCH-01-P-SE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEMO-01-P-SE-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEMO-01-P-SE-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-POC-01-P-SE-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-POC-01-P-SE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-02-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-02-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-03-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-03-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-04-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-04-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-INVEST-01-P03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-INVEST-01-P04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-INVLINK-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-RISK-01-P-CE-01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-RISK-01-P-CE-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-01-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-01-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-POLICY-01-P-CE-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-POLICY-01-P-CE-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-03-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-03-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-RENEW-01-P-CE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-RENEW-01-P-CE-02",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-06-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-06-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P02",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-APPROVAL-01-P-CE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-APPROVAL-01-P-CE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-NEG-01-P-CE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-NEG-01-P-CE-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-STRUCT-01-P-CE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-STRUCT-01-P-CE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-TRANS-01-P-CE-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CE-TRANS-01-P-CE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-02-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-02-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-02-DEAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-04-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-04-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-05-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-05-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-05-ECIF-01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-07-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-07-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P04",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVLINK-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-HEALTH-01-P-CSA-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-HEALTH-01-P-CSA-02",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-01-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-01-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-TECH-CONV-01-P-CSA-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-TECH-CONV-01-P-CSA-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-04-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-04-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONSUME-01-P-CSA-01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONSUME-01-P-CSA-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-05-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-05-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-INVEST-01-P01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-INVEST-01-P02",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-ARCH-01-P-CSA-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-ARCH-01-P-CSA-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-CSA-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-CSA-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-02-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-02-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-02-ECIF-01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-03-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-03-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-OPT-01-P-CSA-01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-OPT-01-P-CSA-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-TECH-01-P-CSA-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-TECH-01-P-CSA-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-06-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-06-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-07-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-07-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-INVEST-01-P03",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-INVEST-01-P04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-INVLINK-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-04-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-04-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-04-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-04-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-04-P03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-03-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-03-P02",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-03-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-03-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-03-ECIF-01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-DEAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-06-P-AE01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONV-01-P-AE-JAI",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-06-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-06-P-AE02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-INVEST-01-P01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-INVEST-01-P02",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-INVEST-01-P03",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-01-P01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-01-P04",
+    "AgentExternalId": "AGT-010",
+    "UsageType": "Primary",
+    "DisplayLabel": "Auto-Fix Pipeline Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-02-P01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-02-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-01-P02",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-01-P05A",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-01-P05B",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-02-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-02-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-INVLINK-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-ORCH-01-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-ORCH-01-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-ORCH-01-P03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-ORCH-01-P03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-VALUE-01-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-VALUE-01-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-VALUE-01-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-VALUE-01-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-VALUE-01-P03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-02",
+    "AgentExternalId": "AGT-011",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-03",
+    "AgentExternalId": "AGT-011",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-01",
+    "AgentExternalId": "AGT-011",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-03-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-ATS-STRAT01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-ATS-STRAT02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ARCH-01-P-ATS-STRAT03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-04-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-05-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-05-ALT-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-JAI",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-06-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ORCH-01-P-ATS-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-07-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ORCH-01-P-ATS-ECIF02",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-ORCH-01-P-ATS-ECIF03",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P04",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CBR-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CBR-P02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-HEALTH-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-HEALTH-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-PARTNER-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-PARTNER-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SOLUTION-01-P-SSP-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SOLUTION-01-P-SSP-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONV-01-P-SSP-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONV-01-P-SSP-JAI",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVLINK-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-COMP-01-P-SSP-01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-COMP-01-P-SSP-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-02",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P02",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P03",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P04",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-01-P05",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-ALT02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P01",
+    "AgentExternalId": "AGT-011",
+    "UsageType": "Primary",
+    "DisplayLabel": "Proactive Insights in MSXI",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Secondary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-ALT01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-ALT02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-ALT02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-ALT01",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-ALT01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-EXEC-ALT02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ORCH-ALT02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-USECASE-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-USECASE-02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-INTEL-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-INTEL-02",
+    "AgentExternalId": "AGT-011",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-NARR-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-NARR-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-DEAL-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-P01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-ALT01",
+    "AgentExternalId": "AGT-007",
+    "UsageType": "Primary",
+    "DisplayLabel": "Analyst",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-ALT01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-ALT02",
+    "AgentExternalId": "AGT-007",
+    "UsageType": "Primary",
+    "DisplayLabel": "Analyst",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-P01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-ALT01",
+    "AgentExternalId": "AGT-012",
+    "UsageType": "Primary",
+    "DisplayLabel": "Customer Success Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-ALT02",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-ALT01",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-ALT02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-05-QUOTE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-02-BYOD-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Deal Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-P06",
+    "AgentExternalId": "SYS-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSX Deal Assistance",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-INVEST-P06",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Secondary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-INVEST-01-P04",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P05",
+    "AgentExternalId": "SYS-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSX Deal Assistance",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-INVEST-01-P05",
+    "AgentExternalId": "AGT-002",
+    "UsageType": "Secondary",
+    "DisplayLabel": "ECIF Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "ATS-INVEST-01-P05",
+    "AgentExternalId": "SYS-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Central",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-INVEST-P05",
+    "AgentExternalId": "SYS-002",
+    "UsageType": "Primary",
+    "DisplayLabel": "ECIF Central",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CBR-P03",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CBR-P04",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-HEALTH-P03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-HEALTH-P04",
+    "AgentExternalId": "AGT-007",
+    "UsageType": "Primary",
+    "DisplayLabel": "Analyst",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-PARTNER-P03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-PARTNER-P04",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-COMP-01-P-SSP-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-COMP-01-P-SSP-04",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-COMP-01-P-SSP-05",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONV-01-P-SSP-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-CONV-01-P-SSP-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-04",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-04",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SOLUTION-01-P-SSP-03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SOLUTION-01-P-SSP-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-03",
+    "AgentExternalId": "AGT-007",
+    "UsageType": "Primary",
+    "DisplayLabel": "Analyst",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-04",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-03-ALT-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-EBC-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-05-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-06-ALT-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-05-ORCH-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-06-P-AE03",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-P03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-TEAM-P05",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-06-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-05-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-COMP-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-06-P-AE03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Alternate",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-PIPE-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-OPP-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-INTEL-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-LEAD-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-HEALTH-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CE-POLICY-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-VALUE-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-SPLAN-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-P01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-P02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-P03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-HEALTH-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-06-CXV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "AE-07-CXV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-HEALTH-CXV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "CX Vitals",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-TRANS-ALT-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-HANDOFF-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-HANDOFF-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-HANDOFF-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-HANDOFF-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ATS-CONSUME-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-SPONSOR-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-FYPLAN-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-01",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-ASSET-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-CONSUME-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SSP-CONSUME-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SE-CONSUME-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSE-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSE-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSE-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-ALT-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-JP-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Open MSX",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-JP-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-JP-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-JP-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-04",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-02",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-03",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-DISC-01-P-SE-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEAL-01-P-SE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SE-ARCH-01-P-SE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SE-INVLINK-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-01-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-03-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-06-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-CE-APPROVAL-01-P-CE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-CE-STRUCT-01-P-CE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-CE-TRANS-01-P-CE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-02-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-04-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-05-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-07-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CE-INVLINK-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-HEALTH-01-P-CSA-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-TECH-CONV-01-P-CSA-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-CONSUME-01-P-CSA-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-TECH-01-P-CSA-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSA-INVLINK-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-04-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-03-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-05-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-05-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-07-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-07-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-06-P-AE02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-02-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-01-P05B",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "AE-02-ALT-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-02",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Secondary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-03",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-01",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Secondary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "WF-VALUE-01-P-SSP-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-VTEAM-01-P-SSP-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SSP-INVLINK-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-X-PLAN-01-P-ATS-INTEL-02",
+    "AgentExternalId": "AGT-008",
+    "UsageType": "Primary",
+    "DisplayLabel": "MSXI Assist V2",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-VALUE-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-RENEW-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-P02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-ALT01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-COMP-01-P-SSP-05",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-CONV-01-P-SSP-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-DEAL-01-P-SSP-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-LEAD-01-P-SSP-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SOLUTION-01-P-SSP-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-ALT-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-ALT-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-PARTNER-ALT-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "PSS-PARTNER-ALT-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DCSA-CONSUME-ALT-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-03",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSE-ARCH-ALT-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-TERR-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-TERR-04",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "PSS-JP-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "PSS-JP-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-CONV-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-DEAL-04",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-RENEW-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-04",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL-04",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-CONV-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-DEAL-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSS-VALUE-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DSE-DISC-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-DISC-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-DISC-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-PROOF-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-PROOF-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-PROOF-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-CONV-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-CONV-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-CONV-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-HEALTH-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-HEALTH-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-HEALTH-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-PART-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-PART-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-PART-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONV-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONV-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-CONV-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-VALUE-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-VALUE-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-VALUE-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-DEM-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-DEM-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-DEM-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-ORCH-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-ORCH-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-ORCH-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-VAL-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-VAL-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-VAL-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-POL-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-POL-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-POL-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-NEG-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-NEG-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-NEG-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-ORCH-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-ORCH-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-ORCH-03",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL2-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL2-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-DEAL2-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-ARCH-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-ARCH-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-ARCH-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-HEALTH-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-HEALTH-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-HEALTH-03",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-EXPAND-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-EXPAND-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-EXPAND-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ASSET-01",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ASSET-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-ASSET-03",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-PARTNER-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-PARTNER-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-PARTNER-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-02",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-ORCH-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-ORCH-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-ORCH-03",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-01",
+    "AgentExternalId": "AGT-013",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Home",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-02",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-03",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CONV-01",
+    "AgentExternalId": "AGT-014",
+    "UsageType": "Primary",
+    "DisplayLabel": "Know Your Partner",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CONV-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CONV-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-HEALTH-05",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-HEALTH-05",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-POL-04",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-INV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-INV-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-INV-03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-INV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-INV-02",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-INV-03",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-INV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DAE-INV-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-INV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSE-INV-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-INV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-INV-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-INV-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-COMP-04",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "PSS-CAP-04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DCSA-HEALTH-04",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "SMEC-CE-RENEW-05",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSEDWON-01",
+    "AgentExternalId": "AGT-001",
+    "UsageType": "Primary",
+    "DisplayLabel": "Sales Agent",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "ALL-CLOSEDWON-02",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-ARCH-01-P-CSA-02",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Secondary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "CSA-VSAT-01-P01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-VSAT-01-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-VSAT-01-P03",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-VSAT-01-P04",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-TECHLEAD-01-P01",
+    "AgentExternalId": "AGT-006",
+    "UsageType": "Primary",
+    "DisplayLabel": "Researcher",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-TECHLEAD-01-P02",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-TECHLEAD-01-P03",
+    "AgentExternalId": "AGT-003",
+    "UsageType": "Primary",
+    "DisplayLabel": "Microsoft 365 Copilot",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSA-TECHLEAD-01-P04",
+    "AgentExternalId": "AGT-004",
+    "UsageType": "Primary",
+    "DisplayLabel": "Cowork",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-SE-ARCH-01-P-SE-02",
+    "AgentExternalId": "AGT-015",
+    "UsageType": "Secondary",
+    "DisplayLabel": "GitHub Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 3
+  },
+  {
+    "ActivityExternalId": "WF-SE-DEMO-01-P-SE-01",
+    "AgentExternalId": "AGT-015",
+    "UsageType": "Secondary",
+    "DisplayLabel": "GitHub Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SE-POC-01-P-SE-01",
+    "AgentExternalId": "AGT-015",
+    "UsageType": "Secondary",
+    "DisplayLabel": "GitHub Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "WF-SE-ASSET-01-P-SE-01",
+    "AgentExternalId": "AGT-015",
+    "UsageType": "Secondary",
+    "DisplayLabel": "GitHub Copilot",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 2
+  },
+  {
+    "ActivityExternalId": "DAE-SIGNAL-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "DSS-SIGNAL-SCOUT-01",
+    "AgentExternalId": "AGT-005",
+    "UsageType": "Primary",
+    "DisplayLabel": "Scout",
+    "ShowAgentAccessLink": 1,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "WF-X-CONV-01-P-ATS-NARR-JAI",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  },
+  {
+    "ActivityExternalId": "CSAM-ESCALATE-JAI",
+    "AgentExternalId": "AGT-009",
+    "UsageType": "Primary",
+    "DisplayLabel": "Agent J.ai",
+    "ShowAgentAccessLink": 0,
+    "DisplayOrder": 1
+  }
+]

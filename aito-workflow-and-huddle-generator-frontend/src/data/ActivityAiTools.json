@@ -1,0 +1,1292 @@
+[
+  {
+    "ActivityExternalId": "ae-pipeline-health-review-msx-cleanup",
+    "ToolExternalId": "sales-agent-auto-fix-pipeline-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-pipeline-gap-analysis",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-msx-report-filtering-guidance",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-msx-report-filtering-guidance",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-account-strategy-territory-prioritizatio",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-account-strategy-territory-prioritizatio",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-account-360-prep",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-weekly-forecast-narrative",
+    "ToolExternalId": "intelligent-snapshots-msxi",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-weekly-forecast-narrative",
+    "ToolExternalId": "proactive-insights-in-msxi",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-forecast-accuracy-trend-analysis",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-forecast-accuracy-trend-analysis",
+    "ToolExternalId": "analyst",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-on-demand-report-generation",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-customer-engagement-value-narrative",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-executive-value-communication",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-deal-book-proposal-creation",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-deal-health-risk-mitigation",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-empowerment-pricing-rule-check",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-sku-migration-pricing",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-pre-meeting-brief-role-alignment",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-partner-strategy-co-sell-execution",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-team-briefing-generator",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-qbr-strategic-cadence-management",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-weekly-status-internal-reporting",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-co-branded-qbr-deck",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-ecif-eligibility-submission-management",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-investment-planning-funded-motion-execut",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-investment-planning-funded-motion-execut",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-ecif-internal-process-finder",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-renewal-pipeline-risk-assessment",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-renewal-outreach-expansion-strategy",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-renewal-outreach-expansion-strategy",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-buying-signal-analysis-lead-qualificatio",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-buying-signal-analysis-lead-qualificatio",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ae-opportunity-capture-outreach-planning",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-deal-options-analysis",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-deal-structuring-orchestration",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-complex-deal-advisory",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-sku-selection-one-time-offer-build",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-contract-negotiation",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-deal-desk-concession-drafting",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-renewal-deal-book",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-renewal-radar",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-renewal-radar",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-renewal-execution",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-renewal-execution",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-amendment-review-at-renewal",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-amendment-review-at-renewal",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-cps-delta-analysis",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-cps-delta-analysis",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-renewal-opportunity-ownership",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-discount-exception-scan",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-licensing-optimization-compliance",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-empowerment-guide-compliance-check",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-coverage-threshold-eligibility-calc",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-coverage-threshold-eligibility-calc",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-side-agreement-discount-risk-validation",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-side-agreement-discount-risk-validation",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-certified-gap-drivers",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-pipeline-auto-fix-review",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-commercial-risk-management",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-forecast-accuracy",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-legacy-to-new-commerce-migration-advisor",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-legacy-to-new-commerce-migration-advisor",
+    "ToolExternalId": "researcher",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ce-mcae-agreement-validation",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-fast-licensing-answers",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-qbr-prep",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ce-meeting-prep-commercial-talking-points",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-account-prep-brief",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-kpi-report-discovery",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-ai-workload-prioritization",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-technical-risk-identification",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-pre-meeting-client-mood-public-signals",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-pre-meeting-client-mood-public-signals",
+    "ToolExternalId": "researcher",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ats-azure-migration-priority",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-create-update-opportunity",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-consumption-optimization",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-technical-vision-strategy",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-technical-planning",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-solution-validation",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-swot-technical-trajectory",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-swot-technical-trajectory",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ats-match-client-challenges-to-microsoft-use",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-technical-orchestration",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-technical-enablement",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-executive-technical-briefings",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-reference-arch-value-summary",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-customer-presentation-assembly",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ats-ebc-organization",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-solution-selling-plan",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-solution-selling-execution",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-solution-positioning-strategy",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-solution-positioning-strategy",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ssp-customer-deck-proposal-build",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-weekly-pipeline-discipline",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-deal-readiness-checklist",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-azure-migration-priority",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-pipeline-execution",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-deal-support",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-prospecting-lead-follow-up",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-prospecting-lead-follow-up",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "ssp-consumption-macc-plan-generation",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-spreadsheet-calculations",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-account-prep-brief",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-customer-discovery",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-competitive-talk-track",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-competitive-positioning",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-competitive-landscape-monitoring",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-create-ecif-workscope",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-specialist-led-partner-engagement",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-ecif-deal-desk-request-prep",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-skill-development",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-role-specific-upskilling",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ssp-shared-prompt-discovery",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-certified-data-q-a",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-kpi-report-discovery",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-kpi-report-discovery",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "se-pipeline-hygiene-review",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-azure-migration-insights",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-business-data-exploration",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-meeting-prep-grounded-briefing",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-meeting-prep-grounded-briefing",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "se-customer-technical-decisioning",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-reactive-real-time-troubleshooting",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-post-call-synthesis-artifacts",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-email-triage-follow-up",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-technical-selling-discovery",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-architecture-design-reuse",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-customer-workshops-technical-positioning",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-deal-review-prep",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-deal-support-technical-validation",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-technical-risk-mitigation",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-pre-sales-to-delivery-handoff",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-plan-vs-reality-reflection-30-60",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-knowledge-development",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-knowledge-development",
+    "ToolExternalId": "researcher",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "se-demo-asset-environment-creation",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-demo-asset-environment-creation",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "se-rfp-proposal-response",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "se-technical-workshop-delivery",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-daily-account-brief",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-acr-trend-comparison",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-azure-migration-priority",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-pre-meeting-customer-context",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-technical-research-customer-profiling",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-qbr-trend-insights",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-kpi-clarification",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-qbr-prep-brief",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-architecture-design",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-operational-readiness-planning",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-consumption-acceleration",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-cost-optimization-finops-advisory",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-per-account-consumption-alerting",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-customer-advisory",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-tech-to-value-summary",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-post-sales-technical-continuity",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-customer-skilling-workshop-prep",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-tech-to-business-value-translation",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-competitive-differentiator-surfacing",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-cross-team-coordination",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-technical-skills-development-innovation",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-partner-technical-enablement",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-eng-support-coordination-escalation",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csa-learning-prioritization-by-customer-need",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-customer-health-plan",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-customer-health-monitoring",
+    "ToolExternalId": "proactive-insights-in-msxi",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-renewal-risk-identification",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-daily-customer-pulse",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-adoption-acceleration",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-adoption-planning",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-value-realization-measurement",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-customer-success-plans-csps",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-renewal-support-view",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-opportunity-tracking-across-handoffs",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-early-stage-opportunity-identification",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-early-stage-opportunity-identification",
+    "ToolExternalId": "researcher",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "csam-delivery-governance",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-delivery-execution-oversight",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-ecif-milestone-tracking",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-ecif-escalation-management",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-ecif-administration",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-consumption-forecasting",
+    "ToolExternalId": "intelligent-snapshots-msxi",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-internal-azure-consumption-forecasting",
+    "ToolExternalId": "intelligent-snapshots-msxi",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-macc-usage-consumption-tracking",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-cross-team-orchestration",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-internal-partner-orchestration",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-customer-stakeholder-engagement",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-multi-source-account-aggregation",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-csdr-merp-prep",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "csam-meeting-recap-with-account-team-routing",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-territory-pipeline-rollup",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-team-forecast-governance",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-weekly-portfolio-health-delivery",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-forecast-comment-hygiene",
+    "ToolExternalId": "scout",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-pipeline-governance-review",
+    "ToolExternalId": "research-canvas",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-pipeline-governance-review",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "sm-1-1-seller-prep-territory-brief",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-territory-level-1-1-trends",
+    "ToolExternalId": "msxi-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-territory-level-1-1-trends",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "sm-deal-inspection-with-coaching-summary",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-deal-inspection-w-partner-alignment",
+    "ToolExternalId": "deal-making-capabilities-in-sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-deal-inspection-w-partner-alignment",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "sm-pre-pipeline-business-development",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-new-c-suite-change-detection",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-customer-exec-meeting-research",
+    "ToolExternalId": "researcher",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-customer-exec-meeting-research",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "sm-weekly-ir-rob-prep",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-ir-weekly-business-review-prep",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-partner-pipeline-sharing-visibility",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-ecif-portfolio-visibility",
+    "ToolExternalId": "ecif-agent",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-fy27-renewal-call-orchestration",
+    "ToolExternalId": "scout",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-change-comms-team-talk-track",
+    "ToolExternalId": "cowork",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-change-leadership-message-translation",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "sm-change-leadership-message-translation",
+    "ToolExternalId": "cowork",
+    "SortOrder": 2,
+    "IsPrimary": false
+  },
+  {
+    "ActivityExternalId": "sm-team-skill-gap-analysis",
+    "ToolExternalId": "m365-copilot",
+    "SortOrder": 1,
+    "IsPrimary": true
+  },
+  {
+    "ActivityExternalId": "ae-pipeline-health-review-msx-cleanup",
+    "ToolExternalId": "sales-agent",
+    "SortOrder": 2,
+    "IsPrimary": false
+  }
+]

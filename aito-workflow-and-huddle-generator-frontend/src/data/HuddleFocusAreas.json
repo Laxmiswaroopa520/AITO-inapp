@@ -1,0 +1,34 @@
+[
+  {
+    "ExternalId": "FA-01",
+    "Name": "Pipeline and Opportunity"
+  },
+  {
+    "ExternalId": "FA-02",
+    "Name": "Customer Engagement and Value"
+  },
+  {
+    "ExternalId": "FA-03",
+    "Name": "Solution and Deal Strategy"
+  },
+  {
+    "ExternalId": "FA-04",
+    "Name": "Commercial Execution"
+  },
+  {
+    "ExternalId": "FA-05",
+    "Name": "Technical Solutioning"
+  },
+  {
+    "ExternalId": "FA-06",
+    "Name": "Customer Success and Technical Health"
+  },
+  {
+    "ExternalId": "FA-07",
+    "Name": "Orchestration and Investment"
+  },
+  {
+    "ExternalId": "FA-00",
+    "Name": "Foundation and Orientation"
+  }
+]

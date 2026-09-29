@@ -1,0 +1,122 @@
+[
+  {
+    "ExternalId": "ae-ent",
+    "Name": "Account Executive",
+    "Abbreviation": "AE",
+    "Segment": "Enterprise",
+    "Description": "Manages strategic enterprise accounts with complex multi-stakeholder deals and long sales cycles.",
+    "SortOrder": 1,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "ats-ent",
+    "Name": "Account Technology Strategist",
+    "Abbreviation": "ATS",
+    "Segment": "Enterprise",
+    "Description": "Owns the technical strategy and solution roadmap for enterprise accounts.",
+    "SortOrder": 2,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "ssp-ent",
+    "Name": "Solution Sales Professional",
+    "Abbreviation": "SSP",
+    "Segment": "Enterprise",
+    "Description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations.",
+    "SortOrder": 3,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "se-ent",
+    "Name": "Solution Engineer",
+    "Abbreviation": "SE",
+    "Segment": "Enterprise",
+    "Description": "Leads technical discovery, qualification, and execution of demos, PoCs, and solution designs.",
+    "SortOrder": 4,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "ce-ent",
+    "Name": "Commercial Executive",
+    "Abbreviation": "CE",
+    "Segment": "Enterprise",
+    "Description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team.",
+    "SortOrder": 5,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "csa-ces",
+    "Name": "Cloud Solution Architect",
+    "Abbreviation": "CSA",
+    "Segment": "Enterprise",
+    "Description": "Designs and validates cloud and AI architectures for customer success.",
+    "SortOrder": 6,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "csam-ces",
+    "Name": "Customer Success Account Manager",
+    "Abbreviation": "CSAM",
+    "Segment": "Enterprise",
+    "Description": "Drives customer adoption, expansion, and renewal through success planning.",
+    "SortOrder": 7,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "sm-mgr",
+    "Name": "Sales Manager",
+    "Abbreviation": "SM",
+    "Segment": "Manager",
+    "Description": "Coaches sellers using AI-driven insights to improve deal quality and effectiveness.",
+    "SortOrder": 8,
+    "IsActive": true
+  },
+  {
+    "ExternalId": "dae-smec",
+    "Name": "Digital Account Executive",
+    "Abbreviation": "DAE",
+    "Segment": "SME&C",
+    "SortOrder": 9,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "dss-smec",
+    "Name": "Digital Solution Area Specialist",
+    "Abbreviation": "DSS",
+    "Segment": "SME&C",
+    "SortOrder": 10,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "dse-smec",
+    "Name": "Digital Solution Engineer",
+    "Abbreviation": "DSE",
+    "Segment": "SME&C",
+    "SortOrder": 11,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "dcsa-smec",
+    "Name": "Digital Cloud Solution Architect",
+    "Abbreviation": "DCSA",
+    "Segment": "SME&C",
+    "SortOrder": 12,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "pss-smec",
+    "Name": "Partner Solution Sales",
+    "Abbreviation": "PSS",
+    "Segment": "SME&C",
+    "SortOrder": 13,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "ROLE-ALL",
+    "Name": "All Roles",
+    "Abbreviation": "ALL",
+    "Segment": "Enterprise",
+    "SortOrder": 8,
+    "IsActive": 1
+  }
+]

@@ -1,0 +1,686 @@
+[
+  {
+    "TopicExternalId": "WF-X-PLAN-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-PLAN-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-PLAN-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-PLAN-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-OPP-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-OPP-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-X-DISC-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-POLICY-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-USECASE-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "AE"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "DAE"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-INVEST-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-ORIENT-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-X-ARCH-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-ASSET-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-X-CONV-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-X-DEAL-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-X-DISC-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-X-OPP-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "DSE"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "DSS"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-X-ORCH-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "ATS"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "CSAM"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-PIPE-01",
+    "RoleAbbreviation": "SSP"
+  },
+  {
+    "TopicExternalId": "WF-X-POLICY-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-RENEW-01",
+    "RoleAbbreviation": "SMEC-CE"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-TECHLEAD-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "CE"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "RoleAbbreviation": "SE"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "DCSA"
+  },
+  {
+    "TopicExternalId": "WF-X-VALUE-01",
+    "RoleAbbreviation": "PSS"
+  },
+  {
+    "TopicExternalId": "WF-X-VSAT-01",
+    "RoleAbbreviation": "CSA"
+  },
+  {
+    "TopicExternalId": "WF-X-PROOF-01",
+    "RoleAbbreviation": "DSE"
+  }
+]

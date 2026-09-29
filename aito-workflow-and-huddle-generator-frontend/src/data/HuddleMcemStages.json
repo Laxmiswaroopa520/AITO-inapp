@@ -1,0 +1,32 @@
+[
+  {
+    "ExternalId": "MCEM-01",
+    "Name": "Listen and Consult",
+    "Description": "Understand the customer's business, goals, challenges and priorities.",
+    "StageNumber": 1
+  },
+  {
+    "ExternalId": "MCEM-02",
+    "Name": "Inspire and Design",
+    "Description": "Show what's possible, envision solutions, create strategy and design.",
+    "StageNumber": 2
+  },
+  {
+    "ExternalId": "MCEM-03",
+    "Name": "Empower and Achieve",
+    "Description": "Implement, deploy, enable users, drive adoption and start achieving value.",
+    "StageNumber": 3
+  },
+  {
+    "ExternalId": "MCEM-04",
+    "Name": "Realize Value",
+    "Description": "Measure results, demonstrate business impact and validate success.",
+    "StageNumber": 4
+  },
+  {
+    "ExternalId": "MCEM-05",
+    "Name": "Manage and Optimize",
+    "Description": "Continuously improve, optimise usage, expand adoption and identify new opportunities.",
+    "StageNumber": 5
+  }
+]

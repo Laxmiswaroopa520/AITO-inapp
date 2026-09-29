@@ -1,0 +1,488 @@
+[
+  {
+    "ExternalId": "RES-GLOBAL-01",
+    "Title": "Role Hub",
+    "Description": "Always-available hub for role guidance and enablement.",
+    "Url": "https://microsoft.sharepoint.com/sites/AIX/SitePages/AIT-Role-Hub.aspx",
+    "Type": "Hub",
+    "LinkLabel": "Open Role Hub",
+    "IsGlobal": 1
+  },
+  {
+    "ExternalId": "RES-001",
+    "Title": "Sales Agent Capabilities Guide",
+    "Description": "Detailed reference for Sales Agent components, capabilities, and example prompts.",
+    "Url": "https://microsoft.sharepoint.com/sites/Salesagent",
+    "Type": "Internal guide",
+    "LinkLabel": "Sales Agent resources",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-002",
+    "Title": "Use Sales Agent in Microsoft 365 Copilot",
+    "Description": "Official overview and use guidance for Sales Agent.",
+    "Url": "https://learn.microsoft.com/en-us/microsoft-sales-copilot/sales-chat-overview",
+    "Type": "Microsoft Learn",
+    "LinkLabel": "Open on Microsoft Learn",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-003",
+    "Title": "Use Dynamics 365 Sales skills in Copilot Cowork",
+    "Description": "Official scenarios and skill model for Dynamics 365 Sales in Cowork.",
+    "Url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/",
+    "Type": "Microsoft Learn",
+    "LinkLabel": "Open on Microsoft Learn",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-004",
+    "Title": "Frontier Accelerator Content and Learning Model",
+    "Description": "Working model for huddle content, practice cards, experiments, validation, and app rendering.",
+    "Url": "Frontier_Accelerator_Huddles_Content_and_Learning_Model_Updated.docx",
+    "Type": "Internal model",
+    "LinkLabel": "Open content model",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-005",
+    "Title": "ATS Finalized Content System",
+    "Description": "ATS-specific working recommendations, coherence pass, capability coverage, and ECIF decisions.",
+    "Url": "Frontier_Accelerator_Huddle_Content_System_v5.8_ATS_Finalized.xlsx",
+    "Type": "Internal workbook",
+    "LinkLabel": "Open ATS source workbook",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-006",
+    "Title": "Agent J.ai Reference",
+    "Description": "MCAPS agent reference for coaching and conversation rehearsal.",
+    "Url": "https://aka.ms/AgentJCopilot",
+    "Type": "Internal reference",
+    "LinkLabel": "Open Agent J.ai reference",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-007",
+    "Title": "MSXI Report and KPI Help",
+    "Description": "MSXI report discovery and KPI interpretation support.",
+    "Url": "https://aka.ms/MSXIAssistV2",
+    "Type": "Internal resource",
+    "LinkLabel": "Open MSXI support",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-008",
+    "Title": "ECIF Guidance and Agent Reference",
+    "Description": "Guidance for ECIF workflow, access surface, and governed review.",
+    "Url": "https://aka.ms/MCAPSHelpECIF",
+    "Type": "Internal resource",
+    "LinkLabel": "Open ECIF guidance",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-CSAM-RSG",
+    "Title": "RSG - Customer Success Account Management (CSAM)",
+    "Description": "Role Success Guide content for CSAM customer health, consumption and usage excellence, delivery excellence, AI transition and customer outcomes.",
+    "Url": "https://microsoft.sharepoint.com/sites/C_D_I/_layouts/15/Doc.aspx?sourcedoc=%7B0E40E0A6-67DA-4431-A789-C03FE145C2A8%7D&file=RSG%20-%20Customer%20Success%20Account%20Management%20(CSAM).pptx&action=edit&mobileredirect=true&DefaultItemOpen=1",
+    "Type": "Role guidance",
+    "LinkLabel": "Open CSAM RSG",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-CSAM-IMPACT",
+    "Title": "CSAM Impact Guide",
+    "Description": "FY27 CSAM impact guidance covering customer trust, health, cloud adoption, Frontier transformation and AI-enabled effectiveness.",
+    "Url": "https://microsoft.sharepoint.com/teams/CS_CSAM/_layouts/15/Doc.aspx?sourcedoc=%7BEB76E124-BAC8-41D5-BD40-835BB5194433%7D&file=CSAM%20Impact%20Guide.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1",
+    "Type": "Impact guide",
+    "LinkLabel": "Open CSAM Impact Guide",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-CSAM-PERSONA",
+    "Title": "CSAM_Persona_FY27",
+    "Description": "Persona source with CSAM tasks for customer health, adoption, success planning, renewal, delivery governance, consumption and orchestration.",
+    "Url": "https://microsoft.sharepoint.com/teams/AITChangeStudio-FieldFeedback/_layouts/15/Doc.aspx?sourcedoc=%7B97F77D44-DF3B-4452-A887-8C2595B43223%7D&file=CSAM_Persona_FY27.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1",
+    "Type": "Persona deck",
+    "LinkLabel": "Open CSAM Persona",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-CSAM-HEALTH",
+    "Title": "Customer Health Success Programs - M365 - CSAM Guide",
+    "Description": "CSAM guide for Customer Health Success Program initiation, stakeholder alignment, delivery partner coordination, report out, CSP, RAID and CSDR follow-through.",
+    "Url": "https://microsoft.sharepoint.com/teams/CS_CSAM/_layouts/15/Doc.aspx?sourcedoc=%7B4B198510-3C8C-43A2-A122-FE59A7B31BBD%7D&file=Customer%20Health%20Success%20Programs%20-%20M365%20-%20CSAM%20Guide.docx&action=default&mobileredirect=true&DefaultItemOpen=1",
+    "Type": "Delivery guide",
+    "LinkLabel": "Open Customer Health CSAM Guide",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-CSAM-AIINNOV",
+    "Title": "AI Innovation Success Programs - CSAM Delivery Guide",
+    "Description": "CSAM orchestration and follow-through guide for AI Innovation Success engagements, focused on strategic alignment, scoping, delivery handoff and measurable outcomes.",
+    "Url": "https://microsoft.sharepoint.com/teams/CS_CSAM/_layouts/15/Doc.aspx?sourcedoc=%7B330D399B-0AA7-4C17-9555-B82CF96EEC9B%7D&file=AI%20Innovation%20Success%20Programs%20-%20CSAM%20Delivery%20Guide.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1",
+    "Type": "Delivery guide",
+    "LinkLabel": "Open AI Innovation CSAM Guide",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-CSAM-CSP",
+    "Title": "FY27 CAIP Enterprise CSA Handbook - Customer Success Planning excerpt",
+    "Description": "Customer Success Planning guidance stating CSAM accountability for Customer Success Plans and monthly review through CSDR or QBR rhythms.",
+    "Url": "https://microsoft.sharepoint.com/sites/CloudAICSU/_layouts/15/Doc.aspx?sourcedoc=%7B112A0789-02C8-4926-9061-EF071233A3E1%7D&file=FY27_CAIP-ENT_EnterpriseCSA_ICandManager_Handbook.pptx&action=edit&mobileredirect=true&DefaultItemOpen=1",
+    "Type": "Planning guidance",
+    "LinkLabel": "Open Customer Success Planning guidance",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SSP-VALIDATION",
+    "Title": "SSP Path Validation Notes",
+    "Description": "Internal validation notes captured in this workbook.",
+    "Url": "See Executive_Summary and Improvement_Recommendations sheets.",
+    "Type": "Workbook note",
+    "LinkLabel": "Review recommendations",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-DA-01",
+    "Title": "Deal Agent central hub",
+    "Description": "Central SharePoint site for Deal Agent, the deal making features invoked through Sales Agent. Start here for current features, guidance, and enablement.",
+    "Url": "https://microsoft.sharepoint.com/sites/DealAgent",
+    "Type": "Internal hub",
+    "LinkLabel": "Open the Deal Agent hub",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-DA-02",
+    "Title": "Deal Agent enhancements",
+    "Description": "Release notes for Deal Agent, which ships on a bi-weekly cadence. Check before a huddle so examples match what is live.",
+    "Url": "https://microsoft.sharepoint.com/sites/DealAgent/SitePages/Deal-Agent-Enhancements-(June-Edition).aspx",
+    "Type": "Release notes",
+    "LinkLabel": "See what shipped recently",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-DA-03",
+    "Title": "Deal Agent community on Viva Engage",
+    "Description": "Community for questions, field examples, and feedback that reaches the Deal Agent product team.",
+    "Url": "https://engage.cloud.microsoft/main/org/microsoft.com/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIyNTYyNzEwNTY4OTYifQ",
+    "Type": "Community",
+    "LinkLabel": "Join the Deal Agent community",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-DA-04",
+    "Title": "Deal Agent huddle deck",
+    "Description": "Huddle deck from the earlier agent-oriented motion. Useful for demonstration flow and worked examples.",
+    "Url": "https://microsoft.sharepoint.com/:p:/s/AIX/cQp7N-0fvlZWT6ITbU68vKrQEgUCRx71l7i3N1KCoEdVJTN4pQ",
+    "Type": "Huddle material",
+    "LinkLabel": "Open the Deal Agent huddle deck",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-DA-05",
+    "Title": "Deal Agent golden prompts",
+    "Description": "Working prompt patterns for deal discovery, exploration, consumption insight, and deal book creation. Every pattern leads with a unique identifier.",
+    "Url": "https://aka.ms/DealAgent",
+    "Type": "Prompt library",
+    "LinkLabel": "Open the golden prompts",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-DA-06",
+    "Title": "Deal Agent Proposal Builder",
+    "Description": "Proposal Builder for Deal Agent, used with bring your own data proposal creation for MCA-E and EA to MCA-E transitions.",
+    "Url": "https://aka.ms/da_proposal",
+    "Type": "Internal tool",
+    "LinkLabel": "Open Proposal Builder",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-ECIF-01",
+    "Title": "ECIF investment workflow: which system, when",
+    "Description": "The investment path across systems. Sales Agent and the ECIF Agent for guidance, ECIF Central for the workscope, MSX Deal Assistance for submission and tracking, MCAPS Help when blocked. For Azure offers, start at Azure Offer Navigator.",
+    "Url": "https://aka.ms/ECIFCentral",
+    "Type": "Process guidance",
+    "LinkLabel": "Open ECIF Central",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SCOUT-01",
+    "Title": "Microsoft Scout FAQ",
+    "Description": "What Scout is, what it can do across files, browser, shell and Microsoft 365, and how autonomous and scheduled work behaves.",
+    "Url": "https://learn.microsoft.com/en-us/microsoft-scout/faq",
+    "Type": "Microsoft Learn",
+    "LinkLabel": "Open the Scout FAQ",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SCOUT-02",
+    "Title": "MCAPS Lobster Pound community",
+    "Description": "Seller community sharing working Scout patterns, including account planning, customer language mining and recurring monitoring.",
+    "Url": "https://microsoft.sharepoint.com/teams/MCAPSLobsterPound",
+    "Type": "Community",
+    "LinkLabel": "Open the Lobster Pound",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SKILLS-CAT",
+    "Title": "CAT Agent Skills catalog",
+    "Description": "Curated catalog of reusable agent skills for Cowork and Microsoft Scout. Filter by platform to see only what runs in the tool you are using.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/",
+    "Type": "Skill catalog",
+    "LinkLabel": "Browse agent skills",
+    "IsGlobal": 1
+  },
+  {
+    "ExternalId": "RES-SKILLS-SHACK",
+    "Title": "Skill Shack",
+    "Description": "Field-submitted Scout skills contributed by Microsoft sellers and technical roles, organised by category. Useful when a seller workflow already has a community-built skill behind it.",
+    "Url": "https://microsoft.sharepoint.com/sites/skill-shack",
+    "Type": "Skill catalog",
+    "LinkLabel": "Browse Skill Shack",
+    "IsGlobal": 1
+  },
+  {
+    "ExternalId": "RES-SK-COACH",
+    "Title": "Skill Authoring Coach",
+    "Description": "Turn a prompt or activity your team runs repeatedly into a reusable skill with clear triggers, instructions and packaging. Use this when a huddle activity works well enough that the team wants it to become permanent.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/skill-authoring-coach",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 1
+  },
+  {
+    "ExternalId": "RES-SK-ONEPAGER",
+    "Title": "Cowork Use Case One-Pager",
+    "Description": "Turn a working session into a short use case write-up. Pairs with the Field Contribution route when a huddle produces something worth sharing beyond the team.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/cowork-use-case-one-pager",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 1
+  },
+  {
+    "ExternalId": "RES-SK-BRIEF",
+    "Title": "Work Brief",
+    "Description": "Scout skill that reads mail, calendar and Teams to produce a prioritised brief of what is owed and what is coming.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/work-brief",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-AWAIT",
+    "Title": "Awaiting Reply",
+    "Description": "Scout skill that finds sent messages which asked for something and never got an answer, then prepares follow-ups.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/awaiting-reply",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-RADAR",
+    "Title": "Pattern Radar",
+    "Description": "Scans your Microsoft 365 signals to surface recurring patterns worth automating. A practical way to find the next workflow to bring to a huddle.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/pattern-radar",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-MEET",
+    "Title": "Meeting Analyzer",
+    "Description": "Extracts decisions, commitments and unspoken signals from meeting content rather than only summarising it.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/meeting-analyzer",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-VOICE",
+    "Title": "Own Voice Builder",
+    "Description": "Builds a reusable voice profile from your own sent messages so drafted content reads like you wrote it.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/own-voice-builder",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-KNOW",
+    "Title": "Institutional Knowledge Archivist",
+    "Description": "Turns scattered Microsoft 365 signals into a structured, searchable knowledge base. Useful for account handover and reusable assets.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/institutional-knowledge",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-REG",
+    "Title": "Regulation Monitor",
+    "Description": "Locks a confirmed list of authoritative sources and sweeps them on a schedule, reporting only what changed. Domain-agnostic - works for commercial policy as well as regulation.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/regulation-monitor",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-QUAL",
+    "Title": "Content Quality Auditor",
+    "Description": "Scores a document against a stated rubric and returns specific edits rather than general feedback.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/content-quality-auditor",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-CASE",
+    "Title": "Anonymised Case Study Writer",
+    "Description": "Turns engagement notes into a shareable case study with customer-identifying detail removed.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/anonymised-case-study-writer",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-TALK",
+    "Title": "Presentation Talk Track Builder",
+    "Description": "Writes first-person presenter scripts for a deck, calibrated to a target duration, without changing the slides.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/presentation-talk-track-builder",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-CHART",
+    "Title": "Chart Builder",
+    "Description": "Produces clean charts from supplied data - useful when a pipeline or consumption view needs to be shown rather than described.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/chart-builder",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-PANEL",
+    "Title": "Persona Reaction Panel",
+    "Description": "Pre-tests a narrative or artefact against role-based personas to surface blind spots and credible-detractor risk before it is used live.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/persona-reaction-panel",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-OUT",
+    "Title": "B2B Outreach Suite",
+    "Description": "Prospect research, outreach drafting, follow-up cadences and objection handling in one skill.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/b2b-outreach-suite",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-UCASE",
+    "Title": "AI Use Case Assessment",
+    "Description": "Scores an AI use case against a structured rubric so value claims are tested rather than asserted.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/ai-usecase-assessment",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-REMIND",
+    "Title": "Conditional Chat Reminder",
+    "Description": "Scout automation that only nudges when the expected update has not appeared - reduces chase without dropping follow-through.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/conditional-chat-reminder",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-ROUTE",
+    "Title": "What to Use When",
+    "Description": "Routes a request to the best-fit Copilot agent and reserves Cowork for longer multi-output work. Useful early in a role path when tool choice is still forming.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/what-to-use-when",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-NEG",
+    "Title": "Stoic Negotiator",
+    "Description": "Structured negotiation preparation covering position, alternatives and zone of agreement, with sourced research.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/stoic-negotiator",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-CONTRACT",
+    "Title": "Vendor Contract Risk Review",
+    "Description": "First-pass review of contract or SOW clauses that commonly cause problems, flagged by risk level to prepare for legal review rather than replace it.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/vendor-contract-risk-review",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-REDLINE",
+    "Title": "Redlining Content",
+    "Description": "Compares a document against a reference or template and produces tracked redlines.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/redlining-content",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SK-PROCESS",
+    "Title": "AI-First Process Redesign",
+    "Description": "Redesigns an existing process assuming AI capability rather than bolting AI onto the current steps.",
+    "Url": "https://microsoft.github.io/cat-agent-skills/skills/ai-first-process-redesign",
+    "Type": "Agent skill",
+    "LinkLabel": "Open skill",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-GLOBAL-02",
+    "Title": "MCAPS Marketplace",
+    "Description": "The catalog of what MCAPS has built with Copilot: plugins, skills, agents, extensions and MCP servers, contributed by colleagues and installable rather than rebuilt. Includes ready-made workflows for account research, pipeline and QBRs, plus a learning hub and a route to contribute your own.",
+    "Url": "https://refactored-adventure-qj34wjk.pages.github.io/",
+    "Type": "Hub",
+    "LinkLabel": "Browse MCAPS Marketplace",
+    "IsGlobal": 1
+  },
+  {
+    "ExternalId": "RES-050",
+    "Title": "Sales Agent on mobile",
+    "Description": "Announcement and prompt starters for Sales Agent on mobile, available through the Microsoft 365 Copilot app and in Teams and Outlook. Covers pre-meeting account summaries, fast pipeline lookups, and updating MSX from the field behind a confirmation card. Current as of August 2026.",
+    "Url": "https://engage.cloud.microsoft/main/org/microsoft.com/articles/eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiNDAwNDYyOTUxMjc3MzYzMiJ9?trk_copy_link=V2",
+    "Type": "Announcement",
+    "LinkLabel": "Read the mobile announcement",
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-SALESHOME",
+    "Title": "Sales Home (SME&C Hub)",
+    "Description": "The SME&C seller surface inside Sales Agent. Covers My View, Prospecting and Pipeline today, with Campaign, Planning, Renewal and Realization & Usage on the roadmap. Sales Home is part of Sales Agent rather than a separate product, and works alongside chat rather than replacing it. In preview for SME&C individual contributors since late July 2026; it does not replace MSX.",
+    "Url": "https://microsoft.sharepoint.com/teams/SMEC_Hub/SitePages/Sales-Home.aspx",
+    "Type": null,
+    "LinkLabel": null,
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-KYP",
+    "Title": "Know Your Partner Agent",
+    "Description": "SME&C partner briefing agent. Assembles partner performance from Partner IAP (ACR, CSP, Copilot seats, net new revenue) and program utilization from Activities Utilization ROB (Azure, Copilot and Security Accelerate), then adds web-sourced partner news and situational fluency. Type a partner name or PartnerOne ID; name several to compare. States placeholders rather than inventing missing data.",
+    "Url": "https://aka.ms/KnowYourPartner",
+    "Type": null,
+    "LinkLabel": null,
+    "IsGlobal": 0
+  },
+  {
+    "ExternalId": "RES-GLOBAL-03",
+    "Title": "Microsoft AI-Powered Selling (MAPS)",
+    "Description": "Optional MCAPS Academy resource for additional learning about AI-powered selling, with role-based courses. Separate from the huddle motion.",
+    "Url": "https://microsoft.sharepoint.com/teams/MCAPSAcademy/SitePages/Microsoft-AI-Powered-Selling.aspx",
+    "Type": "Learning program",
+    "LinkLabel": "Explore MAPS learning",
+    "IsGlobal": 1
+  }
+]

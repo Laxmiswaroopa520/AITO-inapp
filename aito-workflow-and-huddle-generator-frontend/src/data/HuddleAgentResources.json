@@ -1,0 +1,142 @@
+[
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-001",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-002",
+    "DisplayOrder": 2
+  },
+  {
+    "AgentExternalId": "AGT-004",
+    "ResourceExternalId": "RES-003",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-006",
+    "ResourceExternalId": "RES-004",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-009",
+    "ResourceExternalId": "RES-006",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-011",
+    "ResourceExternalId": "RES-007",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-002",
+    "ResourceExternalId": "RES-008",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-GLOBAL-01",
+    "DisplayOrder": 3
+  },
+  {
+    "AgentExternalId": "AGT-002",
+    "ResourceExternalId": "RES-GLOBAL-01",
+    "DisplayOrder": 2
+  },
+  {
+    "AgentExternalId": "AGT-003",
+    "ResourceExternalId": "RES-GLOBAL-01",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-004",
+    "ResourceExternalId": "RES-GLOBAL-01",
+    "DisplayOrder": 2
+  },
+  {
+    "AgentExternalId": "AGT-011",
+    "ResourceExternalId": "RES-CSAM-PERSONA",
+    "DisplayOrder": 2
+  },
+  {
+    "AgentExternalId": "AGT-012",
+    "ResourceExternalId": "RES-CSAM-HEALTH",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-DA-01",
+    "DisplayOrder": 4
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-DA-05",
+    "DisplayOrder": 5
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-DA-02",
+    "DisplayOrder": 6
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-DA-06",
+    "DisplayOrder": 7
+  },
+  {
+    "AgentExternalId": "SYS-001",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "SYS-002",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-002",
+    "ResourceExternalId": "RES-ECIF-01",
+    "DisplayOrder": 3
+  },
+  {
+    "AgentExternalId": "AGT-005",
+    "ResourceExternalId": "RES-SCOUT-01",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-005",
+    "ResourceExternalId": "RES-SCOUT-02",
+    "DisplayOrder": 2
+  },
+  {
+    "AgentExternalId": "AGT-001",
+    "ResourceExternalId": "RES-050",
+    "DisplayOrder": 8
+  },
+  {
+    "AgentExternalId": "AGT-008",
+    "ResourceExternalId": "RES-007",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-013",
+    "ResourceExternalId": "RES-SALESHOME",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-014",
+    "ResourceExternalId": "RES-KYP",
+    "DisplayOrder": 1
+  },
+  {
+    "AgentExternalId": "AGT-013",
+    "ResourceExternalId": "RES-GLOBAL-01",
+    "DisplayOrder": 2
+  },
+  {
+    "AgentExternalId": "AGT-014",
+    "ResourceExternalId": "RES-GLOBAL-01",
+    "DisplayOrder": 2
+  }
+]

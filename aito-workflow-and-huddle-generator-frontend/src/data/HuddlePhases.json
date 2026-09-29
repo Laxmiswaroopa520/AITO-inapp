@@ -1,0 +1,2900 @@
+[
+  {
+    "ExternalId": "PH-AE-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "AE-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-PLAN-PREP",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "AE-PLAN",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-PIPE-1-PREP",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "AE-PIPE-1",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-PIPE-2-PREP",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "AE-PIPE-2",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-OPP-PREP",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "AE-OPP",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "AE-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-DEAL-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "AE-DEAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-RENEW-PREP",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "AE-RENEW",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "AE-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "AE-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-VALUE-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "AE-VALUE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "ATS-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-INTEL-PREP",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "ATS-INTEL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-NARR-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-NARR",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-WORKLOAD-PREP",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "ATS-WORKLOAD",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-TECH-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "ATS-TECH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-EBC-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-EBC",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-TALK-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-TALK",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-TEAM-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "ATS-TEAM",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "ATS-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-CBR-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "ATS-CBR",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "ATS-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-PARTNER-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "ATS-PARTNER",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SSP-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-LEAD-PREP",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "SSP-LEAD",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-PLAN-PREP",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "SSP-PLAN",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-VALUE-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "SSP-VALUE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "SSP-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "SSP-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-COMP-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SSP-COMP",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-DEAL-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SSP-DEAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SSP-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SE-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "SE-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-1-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-1",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-2-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-2",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-3-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-3",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-DISC-PREP",
+    "TopicExternalId": "WF-X-DISC-01",
+    "PlacementExternalId": "SE-DISC",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "SE-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-ASSET-PREP",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "SE-ASSET",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SE-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CE-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CE-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-1-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-1",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-2-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-2",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-3-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-3",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "CE-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-RENEW-PREP",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "CE-RENEW",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-POLICY-PREP",
+    "TopicExternalId": "WF-X-POLICY-01",
+    "PlacementExternalId": "CE-POLICY",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CE-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CE-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CSA-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-PIPE-PREP",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "CSA-PIPE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "CSA-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-ARCH-1-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "CSA-ARCH-1",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-ARCH-2-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "CSA-ARCH-2",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSA-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-VALUE-1-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSA-VALUE-1",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-VALUE-2-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSA-VALUE-2",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CSA-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CSAM-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-SPLAN-PREP",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "CSAM-SPLAN",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSAM-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-USECASE-PREP",
+    "TopicExternalId": "WF-X-USECASE-01",
+    "PlacementExternalId": "ALL-USECASE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-EXEC-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "CSAM-EXEC",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "CSAM-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-VALUE-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSAM-VALUE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-RENEW-PREP",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "CSAM-RENEW",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-ESCALATE-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSAM-ESCALATE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CSAM-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-DEAL-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "ALL-DEAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "AE-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-TRANSITION-PREP",
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "PlacementExternalId": "ALL-TRANSITION",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-HANDOFF-PREP",
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "PlacementExternalId": "ALL-HANDOFF",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ATS-CONSUME-PREP",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "ATS-CONSUME",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-SPONSOR-PREP",
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "PlacementExternalId": "ALL-SPONSOR",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-FYPLAN-PREP",
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "PlacementExternalId": "ALL-FYPLAN",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-ASSET-PREP",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "ALL-ASSET",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSAM-CONSUME-PREP",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "CSAM-CONSUME",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SSP-CONSUME-PREP",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "SSP-CONSUME",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SE-CONSUME-PREP",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "SE-CONSUME",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-CLOSE-PREP",
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "PlacementExternalId": "ALL-CLOSE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-SIGNAL-PREP",
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "PlacementExternalId": "DAE-SIGNAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-SIGNAL-PREP",
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "PlacementExternalId": "DSS-SIGNAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-PARTNER-PREP",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "DAE-PARTNER",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-PARTNER-PREP",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "PSS-PARTNER",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-CONSUME-PREP",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "DCSA-CONSUME",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-ARCH-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DSE-ARCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-TERRITORY-PREP",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "DAE-TERRITORY",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-TERRITORY-PREP",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "DSS-TERRITORY",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-JOINTPLAN-PREP",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "PSS-JOINTPLAN",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DAE-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DAE-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-DEAL-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DAE-DEAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-RENEW-PREP",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "DAE-RENEW",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DAE-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SMEC-CE-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-RENEW-PREP",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "SMEC-CE-RENEW",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-DEAL-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-DEAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "SMEC-CE-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DSS-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DSS-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-DEAL-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DSS-DEAL",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-VALUE-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "DSS-VALUE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-AE-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "AE-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-PLAN-EXPL",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "AE-PLAN",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-PIPE-1-EXPL",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "AE-PIPE-1",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-PIPE-2-EXPL",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "AE-PIPE-2",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-OPP-EXPL",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "AE-OPP",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "AE-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-DEAL-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "AE-DEAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-RENEW-EXPL",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "AE-RENEW",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "AE-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "AE-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-VALUE-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "AE-VALUE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "ATS-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-INTEL-EXPL",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "ATS-INTEL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-NARR-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-NARR",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-WORKLOAD-EXPL",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "ATS-WORKLOAD",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-TECH-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "ATS-TECH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-EBC-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-EBC",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-TALK-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-TALK",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-TEAM-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "ATS-TEAM",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "ATS-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-CBR-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "ATS-CBR",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "ATS-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-PARTNER-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "ATS-PARTNER",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SSP-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-LEAD-EXPL",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "SSP-LEAD",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-PLAN-EXPL",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "SSP-PLAN",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-VALUE-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "SSP-VALUE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "SSP-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "SSP-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-COMP-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SSP-COMP",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-DEAL-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SSP-DEAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SSP-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SE-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "SE-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-1-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-1",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-2-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-2",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-3-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-3",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-DISC-EXPL",
+    "TopicExternalId": "WF-X-DISC-01",
+    "PlacementExternalId": "SE-DISC",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "SE-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-ASSET-EXPL",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "SE-ASSET",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SE-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CE-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CE-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-1-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-1",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-2-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-2",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-3-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-3",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "CE-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-RENEW-EXPL",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "CE-RENEW",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-POLICY-EXPL",
+    "TopicExternalId": "WF-X-POLICY-01",
+    "PlacementExternalId": "CE-POLICY",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CE-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CE-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CSA-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-PIPE-EXPL",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "CSA-PIPE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "CSA-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-ARCH-1-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "CSA-ARCH-1",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-ARCH-2-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "CSA-ARCH-2",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSA-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-VALUE-1-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSA-VALUE-1",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-VALUE-2-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSA-VALUE-2",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CSA-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CSAM-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-SPLAN-EXPL",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "CSAM-SPLAN",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSAM-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-USECASE-EXPL",
+    "TopicExternalId": "WF-X-USECASE-01",
+    "PlacementExternalId": "ALL-USECASE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-EXEC-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "CSAM-EXEC",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "CSAM-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-VALUE-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSAM-VALUE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-RENEW-EXPL",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "CSAM-RENEW",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-ESCALATE-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSAM-ESCALATE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CSAM-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-DEAL-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "ALL-DEAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "AE-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-TRANSITION-EXPL",
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "PlacementExternalId": "ALL-TRANSITION",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-HANDOFF-EXPL",
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "PlacementExternalId": "ALL-HANDOFF",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ATS-CONSUME-EXPL",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "ATS-CONSUME",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-SPONSOR-EXPL",
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "PlacementExternalId": "ALL-SPONSOR",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-FYPLAN-EXPL",
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "PlacementExternalId": "ALL-FYPLAN",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-ASSET-EXPL",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "ALL-ASSET",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSAM-CONSUME-EXPL",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "CSAM-CONSUME",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SSP-CONSUME-EXPL",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "SSP-CONSUME",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SE-CONSUME-EXPL",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "SE-CONSUME",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-CLOSE-EXPL",
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "PlacementExternalId": "ALL-CLOSE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-SIGNAL-EXPL",
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "PlacementExternalId": "DAE-SIGNAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-SIGNAL-EXPL",
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "PlacementExternalId": "DSS-SIGNAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-PARTNER-EXPL",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "DAE-PARTNER",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-PARTNER-EXPL",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "PSS-PARTNER",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-CONSUME-EXPL",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "DCSA-CONSUME",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-ARCH-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DSE-ARCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-TERRITORY-EXPL",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "DAE-TERRITORY",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-TERRITORY-EXPL",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "DSS-TERRITORY",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-JOINTPLAN-EXPL",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "PSS-JOINTPLAN",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DAE-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DAE-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-DEAL-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DAE-DEAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-RENEW-EXPL",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "DAE-RENEW",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DAE-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SMEC-CE-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-RENEW-EXPL",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "SMEC-CE-RENEW",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-DEAL-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-DEAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "SMEC-CE-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DSS-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DSS-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-DEAL-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DSS-DEAL",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-VALUE-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "DSS-VALUE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-AE-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "AE-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-PLAN-COMMIT",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "AE-PLAN",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-PIPE-1-COMMIT",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "AE-PIPE-1",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-PIPE-2-COMMIT",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "AE-PIPE-2",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-OPP-COMMIT",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "AE-OPP",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "AE-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-DEAL-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "AE-DEAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-RENEW-COMMIT",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "AE-RENEW",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "AE-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "AE-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-VALUE-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "AE-VALUE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "ATS-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-INTEL-COMMIT",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "ATS-INTEL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-NARR-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-NARR",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-WORKLOAD-COMMIT",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "ATS-WORKLOAD",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-TECH-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "ATS-TECH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-EBC-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-EBC",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-TALK-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "ATS-TALK",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-TEAM-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "ATS-TEAM",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "ATS-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-CBR-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "ATS-CBR",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "ATS-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-PARTNER-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "ATS-PARTNER",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SSP-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-LEAD-COMMIT",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "SSP-LEAD",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-PLAN-COMMIT",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "SSP-PLAN",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-VALUE-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "SSP-VALUE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "SSP-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "SSP-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-COMP-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SSP-COMP",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-DEAL-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SSP-DEAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SSP-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SE-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "SE-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-1-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-1",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-2-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-2",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-ARCH-3-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "SE-ARCH-3",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-DISC-COMMIT",
+    "TopicExternalId": "WF-X-DISC-01",
+    "PlacementExternalId": "SE-DISC",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "SE-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-ASSET-COMMIT",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "SE-ASSET",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SE-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CE-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CE-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-1-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-1",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-2-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-2",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-DEAL-3-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "CE-DEAL-3",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "CE-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-RENEW-COMMIT",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "CE-RENEW",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-POLICY-COMMIT",
+    "TopicExternalId": "WF-X-POLICY-01",
+    "PlacementExternalId": "CE-POLICY",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CE-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CE-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CSA-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-PIPE-COMMIT",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "CSA-PIPE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "CSA-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-ARCH-1-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "CSA-ARCH-1",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-ARCH-2-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "CSA-ARCH-2",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSA-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-VALUE-1-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSA-VALUE-1",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-VALUE-2-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSA-VALUE-2",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CSA-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "CSAM-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-SPLAN-COMMIT",
+    "TopicExternalId": "WF-X-PLAN-01",
+    "PlacementExternalId": "CSAM-SPLAN",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSAM-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-USECASE-COMMIT",
+    "TopicExternalId": "WF-X-USECASE-01",
+    "PlacementExternalId": "ALL-USECASE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-EXEC-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "CSAM-EXEC",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "CSAM-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-VALUE-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "CSAM-VALUE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-RENEW-COMMIT",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "CSAM-RENEW",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-ESCALATE-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "CSAM-ESCALATE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "CSAM-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-DEAL-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "ALL-DEAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-AE-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "AE-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-TRANSITION-COMMIT",
+    "TopicExternalId": "WF-X-TRANSITION-01",
+    "PlacementExternalId": "ALL-TRANSITION",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-HANDOFF-COMMIT",
+    "TopicExternalId": "WF-X-HANDOFF-01",
+    "PlacementExternalId": "ALL-HANDOFF",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ATS-CONSUME-COMMIT",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "ATS-CONSUME",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-SPONSOR-COMMIT",
+    "TopicExternalId": "WF-X-SPONSOR-01",
+    "PlacementExternalId": "ALL-SPONSOR",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-FYPLAN-COMMIT",
+    "TopicExternalId": "WF-X-FYPLAN-01",
+    "PlacementExternalId": "ALL-FYPLAN",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-ASSET-COMMIT",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "ALL-ASSET",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSAM-CONSUME-COMMIT",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "CSAM-CONSUME",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SSP-CONSUME-COMMIT",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "SSP-CONSUME",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SE-CONSUME-COMMIT",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "SE-CONSUME",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-CLOSE-COMMIT",
+    "TopicExternalId": "WF-X-CLOSE-01",
+    "PlacementExternalId": "ALL-CLOSE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-SIGNAL-COMMIT",
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "PlacementExternalId": "DAE-SIGNAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-SIGNAL-COMMIT",
+    "TopicExternalId": "WF-X-SIGNAL-01",
+    "PlacementExternalId": "DSS-SIGNAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-PARTNER-COMMIT",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "DAE-PARTNER",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-PARTNER-COMMIT",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "PSS-PARTNER",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-CONSUME-COMMIT",
+    "TopicExternalId": "WF-X-CONSUME-01",
+    "PlacementExternalId": "DCSA-CONSUME",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-ARCH-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DSE-ARCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-TERRITORY-COMMIT",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "DAE-TERRITORY",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-TERRITORY-COMMIT",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "DSS-TERRITORY",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-JOINTPLAN-COMMIT",
+    "TopicExternalId": "WF-X-TERRITORY-01",
+    "PlacementExternalId": "PSS-JOINTPLAN",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DAE-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DAE-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-DEAL-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DAE-DEAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-RENEW-COMMIT",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "DAE-RENEW",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DAE-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "SMEC-CE-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-RENEW-COMMIT",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "SMEC-CE-RENEW",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-DEAL-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-DEAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "SMEC-CE-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DSS-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DSS-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-DEAL-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DSS-DEAL",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-VALUE-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "DSS-VALUE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DSE-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-DISC-PREP",
+    "TopicExternalId": "WF-X-DISC-01",
+    "PlacementExternalId": "DSE-DISC",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-PROOF-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DSE-PROOF",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DSE-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DSE-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DCSA-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-PARTNER-PREP",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "DCSA-PARTNER",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DCSA-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-VALUE-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "DCSA-VALUE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-ORIENT-PREP",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "PSS-ORIENT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-DEMAND-PREP",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "PSS-DEMAND",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "PSS-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-VALUE-PREP",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "PSS-VALUE",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-POLICY-PREP",
+    "TopicExternalId": "WF-X-POLICY-01",
+    "PlacementExternalId": "SMEC-CE-POLICY",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-NEG-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-NEG",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "SMEC-CE-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-DEAL2-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-DEAL2",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-ARCH-PREP",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DCSA-ARCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-HEALTH-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DCSA-HEALTH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-EXPAND-PREP",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "DCSA-EXPAND",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-ASSET-PREP",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "DSE-ASSET",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-PARTNER-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "DSE-PARTNER",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-COMP-PREP",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DSS-COMP",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-ORCH-PREP",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "DSS-ORCH",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-CAPACITY-PREP",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "PSS-CAPACITY",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-CONV-PREP",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "PSS-CONV",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSS-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DSS-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-PSS-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "PSS-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DAE-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DAE-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DSE-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DCSA-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DCSA-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-INVEST-PREP",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SMEC-CE-INVEST",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-VSAT-PREP",
+    "TopicExternalId": "WF-X-VSAT-01",
+    "PlacementExternalId": "CSA-VSAT",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-CSA-TECHLEAD-PREP",
+    "TopicExternalId": "WF-X-TECHLEAD-01",
+    "PlacementExternalId": "CSA-TECHLEAD",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-ALL-CLOSEDWON-PREP",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "ALL-CLOSEDWON",
+    "DisplayOrder": 1,
+    "Name": "Preparation"
+  },
+  {
+    "ExternalId": "PH-DSE-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DSE-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-DISC-EXPL",
+    "TopicExternalId": "WF-X-DISC-01",
+    "PlacementExternalId": "DSE-DISC",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-PROOF-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DSE-PROOF",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DSE-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DSE-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DCSA-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-PARTNER-EXPL",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "DCSA-PARTNER",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DCSA-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-VALUE-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "DCSA-VALUE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-ORIENT-EXPL",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "PSS-ORIENT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-DEMAND-EXPL",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "PSS-DEMAND",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "PSS-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-VALUE-EXPL",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "PSS-VALUE",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-POLICY-EXPL",
+    "TopicExternalId": "WF-X-POLICY-01",
+    "PlacementExternalId": "SMEC-CE-POLICY",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-NEG-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-NEG",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "SMEC-CE-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-DEAL2-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-DEAL2",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-ARCH-EXPL",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DCSA-ARCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-HEALTH-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DCSA-HEALTH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-EXPAND-EXPL",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "DCSA-EXPAND",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-ASSET-EXPL",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "DSE-ASSET",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-PARTNER-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "DSE-PARTNER",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-COMP-EXPL",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DSS-COMP",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-ORCH-EXPL",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "DSS-ORCH",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-CAPACITY-EXPL",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "PSS-CAPACITY",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-CONV-EXPL",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "PSS-CONV",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSS-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DSS-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-PSS-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "PSS-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DAE-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DAE-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DSE-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DCSA-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DCSA-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-INVEST-EXPL",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SMEC-CE-INVEST",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-VSAT-EXPL",
+    "TopicExternalId": "WF-X-VSAT-01",
+    "PlacementExternalId": "CSA-VSAT",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-CSA-TECHLEAD-EXPL",
+    "TopicExternalId": "WF-X-TECHLEAD-01",
+    "PlacementExternalId": "CSA-TECHLEAD",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-ALL-CLOSEDWON-EXPL",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "ALL-CLOSEDWON",
+    "DisplayOrder": 2,
+    "Name": "Explore and Practice"
+  },
+  {
+    "ExternalId": "PH-DSE-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DSE-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-DISC-COMMIT",
+    "TopicExternalId": "WF-X-DISC-01",
+    "PlacementExternalId": "DSE-DISC",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-PROOF-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DSE-PROOF",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DSE-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DSE-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "DCSA-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-PARTNER-COMMIT",
+    "TopicExternalId": "WF-X-PARTNER-01",
+    "PlacementExternalId": "DCSA-PARTNER",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "DCSA-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-VALUE-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "DCSA-VALUE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-ORIENT-COMMIT",
+    "TopicExternalId": "WF-ORIENT-01",
+    "PlacementExternalId": "PSS-ORIENT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-DEMAND-COMMIT",
+    "TopicExternalId": "WF-X-OPP-01",
+    "PlacementExternalId": "PSS-DEMAND",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "PSS-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-VALUE-COMMIT",
+    "TopicExternalId": "WF-X-VALUE-01",
+    "PlacementExternalId": "PSS-VALUE",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-POLICY-COMMIT",
+    "TopicExternalId": "WF-X-POLICY-01",
+    "PlacementExternalId": "SMEC-CE-POLICY",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-NEG-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-NEG",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "SMEC-CE-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-DEAL2-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "SMEC-CE-DEAL2",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-ARCH-COMMIT",
+    "TopicExternalId": "WF-X-ARCH-01",
+    "PlacementExternalId": "DCSA-ARCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-HEALTH-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "DCSA-HEALTH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-EXPAND-COMMIT",
+    "TopicExternalId": "WF-X-RENEW-01",
+    "PlacementExternalId": "DCSA-EXPAND",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-ASSET-COMMIT",
+    "TopicExternalId": "WF-X-ASSET-01",
+    "PlacementExternalId": "DSE-ASSET",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-PARTNER-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "DSE-PARTNER",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-COMP-COMMIT",
+    "TopicExternalId": "WF-X-DEAL-01",
+    "PlacementExternalId": "DSS-COMP",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-ORCH-COMMIT",
+    "TopicExternalId": "WF-X-ORCH-01",
+    "PlacementExternalId": "DSS-ORCH",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-CAPACITY-COMMIT",
+    "TopicExternalId": "WF-X-HEALTH-01",
+    "PlacementExternalId": "PSS-CAPACITY",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-CONV-COMMIT",
+    "TopicExternalId": "WF-X-CONV-01",
+    "PlacementExternalId": "PSS-CONV",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSS-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DSS-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-PSS-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "PSS-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DAE-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DAE-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DSE-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DSE-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-DCSA-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "DCSA-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-SMEC-CE-INVEST-COMMIT",
+    "TopicExternalId": "WF-INVEST-01",
+    "PlacementExternalId": "SMEC-CE-INVEST",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-VSAT-COMMIT",
+    "TopicExternalId": "WF-X-VSAT-01",
+    "PlacementExternalId": "CSA-VSAT",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-CSA-TECHLEAD-COMMIT",
+    "TopicExternalId": "WF-X-TECHLEAD-01",
+    "PlacementExternalId": "CSA-TECHLEAD",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  },
+  {
+    "ExternalId": "PH-ALL-CLOSEDWON-COMMIT",
+    "TopicExternalId": "WF-X-PIPE-01",
+    "PlacementExternalId": "ALL-CLOSEDWON",
+    "DisplayOrder": 3,
+    "Name": "Commit to Action"
+  }
+]
