@@ -1,4 +1,5 @@
 import staticApiData from "@/data/static-api-data.json";
+import commonRolePathWeeks from "@/data/commonRolePathWeeks.json";
 import type { CurrentUser } from "@/auth/auth.types";
 import type { Activity, ActivityFilters } from "@/features/workflow-builder/types/activity.types";
 import type { AiTool } from "@/features/workflow-builder/types/aiTool.types";
@@ -10,6 +11,7 @@ import type {
   HuddleLaunchPlanResponse,
   HuddlePlanResponse,
   HuddleSessionResponse,
+  HuddleUpcomingWeekResponse,
   HuddleVoteResponse,
   IncompleteHuddleSessionResponse,
   RecommendedHuddlePathResponse,
@@ -62,6 +64,9 @@ interface StoredSessions {
 }
 
 const DATA = staticApiData as unknown as StaticApiData;
+// Hand-maintained weeks shared by every audience (src/data/commonRolePathWeeks.json). Kept out of
+// static-api-data.json, which is generated from the SQL seed scripts and would lose hand edits.
+const COMMON_ROLE_PATH_WEEKS = commonRolePathWeeks as HuddleUpcomingWeekResponse[];
 const WORKFLOWS_KEY = "aito.local.workflows.v1";
 const HUDDLE_PLANS_KEY = "aito.local.huddle-plans.v1";
 const HUDDLE_LAUNCH_PLAN_KEY = "aito.local.huddle-launch-plan.v1";
@@ -273,6 +278,13 @@ function huddlePlans(): Record<string, StoredPlan> {
   return readStorage<Record<string, StoredPlan>>(HUDDLE_PLANS_KEY, {});
 }
 
+/** Common weeks follow the role's own path, so a role with no weekly path (All Roles) gets none. */
+function upcomingWeeksAfter(items: { week: number }[]): HuddleUpcomingWeekResponse[] {
+  if (items.length === 0) return [];
+  const lastWeek = Math.max(...items.map((item) => item.week));
+  return clone(COMMON_ROLE_PATH_WEEKS.filter((entry) => entry.week > lastWeek).sort((a, b) => a.week - b.week));
+}
+
 function planResponse(roleExternalId: string): HuddlePlanResponse {
   const saved = huddlePlans()[roleExternalId];
   const path = DATA.huddle.weeklyPaths[roleExternalId] ?? [];
@@ -301,6 +313,7 @@ function planResponse(roleExternalId: string): HuddlePlanResponse {
     isCustomized: items.some((item) => item.isCustomized),
     rowVersion: saved?.rowVersion ?? null,
     items,
+    upcomingWeeks: upcomingWeeksAfter(items),
   };
 }
 
