@@ -228,11 +228,24 @@ export interface HuddlePlanItemResponse {
   huddle: HuddleCatalogItemResponse;
 }
 
+/**
+ * A week shared by every audience's Role Path that has no Huddle yet. Kept apart from `items` so
+ * reordering, replacing, saving and exporting the real weeks never sees it.
+ */
+export interface HuddleUpcomingWeekResponse {
+  week: number;
+  status: "coming-soon";
+  title: string;
+  description: string | null;
+}
+
 export interface HuddlePlanResponse {
   roleExternalId: string;
   isCustomized: boolean;
   rowVersion: string | null;
   items: HuddlePlanItemResponse[];
+  /** Common weeks shown after the last real week. Only present for roles that have a weekly path. */
+  upcomingWeeks?: HuddleUpcomingWeekResponse[];
 }
 
 export interface SaveHuddlePlanRequest {
