@@ -1,5 +1,5 @@
 import {
-  ArrowRight, BookOpen, CheckCircle2,
+  ArrowRight, BookOpen, CheckCircle2, ChevronRight,
   Compass, Lightbulb, RefreshCw, Sparkles, Target,
   TrendingUp, Users, ShieldCheck, Presentation, Check,
   Repeat2,
@@ -109,42 +109,143 @@ const journeySteps: Array<[string, string, string, string, string, ElementType, 
 
 const personaOnboarding = {
   manager: {
-    title: 'Manager Onboarding', subtitle: 'Set direction, guide your team, and turn AI practice into stronger team habits.',
-    role: 'As a Manager, help the team understand why the Huddle motion matters, choose the right learning path, and create space for practical AI adoption inside normal team rhythms.',
+    title: 'Manager Onboarding', subtitle: 'Lead your team’s Huddle and turn AI practice into real work.',
+    role: 'Set the rhythm, connect each Huddle to your team’s priorities, and create the conditions for people to experiment, learn, and apply AI in their day-to-day work.',
+    heroCta: 'Explore Role Path',
     cards: [
       ['Set the direction', ['Choose the right role path', 'Connect Huddles to team priorities', 'Explain why the learning matters']],
       ['Shape the plan', ['Review recommended Huddles', 'Customise the sequence if needed', 'Add all topics for your team']],
       ['Reinforce the habit', ['Encourage team members to bring back examples', 'Create repeatable AI behaviours', 'Keep the focus on real work']],
       ['Export and share', ['Export role and custom learning plans', 'Share the plan with facilitators and team members']],
     ],
-    success: ['The team understands the AI adoption motion', 'Huddles connect to real priorities', 'Team members practise AI in actual workflows', 'Learning continues beyond a single session', 'The team can describe what changed in how work gets done'],
     primary: 'Go to Role Path',
   },
   facilitator: {
     title: 'Facilitator Onboarding', subtitle: 'Prepare, guide, and run practical Huddles that help team members apply AI to real work.',
     role: 'As a Facilitator, make each Huddle practical, focused, and collaborative. Use the app to prepare the session, guide discussion, use prompts, capture notes, and create useful follow-up materials.',
+    heroCta: 'Explore Role Path',
     cards: [
       ['Prepare the session', ['Select the Huddle topic', 'Review the outcome and activities', 'Use the facilitator workspace to prepare']],
       ['Guide the conversation', ['Use the Huddle flow', 'Facilitate around real work', 'Connect AI to workflow outcomes']],
       ['Practise with prompts', ['Use recommended prompts', 'Copy prompts into the relevant AI experience', 'Encourage experimentation and sharing']],
       ['Capture and follow up', ['Add facilitator notes', 'Save progress', 'Export HTML or PowerPoint materials where available']],
     ],
-    success: ['Team members understand the purpose', 'Discussion connects to actual work', 'The team tries at least one useful prompt or workflow', 'Actions and follow-ups are clear', 'The Huddle creates a practical commitment'],
     primary: 'Open Role Path',
   },
   'team-member': {
-    title: 'Team Member Orientation', subtitle: 'Build confidence with AI by practising on real workflows and learning with your team.',
-    role: 'As a Team Member, join Huddles, practise with AI, share what works, and bring learning back into daily work. Follow your role path and explore all topics when you are ready.',
+    title: 'Team Member Orientation', subtitle: 'Bring your work. Try something. Share what happens.',
+    role: 'Huddles are a space to experiment with AI using the work you are already doing. No AI expertise is required. Bring real work, participate, apply what is useful, and share what you learn.',
+    heroCta: 'Explore Role Path',
     cards: [
       ['Understand the journey', ['Start with orientation', 'Follow the role path', 'Continue through all topics']],
       ['Join Huddles', ['Take part in weekly discussions', 'Share wins and friction points', 'Learn from team examples']],
       ['Practise AI in real work', ['Try recommended prompts', 'Apply AI to common workflows', 'Bring back examples and outcomes']],
       ['Build lasting habits', ['Repeat what works', 'Save useful prompts', 'Use AI as part of everyday work']],
     ],
-    success: ['You feel more confident using AI', 'You understand when and how to use the right AI tools', 'You can apply prompts to real work', 'You share useful examples with the team', 'AI becomes part of your normal workflow'],
     primary: 'Start Role Path',
   },
 } as const;
+
+// Shown on every role's onboarding page in the Success looks like panel.
+const teamRhythmSuccess = ['The team understands why the Huddle matters', 'Huddles stay connected to real priorities', 'The weekly cadence remains protected', 'Team members bring back practical examples', 'Useful practices continue beyond the initial motion'];
+
+// Each role's onboarding page shows its action plan: a countdown or milestone timeline, then the rhythm around each Huddle.
+interface RoleActionPlan {
+  eyebrow: string;
+  title: string;
+  note: string;
+  steps: Array<{ label: string; items: string[] }>;
+  phases: Array<{ phase: string; items: string[] }>;
+}
+
+const roleActionPlans: Record<HuddlePersona, RoleActionPlan> = {
+  manager: {
+    eyebrow: 'Get ready',
+    title: 'Manager Action Plan: What you will do and when',
+    note: '“T-” labels mark milestones in the weeks counting down to the first Huddle (Week 1); “activation” refers to the 8-week Huddle motion and the period after it.',
+    steps: [
+      { label: 'T-3 Weeks', items: ['Confirm who will be in your Huddle.', 'Connect with your Facilitator.', 'Raise scheduling or coverage concerns.', 'Begin Onboarding.'] },
+      { label: 'T-2 Weeks', items: ['Complete Manager onboarding.', 'Introduce the motion to your team in language that feels relevant to their work.', 'Reinforce the baseline survey.'] },
+      { label: 'T-1 Week', items: ['Schedule the recurring Huddles & confirm the right people and Facilitator are included.', 'Make sure recording and transcript steps are set up and understood.', 'Attend 1st Community Call.'] },
+    ],
+    phases: [
+      { phase: 'Before each Huddle', items: ['Meet with your Facilitator.', 'Agree on the team-specific why, a real-work example, and what you hope people will try or learn.'] },
+      { phase: 'During each Huddle', items: ['Open with the why.', 'Participate with curiosity & encourage team to participate.', 'Connect the conversation to outcomes.'] },
+      { phase: 'After each Huddle', items: ['Reinforce go-dos.', 'Remove blockers.', 'Make sure transcript is available.', 'Share valuable insights & improvements.'] },
+      { phase: 'After Week 8', items: ['Encourage team to complete impact survey.', 'Participate in retrospective.', 'Confirm next steps for ongoing rhythm.'] },
+    ],
+  },
+  facilitator: {
+    eyebrow: 'Get ready',
+    title: 'Facilitator Action Plan',
+    note: '“T-” labels mark milestones in the weeks counting down to the first Huddle (Week 1); “activation” refers to the 8-week Huddle motion and the period after it.',
+    steps: [
+      { label: 'T-3 Weeks', items: ['Connect with your Manager.', 'Flag access, scheduling or preparation needs early.', 'Begin Onboarding.'] },
+      { label: 'T-2 Weeks', items: ['Complete Facilitator onboarding.', 'Get comfortable with the process: Experience Cards, discussion flow, feedback form, Manager/Facilitator Community Calls & support, etc.'] },
+      { label: 'T-1 Week', items: ['Confirm access to topics, tools, materials and team context.', 'Meet with Manager to shape the first session.', 'Rehearse the workflow & attend 1st Community Call.'] },
+    ],
+    phases: [
+      { phase: 'Before each Huddle', items: ['Review the topic and what the team tried last time.', 'Choose a real-work scenario.', 'Confirm with Manager on the opening, flow, and go-dos.'] },
+      { phase: 'During each Huddle', items: ['Always include the week’s Huddle topic in the chat.', 'Invite people to try and share & make room for every voice.', 'Stay curious about friction & keep the focus on real work.', 'Ask the usefulness question.', 'Close with go-dos.'] },
+      { phase: 'After each Huddle', items: ['Partner with the Manager on follow-up.', 'Share friction or ideas via the feedback form.', 'Leverage Manager/Facilitator Community Calls and coaching tips.'] },
+      { phase: 'After Week 8', items: ['Share what you learned in the retrospective.', 'Help Manager decide how to continue.'] },
+    ],
+  },
+  'team-member': {
+    eyebrow: 'Your action plan',
+    title: 'Team Member Action Plan',
+    note: '“Before Huddles begin” covers the weeks leading up to Week 1, the first Huddle; the Huddle steps repeat weekly across the 8-week activation.',
+    steps: [
+      { label: 'Before Huddles begin', items: ['Complete the baseline survey.', 'Learn what Frontier Accelerator Motion is and what taking part involves.', 'Bring your questions.'] },
+      { label: 'After the first 8 weeks', items: ['Complete the impact survey to show the change from baseline.', 'Share what helped you most.'] },
+    ],
+    phases: [
+      { phase: 'Before each Huddle', items: ['Come prepared to engage and ask questions.', 'Bring real scenarios, deals, workflows or tasks.', 'Connect the topic to current work.'] },
+      { phase: 'During each Huddle', items: ['Try the experience.', 'Share what worked and what did not.', 'Help peers learn from what worked for you.'] },
+      { phase: 'After each Huddle', items: ['Commit to one or two go-dos.', 'Apply them in the flow of work.', 'Bring your learning back to a future Huddle.', 'Answer the weekly usefulness question.'] },
+    ],
+  },
+};
+
+// Tailwind needs literal class names, so column counts map to fixed classes.
+const timelineColumns: Record<number, string> = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-3' };
+const rhythmColumns: Record<number, string> = { 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4' };
+
+function GetReadyTimeline({ plan }: { plan: RoleActionPlan }) {
+  return <section>
+    <p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">{plan.eyebrow}</p>
+    <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[#16233A]">{plan.title}</h2>
+    <p className="mt-2 max-w-3xl text-sm leading-6 text-[#647185]">{plan.note}</p>
+    <ol className={`mt-6 grid gap-6 md:gap-0 ${timelineColumns[plan.steps.length] ?? 'md:grid-cols-3'}`}>
+      {plan.steps.map((step) => <li key={step.label} className="md:pr-6">
+        <div className="flex items-center gap-3">
+          <span className="h-5 w-5 shrink-0 rounded-full bg-[#0A6BBA] ring-4 ring-[#E2F1F9]" aria-hidden="true" />
+          <span className="text-sm font-semibold text-[#0A6BBA]">{step.label}</span>
+          <span className="hidden h-px flex-1 bg-[#D6E1EA] md:block" aria-hidden="true" />
+        </div>
+        <ul className="mt-4 space-y-2.5 pl-1">{step.items.map((item) => <li key={item} className="flex gap-2 text-sm text-[#5C697D]"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0A6BBA]" />{item}</li>)}</ul>
+      </li>)}
+    </ol>
+  </section>;
+}
+
+function WeeklyRhythm({ plan }: { plan: RoleActionPlan }) {
+  const { phases } = plan;
+  return <section>
+    <p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">Weekly rhythm</p>
+    <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[#16233A]">Before, during, and after each Huddle</h2>
+    <p className="mt-2 max-w-2xl text-sm leading-6 text-[#647185]">Keep the flow simple and repeatable. Each Huddle should pick up from the last one and leave the team with something practical to try.</p>
+    <ol className={`mt-6 grid overflow-hidden rounded-[20px] border border-[#E0E7ED] bg-white divide-y divide-[#E6ECF1] lg:divide-x lg:divide-y-0 ${rhythmColumns[phases.length] ?? 'lg:grid-cols-4'}`}>
+      {phases.map((phase, index) => <li key={phase.phase} className="p-5 md:p-6">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="text-lg font-semibold text-[#16233A]">{phase.phase}</h3>
+          {index < phases.length - 1 && <ChevronRight className="hidden h-5 w-5 shrink-0 text-[#0A6BBA] lg:block" aria-hidden="true" />}
+        </div>
+        <ul className="mt-4 space-y-2.5">{phase.items.map((item) => <li key={item} className="flex gap-2 text-sm text-[#5C697D]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A6BBA]" />{item}</li>)}</ul>
+      </li>)}
+    </ol>
+  </section>;
+}
 
 function ThinkFeelDo() {
   const nodes = [
@@ -224,24 +325,24 @@ function HuddleJourney() {
   </section>;
 }
 
-function PersonaOnboarding({ persona, onStartRolePath, onAdditionalTopics, onChangePersona }: Pick<HuddleOnboardingExperienceProps, 'persona'|'onStartRolePath'|'onAdditionalTopics'|'onChangePersona'>) {
+function PersonaOnboarding({ persona, onStartRolePath, onAdditionalTopics }: Pick<HuddleOnboardingExperienceProps, 'persona'|'onStartRolePath'|'onAdditionalTopics'>) {
   const p = persona ? personaOnboarding[persona] : null;
   if (!p) return null;
   return <motion.section initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} className="space-y-9 pb-10">
-    <ThinkFeelDo />
     <section className="overflow-hidden rounded-[26px] border border-[#DCE6ED] bg-white shadow-[0_14px_40px_rgba(22,35,58,.06)]">
       <div className="grid lg:grid-cols-[1fr_.55fr]">
-        <div className="p-7 md:p-9"><div className="flex flex-wrap items-center gap-3"><span className="inline-flex rounded-full bg-[#E2F1F9] px-3 py-1.5 text-xs font-semibold text-[#0A6BBA]">{p.title}</span>{onChangePersona && <Button variant="ghost" size="sm" onClick={onChangePersona}>Change experience</Button>}</div><h1 className="mt-4 text-3xl font-semibold tracking-tight text-[#16233A]">{p.subtitle}</h1><p className="mt-4 max-w-3xl text-sm leading-7 text-[#5F6D80]">{p.role}</p></div>
+        <div className="p-7 md:p-9"><div className="flex flex-wrap items-center gap-3"><span className="inline-flex rounded-full bg-[#E2F1F9] px-3 py-1.5 text-xs font-semibold text-[#0A6BBA]">{p.title}</span></div><h1 className="mt-4 text-3xl font-semibold tracking-tight text-[#16233A]">{p.subtitle}</h1><p className="mt-4 max-w-3xl text-sm leading-7 text-[#5F6D80]">{p.role}</p>{'heroCta' in p && <Button className="mt-6 bg-[#0A6BBA] hover:bg-[#115EA3]" onClick={onStartRolePath}>{p.heroCta}<ArrowRight className="ml-2 h-4 w-4"/></Button>}</div>
         <div className="min-h-[230px] bg-[#EDF5F8]"><img src={persona === 'manager' ? IMAGES.manager : persona === 'facilitator' ? IMAGES.facilitator : IMAGES.member} alt="Team collaborating during practical work" className="h-full w-full object-cover" /></div>
       </div>
     </section>
     <section><p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">How this app helps</p><div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{p.cards.map(([title,items],index)=><article key={title} className="rounded-[20px] border border-[#E0E7ED] bg-white p-5 shadow-[0_8px_24px_rgba(22,35,58,.05)]"><div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E2F1F9] text-sm font-bold text-[#0A6BBA]">{index+1}</div><h3 className="mt-4 text-lg font-semibold text-[#16233A]">{title}</h3><ul className="mt-3 space-y-2">{items.map(i=><li key={i} className="flex gap-2 text-sm text-[#5C697D]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#287C70]"/>{i}</li>)}</ul></article>)}</div></section>
-    <section className="grid gap-5 rounded-[24px] border border-[#C8DED8] bg-[#E3F1ED] p-6 md:p-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><p className="text-xs font-bold uppercase tracking-[.14em] text-[#287C70]">Success looks like</p><div className="mt-3 grid gap-2 sm:grid-cols-2">{p.success.map(s=><div key={s} className="flex gap-2 text-sm text-[#365A53]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0"/>{s}</div>)}</div></div><div className="flex flex-wrap gap-2"><Button className="bg-[#0A6BBA] hover:bg-[#115EA3]" onClick={onStartRolePath}>{p.primary}<ArrowRight className="ml-2 h-4 w-4"/></Button><Button variant="outline" className="bg-white" onClick={onAdditionalTopics}>Explore All Topics</Button></div></section>
+    {persona && <><GetReadyTimeline plan={roleActionPlans[persona]} /><WeeklyRhythm plan={roleActionPlans[persona]} /></>}
+    <section className="grid overflow-hidden rounded-[24px] border border-[#DCE6ED] bg-white shadow-[0_8px_24px_rgba(22,35,58,.05)] lg:grid-cols-[1.35fr_1fr]"><div className="p-7 md:p-9"><p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">Success looks like</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#16233A]">A strong team rhythm looks like this</h2><ul className="mt-5 space-y-3.5">{teamRhythmSuccess.map(s=><li key={s} className="flex gap-3 text-sm text-[#5C697D]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A6BBA]"/>{s}</li>)}</ul></div><div className="flex flex-col justify-center border-t border-[#E6ECF1] bg-[#F8F7F5] p-7 md:p-9 lg:border-l lg:border-t-0"><p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">Ready to continue?</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#16233A]">Move from onboarding into practice</h2><p className="mt-2 text-sm leading-6 text-[#647185]">Continue into your role path or explore additional topics when you are ready.</p><div className="mt-5 flex flex-wrap gap-2"><Button className="bg-[#0A6BBA] hover:bg-[#115EA3]" onClick={onStartRolePath}>{p.primary}<ArrowRight className="ml-2 h-4 w-4"/></Button><Button variant="outline" className="bg-white" onClick={onAdditionalTopics}>Explore All Topics</Button></div></div></section>
   </motion.section>;
 }
 
-export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRolePath, onAdditionalTopics, onChangePersona }: HuddleOnboardingExperienceProps) {
-  if (persona) return <PersonaOnboarding persona={persona} onStartRolePath={onStartRolePath} onAdditionalTopics={onAdditionalTopics} onChangePersona={onChangePersona} />;
+export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRolePath, onAdditionalTopics }: HuddleOnboardingExperienceProps) {
+  if (persona) return <PersonaOnboarding persona={persona} onStartRolePath={onStartRolePath} onAdditionalTopics={onAdditionalTopics} />;
 
   return <motion.section initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} className="space-y-12 pb-12">
     {/* Primary landing hero: explain the value first, then offer immediate ways to start. */}
