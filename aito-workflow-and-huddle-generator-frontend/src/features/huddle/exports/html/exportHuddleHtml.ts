@@ -80,7 +80,6 @@ function exportDateToken(date: Date): string {
 }
 
 /** Pure-CSS Copilot glyph, used when an agent has no inlined logo. */
-const COPILOT_MARK = '<span class="copilot-mark" aria-hidden="true"><span class="copilot-loop copilot-loop-a"></span><span class="copilot-loop copilot-loop-b"></span></span>';
 
 /**
  * Export-only UI/UX corrections layered on top of the base Huddle stylesheet.
@@ -1185,7 +1184,7 @@ function agentBrandMark(agent: HuddlePresentationAgent, className: string, label
   const artwork = agentArtwork(agent.name);
   return artwork
     ? `<img class="${className} ${artwork.className}" src="${artwork.source}" alt="${text(label)}">`
-    : COPILOT_MARK;
+    : `<span class="agent-logo-placeholder" aria-hidden="true"></span>`;
 }
 
 /**
