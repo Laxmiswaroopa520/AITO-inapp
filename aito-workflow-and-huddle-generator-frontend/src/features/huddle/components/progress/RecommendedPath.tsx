@@ -22,13 +22,16 @@ interface RecommendedPathProps {
   error: Error | null;
   mutationError: Error | null;
   selectedExternalId: string | null;
+  /** Which placement of selectedExternalId is showing, disambiguating a topic that repeats
+   * across two or three weeks in the same role's path (see the matching HuddleCatalog prop). */
+  selectedPlacementExternalId: string | null;
   hasRole: boolean;
   /** Audience role name for display; the response only carries the external ID. */
   roleName?: string | null;
   votes: Map<string, HuddleVoteResponse>;
   votePending: boolean;
   savePending: boolean;
-  onSelect: (externalId: string | null) => void;
+  onSelect: (externalId: string | null, placementExternalId?: string | null) => void;
   onVote: (externalId: string, value: -1 | 1 | null) => void;
   /** The week card whose HTML download is in progress, if any. */
   htmlExportExternalId: string | null;
@@ -99,7 +102,7 @@ export function RecommendedPath(props: RecommendedPathProps) {
       <div className="flex shrink-0 flex-wrap gap-2"><button type="button" disabled={!props.data.isCustomized || props.savePending} onClick={props.onReset} className="inline-flex h-9 items-center rounded-md border bg-white px-3 text-sm font-semibold hover:bg-[#E8F2FF] disabled:opacity-40"><RefreshCcw className="mr-2 h-4 w-4" />Reset</button><button type="button" onClick={() => void exportPlan(props.data!, props.roleName)} className="inline-flex h-9 items-center rounded-md bg-[#0F6CBD] px-3 text-sm font-semibold text-white hover:bg-[#115EA3]"><Download className="mr-2 h-4 w-4" />Export Learning Plan</button></div>
     </div>
     {props.mutationError && <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">{props.mutationError.message} Refresh the plan before trying again.</p>}
-    <div className="space-y-3">{props.data.items.map((item) => <RecommendedPathCard key={`${item.week}-${item.huddle.externalId}`} week={item.week} huddle={item.huddle} customized={item.isCustomized} selected={props.selectedExternalId === item.huddle.externalId} vote={props.votes.get(item.huddle.externalId)} votePending={props.votePending} onSelect={props.onSelect} onVote={props.onVote} htmlExportPending={props.htmlExportExternalId === item.huddle.externalId} htmlExportDisabled={props.htmlExportExternalId !== null} onExportHtml={() => props.onExportHtml(item.huddle)} managementMenuOpen={menuWeek === item.week} managementMenu={
+    <div className="space-y-3">{props.data.items.map((item) => <RecommendedPathCard key={`${item.week}-${item.huddle.externalId}`} week={item.week} huddle={item.huddle} customized={item.isCustomized} selected={props.selectedExternalId === item.huddle.externalId && props.selectedPlacementExternalId === (item.huddle.placementExternalId ?? null)} vote={props.votes.get(item.huddle.externalId)} votePending={props.votePending} onSelect={props.onSelect} onVote={props.onVote} htmlExportPending={props.htmlExportExternalId === item.huddle.externalId} htmlExportDisabled={props.htmlExportExternalId !== null} onExportHtml={() => props.onExportHtml(item.huddle)} managementMenuOpen={menuWeek === item.week} managementMenu={
       <RolePathWeekMenu week={item.week} weeks={weeksOf(props.data!)} replacements={Array.from(new Map(props.catalog.filter((candidate) => !props.data!.items.some((existing) => existing.huddle.externalId === candidate.externalId)).map((candidate) => [candidate.externalId, candidate])).values())} isCustomized={item.isCustomized} disabled={props.savePending} open={menuWeek === item.week} onOpenChange={(open) => setMenuWeek(open ? item.week : null)} onMoveToWeek={(targetWeek) => update(item.week, "up", targetWeek)} onReplace={(externalId) => update(item.week, "reset", undefined, externalId)} onReset={() => update(item.week, "reset")} />
     } />)}{upcomingWeeks.map((upcoming) => <ComingSoonWeekCard key={`upcoming-${upcoming.week}`} upcoming={upcoming} />)}</div>
   </section>;

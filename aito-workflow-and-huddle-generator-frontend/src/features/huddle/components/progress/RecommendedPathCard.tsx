@@ -16,7 +16,7 @@ interface RecommendedPathCardProps {
   /** Lifts this card's action layer above the sibling cards while its menu is open. */
   managementMenuOpen?: boolean;
   /** Passing null deselects (used when re-clicking the already-selected card). */
-  onSelect: (externalId: string | null) => void;
+  onSelect: (externalId: string | null, placementExternalId?: string | null) => void;
   onVote: (externalId: string, value: -1 | 1 | null) => void;
   htmlExportPending: boolean;
   /** True while any week card is downloading, so downloads never overlap. */
@@ -62,7 +62,7 @@ export function RecommendedPathCard({
       <button
         type="button"
         className="min-w-0 text-left focus-visible:outline-none"
-        onClick={() => onSelect(selected ? null : huddle.externalId)}
+        onClick={() => onSelect(selected ? null : huddle.externalId, huddle.placementExternalId)}
       >
         <span className="flex flex-wrap items-center gap-2">
           <span className="text-base font-semibold leading-5 text-[#242424] transition-colors group-hover:text-[#115EA3]">

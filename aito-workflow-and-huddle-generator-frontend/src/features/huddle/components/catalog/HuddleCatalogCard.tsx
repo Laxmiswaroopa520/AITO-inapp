@@ -44,7 +44,7 @@ export function HuddleCatalogCard({ huddle, selected, vote, votePending, week, o
   const activate = () => {
     if (onTogglePlan) {
       const nextChecked = !planChecked;
-      onTogglePlan(huddle.id);
+      onTogglePlan(huddle.placementExternalId ?? huddle.id);
       if (nextChecked) {
         onSelect(huddle.id, huddle.placementExternalId);
       } else if (selected) {
