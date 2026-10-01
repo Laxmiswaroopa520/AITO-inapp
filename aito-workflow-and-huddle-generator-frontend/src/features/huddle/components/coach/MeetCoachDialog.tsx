@@ -9,6 +9,11 @@ import { dateKey, formatCoachDateTime, formatCoachTime, getBrowserTimeZone, getS
 type Step = "coach" | "availability" | "review" | "confirmation";
 interface MeetCoachDialogProps { open: boolean; huddleExternalId: string; huddleName: string; onClose: () => void }
 
+// Coach directory/booking is fully implemented below for V2, but no approved Coach data is
+// configured yet for this release. Rather than removing the feature, this flag short-circuits
+// the dialog to a simple "Coming Soon" message -- flip it to false once Coach data is ready.
+const COACH_COMING_SOON = true;
+
 function availabilityWindow() {
   const start = new Date();
   start.setUTCSeconds(0, 0);
@@ -42,6 +47,14 @@ export function MeetCoachDialog({ open, huddleExternalId, huddleName, onClose }:
   }, [availability.data?.slots, timeZone]);
 
   if (!open) return null;
+  if (COACH_COMING_SOON) {
+    return <div role="dialog" aria-modal="true" aria-label="Meet with a Coach" className="fixed inset-0 z-[70] flex items-center justify-center bg-black/45 p-3 sm:p-6">
+      <div className="flex max-h-[94vh] w-full max-w-[1100px] flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
+        <header className="flex items-start justify-between border-b px-5 py-4"><div><h2 className="flex items-center gap-2 text-lg font-semibold"><CalendarClock className="h-5 w-5 text-[#0F6CBD]"/>Meet with a Coach</h2><p className="mt-1 text-xs text-muted-foreground">Get practical guidance for “{huddleName}”.</p></div><Button variant="ghost" size="icon" onClick={onClose} aria-label="Close Coach booking"><X className="h-4 w-4"/></Button></header>
+        <main className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-6"><State icon={<CalendarClock className="h-6 w-6"/>} title="Coming Soon" body="Meet with a Coach will be available in a future release."/></main>
+      </div>
+    </div>;
+  }
   const selectCoach = (value: CoachResponse) => { setCoach(value); setSlot(null); setSelectedDate(null); setStep("availability"); };
   const selectSlot = (value: CoachAvailabilitySlotResponse) => { setSlot(value); setBookingRequestId(crypto.randomUUID()); };
   const confirm = async () => {
