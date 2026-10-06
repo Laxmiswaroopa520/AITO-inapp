@@ -115,7 +115,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Give me my weekly forecast narrative for the Area call: qualified vs. committed change since last week, the 5 biggest movers up and down with a one-line reason each, any committed deals at risk in the next 30 days, and 3 inspection questions to bring to my manager 1:1.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 6,
     "IsActive": true
   },
@@ -135,7 +135,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Analyze my forecast accuracy over the past 4 quarters: show the variance between committed and actual by deal stage, identify which opportunity types I consistently over- or under-forecast, and recommend 3 specific changes to my forecasting approach this quarter.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 7,
     "IsActive": true
   },
@@ -155,7 +155,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Generate my territory and Azure consumption reports for tomorrow’s review, formatted for management. Include a self-serve summary the requesting stakeholders can pull themselves.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 8,
     "IsActive": true
   },
@@ -175,7 +175,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prepare me for my next conversation with [Account]: their priorities from the last 60 days, sentiment shifts, open commitments, competitive mentions, and 3 talking points plus the single ask that moves the deal forward. Then create an executive value story for [Solution]: map it to their top priorities, quantify outcomes (cost savings, productivity, risk reduction) using recent meeting and usage signals, and end with 3 CxO talking points and the key ask.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 9,
     "IsActive": true
   },
@@ -195,7 +195,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Draft an email to [Customer Exec] summarizing the value [Account] realized last quarter — map specific solutions to measurable outcomes (cost savings, productivity, risk reduction) — and propose next steps aligned to their strategic priorities. Include 3 CxO-ready talking points I can reference in our follow-up call.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 10,
     "IsActive": true
   },
@@ -295,7 +295,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a pre-meeting brief for my call with [Customer] today: their stated priorities, open commitments, current opportunities by stage, and which account-team roles (AE, SE, SSP, CSAM, partner) are engaged. Flag any role missing for the current stage and who I should pull in.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 15,
     "IsActive": true
   },
@@ -335,7 +335,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Generate a briefing for my extended account team ahead of [event]: my objectives, each role’s expected contribution, required prep, and the insights I need back from them.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 17,
     "IsActive": true
   },
@@ -355,7 +355,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a QBR brief for [Account]: outcomes delivered last quarter with supporting evidence, open commitments on both sides, MACC and ECIF status, top 3 expansion plays for the next 90 days, and key risks. Format as an exec summary, a scorecard, and 3 strategic asks for the customer.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 18,
     "IsActive": true
   },
@@ -435,7 +435,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Pull a consolidated customer-investment view across my accounts with active or pending ECIF: show TPID, approved amount, utilized vs. remaining, and expiration dates. For each account, recommend the best use of remaining funds aligned to the customer’s goals and my pipeline priorities.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 22,
     "IsActive": true
   },
@@ -455,7 +455,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Summarize the ECIF process for [topic]: outline the steps and owners, show the status of my submissions, and tell me what I need to do next to keep it moving.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 23,
     "IsActive": true
   },
@@ -475,7 +475,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Show my accounts with renewals in the next 6 months. For each: ARR, current licensing, consumption trend, top usage gaps, and expansion SKUs to attach. Prioritize by ARR at risk and flag any accounts where consumption trends suggest churn risk or where last customer contact exceeds 30 days.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 24,
     "IsActive": true
   },
@@ -495,7 +495,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "For [Account] renewing in [Month]: draft a renewal outreach email tied to the customer’s stated goals, summarize value delivered this term, and recommend expansion SKUs with pricing uplift estimates. Include talking points that connect renewal to their strategic priorities and any active consumption gaps I should address before the renewal conversation.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 25,
     "IsActive": true
   },
@@ -935,7 +935,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Review the Proactive Insights affecting my deals this quarter and identify my top commercial risks. For each, give the recommended mitigation and flag where escalation is required.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 47,
     "IsActive": true
   },
@@ -955,7 +955,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Using certified MSXI data, show forecast performance and gaps for my territory this quarter, explain the main drivers behind any variance, and recommend specific actions to improve accuracy before close.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 48,
     "IsActive": true
   },
@@ -975,7 +975,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a migration brief for [Account]: contractual differences, administrative-burden shift, red-line risks, and a talking-track to convince the customer to move to New Commerce.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 49,
     "IsActive": true
   },
@@ -1035,7 +1035,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prep my QBR for [Account]: 3 wins, 3 risks ranked by impact, relationship health by stakeholder, and 2 anticipated tough questions with responses—from the last 6 weeks of email, notes, docs and calendar.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 52,
     "IsActive": true
   },
@@ -1055,7 +1055,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build the CE talking track for [Account]'s QBR: concessions available, terms to contest, and the \"bad cop\" commercial positions, separate from the AE's relationship agenda.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 53,
     "IsActive": true
   },
@@ -1075,7 +1075,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Act as my account intelligence analyst for [Account]. (1) Build a meeting prep brief covering 30-day email/Teams activity, stakeholder interactions, calendar history, and public news. (2) Explain how [KPI] is calculated and link to the relevant report. (3) From this week's Proactive Insights, identify and rank AI/Azure workloads by readiness, ACR upside, and owner. (4) Surface the top 5 architectural, security, or scalability risks with MCEM stage impact and 14-day mitigations. Close with 3 tailored executive talking points, a prioritized action list ordered by leverage, and flag any engagement gaps or missing V-team roles.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 54,
     "IsActive": true
   },
@@ -1095,7 +1095,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "How is [KPI] calculated? Link me to the relevant report and explain the methodology.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 55,
     "IsActive": true
   },
@@ -1135,7 +1135,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a weekly technical risk register for my priority Enterprise accounts: the top 5 escalating architectural, security, or scalability risks, the accounts and opportunities affected, the MCEM stage at risk, and the best role to mitigate each (ATS, SE, CSAM, CSA, or partner) with a recommended 14-day action.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 57,
     "IsActive": true
   },
@@ -1155,7 +1155,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Summarize [Client]'s recent LinkedIn/web signals and tell me how to adjust my talk track before the call.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 58,
     "IsActive": true
   },
@@ -1195,7 +1195,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Create a new opportunity for recommendation ID [5-XYZ1234]. Topic: [Azure AI Modernization]. Estimated revenue: [$250,000]. Solution area: [Data & AI]. Estimated close date: [Dec 15, 2025].",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 60,
     "IsActive": true
   },
@@ -1215,7 +1215,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Show my current MACC consumption versus target for [Account] and flag the top technical blockers slowing adoption. Recommend architecture adjustments and partner engagements to accelerate.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 61,
     "IsActive": true
   },
@@ -1235,7 +1235,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Act as my technical strategy advisor for [Account]. (1) Analyze the main pipeline and consumption drivers over the last two quarters and recommend the top 3 technical bets for the next 6 months—each with the business outcome it supports, the customer stakeholder to engage, and the first conversation to advance it. (2) Generate a Secure AI snapshot: security posture signals, top Copilot and Azure AI workloads ranked by readiness, and adoption blockers across identity, data residency, and compliance. Recommend the top 3 technical actions for the next 30-60 days coordinated with my SE and CSA. (3) Summarize technical validation status for each active opportunity: proof on hand, gaps blocking commitment, and recommended validation activities with owners and target dates.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 62,
     "IsActive": true
   },
@@ -1255,7 +1255,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Give me a Secure AI snapshot for [Account]: current security posture signals and gaps, the top Copilot and Azure AI workloads ranked by readiness, and the main adoption blockers across identity, data residency, and compliance.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 63,
     "IsActive": true
   },
@@ -1315,7 +1315,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Match [Client]'s strategy and challenges to appropriate Microsoft 365 / Azure AI use cases and produce a manager-ready brief.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 66,
     "IsActive": true
   },
@@ -1335,7 +1335,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Act as my V-team coordinator and enablement curator. (1) For my top 10 Enterprise opportunities, show the assigned SE, CSA, and partner architect, the engagement status of each, and flag any deal where a role is missing or stalled. For each gap, recommend the next outreach and draft a short message to pull that person in. (2) Compile my weekly ATS enablement digest: the top 5 AI, Azure, and Security capability changes that affect customer decisions this week, what each unlocks for the technical sale, one account in my book where it applies, a one-line CTO talk track, and the recommended training or doc per item.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 67,
     "IsActive": true
   },
@@ -1375,7 +1375,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Act as my executive briefing architect for [Account] on [Topic]. (1) Prepare a CxO technical briefing: the customer's stated business outcomes, the architectural approach mapped to each outcome, the top 3 risks with mitigations, and relevant reference proof points. (2) Turn the reference architecture into a one-page business value summary with ROI projections and Azure consumption impact for the customer sponsor. Close with 3 executive talking points and the technical ask that advances the next MCEM stage.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 69,
     "IsActive": true
   },
@@ -1395,7 +1395,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Turn this reference architecture for [Account] into a one-page business value summary with ROI and the Azure consumption impact for the customer sponsor.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 70,
     "IsActive": true
   },
@@ -1415,7 +1415,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a 12-slide exec deck for [Account] from these transcripts/emails; map each section to their stated business outcomes and our Azure/AI roadmap, and flag the 3 open technical decisions to raise.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 71,
     "IsActive": true
   },
@@ -1435,7 +1435,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Help me organize an EBC for [Customer]. Choose the right session from available options and propose a coherent end-to-end timeline and prep plan.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 72,
     "IsActive": true
   },
@@ -1595,7 +1595,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Give me my [Solution Area] pipeline view: opportunities by MCEM stage, deals stalled or missing a close date or ARR, and the specific fields I need to update in MSX. Recommend the next action to clear the current-stage exit criteria for each at-risk deal.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 80,
     "IsActive": true
   },
@@ -1695,7 +1695,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a meeting prep brief on [Account]: 30-day email/Teams activity, stakeholder interactions, calendar history, public news, and 3 tailored talking points. Flag engagement gaps and anything that needs follow-up before the meeting.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 85,
     "IsActive": true
   },
@@ -1715,7 +1715,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prepare me for my upcoming meeting with [Account]. From the last 60 days of meetings and emails, summarize their priorities, key stakeholders, open risks, and any competitive mentions. Then draft 5 discovery questions tailored to their industry and AI maturity to validate fit.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 86,
     "IsActive": true
   },
@@ -1735,7 +1735,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Produce a competitive differentiation brief for my solution area: win/loss drivers, performance vs [Competitor] by deal size, our 3 strongest differentiators with proof, top objections with handlers, and a fresh talk track.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 87,
     "IsActive": true
   },
@@ -1755,7 +1755,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Give me a competitive differentiation brief for [Solution Play] vs [Competitor]. Pull the top win and loss drivers over the last 2 quarters, our 3 strongest differentiation points with proof, and the most common objections with handlers I can use in this week's customer conversations. Format as a one-page battlecard.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 88,
     "IsActive": true
   },
@@ -1895,7 +1895,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Surface colleague-rated prompts for [scenario/agent], ranked by likes, with the source seller.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 95,
     "IsActive": true
   },
@@ -1935,7 +1935,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "I need to understand my key performance metrics. How is [KPI] calculated, what data sources feed it, and what does a healthy range look like for my role? Then pull the latest values from my reports and flag any that are trending below target.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 97,
     "IsActive": true
   },
@@ -2015,7 +2015,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "I have a [discovery/technical/cadence] call with [Customer] on [topic] today. Pull from my last 30 days of emails, Teams chats, and meetings with them and build my meeting brief: (1) account history and stakeholder context; (2) the 3 most recent open issues or asks and decisions already made; (3) the 5 questions that move technical decisioning forward; (4) likely objections with how I addressed them before; and (5) a one-line opening to set the agenda.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 101,
     "IsActive": true
   },
@@ -2115,7 +2115,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Using my account notes and recent emails for [Opportunity], build a technical selling plan across MCEM Inspire & Design and Empower & Achieve. Give me: (1) a demo agenda mapped to the customer's stated priorities; (2) a PoC scope with success criteria and the proof outcome that clears the Empower & Achieve exit; (3) the customer-side technical contacts I still need to engage; and (4) the likely technical objections with prepared responses. Keep it to one page I can act on this week.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 106,
     "IsActive": true
   },
@@ -2175,7 +2175,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prep me for Friday's deal review on the [Account] $[X]M opportunity: give me 3 wins, 3 risks, 1 ask of my manager, and anticipated tough questions— sourced from the last 4 weeks of email, MEDDPICC notes, and the technical objection log. Format as a one-page brief I can reference during the review.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 109,
     "IsActive": true
   },
@@ -2275,7 +2275,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Build my monthly knowledge plan for [Solution Area], grounded in our ADO engineering wiki and Seismic. Include: (1) the top 5 capability or product changes that affect my customer conversations this month; (2) the 2 active deals where I will apply the new expertise; (3) one hands-on lab or PoC to build, with a clear success measure; and (4) what I will be able to do at month-end that I cannot do today.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 114,
     "IsActive": true
   },
@@ -2455,7 +2455,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Generate consumption and adoption trend insights for [Account] to prepare my upcoming QBR.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 123,
     "IsActive": true
   },
@@ -2475,7 +2475,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "How is [KPI] calculated?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 124,
     "IsActive": true
   },
@@ -2495,7 +2495,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prep my QBR for [Account]: 3 wins, 3 risks ranked by impact, relationship health across stakeholders, and 2 anticipated tough questions with responses— from the last 6 weeks of email, notes, docs and calendar.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 125,
     "IsActive": true
   },
@@ -2515,7 +2515,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Design a production-ready architecture for [Customer] on [Workload]. Include the recommended reference architecture, security and resilience posture, key cost-optimization (FinOps) levers, and a deployment sequence tied to their committed milestones. Highlight the 2-3 architectural decisions that most unblock consumption, then draft a short customer-facing summary.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 126,
     "IsActive": true
   },
@@ -2555,7 +2555,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Diagnose what's slowing consumption at [Account]: workload-by-workload commit-to-complete (C2C) status, the top technical blockers (architecture, identity, networking, data), and any customer-skill or partner gaps. Recommend a 30-day acceleration plan tied to committed Azure milestones, with the best-suited owner for each action (CSA, CSAM, partner, ATS).",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 128,
     "IsActive": true
   },
@@ -2575,7 +2575,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a FinOps advisory brief for [Account]: surface the cost concerns raised in recent emails and meetings, summarize current Azure spend patterns, identify the top optimization opportunities (reserved instances, right-sizing, idle resources), and draft talking points for a cost review with the customer.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 129,
     "IsActive": true
   },
@@ -2595,7 +2595,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Monitor my account list at service level (Fabric/Synapse/Databricks); if consumption drops over 3 weeks, email me with causes and recommendations.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 130,
     "IsActive": true
   },
@@ -2615,7 +2615,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prepare a technical advisory brief for my meeting with [Customer], grounded in our recent emails and meetings: recent engagement history, open technical issues, upcoming milestones, and 3-5 recommended discussion topics. Schedule this to run weekly for my top accounts.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 131,
     "IsActive": true
   },
@@ -2655,7 +2655,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Generate a technical continuity report for [Account]: compare the pre-sales solution design to the current deployment state, track adoption against expected milestones, flag technical debt or configuration drift, and recommend actions to keep the solution healthy.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 133,
     "IsActive": true
   },
@@ -2675,7 +2675,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Build a personalized envisioning/hackathon agenda and materials for [Customer], tailored to their workloads and maturity.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 134,
     "IsActive": true
   },
@@ -2695,7 +2695,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build an ROI/value brief tying [Customer]'s architecture to outcomes, with comparable Azure success stories.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 135,
     "IsActive": true
   },
@@ -2715,7 +2715,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Surface Azure differentiators vs. [competitor] (e.g., Fabric vs. BigQuery) and draft customer talking points.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 136,
     "IsActive": true
   },
@@ -2835,7 +2835,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Turn today's insights into my weekly plan: rank accounts by health risk (adoption decline, support escalation, sentiment shift, MACC slippage, ECIF milestone miss), show the driver, and recommend the mitigation.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 142,
     "IsActive": true
   },
@@ -2855,7 +2855,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Rank my accounts by health risk using today's Proactive Insights. For each at-risk account, show the main driver (adoption decline, support escalation, sentiment shift, or MACC slippage), the recommended mitigation, and flag any I should escalate to the AE or DCE this week.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 143,
     "IsActive": true
   },
@@ -2875,7 +2875,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Scan my portfolio for renewal risk signals: drops in active usage, support ticket spikes, sentiment shifts, ECIF milestone slippage, and stakeholder turnover. Rank accounts by composite risk, name the lead indicator for each, and recommend a mitigation play with an owner and target date.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 144,
     "IsActive": true
   },
@@ -2895,7 +2895,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Give me a daily pulse on my accounts: surface new support tickets, sentiment changes, usage anomalies, or stakeholder updates since yesterday, and flag the top 3 needing attention today.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 145,
     "IsActive": true
   },
@@ -2915,7 +2915,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Build an adoption acceleration plan for [Account]: usage by workload vs entitlement, top 3 underused features mapped to priorities, a 4-week activation campaign, and a draft email to the sponsor proposing it.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 146,
     "IsActive": true
   },
@@ -2935,7 +2935,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Build a 4-week adoption plan for [Account]. Compare current usage by workload against license entitlement, identify the top 3 underused features tied to their stated priorities, and recommend activation actions (champions, training, scenarios) with milestones I can track.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 147,
     "IsActive": true
   },
@@ -2955,7 +2955,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a value realization brief for [Account]. Show month-over-month usage and adoption changes by workload, tie each change to a customer business outcome, and summarize value signals from recent meetings and emails. Frame it as a value story the AE can take into the next QBR.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 148,
     "IsActive": true
   },
@@ -2995,7 +2995,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build a renewal support view for accounts renewing in 6 months: ARR, licensing, ACR vs MACC, top usage gaps, expansion SKUs with adoption proof, the AE to align with and 3 actions for the next 30 days.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 150,
     "IsActive": true
   },
@@ -3075,7 +3075,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "Review all milestones for [Account] and flag any that are at-risk or stalled. Summarize the risk, dependency, and owner for each, and recommend prioritized actions to keep delivery commitments on track. Set this to run weekly so I can monitor progress.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 154,
     "IsActive": true
   },
@@ -3155,7 +3155,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Summarize ACR trends by workload for my top accounts over the last 6 months and compare the trajectory to MACC and the C+U plan. Identify the top 3 drivers, the accounts most at risk of falling short, and a specific intervention for each.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 158,
     "IsActive": true
   },
@@ -3175,7 +3175,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Show ACR trends for my top accounts over the past 6 months by workload. Compare trajectory against MACC commitments, flag accounts at risk of shortfall, and recommend interventions.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 159,
     "IsActive": true
   },
@@ -3195,7 +3195,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Pull current MACC utilization for my portfolio. Show consumed vs. committed by account, flag those under 70% with months remaining, and recommend consumption acceleration plays.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 160,
     "IsActive": true
   },
@@ -3215,7 +3215,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Analyze my emails, Teams chats, meeting notes and account data for [Account] over the last 2 weeks: list active workstreams with status, stakeholders and risks, then give me the top 5 actions for this week.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 161,
     "IsActive": true
   },
@@ -3235,7 +3235,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Summarize my emails, Teams chats, and meetings for [Account] over the last 2 weeks. Identify the active workstreams (delivery, support, adoption, partner) and, for each, give the current status, key stakeholders, and any risks or blockers. Then list the top 5 actions I should take this week and flag any misalignment across ATU, CSU, or partners.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 162,
     "IsActive": true
   },
@@ -3255,7 +3255,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prepare me for my meeting with [Account]. Summarize recent interactions and stakeholder context, then give me an executive-level brief with key priorities, risks, and 3-4 recommended talking points and questions to drive a value-focused discussion.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 163,
     "IsActive": true
   },
@@ -3275,7 +3275,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Aggregate my emails, Teams chats, meetings, and CRM data for [Account]. Summarize the last 2 weeks of activity across all channels and highlight action items, risks, and follow-ups.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 164,
     "IsActive": true
   },
@@ -3295,7 +3295,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prepare a CSDR brief for [Account]: summarize recent delivery status, key milestones achieved, open risks, and recommended discussion points for the executive review.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 165,
     "IsActive": true
   },
@@ -3315,7 +3315,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Recap my last meeting with [Account]. Extract action items with owners and deadlines, identify items that need routing to AE, SSP, or delivery, and draft follow-up messages for each.",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 166,
     "IsActive": true
   },
@@ -3375,7 +3375,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Set up a recurring weekly insight: analyze my full portfolio across accounts including pipeline stage, deal velocity, usage/adoption signals, ECIF activity, and risk indicators. Identify where I should focus this week, highlight gaps or stalled opportunities, and recommend 3-5 specific actions. Deliver every Monday at 7 AM.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 169,
     "IsActive": true
   },
@@ -3435,7 +3435,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "Automatically deliver a territory-level 1:1 prep for [Seller]: full-territory DBF/forecast changes week-on-week, top 5 deals driving the delta, partner pipeline matching status, accounts flagged for manager outreach, and attainment trends. Recommend 3 coaching topics focused on territory coverage and partner engagement. Deliver 30 minutes before each scheduled 1:1.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 172,
     "IsActive": true
   },
@@ -3455,7 +3455,7 @@
     "BusinessOutcome": "Accurate forecasting with proactive risk identification",
     "BeginnerPrompt": "For my 1:1 with [Seller], show territory-level forecast/DBF change week-on-week and the specific deals driving the change, so we discuss trends not individual deals. Flag any deals where the stage hasn't moved in 2+ weeks.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
+    "SuggestedOutputs": "[\"Summarizes forecast movement and rationale\", \"Flags committed-at-risk deals\", \"Creates inspection questions for manager reviews\"]",
     "SortOrder": 173,
     "IsActive": true
   },
@@ -3475,7 +3475,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Work with me on a deal inspection for [Opportunity] with [Seller]: MCEM stage and exit-criteria status, MEDDPICC health, stakeholder coverage and partner alignment. Help me sharpen inspection questions, identify blind spots, and draft a coaching summary with reinforcing observations, development areas and next-step commitments.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 174,
     "IsActive": true
   },
@@ -3495,7 +3495,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "For [Opportunity], check the rep knows the right partner stakeholder and next actions on both sides; build inspection questions covering internal AND partner alignment. Draft a coaching summary highlighting where co-sell coordination needs strengthening.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 175,
     "IsActive": true
   },
@@ -3515,7 +3515,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Across my team's accounts, find the 5 best to engage now based on new C-suite hires, industry triggers, and un-engaged rooms of the house and draft the coaching ask per seller. Prioritize accounts with the highest potential for new workload conversations.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 176,
     "IsActive": true
   },
@@ -3535,7 +3535,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Scan public sources for C-suite changes and strategy shifts across my accounts; prioritize 5 where I should proactively request an exec meeting myself. Include recent earnings signals and organizational restructuring.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 177,
     "IsActive": true
   },
@@ -3555,7 +3555,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Prepare me for an exec meeting with [Customer]: priorities, earnings signals, AI adoption trends, risks, competitive landscape, and a recommended discussion flow. Include recent public announcements and industry-specific challenges.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 178,
     "IsActive": true
   },
@@ -3575,7 +3575,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Build my weekly IR prep: surface the top 5 discussion areas from this week's pipeline data, GTM emails and leadership comms. Synthesize key themes, flag surprises or risks, and draft a structured briefing with data points I'll likely be asked about and suggested talking points for each topic.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 179,
     "IsActive": true
   },
@@ -3595,7 +3595,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Before each weekly IR, proactively push a package of the top discussion areas for my business, pulling MSXI reporting, GTM emails, and SDU leadership signals. Deliver as a recurring scheduled insight every [day] at [time] so I have prep time.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 180,
     "IsActive": true
   },
@@ -3695,7 +3695,7 @@
     "BusinessOutcome": "Better customer conversations grounded in recent context and priorities",
     "BeginnerPrompt": "Turn this WW guidance into a low-anxiety manager talk track: what changed, why it matters, what to do differently. Frame it as an assist I edit, not full automation. Include suggested talking points for my next team meeting and a FAQ document I can share.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Summarises recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
+    "SuggestedOutputs": "[\"Summarizes recent customer context\", \"Highlights priorities, risks and open commitments\", \"Creates talking points and next-step asks\"]",
     "SortOrder": 185,
     "IsActive": true
   },
@@ -3715,7 +3715,7 @@
     "BusinessOutcome": "Higher adoption and consumption tied to measurable customer value",
     "BeginnerPrompt": "From 1:1s, Teams meetings, and Connects data, identify each seller's skill gaps by MCEM stage and recommend targeted development actions. Highlight patterns across the team and suggest group training opportunities alongside individual coaching focus areas.?",
     "AdvancedPrompt": null,
-    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realisation actions\"]",
+    "SuggestedOutputs": "[\"Compares usage and consumption against commitments\", \"Flags adoption gaps and health risks\", \"Recommends acceleration or value-realization actions\"]",
     "SortOrder": 186,
     "IsActive": true
   }

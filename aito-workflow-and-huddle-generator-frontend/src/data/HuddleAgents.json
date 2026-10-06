@@ -85,7 +85,7 @@
     "WhatItHelpsYouDo": "Analyzes supplied data and produces understandable findings and visuals.",
     "WhenToUseIt": "Multi-file quantitative analysis, trend analysis, and executive-ready data insights.",
     "WhenNotToUseIt": "Avoid when authoritative operational reporting must come directly from a certified business system.",
-    "StepsToGetStarted": "Open Microsoft 365 Copilot and select the Analyst agent, then attach the data you want analysed.",
+    "StepsToGetStarted": "Open Microsoft 365 Copilot and select the Analyst agent, then attach the data you want analyzed.",
     "KeyBenefits": "Turns supplied data into findings and visuals a non-analyst can act on, including trends, outliers, and executive-ready charts, without building the analysis by hand.",
     "AccessUrl": "https://m365.cloud.microsoft/chat",
     "AccessLinkLabel": "Open Analyst"
