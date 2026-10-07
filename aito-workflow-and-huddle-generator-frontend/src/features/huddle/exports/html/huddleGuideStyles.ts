@@ -40,7 +40,7 @@ export const huddleGuideStyles = `
       color: var(--ink);
       font-family: ${HUDDLE_FONT_STACK};
       /* Match the application: never let the browser fake a weight the font does not have.
-         Segoe UI stops at 700, this design asks for 800, and a synthesised 800 reads as a
+         Segoe UI stops at 700, this design asks for 800, and a synthesized 800 reads as a
          different typeface next to a real one. */
       font-synthesis: none;
       text-rendering: optimizeLegibility;

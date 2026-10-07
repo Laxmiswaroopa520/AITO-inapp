@@ -4,8 +4,8 @@ export const huddleQueryKeys = {
   all: ["huddles"] as const,
 
   // Kept separate from `catalog` on purpose: this is the plain role list (same shape the
-  // Workflow builder reads from `/api/roles`), not a projection of the catalogue read, so it
-  // must not share a cache entry or a loading state with the heavier catalogue query.
+  // Workflow builder reads from `/api/roles`), not a projection of the catalog read, so it
+  // must not share a cache entry or a loading state with the heavier catalog query.
   audienceRoles: () => [...huddleQueryKeys.all, "audience-roles"] as const,
 
   catalog: (filters: HuddleCatalogFilters) =>

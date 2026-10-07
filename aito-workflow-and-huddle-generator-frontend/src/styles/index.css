@@ -117,7 +117,7 @@ button:disabled {
 /*
   Kept inside @layer base so Tailwind utilities can still win.
   Unlayered rules override every @layer utilities declaration regardless of
-  specificity, which previously forced anchors to inherit their colour and
+  specificity, which previously forced anchors to inherit their color and
   swallowed text-[#0f6cbd] / hover:underline on links and asChild buttons.
 */
 @layer base {

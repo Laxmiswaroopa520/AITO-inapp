@@ -79,7 +79,7 @@ export function HuddlePage() {
   const [exportPending, setExportPending] = useState(false);
   const [feedback, setFeedback] = useState<{ kind: "success" | "error"; message: string } | null>(null);
 
-  // Mirrors the auto-dismissing acknowledgement pattern used elsewhere in Huddle (see
+  // Mirrors the auto-dismissing acknowledgment pattern used elsewhere in Huddle (see
   // HuddleWorkspace's own `feedback` banner) so a download/export confirmation reads like a
   // toast instead of a banner the reader has to dismiss by hand.
   useEffect(() => {
@@ -106,11 +106,11 @@ export function HuddlePage() {
   // picker, or just the audience role(s) shown as selected (evergreenAudienceDisplayIds
   // already carries the same inherited-role fallback the picker itself displays) once one
   // or more are. Leaving both params unset when no role is in scope lets the plain
-  // "default catalogue" projection -- already precomputed as that exact union -- come back
+  // "default catalog" projection -- already precomputed as that exact union -- come back
   // untouched. See localApiClient's huddleCatalog for the merge itself.
   const evergreenRolePathRoleIds = evergreenAudienceDisplayIds;
   // Only the All Topics tab reads this. It used to run unconditionally alongside
-  // referenceCatalogQuery on every visit to the Huddle page -- two full catalogue reads in
+  // referenceCatalogQuery on every visit to the Huddle page -- two full catalog reads in
   // parallel, competing for the same backend and database, before the reader had even chosen a
   // tab. Scoping it to its own tab (the same pattern already used for the Role Path query below)
   // halves that redundant load on first paint.
@@ -139,7 +139,7 @@ export function HuddlePage() {
   const recommendedPathQuery = useMyHuddlePlan(selectedRoleExternalId, viewMode === "guided");
   // Which placement to open. The same topic sits on several role paths with different activities,
   // so the detail read has to name one, otherwise the API aggregates every role: a topic on five
-  // placements comes back with fifteen phases. Role Path and catalogue cards both carry the id.
+  // placements comes back with fifteen phases. Role Path and catalog cards both carry the id.
   const selectedPlacementExternalId = useMemo(() => {
     if (!selectedExternalId) return null;
     if (selectedCatalogSelection?.externalId === selectedExternalId) return selectedCatalogSelection.placementExternalId;
@@ -158,8 +158,8 @@ export function HuddlePage() {
   const voteMutation = useSetHuddleVote();
   useLegacyHuddlePlanMigration(selectedRoleExternalId, recommendedPathQuery.data, referenceCatalogQuery.data);
 
-  // Read directly from /api/roles instead of deriving from the catalogue read: the audience
-  // picker used to wait on every topic in the catalogue just to list eight roles, so it could
+  // Read directly from /api/roles instead of deriving from the catalog read: the audience
+  // picker used to wait on every topic in the catalog just to list eight roles, so it could
   // not appear until the heaviest read on the page finished. See useHuddleAudienceRoles.
   const audienceRolesQuery = useHuddleAudienceRoles();
   const roles = useMemo(
@@ -167,7 +167,7 @@ export function HuddlePage() {
     [audienceRolesQuery.data],
   );
 
-  // The audience list has its own pending and error states now, independent of the catalogue.
+  // The audience list has its own pending and error states now, independent of the catalog.
   const rolesLoading = audienceRolesQuery.isPending;
   const rolesErrorMessage = audienceRolesQuery.isError
     ? "Audience roles could not be loaded. Refresh to try again."
@@ -288,7 +288,11 @@ export function HuddlePage() {
 
   return (
     <div className="mx-auto max-w-[1540px] space-y-6 p-4 [font-family:var(--aito-font-sans)] lg:p-6">
+<<<<<<< HEAD
       <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"><div>{persona && <nav aria-label="Huddle breadcrumb" className="mb-1.5 flex min-w-0 items-center gap-1 text-sm font-medium"><button type="button" onClick={changePersona} title="Back to the Huddle landing page" className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[#0F6CBD] transition-colors hover:bg-[#E8F2FF] hover:underline"><Home className="h-3.5 w-3.5" aria-hidden="true" />Home</button><ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50" aria-hidden="true" />{viewMode === "orientation" ? <span className="px-1.5 py-0.5 text-muted-foreground" aria-current="page">{personaLabel}</span> : <button type="button" onClick={() => changeViewMode("orientation")} title={`Back to ${personaLabel} home`} className="truncate rounded-md px-1.5 py-0.5 text-[#0F6CBD] transition-colors hover:bg-[#E8F2FF] hover:underline">{personaLabel}</button>}</nav>}<div className="mb-2 flex items-center gap-3"><span className="rounded-xl bg-[#E8F2FF] p-2"><Users className="h-6 w-6 text-[#0F6CBD]" /></span><h1 className="text-2xl font-bold lg:text-3xl">{persona ? personaLabel : "Huddles"}</h1></div><p className="text-muted-foreground">{persona ? "Discover and run guided Huddles that help your team apply AI to real workflows." : "Build AI fluency through guided conversations, practical activities, and shared learning."}</p></div><div className="flex flex-nowrap shrink-0 items-center gap-1.5"><span className="group relative inline-flex shrink-0"><button type="button" data-tour="huddle-in-a-box" onClick={() => setHuddleInABoxOpen(true)} className="inline-flex h-10 items-center rounded-lg border border-[#0A6BBA] bg-white px-3 text-sm font-semibold text-[#0A6BBA] hover:bg-[#E2F1F9]"><Box className="mr-2 h-4 w-4" />Create your own huddle</button><span role="tooltip" className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 rounded-lg border bg-white p-2.5 text-xs font-medium leading-4 text-[#242424] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100">Not finding the role, workflow, practice, or tool you're looking for? Try creating your own huddle content!</span></span>{persona === "manager" && <button type="button" data-tour="huddle-launch-planner" onClick={() => navigate("/huddle/launch-planner")} className="inline-flex h-10 items-center rounded-lg border border-[#0A6BBA] bg-white px-3 text-sm font-semibold text-[#0A6BBA] hover:bg-[#E2F1F9] shrink-0"><CalendarDays className="mr-2 h-4 w-4" />Launch Planner</button>}<button type="button" data-tour="huddle-resources" onClick={() => setResourcesOpen(true)} className="inline-flex h-10 items-center rounded-lg border bg-white px-3 text-sm font-semibold hover:bg-muted shrink-0"><Library className="mr-2 h-4 w-4" />Resources</button>{viewMode !== "orientation" && <span className="inline-flex h-10 shrink-0 items-center rounded-lg border border-[#0F6CBD]/25 bg-[#E8F2FF] px-2 text-sm font-semibold text-[#0F6CBD]">{selectedExternalId ? "1 selected" : "0 selected"}</span>}{selectedExternalId && <button type="button" data-tour="huddle-generate" onClick={() => setWorkspaceOpen(true)} className="inline-flex h-10 items-center rounded-lg bg-[#0F6CBD] px-3 text-sm font-semibold text-white shadow-lg shadow-[#0F6CBD]/20 hover:bg-[#115EA3] shrink-0"><Sparkles className="mr-2 h-4 w-4" />Generate Huddle</button>}</div></header>
+=======
+      <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"><div>{persona && <nav aria-label="Huddle breadcrumb" className="mb-1.5 flex min-w-0 items-center gap-1 text-sm font-medium"><button type="button" onClick={changePersona} title="Back to the Huddle landing page" className="inline-flex items-center gap-1 rounded-md px-1.5 py-0.5 text-[#0F6CBD] transition-colors hover:bg-[#E8F2FF] hover:underline"><Home className="h-3.5 w-3.5" aria-hidden="true" />Home</button><ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50" aria-hidden="true" />{viewMode === "orientation" ? <span className="px-1.5 py-0.5 text-muted-foreground" aria-current="page">{personaLabel}</span> : <button type="button" onClick={() => changeViewMode("orientation")} title={`Back to ${personaLabel} home`} className="truncate rounded-md px-1.5 py-0.5 text-[#0F6CBD] transition-colors hover:bg-[#E8F2FF] hover:underline">{personaLabel}</button>}</nav>}<div className="mb-2 flex items-center gap-3"><span className="rounded-xl bg-[#E8F2FF] p-2"><Users className="h-6 w-6 text-[#0F6CBD]" /></span><h1 className="text-2xl font-bold lg:text-3xl">{persona ? personaLabel : "Huddles"}</h1></div><p className="text-muted-foreground">{persona ? "Discover and run guided Huddles that help your team apply AI to real workflows." : "Build AI fluency through guided conversations, practical activities, and shared learning."}</p></div><div className="flex flex-wrap items-center gap-2">{persona === "manager" && <button type="button" data-tour="huddle-launch-planner" onClick={() => navigate("/huddle/launch-planner")} className="inline-flex h-10 items-center rounded-lg border border-[#C7C7C7] bg-[#F0F0F0] px-4 text-sm font-semibold text-[#616161] hover:bg-[#E6E6E6]"><CalendarDays className="mr-2 h-4 w-4" />Launch Planner</button>}<button type="button" data-tour="huddle-resources" onClick={() => setResourcesOpen(true)} className="inline-flex h-10 items-center rounded-lg border bg-white px-4 text-sm font-semibold hover:bg-muted"><Library className="mr-2 h-4 w-4" />Resources</button></div></header>
+>>>>>>> origin/main
       {feedback && (
         <div
           role="status"

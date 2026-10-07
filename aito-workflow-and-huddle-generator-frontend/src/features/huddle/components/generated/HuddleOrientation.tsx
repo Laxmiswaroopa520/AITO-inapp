@@ -44,8 +44,8 @@ const roles = [
 
 const toolkit = [
   { icon: BriefcaseBusiness, title: "Sales Agent", body: "Prepare for customer engagements and opportunity planning.", label: "Customer workflow", accent: "#0F6CBD" },
-  { icon: Lightbulb, title: "MSXI Assist", body: "Research, analyse, and gather insights for customer readiness.", label: "Insight workflow", accent: "#5C2D91" },
-  { icon: Bot, title: "Microsoft 365 Copilot", body: "Create, summarise, and accelerate everyday work.", label: "Productivity workflow", accent: "#008272" },
+  { icon: Lightbulb, title: "MSXI Assist", body: "Research, analyze, and gather insights for customer readiness.", label: "Insight workflow", accent: "#5C2D91" },
+  { icon: Bot, title: "Microsoft 365 Copilot", body: "Create, summarize, and accelerate everyday work.", label: "Productivity workflow", accent: "#008272" },
   { icon: Wrench, title: "Additional Role Tools", body: "Discover AI experiences recommended for your role path.", label: "Role-specific", accent: "#D83B01" },
 ];
 

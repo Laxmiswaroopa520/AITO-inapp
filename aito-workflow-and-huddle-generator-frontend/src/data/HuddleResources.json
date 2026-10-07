@@ -236,7 +236,7 @@
   {
     "ExternalId": "RES-SKILLS-SHACK",
     "Title": "Skill Shack",
-    "Description": "Field-submitted Scout skills contributed by Microsoft sellers and technical roles, organised by category. Useful when a seller workflow already has a community-built skill behind it.",
+    "Description": "Field-submitted Scout skills contributed by Microsoft sellers and technical roles, organized by category. Useful when a seller workflow already has a community-built skill behind it.",
     "Url": "https://microsoft.sharepoint.com/sites/skill-shack",
     "Type": "Skill catalog",
     "LinkLabel": "Browse Skill Shack",
@@ -263,7 +263,7 @@
   {
     "ExternalId": "RES-SK-BRIEF",
     "Title": "Work Brief",
-    "Description": "Scout skill that reads mail, calendar and Teams to produce a prioritised brief of what is owed and what is coming.",
+    "Description": "Scout skill that reads mail, calendar and Teams to produce a prioritized brief of what is owed and what is coming.",
     "Url": "https://microsoft.github.io/cat-agent-skills/skills/work-brief",
     "Type": "Agent skill",
     "LinkLabel": "Open skill",
@@ -290,7 +290,7 @@
   {
     "ExternalId": "RES-SK-MEET",
     "Title": "Meeting Analyzer",
-    "Description": "Extracts decisions, commitments and unspoken signals from meeting content rather than only summarising it.",
+    "Description": "Extracts decisions, commitments and unspoken signals from meeting content rather than only summarizing it.",
     "Url": "https://microsoft.github.io/cat-agent-skills/skills/meeting-analyzer",
     "Type": "Agent skill",
     "LinkLabel": "Open skill",
@@ -362,7 +362,7 @@
   {
     "ExternalId": "RES-SK-PANEL",
     "Title": "Persona Reaction Panel",
-    "Description": "Pre-tests a narrative or artefact against role-based personas to surface blind spots and credible-detractor risk before it is used live.",
+    "Description": "Pre-tests a narrative or artifact against role-based personas to surface blind spots and credible-detractor risk before it is used live.",
     "Url": "https://microsoft.github.io/cat-agent-skills/skills/persona-reaction-panel",
     "Type": "Agent skill",
     "LinkLabel": "Open skill",

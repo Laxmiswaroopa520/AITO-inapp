@@ -40,7 +40,7 @@ const personas = [
   {
     id: 'manager' as const, icon: Target, title: 'Manager', headline: 'Lead AI adoption across your team', image: IMAGES.manager,
     body: 'Set direction, shape learning priorities, and help team members turn AI practice into stronger team habits.',
-    helps: ['Select a role-based learning path', 'Customise recommended Huddles', 'Build and export a team learning plan', 'Reinforce adoption through team rhythm'],
+    helps: ['Select a role-based learning path', 'Customize recommended Huddles', 'Build and export a team learning plan', 'Reinforce adoption through team rhythm'],
     success: 'Your team applies AI to real workflows and brings back examples that improve how work gets done.',
     cta: 'Open Manager View', accent: '#0A6BBA',
   },
@@ -48,13 +48,13 @@ const personas = [
     id: 'facilitator' as const, icon: Presentation, title: 'Facilitator', headline: 'Run practical Huddles with confidence', image: IMAGES.facilitator,
     body: 'Prepare, guide, capture, and follow up on Huddles that connect AI to the work team members do every day.',
     helps: ['Prepare for a Huddle', 'Guide the conversation', 'Use recommended prompts', 'Capture notes and actions', 'Export session materials'],
-    success: 'Team members practise with real prompts and leave with one practical commitment they can apply.',
+    success: 'Team members practice with real prompts and leave with one practical commitment they can apply.',
     cta: 'Open Facilitator View', accent: '#2A446F',
   },
   {
     id: 'team-member' as const, icon: Users, title: 'Team Member', headline: 'Build AI habits through real work', image: IMAGES.member,
-    body: 'Follow a role-based path, practise AI in daily workflows, explore all topics, and share what works.',
-    helps: ['Understand the learning journey', 'Complete role-based Huddles', 'Practise AI with real workflows', 'Explore all topics', 'Build repeatable AI habits'],
+    body: 'Follow a role-based path, practice AI in daily workflows, explore all topics, and share what works.',
+    helps: ['Understand the learning journey', 'Complete role-based Huddles', 'Practice AI with real workflows', 'Explore all topics', 'Build repeatable AI habits'],
     success: 'You know when to use the right AI experiences and can apply them to everyday work with confidence.',
     cta: 'Start Learning Journey', accent: '#287C70',
   },
@@ -88,7 +88,7 @@ const rhythm = [
   ['Reflect', 'Share wins, lessons, and friction points.'],
   ['Frame', 'Connect the topic to the workflow and outcome.'],
   ['Discuss', 'Surface questions, blockers, and peer insights.'],
-  ['Practise', 'Try a prompt, tool, or workflow pattern.'],
+  ['Practice', 'Try a prompt, tool, or workflow pattern.'],
   ['Commit', 'Choose one practical action for this week.'],
   ['Bring Back', 'Return with evidence, learning, or a result.'],
 ];
@@ -98,7 +98,7 @@ const topAgents = [
   { name: 'Cowork', label: 'Create & orchestrate', description: 'Turn complex work into structured outputs and actionable next steps.', logo: coworkLogo },
   { name: 'Scout', label: 'Monitor & discover', description: 'Surface relevant signals, changes and information worth exploring.', logo: scoutLogo },
   { name: 'Sales Agent', label: 'Plan & progress', description: 'Support customer, account and opportunity workflows.', logo: salesAgentLogo },
-  { name: 'Agent J.ai', label: 'Prepare & practise', description: 'Prepare and practise for important customer conversations.', logo: agentJLogo },
+  { name: 'Agent J.ai', label: 'Prepare & practice', description: 'Prepare and practice for important customer conversations.', logo: agentJLogo },
 ];
 
 const journeySteps: Array<[string, string, string, string, string, ElementType, string]> = [
@@ -114,8 +114,8 @@ const personaOnboarding = {
     heroCta: 'Explore Role Path',
     cards: [
       ['Set the direction', ['Choose the right role path', 'Connect Huddles to team priorities', 'Explain why the learning matters']],
-      ['Shape the plan', ['Review recommended Huddles', 'Customise the sequence if needed', 'Add all topics for your team']],
-      ['Reinforce the habit', ['Encourage team members to bring back examples', 'Create repeatable AI behaviours', 'Keep the focus on real work']],
+      ['Shape the plan', ['Review recommended Huddles', 'Customize the sequence if needed', 'Add all topics for your team']],
+      ['Reinforce the habit', ['Encourage team members to bring back examples', 'Create repeatable AI behaviors', 'Keep the focus on real work']],
       ['Export and share', ['Export role and custom learning plans', 'Share the plan with facilitators and team members']],
     ],
     primary: 'Go to Role Path',
@@ -127,7 +127,7 @@ const personaOnboarding = {
     cards: [
       ['Prepare the session', ['Select the Huddle topic', 'Review the outcome and activities', 'Use the facilitator workspace to prepare']],
       ['Guide the conversation', ['Use the Huddle flow', 'Facilitate around real work', 'Connect AI to workflow outcomes']],
-      ['Practise with prompts', ['Use recommended prompts', 'Copy prompts into the relevant AI experience', 'Encourage experimentation and sharing']],
+      ['Practice with prompts', ['Use recommended prompts', 'Copy prompts into the relevant AI experience', 'Encourage experimentation and sharing']],
       ['Capture and follow up', ['Add facilitator notes', 'Save progress', 'Export HTML or PowerPoint materials where available']],
     ],
     primary: 'Open Role Path',
@@ -139,7 +139,7 @@ const personaOnboarding = {
     cards: [
       ['Understand the journey', ['Start with orientation', 'Follow the role path', 'Continue through all topics']],
       ['Join Huddles', ['Take part in weekly discussions', 'Share wins and friction points', 'Learn from team examples']],
-      ['Practise AI in real work', ['Try recommended prompts', 'Apply AI to common workflows', 'Bring back examples and outcomes']],
+      ['Practice AI in real work', ['Try recommended prompts', 'Apply AI to common workflows', 'Bring back examples and outcomes']],
       ['Build lasting habits', ['Repeat what works', 'Save useful prompts', 'Use AI as part of everyday work']],
     ],
     primary: 'Start Role Path',
@@ -249,8 +249,8 @@ function WeeklyRhythm({ plan }: { plan: RoleActionPlan }) {
 
 function ThinkFeelDo() {
   const nodes = [
-    { label: 'THINK', title: 'Adopt a Frontier Mindset', detail: 'Be curious, adaptive, human-centred, and outcome-oriented. See AI as a transformation lever and learn as Customer Zero.', color: '#8DC8E8', text: '#184C6A', pos: 'left-1/2 top-0 -translate-x-1/2' },
-    { label: 'DO', title: 'Apply AI in Real Work', detail: 'Practise inside real workflows, use useful prompts, experiment with the team, and build reusable patterns.', color: '#0A6BBA', text: '#FFFFFF', pos: 'right-0 bottom-3' },
+    { label: 'THINK', title: 'Adopt a Frontier Mindset', detail: 'Be curious, adaptive, human-centered, and outcome-oriented. See AI as a transformation lever and learn as Customer Zero.', color: '#8DC8E8', text: '#184C6A', pos: 'left-1/2 top-0 -translate-x-1/2' },
+    { label: 'DO', title: 'Apply AI in Real Work', detail: 'Practice inside real workflows, use useful prompts, experiment with the team, and build reusable patterns.', color: '#0A6BBA', text: '#FFFFFF', pos: 'right-0 bottom-3' },
     { label: 'FEEL', title: 'Build Confidence', detail: 'Share wins, lessons, and friction. Repeated practice builds confidence, momentum, and clarity.', color: '#92D3C6', text: '#224E46', pos: 'left-0 bottom-3' },
   ];
 
@@ -279,7 +279,7 @@ function ThinkFeelDo() {
             <p className="mt-0 max-h-0 overflow-hidden text-xs leading-5 opacity-0 transition-all duration-300 group-hover:mt-3 group-hover:max-h-32 group-hover:opacity-90">{node.detail}</p>
           </motion.article>)}
           {/* Clockwise cycle arrows (Think -> Do -> Feel -> Think), drawn as arcs on a circle around the
-              loop's centre so each sits in the gap between two cards and points at the next step. */}
+              loop's center so each sits in the gap between two cards and points at the next step. */}
           <svg className="pointer-events-none absolute left-1/2 top-0 h-[430px] w-[400px] -translate-x-1/2" viewBox="0 0 400 430" fill="none" aria-hidden="true">
             <defs>
               {[['think-do', '#0A6BBA'], ['do-feel', '#287C70'], ['feel-think', '#5B93B1']].map(([id, color]) => (
@@ -444,6 +444,6 @@ export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRo
 
     <section className="grid gap-5 xl:grid-cols-2"><div className="overflow-hidden rounded-[26px] border border-[#DCE5EC] bg-white"><div className="bg-gradient-to-r from-[#EEF7FC] to-white p-7"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#0A6BBA]">Before you begin</p><h2 className="mt-2 text-2xl font-semibold text-[#16233A]">Readiness checklist</h2><p className="mt-2 text-sm text-[#647185]">Complete these steps before your first role-based Huddle.</p></div><div className="grid gap-3 p-6 sm:grid-cols-2">{readiness.map(([title,step])=><div key={title} className="flex gap-3 rounded-2xl border border-[#E1E7ED] p-4"><div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E7F6EA]"><Check className="h-4 w-4 text-[#24863A]"/></div><div><p className="text-sm font-semibold text-[#24344C]">{title}</p><p className="mt-1 text-xs text-[#8793A2]">{step}</p></div></div>)}</div></div><div className="overflow-hidden rounded-[26px] border border-[#DCE5EC] bg-white"><div className="bg-gradient-to-r from-[#F4EEFC] to-[#EEF8F2] p-7"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#5E45A8]">Success looks like</p><h2 className="mt-2 text-2xl font-semibold text-[#16233A]">Practical, repeatable adoption</h2><p className="mt-2 text-sm text-[#647185]">The motion is successful when team members change how work gets done.</p></div><div className="grid gap-3 p-6 sm:grid-cols-2">{successSignals.map(([title,body,Icon],i)=><div key={title} className={`${i===4?'sm:col-span-2':''} flex gap-3 rounded-2xl border border-[#E1E7ED] p-4`}><div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#F0E9FA]"><Icon className="h-4 w-4 text-[#6743B5]"/></div><div><p className="text-sm font-semibold text-[#24344C]">{title}</p><p className="mt-1 text-xs leading-5 text-[#647185]">{body}</p></div></div>)}</div></div></section>
 
-    <section className="rounded-[28px] border border-[#C9DDE9] bg-gradient-to-br from-[#193B63] to-[#2A446F] p-7 text-white md:p-9"><div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#BFE2F5]">Weekly Huddle Rhythm</p><h2 className="mt-2 text-3xl font-semibold">A continuous loop from reflection to action</h2><p className="mt-2 text-sm leading-6 text-white/70">Each Huddle picks up where the previous one ended. Teams reflect, practise, commit, and bring real examples back into the next conversation.</p></div><div className="mx-auto mt-8 hidden h-[500px] max-w-[780px] lg:block"><div className="relative h-full"><motion.div animate={{rotate:360}} transition={{duration:34,repeat:Infinity,ease:'linear'}} className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/35"/><div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-white/20 bg-white/10 text-center backdrop-blur"><Repeat2 className="h-6 w-6 text-[#92D3C6]"/><p className="mt-2 text-sm font-semibold">Team rhythm</p><p className="mt-1 px-3 text-xs leading-5 text-white/65">Learn, apply, bring back, repeat.</p></div>{rhythm.map(([title,body],i)=>{const positions=['left-1/2 top-0 -translate-x-1/2','right-[2%] top-[22%]','right-[8%] bottom-[10%]','left-1/2 bottom-0 -translate-x-1/2','left-[8%] bottom-[10%]','left-[2%] top-[22%]'];return <motion.div whileHover={{scale:1.04}} key={title} className={`absolute w-[205px] rounded-[20px] border border-white/15 bg-white/[.08] p-4 backdrop-blur ${positions[i]}`}><span className="text-[10px] font-bold text-[#92D3C6]">0{i+1}</span><p className="mt-2 font-semibold">{title}</p><p className="mt-1 text-xs leading-5 text-white/65">{body}</p></motion.div>})}</div></div><div className="mt-7 grid gap-3 sm:grid-cols-2 lg:hidden">{rhythm.map(([t,b],i)=><div key={t} className="rounded-2xl border border-white/12 bg-white/[.07] p-4"><span className="text-xs font-bold text-[#92D3C6]">0{i+1}</span><p className="mt-3 font-semibold">{t}</p><p className="mt-2 text-xs leading-5 text-white/70">{b}</p></div>)}</div></section>
+    <section className="rounded-[28px] border border-[#C9DDE9] bg-gradient-to-br from-[#193B63] to-[#2A446F] p-7 text-white md:p-9"><div className="max-w-3xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#BFE2F5]">Weekly Huddle Rhythm</p><h2 className="mt-2 text-3xl font-semibold">A continuous loop from reflection to action</h2><p className="mt-2 text-sm leading-6 text-white/70">Each Huddle picks up where the previous one ended. Teams reflect, practice, commit, and bring real examples back into the next conversation.</p></div><div className="mx-auto mt-8 hidden h-[500px] max-w-[780px] lg:block"><div className="relative h-full"><motion.div animate={{rotate:360}} transition={{duration:34,repeat:Infinity,ease:'linear'}} className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/35"/><div className="absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-white/20 bg-white/10 text-center backdrop-blur"><Repeat2 className="h-6 w-6 text-[#92D3C6]"/><p className="mt-2 text-sm font-semibold">Team rhythm</p><p className="mt-1 px-3 text-xs leading-5 text-white/65">Learn, apply, bring back, repeat.</p></div>{rhythm.map(([title,body],i)=>{const positions=['left-1/2 top-0 -translate-x-1/2','right-[2%] top-[22%]','right-[8%] bottom-[10%]','left-1/2 bottom-0 -translate-x-1/2','left-[8%] bottom-[10%]','left-[2%] top-[22%]'];return <motion.div whileHover={{scale:1.04}} key={title} className={`absolute w-[205px] rounded-[20px] border border-white/15 bg-white/[.08] p-4 backdrop-blur ${positions[i]}`}><span className="text-[10px] font-bold text-[#92D3C6]">0{i+1}</span><p className="mt-2 font-semibold">{title}</p><p className="mt-1 text-xs leading-5 text-white/65">{body}</p></motion.div>})}</div></div><div className="mt-7 grid gap-3 sm:grid-cols-2 lg:hidden">{rhythm.map(([t,b],i)=><div key={t} className="rounded-2xl border border-white/12 bg-white/[.07] p-4"><span className="text-xs font-bold text-[#92D3C6]">0{i+1}</span><p className="mt-3 font-semibold">{t}</p><p className="mt-2 text-xs leading-5 text-white/70">{b}</p></div>)}</div></section>
   </motion.section>;
 }
