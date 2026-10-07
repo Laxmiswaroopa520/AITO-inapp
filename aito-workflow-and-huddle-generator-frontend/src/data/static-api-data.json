@@ -178342,13 +178342,10 @@
       "DCSA-ORIENT": {
         "placementExternalId": "DCSA-ORIENT",
         "roleTopicName": "Frontier Accelerator Orientation",
-<<<<<<< HEAD
+
         "roleTopicDescription": "Get grounded in the huddle motion: understand why it matters, what to expect, where AI may add value in your work, and how to participate and prepare for each huddle.",
-        "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the centre of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
-=======
-        "roleTopicDescription": "Introduce the eight-week huddle motion: why Frontier Accelerator exists, what happens in a thirty-minute huddle, the five roles that make it work, and what is expected of you between sessions.",
         "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
->>>>>>> origin/main
+
         "externalId": "WF-ORIENT-01",
         "name": "Frontier Accelerator Orientation",
         "description": "Introduces the motion, the huddle format, the AI tools in scope, and what team members are expected to try between sessions.",
@@ -180642,13 +180639,10 @@
       "PSS-ORIENT": {
         "placementExternalId": "PSS-ORIENT",
         "roleTopicName": "Frontier Accelerator Orientation",
-<<<<<<< HEAD
+
         "roleTopicDescription": "Get grounded in the huddle motion: understand why it matters, what to expect, where AI may add value in your work, and how to participate and prepare for each huddle.",
-        "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the centre of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
-=======
-        "roleTopicDescription": "Introduce the eight-week huddle motion: why Frontier Accelerator exists, what happens in a thirty-minute huddle, the five roles that make it work, and what is expected of you between sessions.",
         "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
->>>>>>> origin/main
+
         "externalId": "WF-ORIENT-01",
         "name": "Frontier Accelerator Orientation",
         "description": "Introduces the motion, the huddle format, the AI tools in scope, and what team members are expected to try between sessions.",
