@@ -7,13 +7,13 @@ import { huddleQueryKeys } from "./huddleQueryKeys";
 /**
  * The role list backing the Huddle audience picker and the All Topics filter.
  *
- * This used to be derived from the full Huddle catalogue read (every published topic's roles,
+ * This used to be derived from the full Huddle catalog read (every published topic's roles,
  * deduplicated client-side), which meant the audience dropdown could not render until the
- * heaviest read on the page finished -- the catalogue query joins topics, phases, activities,
+ * heaviest read on the page finished -- the catalog query joins topics, phases, activities,
  * agents and facilitator guides across dozens of rows, while the role list itself is eight
  * stable reference rows. Reading `/api/roles` directly (the same endpoint the Workflow builder
  * already uses) makes the audience picker render as soon as its own tiny request completes,
- * independent of how long the catalogue takes.
+ * independent of how long the catalog takes.
  */
 export function useHuddleAudienceRoles(): UseQueryResult<HuddleRoleResponse[], Error> {
   const apiClient = useApiClient();

@@ -4,7 +4,7 @@
  * CSS display size, which keeps the export around 70 KB instead of the 1.1 MB the
  * reference file carried.
  *
- * Agent artwork is matched on the agent name because the Huddle catalogue has no
+ * Agent artwork is matched on the agent name because the Huddle catalog has no
  * logo column yet. Move this to a HuddleAgent field once the content model has one.
  */
 

@@ -1,5 +1,5 @@
 /**
- * Behaviour for the downloadable Huddle guide: tab and Previous/Next navigation,
+ * Behavior for the downloadable Huddle guide: tab and Previous/Next navigation,
  * the clickable AI-in-Action stage cards, and prompt copy buttons. Mirrors the
  * Frontier Accelerator reference export so a downloaded guide behaves identically.
  */

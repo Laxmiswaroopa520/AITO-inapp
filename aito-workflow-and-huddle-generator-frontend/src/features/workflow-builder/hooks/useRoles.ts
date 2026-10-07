@@ -34,7 +34,7 @@ export function useRoles():
     /*
      * Roles are small, stable reference data. Do not bind this request to the
      * temporary observer AbortSignal: React StrictMode intentionally mounts,
-     * unmounts, and remounts the page in development, and cancelling this
+     * unmounts, and remounts the page in development, and canceling this
      * startup request can otherwise leave the replacement screen waiting while
      * a debugger is paused on the expected OperationCanceledException.
      */
