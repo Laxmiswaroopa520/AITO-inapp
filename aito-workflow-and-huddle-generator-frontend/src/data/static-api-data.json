@@ -83,8 +83,17 @@
         "name": "Digital Account Executive",
         "abbreviation": "DAE",
         "segment": "SME&C",
-        "description": null,
+        "description": "Manages a high-volume portfolio of SME&C accounts through digital-first, scaled sales motions.",
         "sortOrder": 9
+      },
+      {
+        "id": 15,
+        "externalId": "ce-smec",
+        "name": "Commercial Executive (SME&C)",
+        "abbreviation": "SMEC-CE",
+        "segment": "SME&C",
+        "description": null,
+        "sortOrder": 10
       },
       {
         "id": 10,
@@ -92,8 +101,8 @@
         "name": "Digital Solution Area Specialist",
         "abbreviation": "DSS",
         "segment": "SME&C",
-        "description": null,
-        "sortOrder": 10
+        "description": "Drives solution-area opportunities for SME&C customers through scaled, digital engagement models.",
+        "sortOrder": 11
       },
       {
         "id": 11,
@@ -101,8 +110,8 @@
         "name": "Digital Solution Engineer",
         "abbreviation": "DSE",
         "segment": "SME&C",
-        "description": null,
-        "sortOrder": 11
+        "description": "Leads technical discovery and solution demonstrations for SME&C accounts through digital-first engagements.",
+        "sortOrder": 12
       },
       {
         "id": 12,
@@ -110,8 +119,8 @@
         "name": "Digital Cloud Solution Architect",
         "abbreviation": "DCSA",
         "segment": "SME&C",
-        "description": null,
-        "sortOrder": 12
+        "description": "Designs and validates cloud and AI architectures for SME&C customers at scale.",
+        "sortOrder": 13
       },
       {
         "id": 13,
@@ -119,8 +128,8 @@
         "name": "Partner Solution Sales",
         "abbreviation": "PSS",
         "segment": "SME&C",
-        "description": null,
-        "sortOrder": 13
+        "description": "Drives solution sales and pipeline growth for SME&C customers through the partner channel.",
+        "sortOrder": 14
       },
       {
         "id": 14,
@@ -9398,6 +9407,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -9887,6 +9903,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -10721,6 +10744,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -11120,6 +11150,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -11556,6 +11593,13 @@
             "abbreviation": "CE",
             "segment": "Enterprise",
             "description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           }
         ],
         "primaryAgents": [
@@ -12110,6 +12154,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -12503,6 +12554,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -15403,6 +15461,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -17478,6 +17543,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -17854,6 +17926,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -18275,6 +18354,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -20753,6 +20839,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -21235,6 +21328,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -22896,6 +22996,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -23380,6 +23487,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -23783,6 +23897,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -24189,6 +24310,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -26230,6 +26358,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -26945,6 +27080,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -27038,6 +27180,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -27531,6 +27680,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -27935,6 +28091,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -28343,6 +28506,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -28727,6 +28897,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -29185,6 +29362,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -29556,6 +29740,13 @@
             "abbreviation": "CE",
             "segment": "Enterprise",
             "description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           }
         ],
         "primaryAgents": [
@@ -29884,6 +30075,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -31531,6 +31729,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -32930,6 +33135,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -33414,6 +33626,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -34316,6 +34535,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -35228,6 +35454,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -35640,6 +35873,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -37004,6 +37244,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -37537,6 +37784,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -37956,6 +38210,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -38370,6 +38631,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -38771,7 +39039,7 @@
         "durationMinutes": 30,
         "recommendationPriority": null,
         "audienceDescription": null,
-        "desiredOutcome": "CEs know how the motion works, which tools may show up, and what to try before the next session.",
+        "desiredOutcome": "You know how the motion works, what happens in each huddle, what is expected of you between sessions, and you leave with one thing to try before the next one.",
         "roles": [
           {
             "externalId": "ae-ent",
@@ -38829,6 +39097,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -38860,8 +39135,8 @@
         "placementExternalId": "SMEC-CE-ORIENT",
         "featuredActivityCount": 0,
         "extendedActivityCount": 0,
-        "roleTopicName": "Frontier Accelerator Orientation for Commercial Executives in SME&C",
-        "roleTopicDescription": "Introduce the eight-session motion, where AI reduces the commercial research and preparation load across a book of agreements rather than a handful, and what to bring back each week."
+        "roleTopicName": "Frontier Accelerator Orientation",
+        "roleTopicDescription": "Introduce the eight-week huddle motion: why Frontier Accelerator exists, what happens in a thirty-minute huddle, the five roles that make it work, and what is expected of you between sessions."
       },
       "SMEC-CE-RENEW": {
         "externalId": "WF-X-RENEW-01",
@@ -38901,6 +39176,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -39322,6 +39604,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -39762,6 +40051,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -40762,6 +41058,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -41252,6 +41555,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -42155,6 +42465,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -42528,6 +42845,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -43468,6 +43792,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -44283,6 +44614,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -44796,6 +45134,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -45139,6 +45484,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -45568,6 +45920,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -45961,6 +46320,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -46400,6 +46766,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -46884,6 +47257,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -47418,6 +47798,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -47815,6 +48202,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -51776,6 +52170,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -52976,6 +53377,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -53433,6 +53841,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -54754,6 +55169,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -55081,6 +55503,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -55939,6 +56368,13 @@
             "abbreviation": "CE",
             "segment": "Enterprise",
             "description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           }
         ],
         "primaryAgents": [
@@ -56214,6 +56650,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -56546,6 +56989,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -56998,6 +57448,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -57731,6 +58188,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -58160,6 +58624,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -58733,6 +59204,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -59185,6 +59663,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -59515,6 +60000,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -59960,6 +60452,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -60852,6 +61351,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -61195,6 +61701,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -61542,6 +62055,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -61885,6 +62405,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -62232,6 +62759,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -62575,6 +63109,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -68917,6 +69458,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -69886,6 +70434,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -71497,6 +72052,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -72341,6 +72903,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -73415,6 +73984,13 @@
             "abbreviation": "CE",
             "segment": "Enterprise",
             "description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           }
         ],
         "audienceDescription": null,
@@ -75154,6 +75730,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -75932,6 +76515,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -85759,6 +86349,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -90985,6 +91582,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -92385,6 +92989,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -93543,6 +94154,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -98859,6 +99477,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -99860,6 +100485,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -103543,6 +104175,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -104517,6 +105156,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -105508,6 +106154,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -106416,6 +107069,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -110662,6 +111322,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -112328,6 +112995,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -112503,6 +113177,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -113476,6 +114157,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -114317,6 +115005,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -115505,6 +116200,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -116664,6 +117366,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -117621,6 +118330,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -118567,6 +119283,13 @@
             "abbreviation": "CE",
             "segment": "Enterprise",
             "description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           }
         ],
         "audienceDescription": null,
@@ -119645,6 +120368,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -123238,6 +123968,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -125893,6 +126630,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -127174,6 +127918,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -129414,6 +130165,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -131416,6 +132174,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -132273,6 +133038,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -136393,6 +137165,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -137756,6 +138535,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -138943,6 +139729,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -139979,6 +140772,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -141148,9 +141948,9 @@
       },
       "SMEC-CE-ORIENT": {
         "placementExternalId": "SMEC-CE-ORIENT",
-        "roleTopicName": "Frontier Accelerator Orientation for Commercial Executives in SME&C",
-        "roleTopicDescription": "Introduce the eight-session motion, where AI reduces the commercial research and preparation load across a book of agreements rather than a handful, and what to bring back each week.",
-        "wiifm": "Commercial work here is spread across far more agreements than anyone can inspect individually, and much of it transacts through a partner. This is about getting the research time back.",
+        "roleTopicName": "Frontier Accelerator Orientation",
+        "roleTopicDescription": "Introduce the eight-week huddle motion: why Frontier Accelerator exists, what happens in a thirty-minute huddle, the five roles that make it work, and what is expected of you between sessions.",
+        "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
         "externalId": "WF-ORIENT-01",
         "name": "Frontier Accelerator Orientation",
         "description": "Introduces the motion, the huddle format, the AI tools in scope, and what team members are expected to try between sessions.",
@@ -141217,6 +142017,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -141242,10 +142049,10 @@
           }
         ],
         "audienceDescription": null,
-        "todayObjective": "Understand how the CE path runs in this segment and where the human checkpoints protect commercial and policy judgment.",
+        "todayObjective": "Understand how the huddle motion runs, what you are being asked to do each week, and where your own judgment stays yours.",
         "useCase": null,
         "whyItMatters": "Eight weeks of huddles only works if everyone understands what is being asked, what good participation looks like, and where human judgment stays non-negotiable.",
-        "desiredOutcome": "CEs know how the motion works, which tools may show up, and what to try before the next session.",
+        "desiredOutcome": "You know how the motion works, what happens in each huddle, what is expected of you between sessions, and you leave with one thing to try before the next one.",
         "stepsToGetStarted": [],
         "mcemStages": [],
         "primaryAgents": [],
@@ -141277,36 +142084,18 @@
           }
         ],
         "facilitatorGuide": {
-          "sessionIntroduction": "Eight sessions, each built around one part of the commercial job rather than one tool. This first one is about what is being asked and what is not.",
-          "keyTalkingPoints": [
-            "The motion is about better workflow with human judgment kept explicit, not tool adoption. Every activity names a human checkpoint - the judgment that is not delegated. In this segment the commercial role covers enrollments, renewals and commercial strategy across a large book, and a substantial share transacts through a partner rather than directly. Facilitator note: Sales Agent is not available in GCC or DoD, and policy and licensing interpretation always routes to the authoritative owner rather than to any agent."
-          ],
-          "discussionQuestions": [
-            "How much of your week goes to assembling commercial context rather than deciding anything with it?",
-            "How many agreements are you responsible for, and how many did you look at last month?",
-            "What have you already tried with AI, and what happened?"
-          ],
-          "suggestedTransitions": [
-            "Move from the discussion to the one thing each person will try before the next session."
-          ],
-          "wrapUpGuidance": "Close by having each person name the account they will run the baseline task against.",
-          "preparationChecklist": [
-            "Before the session: no preparation needed. Bring one piece of commercial work that took longer than it should have."
-          ],
-          "facilitatorQuestions": [
-            "What is the commercial work that does not scale to a book this size?",
-            "Where would you never want an AI answer?",
-            "What would make you distrust an output?"
-          ],
-          "listenFor": [
-            "Listen for expectations that an agent will interpret policy, for scepticism worth taking seriously, and for workflows that are already broken without AI."
-          ],
-          "fallbackGuidance": "If the group is quiet, ask what commercial question they answered most often last month.",
-          "reflectPrompt": "Which part of your commercial week would you most like to stop doing manually?",
-          "commitPrompt": "Before the next huddle, open Sales Agent and ask it to summarize the agreement position on one account in your book you have not looked at this quarter. Note one thing you did not know and one thing it got wrong.",
-          "bringBackEvidence": [
-            "Bring the account, the thing you did not know, and the thing it got wrong. The failure is the more useful half."
-          ]
+          "sessionIntroduction": "This is the first of eight huddles, and the one with no AI activity in it. Today is about what the motion is and what it asks of you. Frontier Accelerator exists because we are asking customers to reshape how they work around AI, and that argument is stronger when we have done it ourselves first. That is what Customer Zero means here: we apply these tools to our own real work, and we are straight about where they help and where they do not.",
+          "keyTalkingPoints": "Weekly and short, led by the manager with a facilitator. The cadence carries the motion, so if the slot has to move, move it rather than drop it.\nFour principles hold every week: keep the weekly rhythm, learn from what colleagues have actually tried, ground every session in real work rather than hypothetical scenarios, and try something between huddles so there is an experience to bring back.\nEvery huddle from next week runs to the same shape, and the agenda and timings are set out on the huddle page: a short framing of why the topic matters, then sharing what you tried since last time, then hands-on work on a real scenario, then a close where you pick the one thing you will carry into the week.\nFive roles make the motion work. The Leader connects it to strategy and clears barriers. The Manager owns the huddle and opens with the why. The Facilitator runs it and draws every voice in. The Team Member experiments in their own workflow and brings back wins and friction. The Coach reviews patterns across huddles and feeds insight back.\nThe journey ahead: this week you get grounded, weeks two to eight you build the habit on real work, week nine the team decides which habits stick and what comes next, and from week ten you choose your own topics.\nYou are here as a peer, not an expert. You do not need prior AI experience, and “I do not know” is a good answer.\nTwo things on feedback. The facilitator posts one question in the chat each week, asking how useful the huddle was on a scale of one to ten. Huddle transcripts are reviewed for themes to improve the sessions, so keep confidential detail out of the room, whether that is customer, partner, enrollment or commercial, and put product problems into the tool's own feedback control rather than here.",
+          "discussionQuestions": "Which part of your week is assembling information rather than deciding anything?\nWhere do you already use AI, and where have you deliberately avoided it?\nWhat would you need to see before you trusted an AI-drafted output in front of a customer?\nWhat would make thirty minutes a week worth protecting for this?",
+          "suggestedTransitions": "Move from how the motion works to the recurring work each person will map with the discovery prompt this week.",
+          "wrapUpGuidance": "Close by pointing the team to the resources for next week's topic and to the discovery prompt below. Week one is for finding the recurring work worth handing to AI. Post the usefulness question in the chat before people leave.",
+          "preparationChecklist": "Before the session: complete the baseline survey if it has been sent to you, confirm the huddle series is on your calendar, confirm you can open at least one of the tools named for your path, since the commitment at the end of this session runs in one of them, and come ready to describe the work you repeat most weeks. If your access is blocked, come anyway and say so, because that is a different problem from not being interested. No prior AI experience is needed for this session.",
+          "facilitatorQuestions": "Which work do you repeat every week without ever thinking of it as a workflow?\nWhich of those steps is assembling information rather than making a decision?\nWhere does your judgment have to stay human no matter how good the output gets?\nWhat would have to happen in these thirty minutes for you to want the next one?",
+          "listenFor": "Listen for unvoiced skepticism, for access blockers stated as disinterest, and for the assumption that this is a tool rollout. Listen for people describing only their exceptional work rather than the work they repeat, because the recurring and unglamorous tasks are the ones worth mapping. Listen for anyone who thinks they need to be an AI expert to take part, and correct that in the room.",
+          "fallbackGuidance": "If tool access is not confirmed, still run the conversation and record access blockers separately from interest, since they need different fixes. The discovery prompt runs in whichever tool the person already has. If the room stays quiet, start with your own example of work you repeat every week.",
+          "reflectPrompt": "Which part of your week had you never thought of as a workflow until now? What would have to be true before you trusted AI with it?",
+          "commitPrompt": "Run this in Microsoft 365 Copilot, Cowork, or Scout before the next huddle, then bring the result to the session:\n\n“I am a [your role] at Microsoft and I want to find the recurring work in my week that AI could take on.\n1. First, look at my calendar, mail and Teams activity from the last four weeks and tell me what you can see about where my time actually goes. If you cannot access that data, say so and move to step 2 rather than guessing.\n2. Then ask me up to five short questions, one at a time, to cover the work that never shows up in a calendar or an inbox.\n3. Then list the five things I do most often. For each one give an estimate of the time it costs me per month, whether it is best handled as a saved prompt, a reusable skill, a scheduled automation or an existing agent, and the one judgment that must stay mine.\n4. Rank them by time returned and tell me which one to start with.”",
+          "bringBackEvidence": "Bring the ranked list of the five things you repeat most, which of them looked like a prompt, skill, automation or agent fit, and any AI experience from the week, including anything that did not work."
         },
         "topicResources": [],
         "reflectionPrompt": null,
@@ -141369,6 +142158,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -142500,6 +143296,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -142913,7 +143716,7 @@
                   "3. For anything you decide, confirm it against current approved guidance rather than the agent's reading.",
                   "4. Pick the single element where your input changes the outcome most."
                 ],
-                "whyThisMatters": "The most common way commercial effort is wasted in this segment is spending it on decisions that belong to somebody else. Mapping authority first is the cheapest work available.",
+                "whyThisMatters": "Commercial effort in this segment gets spent on decisions that belong to somebody else. Mapping authority first is the cheapest work available.",
                 "launchUrl": "https://aka.ms/SalesM365",
                 "launchLabel": "Open Sales Agent",
                 "prerequisiteActivityExternalId": null,
@@ -143077,7 +143880,7 @@
                   "3. Route every policy, eligibility and pricing flag to the authoritative owner before comparing._x000D_",
                   "4. Choose the structure that is best among the transactable ones, not best in the abstract."
                 ],
-                "whyThisMatters": "Structures are usually compared on commercial merit and then discovered to be untransactable through the route in play. Applying that filter first changes which option wins.",
+                "whyThisMatters": "Structures get compared on commercial merit and then discovered to be untransactable through the route in play. Applying that filter first changes which option wins.",
                 "launchUrl": "https://aka.ms/SalesM365",
                 "launchLabel": "Open Sales Agent",
                 "prerequisiteActivityExternalId": "SMEC-CE-DEAL-01",
@@ -143194,15 +143997,10 @@
                 "bestFitJob": "Partner enablement",
                 "practiceTier": "Featured",
                 "executionMethod": "Both",
-                "activitySteps": [
-                  "1. Open Sales Agent, paste the prompt, and replace both bracketed sections._x000D_",
-                  "2. Check the draft against the CELA rules before it goes anywhere: no personal data, no seat or spend detail, nothing resembling an export._x000D_",
-                  "3. Read it as the partner would - if it only makes sense with your explanation attached, it is not finished._x000D_",
-                  "4. Send it through your normal partner channel."
-                ],
+                "activitySteps": "1. Open Cowork, paste the prompt, and replace both bracketed sections.\n2. Check the draft against the CELA rules before it goes anywhere: no personal data, no seat or spend detail, nothing resembling an export.\n3. Read it as the partner would - if it only makes sense with your explanation attached, it is not finished.\n4. Send it through your normal partner channel.",
                 "whyThisMatters": "A structure a partner cannot explain will not be sold, whatever its merits. Enablement is the actual lever when somebody else transacts.",
-                "launchUrl": "https://aka.ms/SalesM365",
-                "launchLabel": "Open Sales Agent",
+                "launchUrl": "https://m365.cloud.microsoft/cowork",
+                "launchLabel": "Open Cowork",
                 "prerequisiteActivityExternalId": "SMEC-CE-DEAL-01",
                 "prerequisiteActivityName": "Separate what you decide from what you recommend",
                 "agents": [
@@ -143604,7 +144402,7 @@
         "placementExternalId": "SMEC-CE-HEALTH",
         "roleTopicName": "Spot Commercial Risk Across the Portfolio",
         "roleTopicDescription": "Find the commercial exposure hiding in a portfolio of agreements too large to review individually, and decide which of it is worth acting on now.",
-        "wiifm": "Commercial problems in this segment are rarely dramatic. They are small, numerous, and discovered at renewal, when the options have gone.",
+        "wiifm": "Commercial problems in this segment are not dramatic. They are small, numerous, and discovered at renewal, when the options have gone.",
         "externalId": "WF-X-HEALTH-01",
         "name": "Assess Health and Prioritize Risk",
         "description": "Find the risk that matters most right now, and decide what to do about it while it is still cheap.",
@@ -143662,6 +144460,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -144535,15 +145340,10 @@
                 "bestFitJob": "Escalation",
                 "practiceTier": "Extended",
                 "executionMethod": "Both",
-                "activitySteps": [
-                  "1. Open Sales Agent, paste the prompt, and replace the bracketed sections with your finding._x000D_",
-                  "2. Check the account count yourself rather than accepting it._x000D_",
-                  "3. Remove anything that reads as you deciding the policy - that is not your call and framing it that way gets it dismissed._x000D_",
-                  "4. Send it to the policy owner with the evidence attached."
-                ],
+                "activitySteps": "1. Open Cowork, paste the prompt, and replace the bracketed sections with your finding.\n2. Check the account count yourself rather than accepting it.\n3. Remove anything that reads as you deciding the policy - that is not your call and framing it that way gets it dismissed.\n4. Send it to the policy owner with the evidence attached.",
                 "whyThisMatters": "A repeated exception is either a policy that needs changing or a practice that needs stopping. Neither gets resolved while it stays visible only to the person granting it.",
-                "launchUrl": "https://aka.ms/SalesM365",
-                "launchLabel": "Open Sales Agent",
+                "launchUrl": "https://m365.cloud.microsoft/cowork",
+                "launchLabel": "Open Cowork",
                 "prerequisiteActivityExternalId": "SMEC-CE-HEALTH-02",
                 "prerequisiteActivityName": "Find the exception you have granted more than once",
                 "agents": [
@@ -146979,6 +147779,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -148132,6 +148939,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -150212,6 +151026,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -150970,6 +151791,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -152750,6 +153578,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -154461,6 +155296,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -155313,6 +156155,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -156213,6 +157062,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -157183,6 +158039,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -158002,6 +158865,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -158895,6 +159765,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -159804,6 +160681,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -161121,6 +162005,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -162052,6 +162943,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -175399,9 +176297,8 @@
       "DSE-ORIENT": {
         "placementExternalId": "DSE-ORIENT",
         "roleTopicName": "Frontier Accelerator Orientation",
-       "roleTopicDescription": "Get grounded in the huddle motion: understand why it matters, what to expect, where AI may add value in your work, and how to participate and prepare for each huddle.",
-"wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
-        
+        "roleTopicDescription": "Get grounded in the huddle motion: understand why it matters, what to expect, where AI may add value in your work, and how to participate and prepare for each huddle.",
+        "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
         "externalId": "WF-ORIENT-01",
         "name": "Frontier Accelerator Orientation",
         "description": "Introduces the motion, the huddle format, the AI tools in scope, and what team members are expected to try between sessions.",
@@ -175466,6 +176363,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -177652,6 +178556,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -178342,10 +179253,8 @@
       "DCSA-ORIENT": {
         "placementExternalId": "DCSA-ORIENT",
         "roleTopicName": "Frontier Accelerator Orientation",
-
         "roleTopicDescription": "Get grounded in the huddle motion: understand why it matters, what to expect, where AI may add value in your work, and how to participate and prepare for each huddle.",
         "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
-
         "externalId": "WF-ORIENT-01",
         "name": "Frontier Accelerator Orientation",
         "description": "Introduces the motion, the huddle format, the AI tools in scope, and what team members are expected to try between sessions.",
@@ -178410,6 +179319,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -180639,10 +181555,8 @@
       "PSS-ORIENT": {
         "placementExternalId": "PSS-ORIENT",
         "roleTopicName": "Frontier Accelerator Orientation",
-
         "roleTopicDescription": "Get grounded in the huddle motion: understand why it matters, what to expect, where AI may add value in your work, and how to participate and prepare for each huddle.",
         "wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
-
         "externalId": "WF-ORIENT-01",
         "name": "Frontier Accelerator Orientation",
         "description": "Introduces the motion, the huddle format, the AI tools in scope, and what team members are expected to try between sessions.",
@@ -180707,6 +181621,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -181423,6 +182344,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -182869,6 +183797,13 @@
             "abbreviation": "CE",
             "segment": "Enterprise",
             "description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           }
         ],
         "audienceDescription": null,
@@ -183513,6 +184448,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -184151,6 +185093,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -184911,6 +185860,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dss-smec",
@@ -186258,6 +187214,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -187092,6 +188055,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -188263,6 +189233,13 @@
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dse-smec",
             "name": "Digital Solution Engineer",
             "abbreviation": "DSE",
@@ -189013,6 +189990,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dss-smec",
             "name": "Digital Solution Area Specialist",
             "abbreviation": "DSS",
@@ -189711,6 +190695,13 @@
             "abbreviation": "SSP",
             "segment": "Enterprise",
             "description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations."
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dse-smec",
@@ -190463,6 +191454,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -192012,6 +193010,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -192691,6 +193696,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -193360,6 +194372,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -193976,6 +194995,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -194596,6 +195622,13 @@
             "segment": "SME&C"
           },
           {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
+          },
+          {
             "externalId": "dcsa-smec",
             "name": "Digital Cloud Solution Architect",
             "abbreviation": "DCSA",
@@ -195212,6 +196245,13 @@
             "name": "Digital Account Executive",
             "abbreviation": "DAE",
             "segment": "SME&C"
+          },
+          {
+            "externalId": "ce-smec",
+            "name": "Commercial Executive (SME&C)",
+            "abbreviation": "SMEC-CE",
+            "segment": "SME&C",
+            "description": null
           },
           {
             "externalId": "dcsa-smec",
@@ -197602,6 +198642,36 @@
         "WF-X-TECHLEAD-01": "CSA-TECHLEAD",
         "WF-X-PROOF-01": "DSE-PROOF"
       },
+      "ce-smec": {
+        "WF-X-PLAN-01": "AE-PLAN",
+        "WF-X-PIPE-01": "AE-PIPE-1",
+        "WF-X-OPP-01": "AE-OPP",
+        "WF-X-CONV-01": "AE-CONV",
+        "WF-X-ARCH-01": "ATS-TECH",
+        "WF-X-DISC-01": "SE-DISC",
+        "WF-X-HEALTH-01": "SMEC-CE-HEALTH",
+        "WF-X-DEAL-01": "SMEC-CE-DEAL",
+        "WF-X-VALUE-01": "SSP-VALUE",
+        "WF-X-RENEW-01": "SMEC-CE-RENEW",
+        "WF-X-ORCH-01": "SMEC-CE-ORCH",
+        "WF-X-POLICY-01": "SMEC-CE-POLICY",
+        "WF-X-ASSET-01": "SE-ASSET",
+        "WF-INVEST-01": "SMEC-CE-INVEST",
+        "WF-ORIENT-01": "SMEC-CE-ORIENT",
+        "WF-X-USECASE-01": "ALL-USECASE",
+        "WF-X-TRANSITION-01": "ALL-TRANSITION",
+        "WF-X-HANDOFF-01": "ALL-HANDOFF",
+        "WF-X-CONSUME-01": "CSA-PIPE",
+        "WF-X-SPONSOR-01": "ALL-SPONSOR",
+        "WF-X-FYPLAN-01": "ALL-FYPLAN",
+        "WF-X-CLOSE-01": "ALL-CLOSE",
+        "WF-X-SIGNAL-01": "DAE-SIGNAL",
+        "WF-X-PARTNER-01": "DAE-PARTNER",
+        "WF-X-TERRITORY-01": "DAE-TERRITORY",
+        "WF-X-VSAT-01": "CSA-VSAT",
+        "WF-X-TECHLEAD-01": "CSA-TECHLEAD",
+        "WF-X-PROOF-01": "DSE-PROOF"
+      },
       "dss-smec": {
         "WF-X-PLAN-01": "AE-PLAN",
         "WF-X-PIPE-01": "AE-PIPE-1",
@@ -198091,6 +199161,48 @@
           "topicExternalId": "WF-X-HEALTH-01"
         }
       ],
+      "ce-smec": [
+        {
+          "week": 1,
+          "placementExternalId": "SMEC-CE-ORIENT",
+          "topicExternalId": "WF-ORIENT-01"
+        },
+        {
+          "week": 2,
+          "placementExternalId": "SMEC-CE-RENEW",
+          "topicExternalId": "WF-X-RENEW-01"
+        },
+        {
+          "week": 3,
+          "placementExternalId": "SMEC-CE-DEAL",
+          "topicExternalId": "WF-X-DEAL-01"
+        },
+        {
+          "week": 4,
+          "placementExternalId": "SMEC-CE-HEALTH",
+          "topicExternalId": "WF-X-HEALTH-01"
+        },
+        {
+          "week": 5,
+          "placementExternalId": "SMEC-CE-POLICY",
+          "topicExternalId": "WF-X-POLICY-01"
+        },
+        {
+          "week": 6,
+          "placementExternalId": "SMEC-CE-NEG",
+          "topicExternalId": "WF-X-DEAL-01"
+        },
+        {
+          "week": 7,
+          "placementExternalId": "SMEC-CE-ORCH",
+          "topicExternalId": "WF-X-ORCH-01"
+        },
+        {
+          "week": 8,
+          "placementExternalId": "SMEC-CE-DEAL2",
+          "topicExternalId": "WF-X-DEAL-01"
+        }
+      ],
       "dss-smec": [
         {
           "week": 1,
@@ -198376,6 +199488,13 @@
         {
           "week": 1,
           "placementExternalId": "DAE-INVEST",
+          "topicExternalId": "WF-INVEST-01"
+        }
+      ],
+      "ce-smec": [
+        {
+          "week": 1,
+          "placementExternalId": "SMEC-CE-INVEST",
           "topicExternalId": "WF-INVEST-01"
         }
       ],

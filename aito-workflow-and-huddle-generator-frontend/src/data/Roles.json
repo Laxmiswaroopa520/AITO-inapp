@@ -76,7 +76,17 @@
     "Name": "Digital Account Executive",
     "Abbreviation": "DAE",
     "Segment": "SME&C",
+    "Description": "Manages a high-volume portfolio of SME&C accounts through digital-first, scaled sales motions.",
     "SortOrder": 9,
+    "IsActive": 1
+  },
+  {
+    "ExternalId": "ce-smec",
+    "Name": "Commercial Executive (SME&C)",
+    "Abbreviation": "SMEC-CE",
+    "Segment": "SME&C",
+    "Description": null,
+    "SortOrder": 10,
     "IsActive": 1
   },
   {
@@ -84,7 +94,8 @@
     "Name": "Digital Solution Area Specialist",
     "Abbreviation": "DSS",
     "Segment": "SME&C",
-    "SortOrder": 10,
+    "Description": "Drives solution-area opportunities for SME&C customers through scaled, digital engagement models.",
+    "SortOrder": 11,
     "IsActive": 1
   },
   {
@@ -92,7 +103,8 @@
     "Name": "Digital Solution Engineer",
     "Abbreviation": "DSE",
     "Segment": "SME&C",
-    "SortOrder": 11,
+    "Description": "Leads technical discovery and solution demonstrations for SME&C accounts through digital-first engagements.",
+    "SortOrder": 12,
     "IsActive": 1
   },
   {
@@ -100,7 +112,8 @@
     "Name": "Digital Cloud Solution Architect",
     "Abbreviation": "DCSA",
     "Segment": "SME&C",
-    "SortOrder": 12,
+    "Description": "Designs and validates cloud and AI architectures for SME&C customers at scale.",
+    "SortOrder": 13,
     "IsActive": 1
   },
   {
@@ -108,7 +121,8 @@
     "Name": "Partner Solution Sales",
     "Abbreviation": "PSS",
     "Segment": "SME&C",
-    "SortOrder": 13,
+    "Description": "Drives solution sales and pipeline growth for SME&C customers through the partner channel.",
+    "SortOrder": 14,
     "IsActive": 1
   },
   {
