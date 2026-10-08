@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router";
 import aitoLogo from "@/assets/AITO New Logo.png";
 import { Button } from "@/components/ui/button";
 import { HuddleExperienceSelector } from "@/features/huddle/components/onboarding";
-import { huddlePersonaAtom, huddleViewModeAtom } from "@/features/huddle/store";
+import { huddlePersonaAtom, huddleViewModeAtom, selectedHuddleExternalIdAtom } from "@/features/huddle/store";
 import type { HuddlePersona } from "@/features/huddle/types/huddlePersona.types";
 import { ModeToggle } from "./ModeToggle";
 import { UserMenu } from "./UserMenu";
@@ -20,10 +20,12 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [huddlePersona, setHuddlePersona] = useAtom(huddlePersonaAtom);
   const [, setHuddleViewMode] = useAtom(huddleViewModeAtom);
+  const [, setSelectedHuddleExternalId] = useAtom(selectedHuddleExternalIdAtom);
   const isHuddleRoute = location.pathname.startsWith("/huddle");
 
   const changeHuddleExperience = (value: string) => {
     setHuddlePersona(value as HuddlePersona);
+    setSelectedHuddleExternalId(null); // a topic picked under the previous role must not carry over
     setHuddleViewMode("orientation");
     setMobileMenuOpen(false);
     navigate("/huddle");

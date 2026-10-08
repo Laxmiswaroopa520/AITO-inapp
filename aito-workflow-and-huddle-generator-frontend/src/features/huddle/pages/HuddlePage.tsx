@@ -230,10 +230,12 @@ export function HuddlePage() {
   const changeViewMode = (mode: HuddleViewMode) => { setViewMode(mode); setSelectedExternalId(null); setSelectedCatalogSelection(null); setWorkspaceOpen(false); setPreviewOpen(false); };
   const selectPersona = (nextPersona: HuddlePersona) => {
     setPersona(nextPersona);
+    selectFromCatalog(null);
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   };
   const changePersona = () => {
     setPersona(null);
+    selectFromCatalog(null);
     setViewMode("orientation");
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   };
