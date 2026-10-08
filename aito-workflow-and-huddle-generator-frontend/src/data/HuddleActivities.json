@@ -7735,7 +7735,7 @@
     "ExpectedOutput": "Commercial elements separated by who actually decides them, with the one element worth your effort identified.",
     "HumanCheckpoint": "The CE decides where their input actually changes the outcome. Advising on an element the partner owns is effort that produces friction rather than a different deal, and only someone who knows the partner relationship can tell which is which.",
     "BestFitJob": "Commercial levers",
-    "WhyThisMatters": "The most common way commercial effort is wasted in this segment is spending it on decisions that belong to somebody else. Mapping authority first is the cheapest work available.",
+    "WhyThisMatters": "Commercial effort in this segment gets spent on decisions that belong to somebody else. Mapping authority first is the cheapest work available.",
     "LaunchUrl": "https://aka.ms/SalesM365",
     "LaunchLabel": "Open Sales Agent"
   },
@@ -7755,7 +7755,7 @@
     "ExpectedOutput": "Commercial structures compared on what is actually transactable through this route, with the policy questions routed rather than assumed.",
     "HumanCheckpoint": "The CE judges what the partner can genuinely transact, and confirms every policy and eligibility question with the authoritative owner before comparing options. A structure that is commercially elegant and cannot be sold through this route is a recommendation that wastes a cycle for everyone.",
     "BestFitJob": "Structure options",
-    "WhyThisMatters": "Structures are usually compared on commercial merit and then discovered to be untransactable through the route in play. Applying that filter first changes which option wins.",
+    "WhyThisMatters": "Structures get compared on commercial merit and then discovered to be untransactable through the route in play. Applying that filter first changes which option wins.",
     "LaunchUrl": "https://aka.ms/SalesM365",
     "LaunchLabel": "Open Sales Agent"
   },
@@ -7770,14 +7770,14 @@
     "PracticeTier": "Featured",
     "ExecutionMethod": "Both",
     "Prompt": "I want a partner to sell [describe the commercial structure] to [account name]. Draft a short explanation they could use with the customer: what the structure is, what it gives the customer, what it requires from them, and the two questions the customer is most likely to ask. Write it for an audience outside Microsoft. Do not include internal margin or cost detail, seat counts, spend figures, personal data, or anything that reads as an export from our systems.",
-    "ActivitySteps": "1. Open Sales Agent, paste the prompt, and replace both bracketed sections._x000D_\n2. Check the draft against the CELA rules before it goes anywhere: no personal data, no seat or spend detail, nothing resembling an export._x000D_\n3. Read it as the partner would - if it only makes sense with your explanation attached, it is not finished._x000D_\n4. Send it through your normal partner channel.",
+    "ActivitySteps": "1. Open Cowork, paste the prompt, and replace both bracketed sections.\n2. Check the draft against the CELA rules before it goes anywhere: no personal data, no seat or spend detail, nothing resembling an export.\n3. Read it as the partner would - if it only makes sense with your explanation attached, it is not finished.\n4. Send it through your normal partner channel.",
     "RequiredContext": "Your recommended commercial structure and the account. The CELA rules on partner data exchange.",
     "ExpectedOutput": "A partner-usable explanation of the structure, checked against the data-sharing boundary before it leaves Microsoft.",
     "HumanCheckpoint": "The CE owns what crosses to the partner and checks the draft against the data rules before sending. A model asked to make a commercial structure persuasive will reach for the numbers that make it persuasive, and the sender is the only control on that.",
     "BestFitJob": "Partner enablement",
     "WhyThisMatters": "A structure a partner cannot explain will not be sold, whatever its merits. Enablement is the actual lever when somebody else transacts.",
-    "LaunchUrl": "https://aka.ms/SalesM365",
-    "LaunchLabel": "Open Sales Agent"
+    "LaunchUrl": "https://m365.cloud.microsoft/cowork",
+    "LaunchLabel": "Open Cowork"
   },
   {
     "ExternalId": "SMEC-CE-DEAL-04",
@@ -7870,14 +7870,14 @@
     "PracticeTier": "Extended",
     "ExecutionMethod": "Both",
     "Prompt": "I have found that [describe the variation] appears across [number] accounts in my book. Help me structure this as a case for a policy owner: what the variation is, how consistently it appears, what commercial pressure appears to be driving it, and what the options are. Frame the options as questions for the policy owner rather than recommendations. Do not state what the policy should be or assert that any variation is permitted.",
-    "ActivitySteps": "1. Open Sales Agent, paste the prompt, and replace the bracketed sections with your finding._x000D_\n2. Check the account count yourself rather than accepting it._x000D_\n3. Remove anything that reads as you deciding the policy - that is not your call and framing it that way gets it dismissed._x000D_\n4. Send it to the policy owner with the evidence attached.",
+    "ActivitySteps": "1. Open Cowork, paste the prompt, and replace the bracketed sections with your finding.\n2. Check the account count yourself rather than accepting it.\n3. Remove anything that reads as you deciding the policy - that is not your call and framing it that way gets it dismissed.\n4. Send it to the policy owner with the evidence attached.",
     "RequiredContext": "Your grouped exception finding with the account count verified. The authoritative policy owner for this variation.",
     "ExpectedOutput": "A structured case for the policy owner with the pattern evidenced and the options framed as questions.",
     "HumanCheckpoint": "The CE presents evidence and does not propose the policy. A field observation carries weight precisely because it is an observation, and a case that arrives with the answer already written is read as advocacy and discounted.",
     "BestFitJob": "Escalation",
     "WhyThisMatters": "A repeated exception is either a policy that needs changing or a practice that needs stopping. Neither gets resolved while it stays visible only to the person granting it.",
-    "LaunchUrl": "https://aka.ms/SalesM365",
-    "LaunchLabel": "Open Sales Agent"
+    "LaunchUrl": "https://m365.cloud.microsoft/cowork",
+    "LaunchLabel": "Open Cowork"
   },
   {
     "ExternalId": "DSS-CONV-01",

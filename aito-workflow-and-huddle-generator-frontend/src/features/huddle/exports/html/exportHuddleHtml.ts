@@ -1416,7 +1416,14 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const topicName = model.identity.name;
   const aiToolsSummary = (() => {
     const topFiveNames = agentNames(topFiveUsedAgents);
-    const alsoUsedNames = agentNames(alsoUsedAgents);
+    // "Also used" also lists the Huddle's secondary agents, even when no activity calls on them, so
+    // the summary matches the Secondary AI Tools shown in the app. The Top 5 band and the Resources
+    // tool grid keep the activity-used list (alsoUsedAgents / agents) and are unchanged.
+    const secondaryAgents = [...model.agents.secondary]
+      .filter((agent, index, all) => all.findIndex((candidate) => candidate.externalId === agent.externalId) === index)
+      .sort((left, right) => left.displayOrder - right.displayOrder || left.externalId.localeCompare(right.externalId));
+    const listedExternalIds = new Set([...topFiveUsedAgents, ...alsoUsedAgents].map((agent) => agent.externalId));
+    const alsoUsedNames = agentNames([...alsoUsedAgents, ...secondaryAgents.filter((agent) => !listedExternalIds.has(agent.externalId))]);
     if (!topFiveNames.length && !alsoUsedNames.length) return "Not configured";
     const topFivePart = topFiveNames.length ? `Top 5: ${topFiveNames.join(", ")}.` : "";
     const alsoUsedPart = alsoUsedNames.length ? `Also used: ${alsoUsedNames.join(", ")}.` : "";

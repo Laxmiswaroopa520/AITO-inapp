@@ -837,11 +837,11 @@
     "TopicExternalId": "WF-ORIENT-01",
     "PathSection": "SEC-ORIENTATION",
     "Sequence": 1,
-    "RoleTopicName": "Frontier Accelerator Orientation for Commercial Executives in SME&C",
-    "RoleTopicDescription": "Introduce the eight-session motion, where AI reduces the commercial research and preparation load across a book of agreements rather than a handful, and what to bring back each week.",
-    "TodayObjective": "Understand how the CE path runs in this segment and where the human checkpoints protect commercial and policy judgment.",
-    "Wiifm": "Commercial work here is spread across far more agreements than anyone can inspect individually, and much of it transacts through a partner. This is about getting the research time back.",
-    "DesiredOutcome": "CEs know how the motion works, which tools may show up, and what to try before the next session.",
+    "RoleTopicName": "Frontier Accelerator Orientation",
+    "RoleTopicDescription": "Introduce the eight-week huddle motion: why Frontier Accelerator exists, what happens in a thirty-minute huddle, the five roles that make it work, and what is expected of you between sessions.",
+    "TodayObjective": "Understand how the huddle motion runs, what you are being asked to do each week, and where your own judgment stays yours.",
+    "Wiifm": "You are Customer Zero. Before we ask a customer to put AI at the center of how they work, we do it on our own work and find out honestly where it helps and where it does not. The aim is to get time back from the assembling, and to find out first-hand where AI earns that time and where it does not.",
+    "DesiredOutcome": "You know how the motion works, what happens in each huddle, what is expected of you between sessions, and you leave with one thing to try before the next one.",
     "IsActive": 1
   },
   {
@@ -879,7 +879,7 @@
     "RoleTopicName": "Spot Commercial Risk Across the Portfolio",
     "RoleTopicDescription": "Find the commercial exposure hiding in a portfolio of agreements too large to review individually, and decide which of it is worth acting on now.",
     "TodayObjective": "Identify the commercial risk in your book that will be expensive if it is found late.",
-    "Wiifm": "Commercial problems in this segment are rarely dramatic. They are small, numerous, and discovered at renewal, when the options have gone.",
+    "Wiifm": "Commercial problems in this segment are not dramatic. They are small, numerous, and discovered at renewal, when the options have gone.",
     "DesiredOutcome": "The portfolio scanned for commercial exposure, the highest-cost risk identified with evidence, and one intervention started.",
     "IsActive": 1
   },

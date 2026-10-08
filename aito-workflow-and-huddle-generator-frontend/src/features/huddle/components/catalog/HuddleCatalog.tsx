@@ -45,12 +45,16 @@ interface HuddleCatalogProps {
   onCloseDetails?: () => void;
   /** Opens the "Create your own Huddle" (Huddle in a Box) dialog from the footer prompt. */
   onCreateOwnHuddle: () => void;
+  /** The topic whose HTML download is in progress, if any (same value the Role Path cards use). */
+  htmlExportExternalId?: string | null;
+  /** Downloads a topic's HTML the same way the Role Path week cards do. Omit to hide the button. */
+  onExportHtml?: (huddle: HuddleCatalogItemResponse) => void;
 }
 
 const PAGE_SIZE = 10;
 
 
-export function HuddleCatalog({ data, isLoading, error, selectedExternalId, selectedPlacementExternalId, audienceRoleIds, filterKey, filtersActive = false, votes, votePending, continueLearning, plan, planAudienceLabel, onSelect, onVote, onRetry, onContinue, onCloseDetails, onCreateOwnHuddle }: HuddleCatalogProps) {
+export function HuddleCatalog({ data, isLoading, error, selectedExternalId, selectedPlacementExternalId, audienceRoleIds, filterKey, filtersActive = false, votes, votePending, continueLearning, plan, planAudienceLabel, onSelect, onVote, onRetry, onContinue, onCloseDetails, onCreateOwnHuddle, htmlExportExternalId = null, onExportHtml }: HuddleCatalogProps) {
   const [page, setPage] = useState(1);
   // Tracks the filterKey that `page` was last reset for, so paging can restart at page one
   // without an effect (adjusting state during render instead of in a useEffect, per React's
@@ -66,6 +70,8 @@ export function HuddleCatalog({ data, isLoading, error, selectedExternalId, sele
     return (data ?? []).filter((item) => item.roles.some((role) => audienceRoleIds.includes(role.externalId)));
   }, [data, audienceRoleIds]);
   const cards = useMemo(() => visible.map(mapHuddleCatalogItemToCard), [visible]);
+  // The HTML export needs the API item, not the card view model; keyed the same way as the cards.
+  const itemsByCardKey = useMemo(() => new Map(visible.map((item) => [item.placementExternalId ?? item.externalId, item])), [visible]);
 
   // Resolve the plan sequence against the full API payload so a topic stays in the plan
   // even when the current filters or page would hide its card.
@@ -118,7 +124,7 @@ export function HuddleCatalog({ data, isLoading, error, selectedExternalId, sele
       <ContinueLearningList items={continueLearning} onContinue={onContinue} />
       {plan && plan.selectedIds.length > 0 && <CustomLearningPlanCard selectedCount={plan.selectedIds.length} exporting={exporting} onBuild={() => setPlanOpen(true)} onExport={exportPlan} onClear={clearPlan} />}
       {planError && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-900">{planError}</p>}
-      <div className="space-y-3">{pagedCards.map((huddle) => <HuddleCatalogCard showManagementMenu key={huddle.placementExternalId ?? huddle.id} huddle={huddle} selected={selectedExternalId === huddle.id && selectedPlacementExternalId === (huddle.placementExternalId ?? null)} vote={votes.get(huddle.id)} votePending={votePending} primaryAccessUrl={huddle.primaryAccessUrl} planChecked={plan?.isSelected(huddle.placementExternalId ?? huddle.id) ?? false} onTogglePlan={plan ? plan.toggle : undefined} onSelect={onSelect} onVote={onVote} />)}</div>
+      <div className="space-y-3">{pagedCards.map((huddle) => <HuddleCatalogCard showManagementMenu key={huddle.placementExternalId ?? huddle.id} huddle={huddle} selected={selectedExternalId === huddle.id && selectedPlacementExternalId === (huddle.placementExternalId ?? null)} vote={votes.get(huddle.id)} votePending={votePending} primaryAccessUrl={huddle.primaryAccessUrl} planChecked={plan?.isSelected(huddle.placementExternalId ?? huddle.id) ?? false} onTogglePlan={plan ? plan.toggle : undefined} onSelect={onSelect} onVote={onVote} onExportHtml={onExportHtml ? () => { const item = itemsByCardKey.get(huddle.placementExternalId ?? huddle.id); if (item) onExportHtml(item); } : undefined} htmlExportPending={htmlExportExternalId === huddle.id} htmlExportDisabled={htmlExportExternalId !== null} />)}</div>
       {/* A role can have a Role Path and no additional content, which is the mirror of All Roles
           having additional content and no Role Path. Say which of the two happened. */}
       {cards.length === 0 && <div className="rounded-xl border border-dashed bg-white py-10 text-center text-sm text-muted-foreground">{filtersActive ? "No Huddles match this filter." : "No All Topics are configured for this audience."}</div>}

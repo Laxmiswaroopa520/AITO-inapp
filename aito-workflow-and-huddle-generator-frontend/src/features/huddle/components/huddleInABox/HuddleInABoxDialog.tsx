@@ -13,7 +13,7 @@ interface HuddleInABoxStep {
 
 const STEPS: HuddleInABoxStep[] = [
   { title: "Open the template", body: "Open the self-contained HTML in your browser." },
-  { title: "Choose how to customise it", body: "Build it with AI, create your own version, or edit it directly." },
+  { title: "Choose how to customize it", body: "Build it with AI, create your own version, or edit it directly." },
   { title: "Review and run", body: "Make final edits, then download or present the finished Huddle with your team." },
 ];
 
@@ -36,7 +36,7 @@ export function HuddleInABoxDialog({ open, onClose, onDownload }: HuddleInABoxDi
       >
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-bold uppercase tracking-wide text-[#7C3AED]">Huddle in a Box</p>
+            <p className="text-xs font-bold uppercase tracking-wide text-[#0A6BBA]">Huddle in a Box</p>
             <h2 id="huddle-in-a-box-title" className="mt-1 text-xl font-bold text-[#242424]">Create your own Huddle</h2>
           </div>
           <button type="button" onClick={onClose} aria-label="Close" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md hover:bg-muted">
@@ -51,7 +51,7 @@ export function HuddleInABoxDialog({ open, onClose, onDownload }: HuddleInABoxDi
         <ol className="mt-5 space-y-4">
           {STEPS.map((step, index) => (
             <li key={step.title} className="flex gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F3E8FF] text-xs font-bold text-[#7C3AED]">{index + 1}</span>
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E2F1F9] text-xs font-bold text-[#0A6BBA]">{index + 1}</span>
               <p className="text-sm leading-5 text-[#242424]">
                 <span className="font-semibold">{step.title}</span>
                 <br />
@@ -63,7 +63,7 @@ export function HuddleInABoxDialog({ open, onClose, onDownload }: HuddleInABoxDi
 
         <div className="mt-6 flex justify-end gap-2">
           <button type="button" onClick={onClose} className="h-10 rounded-lg border px-4 text-sm font-semibold hover:bg-muted">Close</button>
-          <button type="button" onClick={onDownload} className="inline-flex h-10 items-center gap-1 rounded-lg bg-[#7C3AED] px-4 text-sm font-semibold text-white hover:bg-[#6D28D9]">
+          <button type="button" onClick={onDownload} className="inline-flex h-10 items-center gap-1 rounded-lg bg-[#0A6BBA] px-4 text-sm font-semibold text-white hover:bg-[#115EA3]">
             Download Huddle in a Box
             <ArrowRight className="h-4 w-4" />
           </button>
