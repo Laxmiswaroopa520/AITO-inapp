@@ -44,6 +44,10 @@ interface HuddleAudienceSelectProps {
    * why a role is already showing instead of "Select Audience".
    */
   note?: string | null;
+  /** Segment to start on, so a parent-held segment survives this picker remounting (e.g. a tab switch). */
+  initialSegment?: string | null;
+  /** Told whenever the reader picks a segment (null = All Segments). */
+  onSegmentChange?: (segment: string | null) => void;
 }
 
 function roleIcon(externalId: string): ElementType {
@@ -54,11 +58,11 @@ function roleSegment(role: HuddleRoleResponse): string {
   return role.segment ?? "Other";
 }
 
-export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onChange, loading = false, errorMessage = null, note = null }: HuddleAudienceSelectProps) {
+export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onChange, loading = false, errorMessage = null, note = null, initialSegment = null, onSegmentChange }: HuddleAudienceSelectProps) {
   const [open, setOpen] = useState(false);
   const [segmentOpen, setSegmentOpen] = useState(false);
   /** The segment picked in the first dropdown. null means "not chosen yet" (single) or "All Segments" (multi). */
-  const [chosenSegment, setChosenSegment] = useState<string | null>(null);
+  const [chosenSegment, setChosenSegment] = useState<string | null>(initialSegment);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const segmentContainerRef = useRef<HTMLDivElement | null>(null);
   const multi = mode === "multi";
@@ -109,6 +113,7 @@ export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onCh
 
   const chooseSegment = (segment: string | null) => {
     setChosenSegment(segment);
+    onSegmentChange?.(segment);
     setSegmentOpen(false);
     // Drop any selected role outside the new segment, so the Role dropdown never holds a
     // role the reader can no longer see in its list.
@@ -117,6 +122,10 @@ export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onCh
       if (kept.length !== selectedIds.length) onChange(kept);
       // Role Path needs a role next, so move straight on to the role list.
       if (!multi) setOpen(true);
+    } else if (selectedIds.length > 0) {
+      // "All Segments" resets the audience. Keeping the roles would also snap the Segment
+      // dropdown straight back to their segment (see activeSegment above).
+      onChange([]);
     }
   };
 
