@@ -22,6 +22,8 @@ interface RecommendedPathCardProps {
   /** True while any week card is downloading, so downloads never overlap. */
   htmlExportDisabled: boolean;
   onExportHtml: () => void;
+  /** Marks this card's HTML and vote controls as walkthrough targets (first card only). */
+  tourFirst?: boolean;
 }
 
 function agentLabel(names: string[]): string {
@@ -42,6 +44,7 @@ export function RecommendedPathCard({
   htmlExportPending,
   htmlExportDisabled,
   onExportHtml,
+  tourFirst = false,
 }: RecommendedPathCardProps) {
   const card = mapHuddleCatalogItemToCard(huddle);
 
@@ -120,6 +123,7 @@ export function RecommendedPathCard({
       <div className="col-span-2 flex items-center justify-end gap-1 pt-1 sm:col-span-1 sm:pt-0">
         <button
           type="button"
+          data-tour={tourFirst ? "huddle-week-html" : undefined}
           disabled={htmlExportDisabled}
           onClick={(event) => { event.stopPropagation(); onExportHtml(); }}
           className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-white px-2 text-xs font-semibold text-[#242424] transition-colors hover:bg-[#F5F9FF] disabled:opacity-50"
@@ -130,6 +134,7 @@ export function RecommendedPathCard({
           {htmlExportPending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}HTML
         </button>
         <HuddleVoteControls
+          tour={tourFirst}
           huddleName={card.title}
           vote={vote}
           disabled={votePending}

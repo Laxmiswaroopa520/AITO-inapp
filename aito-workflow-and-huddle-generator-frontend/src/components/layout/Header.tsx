@@ -46,7 +46,7 @@ export function Header() {
 
       <div className="ml-auto flex items-center gap-1">
         <div data-tour="global-search" className="mx-2 hidden w-[274px] xl:block"><GlobalSearch /></div>
-        <Button type="button" variant="ghost" size="icon" className="xl:hidden" aria-label="Toggle search" onClick={() => setSearchOpen(value => !value)}>{searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}</Button>
+        <Button data-tour="global-search" type="button" variant="ghost" size="icon" className="xl:hidden" aria-label="Toggle search" onClick={() => setSearchOpen(value => !value)}>{searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}</Button>
         <Button data-tour="help" type="button" variant="ghost" size="icon" aria-label="Help and tips" title="Help and tips" onClick={() => window.dispatchEvent(new Event("aito:start-layout-tour"))}><HelpCircle className="h-5 w-5" /></Button>
         {/* Notifications is not wired up to any real functionality yet -- hidden until that work lands.
         Restore by uncommenting this Button (no other change needed):

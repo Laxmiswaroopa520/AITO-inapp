@@ -3,6 +3,8 @@ import type { HuddleUpcomingWeekResponse } from "../../types";
 
 interface ComingSoonWeekCardProps {
   upcoming: HuddleUpcomingWeekResponse;
+  /** Marks the card as the walkthrough target (first Coming Soon card only). */
+  tour?: boolean;
 }
 
 /**
@@ -10,9 +12,10 @@ interface ComingSoonWeekCardProps {
  * reads as part of the same path, but it is not selectable, votable or manageable, and its HTML action is
  * disabled.
  */
-export function ComingSoonWeekCard({ upcoming }: ComingSoonWeekCardProps) {
+export function ComingSoonWeekCard({ upcoming, tour = false }: ComingSoonWeekCardProps) {
   return (
     <article
+      data-tour={tour ? "huddle-coming-soon" : undefined}
       aria-disabled="true"
       className="relative grid grid-cols-[58px_minmax(0,1fr)] items-start gap-3 rounded-xl border border-[#E1DFDD] bg-white p-4 shadow-sm before:absolute before:-bottom-4 before:left-[39px] before:top-8 before:w-px before:bg-[#C7E0F4] last:before:hidden sm:grid-cols-[58px_minmax(0,1fr)_auto]"
     >
