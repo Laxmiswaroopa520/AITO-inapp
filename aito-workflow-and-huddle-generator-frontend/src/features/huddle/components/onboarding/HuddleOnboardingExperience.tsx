@@ -2,7 +2,7 @@ import {
   ArrowRight, BookOpen, CheckCircle2, ChevronRight,
   Compass, Lightbulb, RefreshCw, Sparkles, Target,
   TrendingUp, Users, ShieldCheck, Presentation, Check,
-  Repeat2, FileImage,
+  Repeat2, FileImage, CalendarDays,
 } from 'lucide-react';
 import { useState, type ElementType } from 'react';
 import { motion } from 'motion/react';
@@ -224,14 +224,14 @@ function GetReadyTimeline({ plan }: { plan: RoleActionPlan }) {
     <p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">{plan.eyebrow}</p>
     <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[#16233A]">{plan.title}</h2>
     <p className="mt-2 max-w-3xl text-sm leading-6 text-[#647185]">{plan.note}</p>
-    <ol className={`mt-6 grid gap-6 md:gap-0 ${timelineColumns[plan.steps.length] ?? 'md:grid-cols-3'}`}>
-      {plan.steps.map((step) => <li key={step.label} className="md:pr-6">
+    {/* One card per milestone, styled like the Weekly rhythm cards below so the two sections read as a set. */}
+    <ol className={`mt-6 grid gap-4 ${timelineColumns[plan.steps.length] ?? 'md:grid-cols-3'}`}>
+      {plan.steps.map((step) => <li key={step.label} className="flex flex-col rounded-[20px] border border-[#E0E7ED] bg-white p-5 shadow-[0_8px_24px_rgba(22,35,58,.04)] md:p-6">
         <div className="flex items-center gap-3">
-          <span className="h-5 w-5 shrink-0 rounded-full bg-[#0A6BBA] ring-4 ring-[#E2F1F9]" aria-hidden="true" />
-          <span className="text-sm font-semibold text-[#0A6BBA]">{step.label}</span>
-          <span className="hidden h-px flex-1 bg-[#D6E1EA] md:block" aria-hidden="true" />
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E2F1F9] text-[#0A6BBA]" aria-hidden="true"><CalendarDays className="h-4 w-4" /></span>
+          <h3 className="text-lg font-semibold text-[#16233A]">{step.label}</h3>
         </div>
-        <ul className="mt-4 space-y-2.5 pl-1">{step.items.map((item) => <li key={item} className="flex gap-2 text-sm text-[#5C697D]"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#0A6BBA]" />{item}</li>)}</ul>
+        <ul className="mt-4 space-y-2.5">{step.items.map((item) => <li key={item} className="flex gap-2 text-sm text-[#5C697D]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A6BBA]" />{item}</li>)}</ul>
       </li>)}
     </ol>
   </section>;
@@ -349,6 +349,8 @@ function PersonaOnboarding({ persona, onStartRolePath, onAdditionalTopics }: Pic
     <section><p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">How this app helps</p><div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{p.cards.map(([title,items],index)=><article key={title} className="rounded-[20px] border border-[#E0E7ED] bg-white p-5 shadow-[0_8px_24px_rgba(22,35,58,.05)]"><div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E2F1F9] text-sm font-bold text-[#0A6BBA]">{index+1}</div><h3 className="mt-4 text-lg font-semibold text-[#16233A]">{title}</h3><ul className="mt-3 space-y-2">{items.map(i=><li key={i} className="flex gap-2 text-sm text-[#5C697D]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#287C70]"/>{i}</li>)}</ul></article>)}</div></section>
     {persona && <><GetReadyTimeline plan={roleActionPlans[persona]} /><WeeklyRhythm plan={roleActionPlans[persona]} /></>}
     <section className="grid overflow-hidden rounded-[24px] border border-[#DCE6ED] bg-white shadow-[0_8px_24px_rgba(22,35,58,.05)] lg:grid-cols-[1.35fr_1fr]"><div className="p-7 md:p-9"><p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">Success looks like</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#16233A]">A strong team rhythm looks like this</h2><ul className="mt-5 space-y-3.5">{teamRhythmSuccess.map(s=><li key={s} className="flex gap-3 text-sm text-[#5C697D]"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0A6BBA]"/>{s}</li>)}</ul></div><div className="flex flex-col justify-center border-t border-[#E6ECF1] bg-[#F8F7F5] p-7 md:p-9 lg:border-l lg:border-t-0"><p className="text-xs font-bold uppercase tracking-[.14em] text-[#0A6BBA]">Ready to continue?</p><h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#16233A]">Move from onboarding into practice</h2><p className="mt-2 text-sm leading-6 text-[#647185]">Continue into your role path or explore additional topics when you are ready.</p><div className="mt-5 flex flex-wrap gap-2"><Button className="bg-[#0A6BBA] hover:bg-[#115EA3]" onClick={onStartRolePath}>{p.primary}<ArrowRight className="ml-2 h-4 w-4"/></Button><Button variant="outline" className="bg-white" onClick={onAdditionalTopics}>Explore All Topics</Button></div></div></section>
+
+    <HuddleResourcesSection />
   </motion.section>;
 }
 
