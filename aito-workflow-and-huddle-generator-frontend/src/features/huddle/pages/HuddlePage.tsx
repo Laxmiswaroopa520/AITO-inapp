@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useAtom } from "jotai";
 import { useQueryClient } from "@tanstack/react-query";
-import { AlertTriangle, Box, CalendarDays, CheckCircle2, ChevronRight, Home, Library, Users, X } from "lucide-react";
+import { AlertTriangle, Box, CalendarDays, CheckCircle2, ChevronRight, HelpCircle, Home, Library, Users, X } from "lucide-react";
 import { useNavigate } from "react-router";
 import { cn } from "@/lib/utils";
 import { useApiClient } from "@/api/useApiClient";
@@ -426,6 +426,25 @@ export function HuddlePage() {
         </div>
 
         <div className="flex flex-nowrap shrink-0 items-center gap-1.5">
+          {/* Same action as the header's "?" icon, placed where a reader who is unsure where to go will see it. */}
+          <span className="group relative inline-flex shrink-0">
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("aito:start-layout-tour"))}
+              className="inline-flex h-10 items-center rounded-lg border bg-white px-3 text-sm font-semibold hover:bg-muted"
+            >
+              <HelpCircle className="mr-2 h-4 w-4" />
+              Help and tips
+            </button>
+
+            <span
+              role="tooltip"
+              className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 rounded-lg border bg-white p-2.5 text-xs font-medium leading-4 text-[#242424] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
+            >
+              Not sure where to go? Take a quick tour of this page.
+            </span>
+          </span>
+
           <span className="group relative inline-flex shrink-0">
             <button
               type="button"

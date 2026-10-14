@@ -224,8 +224,8 @@ const LAUNCH_PLANNER_STEPS: TourStep[] = [
 /** Shown in place of the role-worded step until an experience is chosen. */
 const CHOOSE_ROLE_STEP: TourStep = {
   target: "huddle-role",
-  title: "Your experience",
-  content: "Pick how you take part: Manager, Facilitator, or Team Member. The rest of the page follows that choice.",
+  title: "Select your huddle role",
+  content: "Select how you want to use Huddles. Choose Manager to plan team learning, Facilitator to prepare and lead Huddles, or Team Member to follow a guided learning journey and practice AI. You can switch experiences later.",
 };
 
 interface ResolveTourStepsInput {

@@ -381,10 +381,36 @@ function sessionActivities(externalId: string, placementExternalId: string | nul
   return detail?.phases.flatMap((phase) => phase.activities).map((activity) => activity.externalId) ?? [];
 }
 
+/** Featured activities are the ones a Huddle is completed on; Extended ones are optional extras. */
+function featuredActivityIds(externalId: string, placementExternalId: string | null): Set<string> {
+  const detail = placementExternalId
+    ? DATA.huddle.placementDetails[placementExternalId]
+    : DATA.huddle.defaultDetails[externalId];
+  return new Set(detail?.phases.flatMap((phase) => phase.activities).filter((activity) => activity.practiceTier !== "Extended").map((activity) => activity.externalId) ?? []);
+}
+
+/**
+ * Progress and "Complete Huddle" count Featured activities only, matching the hub's own denominator.
+ * Applied on every read and write, so sessions saved before this rule are corrected as they load.
+ */
+function withFeaturedCounts(session: HuddleSessionResponse, placementExternalId: string | null): HuddleSessionResponse {
+  const featured = featuredActivityIds(session.huddleExternalId, placementExternalId);
+  if (featured.size === 0) return session;
+  const removed = new Set(session.removedActivityExternalIds);
+  const counted = [...featured].filter((id) => !removed.has(id));
+  const completed = new Set(session.activities.filter((activity) => activity.isCompleted).map((activity) => activity.activityExternalId));
+  return { ...session, validActivityCount: counted.length, completedActivityCount: counted.filter((id) => completed.has(id)).length };
+}
+
+function placementFromSessionKey(key: string): string | null {
+  const placement = key.split("::")[1];
+  return placement && placement !== "default" ? placement : null;
+}
+
 function createSession(externalId: string, placementExternalId: string | null): HuddleSessionResponse {
   const now = new Date().toISOString();
   const ids = sessionActivities(externalId, placementExternalId);
-  return {
+  return withFeaturedCounts({
     huddleExternalId: externalId,
     currentPhaseExternalId: null,
     facilitatorNotes: null,
@@ -398,7 +424,7 @@ function createSession(externalId: string, placementExternalId: string | null): 
     validActivityCount: ids.length,
     completedActivityCount: 0,
     canContinue: true,
-  };
+  }, placementExternalId);
 }
 
 function saveSessions(sessions: StoredSessions): void {
@@ -443,7 +469,8 @@ async function localGet(path: string): Promise<unknown> {
   }
   if (pathname === "/api/huddle-sessions/me/incomplete") {
     const sessions = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
-    const result: IncompleteHuddleSessionResponse[] = Object.values(sessions)
+    const result: IncompleteHuddleSessionResponse[] = Object.entries(sessions)
+      .map(([key, stored]) => withFeaturedCounts(stored, placementFromSessionKey(key)))
       .filter((session) => session.sessionStatus === "InProgress")
       .map((session) => {
         const detail = DATA.huddle.defaultDetails[session.huddleExternalId];
@@ -467,7 +494,7 @@ async function localGet(path: string): Promise<unknown> {
     const placementExternalId = searchParams.get("placementExternalId");
     const stored = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
     const session = stored[sessionKey(externalId, placementExternalId)];
-    return session ? clone(session) : notFound("No saved Huddle session exists yet.");
+    return session ? clone(withFeaturedCounts(session, placementExternalId)) : notFound("No saved Huddle session exists yet.");
   }
   if (pathname.startsWith("/api/huddles/")) {
     const externalId = decodeURIComponent(pathname.split("/")[3]);
@@ -549,7 +576,7 @@ async function localPost(path: string, body: unknown): Promise<unknown> {
     const key = sessionKey(externalId, placementExternalId);
     const session = sessions[key] ?? createSession(externalId, placementExternalId);
     const now = new Date().toISOString();
-    const next = { ...session, completedAtUtc: now, lastSavedAtUtc: now, sessionStatus: "Completed" as const, rowVersion: version(), canContinue: false };
+    const next = { ...withFeaturedCounts(session, placementExternalId), completedAtUtc: now, lastSavedAtUtc: now, sessionStatus: "Completed" as const, rowVersion: version(), canContinue: false };
     sessions[key] = next;
     saveSessions(sessions);
     return clone(next);
@@ -593,12 +620,12 @@ async function localPut(path: string, body: unknown): Promise<unknown> {
     session.activities = session.activities.map((activity) => activity.activityExternalId === activityExternalId
       ? { ...activity, isCompleted: request.isCompleted, completedAtUtc: request.isCompleted ? now : null }
       : activity);
-    session.completedActivityCount = session.activities.filter((activity) => activity.isCompleted).length;
     session.lastSavedAtUtc = now;
     session.rowVersion = version();
-    sessions[key] = session;
+    const counted = withFeaturedCounts(session, placementExternalId);
+    sessions[key] = counted;
     saveSessions(sessions);
-    return clone(session);
+    return clone(counted);
   }
   if (pathname.startsWith("/api/huddles/") && pathname.endsWith("/session")) {
     const externalId = decodeURIComponent(pathname.split("/")[3]);
@@ -611,9 +638,10 @@ async function localPut(path: string, body: unknown): Promise<unknown> {
     session.facilitatorNotes = request.facilitatorNotes;
     session.lastSavedAtUtc = new Date().toISOString();
     session.rowVersion = version();
-    sessions[key] = session;
+    const counted = withFeaturedCounts(session, placementExternalId);
+    sessions[key] = counted;
     saveSessions(sessions);
-    return clone(session);
+    return clone(counted);
   }
   if (pathname.startsWith("/api/workflows/")) {
     const id = decodeURIComponent(pathname.split("/")[3]);
