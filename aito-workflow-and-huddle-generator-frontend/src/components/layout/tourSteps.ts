@@ -11,6 +11,7 @@ const SHELL_TOP: TourStep[] = [
 const WORKFLOW_SEARCH: TourStep = { target: "global-search", title: "Search", content: "Find activities, prompts, and tools from the current experience." };
 const HUDDLE_SEARCH: TourStep = { target: "global-search", title: "Search Huddles", content: "Type two or more letters to find Huddles and tools. Choosing a result opens that Huddle in All Topics." };
 const HELP: TourStep = { target: "help", title: "Page tips", content: "Reopen these tips any time. They change with your role and the tab you are on." };
+const PROFILE: TourStep = { target: "user-menu", title: "Profile Settings & Feedback", content: "Open your profile menu to see your account details and find Send feedback to share ideas or report a problem." };
 
 /** Workflow tips are matched to the step on screen: a target that is not rendered is dropped when the tour opens. */
 const WORKFLOW_CONTENT: TourStep[] = [
@@ -239,7 +240,7 @@ interface ResolveTourStepsInput {
 export function resolveLayoutSteps({ isHuddleRoute, persona, viewMode }: ResolveTourStepsInput): TourStep[] {
   const roleStep = persona ? huddleStep(persona, viewMode, "huddle-role") : null;
   const moduleHeader = isHuddleRoute ? [roleStep ?? CHOOSE_ROLE_STEP] : [];
-  return [...SHELL_TOP, ...moduleHeader, isHuddleRoute ? HUDDLE_SEARCH : WORKFLOW_SEARCH, HELP];
+  return [...SHELL_TOP, ...moduleHeader, isHuddleRoute ? HUDDLE_SEARCH : WORKFLOW_SEARCH, HELP, PROFILE];
 }
 
 /**
