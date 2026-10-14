@@ -369,6 +369,7 @@ export function HuddlePage() {
         <div>
           {persona && (
             <nav
+              data-tour="huddle-breadcrumb"
               aria-label="Huddle breadcrumb"
               className="mb-1.5 flex min-w-0 items-center gap-1 text-sm font-medium"
             >

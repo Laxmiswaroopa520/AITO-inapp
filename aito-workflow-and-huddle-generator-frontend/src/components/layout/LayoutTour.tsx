@@ -13,6 +13,12 @@ interface TourChoice { layout: TourStep[]; page: TourStep[] }
 
 const EMPTY_CHOICE: TourChoice = { layout: [], page: [] };
 
+/** First element for a tour target that is actually laid out; hidden (responsive) copies are skipped. */
+function findTarget(target: string): HTMLElement | null {
+  const matches = Array.from(document.querySelectorAll<HTMLElement>(`[data-tour="${target}"]`));
+  return matches.find(element => { const box = element.getBoundingClientRect(); return box.width > 0 && box.height > 0; }) ?? null;
+}
+
 function describe(count: number, summary: string): string {
   return count === 0 ? "Nothing to show on this page yet." : `${summary} ${count} ${count === 1 ? "tip" : "tips"}.`;
 }
@@ -45,10 +51,11 @@ export function LayoutTour() {
     const start = () => {
       // Filtered against the DOM on open, so conditional controls (Launch Planner,
       // Generate Huddle) never leave a step pointing at nothing.
-      const onPage = (candidate: TourStep) => document.querySelector(`[data-tour="${candidate.target}"]`) !== null;
+      const onPage = (candidate: TourStep) => findTarget(candidate.target) !== null;
+      const pathname = location.pathname;
       const next: TourChoice = {
-        layout: resolveLayoutSteps({ isHuddleRoute, persona, viewMode }).filter(onPage),
-        page: resolvePageSteps({ isHuddleRoute, persona, viewMode }).filter(onPage),
+        layout: resolveLayoutSteps({ isHuddleRoute, persona, viewMode, pathname }).filter(onPage),
+        page: resolvePageSteps({ isHuddleRoute, persona, viewMode, pathname }).filter(onPage),
       };
       if (next.layout.length + next.page.length === 0) return;
       setChoice(next);
@@ -57,7 +64,7 @@ export function LayoutTour() {
     };
     window.addEventListener("aito:start-layout-tour", start);
     return () => window.removeEventListener("aito:start-layout-tour", start);
-  }, [isHuddleRoute, persona, viewMode, run]);
+  }, [isHuddleRoute, persona, viewMode, location.pathname, run]);
 
   useEffect(() => {
     if (!open && !choosing) return;
@@ -69,7 +76,7 @@ export function LayoutTour() {
   useLayoutEffect(() => {
     if (!open || !step) return;
     const update = () => {
-      const element = document.querySelector<HTMLElement>(`[data-tour="${step.target}"]`);
+      const element = findTarget(step.target);
       if (!element) { setRect(null); return; }
       if (!element.closest("header")) element.scrollIntoView({ block: "center", behavior: "smooth" });
       const value = element.getBoundingClientRect();

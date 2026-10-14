@@ -19,6 +19,8 @@ interface RolePathWeekMenuProps {
   onMoveToWeek: (week: number) => void;
   onReplace: (externalId: string) => void;
   onReset: () => void;
+  /** Marks the trigger as the walkthrough target (first card only, so the target stays unique). */
+  tour?: boolean;
 }
 
 type Submenu = "week" | "huddle";
@@ -52,6 +54,7 @@ export function RolePathWeekMenu(props: RolePathWeekMenuProps) {
     <div ref={containerRef} className="relative">
       <button
         type="button"
+        data-tour={props.tour ? "huddle-week-menu" : undefined}
         disabled={props.disabled}
         onClick={() => {
           setSubmenu(null);
