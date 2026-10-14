@@ -33,6 +33,7 @@ import {
 import { cn } from "@/lib/utils";
 import type {
   HuddlePresentationActivity,
+  HuddlePresentationAgent,
   HuddlePresentationModel,
   HuddlePresentationResource,
   HuddleSessionResponse,
@@ -90,7 +91,7 @@ function ActivityCard({ activity, ordinal, completed, disabled, fallbackResource
   const toggleOpen = () => setOpen((value) => !value);
 
   return (
-    <article className={cn("overflow-hidden rounded-xl border bg-white shadow-sm transition-colors", open ? "border-[#8DC8E8]" : completed ? "border-[#107C10]/40" : "border-[#dfe3e8]")}>
+    <article className={cn("rounded-xl border bg-white shadow-sm transition-colors", open ? "border-[#8DC8E8]" : completed ? "border-[#107C10]/40" : "border-[#dfe3e8]")}>
       <div className="p-4">
         {/* Two rows, not two columns. The description and the metadata chips used to sit inside the
             title column, which is sized next to the action buttons, so they were capped at the
@@ -134,7 +135,7 @@ function ActivityCard({ activity, ordinal, completed, disabled, fallbackResource
       </div>
 
       {open && (
-        <div className="border-t border-[#e1e4e8] bg-[#fbfcff] p-4">
+        <div className="rounded-b-xl border-t border-[#e1e4e8] bg-[#fbfcff] p-4">
           <p className="mb-3 text-[10px] font-semibold uppercase tracking-wide text-[#707070]">Activity {ordinal}</p>
           {activity.prompt && <section className="rounded-lg border border-[#b5d5f0] bg-[#f5f9ff] px-4 py-3"><div className="flex items-center justify-between gap-3"><p className="text-xs font-semibold uppercase tracking-wide text-[#616161]">Prompt</p><button type="button" onClick={() => void navigator.clipboard.writeText(activity.prompt!)} className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#242424] hover:text-[#0F6CBD]"><Copy className="h-3.5 w-3.5" />Copy</button></div><p className="mt-1.5 whitespace-pre-wrap text-sm leading-6 text-[#242424]">{activity.prompt}</p></section>}
           {activity.activitySteps.length > 0 && <section className="mt-3 rounded-lg border border-[#e1e4e8] bg-white px-4 py-3"><p className="text-xs font-semibold uppercase tracking-wide text-[#616161]">How to practice</p><ol className="mt-2 space-y-2">{activity.activitySteps.map((step, index) => <li key={index} className="flex gap-2 text-sm leading-6 text-[#242424]"><span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#0f6cbd] text-[11px] font-semibold text-white">{index + 1}</span><span>{step}</span></li>)}</ol></section>}
@@ -159,7 +160,9 @@ function ActivityField({ label, value, tone = "default" }: { label: string; valu
 }
 
 export function HuddleWorkspace({ model, session, sessionLoading, sessionError, mutationPending, onRefreshSession, onSaveSession, onSetActivityCompletion, onCompleteSession, onMeetCoach, onPreviewSlides, onClose }: HuddleWorkspaceProps) {
-  const [section, setSection] = useState<WorkspaceSection>(model.phases.length > 0 ? "activities" : "overview");
+  // The hub always opens on Overview so the facilitator starts from the summary of what the Huddle
+  // covers. The phase below is still pre-selected, so Huddle Flow opens where the session left off.
+  const [section, setSection] = useState<WorkspaceSection>("overview");
   const [activePhaseId, setActivePhaseId] = useState<string | null>(() =>
     session?.currentPhaseExternalId && model.phases.some((phase) => phase.externalId === session.currentPhaseExternalId)
       ? session.currentPhaseExternalId
@@ -272,7 +275,7 @@ export function HuddleWorkspace({ model, session, sessionLoading, sessionError, 
     <div role="dialog" aria-modal="true" aria-label={`${model.identity.name} workspace`} className="fixed inset-0 z-50 flex h-dvh w-screen flex-col overflow-hidden bg-[#f7f8fa] text-[#242424]">
       <header className="flex flex-shrink-0 items-center border-b border-[#e1e4e8] bg-white px-4 py-3 lg:px-5">
         <div className="flex min-w-0 items-center gap-3"><Button variant="ghost" size="icon" className="h-9 w-9" onClick={onClose} aria-label="Exit generated Huddle"><X className="h-4 w-4" /></Button><div className="min-w-0"><div className="flex items-center gap-2"><h2 className="truncate text-lg font-semibold lg:text-xl">{model.identity.name}</h2></div>{model.identity.description && <p className="hidden truncate text-sm text-[#616161] sm:block">{model.identity.description}</p>}</div></div>
-        <div className="ml-auto flex flex-shrink-0 items-center gap-2 overflow-x-auto pl-3"><Button variant="outline" size="sm" disabled={sessionLoading || mutationPending} onClick={() => void saveProgress()}><FileText className="mr-2 h-4 w-4" />{mutationPending ? "Saving..." : "Save Progress"}</Button><Button size="sm" disabled={!progressSummary.canComplete || mutationPending} title={progressSummary.canComplete ? undefined : "Complete every featured activity first"} onClick={() => void completeHuddle()} className="flex-shrink-0 bg-[#0f6cbd] text-white hover:bg-[#115ea3]"><CheckCircle2 className="mr-2 h-4 w-4" />Complete Huddle</Button></div>
+        <div className="ml-auto flex flex-shrink-0 items-center gap-2 overflow-x-auto pl-3"><Button variant="outline" size="sm" disabled={sessionLoading || mutationPending} onClick={() => void saveProgress()}><FileText className="mr-2 h-4 w-4" />{mutationPending ? "Saving..." : "Save Progress"}</Button><Button size="sm" disabled={!progressSummary.canComplete || mutationPending} title={progressSummary.canComplete ? undefined : "Complete every featured activity first"} onClick={() => void completeHuddle()} variant="outline" className="flex-shrink-0"><CheckCircle2 className="mr-2 h-4 w-4" />Complete Huddle</Button></div>
       </header>
       <div className="flex flex-shrink-0 items-center gap-2 overflow-x-auto border-b border-[#e1e4e8] bg-white px-4 py-3 lg:px-6">
         <div className="flex w-full items-center gap-2 overflow-x-auto">{[{ label: "Duration", value: model.identity.durationMinutes === null ? "Unavailable" : `${model.identity.durationMinutes} min`, icon: Clock }, { label: "Phases", value: String(model.phases.length), icon: Layers }, { label: "Activities", value: String(activityCount), icon: ListChecks }, { label: "AI tools", value: String(agents.length), icon: Bot }].map(({ label, value, icon: Icon }) => <div key={label} className="flex flex-shrink-0 items-center gap-2 rounded-lg border border-[#e1e4e8] bg-white px-3 py-2"><Icon className="h-4 w-4 text-[#0f6cbd]" /><div><p className="text-sm font-semibold">{value}</p><p className="text-[10px] uppercase tracking-wide text-[#707070]">{label}</p></div></div>)}<div className="ml-auto hidden min-w-[280px] lg:block"><div className="mb-1 flex justify-between text-xs text-[#616161]"><span>{progressSummary.completedCount} of {progressSummary.totalCount} activities complete</span><span>{progressSummary.percentage}%</span></div><div className="h-1.5 overflow-hidden rounded-full bg-[#e8eaed]"><div className="h-full rounded-full bg-[#0f6cbd] transition-all" style={{ width: `${progressSummary.percentage}%` }} /></div></div></div>
@@ -303,7 +306,7 @@ export function HuddleWorkspace({ model, session, sessionLoading, sessionError, 
           </div>
         </aside>
       </div>
-      <footer className="flex flex-shrink-0 items-center gap-3 overflow-x-auto border-t border-[#e1e4e8] bg-white px-4 py-2.5 lg:px-5"><Button variant="ghost" className="flex-shrink-0" onClick={onClose}><ChevronLeft className="mr-2 h-4 w-4" />Exit to Huddle Library</Button><span className="ml-auto hidden flex-shrink-0 text-xs text-[#707070] xl:block">{session ? `Last saved ${new Date(session.lastSavedAtUtc).toLocaleString()}` : "Progress has not been saved yet."}</span><div className="flex flex-shrink-0 items-center gap-2"><Button className="lg:hidden" variant="outline" size="sm" onClick={onMeetCoach}><UserRound className="mr-2 h-4 w-4" />Meet with a Coach</Button>{SHOW_SLIDE_EXPORTS && <Button variant="outline" size="sm" onClick={onPreviewSlides}><Eye className="mr-2 h-4 w-4" />Preview slides</Button>}<Button variant="outline" size="sm" disabled={exportingHtml} onClick={() => void downloadHtml()}><FileDown className="mr-2 h-4 w-4" />{exportingHtml ? "Exporting..." : "HTML"}</Button>{SHOW_SLIDE_EXPORTS && <Button variant="outline" size="sm" disabled={exporting} onClick={() => void downloadPowerPoint()}><FileDown className="mr-2 h-4 w-4" />{exporting ? "Exporting..." : "PowerPoint"}</Button>}<Button className="lg:hidden" variant="outline" size="sm" disabled={sessionLoading || mutationPending} onClick={() => void saveProgress()}><FileText className="mr-2 h-4 w-4" />{mutationPending ? "Saving..." : "Save Progress"}</Button><Button size="sm" disabled={!progressSummary.canComplete || mutationPending} title={progressSummary.canComplete ? undefined : "Complete every featured activity first"} onClick={() => void completeHuddle()} className="bg-[#0f6cbd] text-white hover:bg-[#115ea3]"><CheckCircle2 className="mr-2 h-4 w-4" />Complete Huddle</Button></div></footer>
+      <footer className="flex flex-shrink-0 items-center gap-3 overflow-x-auto border-t border-[#e1e4e8] bg-white px-4 py-2.5 lg:px-5"><Button variant="ghost" className="flex-shrink-0" onClick={onClose}><ChevronLeft className="mr-2 h-4 w-4" />Exit to Huddle Library</Button><span className="ml-auto hidden flex-shrink-0 text-xs text-[#707070] xl:block">{session ? `Last saved ${new Date(session.lastSavedAtUtc).toLocaleString()}` : "Progress has not been saved yet."}</span><div className="flex flex-shrink-0 items-center gap-2"><Button className="lg:hidden" variant="outline" size="sm" onClick={onMeetCoach}><UserRound className="mr-2 h-4 w-4" />Meet with a Coach</Button>{SHOW_SLIDE_EXPORTS && <Button variant="outline" size="sm" onClick={onPreviewSlides}><Eye className="mr-2 h-4 w-4" />Preview slides</Button>}<Button size="sm" disabled={exportingHtml} onClick={() => void downloadHtml()} className="bg-[#0F6CBD] px-4 font-semibold text-white shadow-sm hover:bg-[#115EA3]"><FileDown className="mr-2 h-4 w-4" />{exportingHtml ? "Exporting..." : "HTML"}</Button>{SHOW_SLIDE_EXPORTS && <Button variant="outline" size="sm" disabled={exporting} onClick={() => void downloadPowerPoint()}><FileDown className="mr-2 h-4 w-4" />{exporting ? "Exporting..." : "PowerPoint"}</Button>}<Button className="lg:hidden" variant="outline" size="sm" disabled={sessionLoading || mutationPending} onClick={() => void saveProgress()}><FileText className="mr-2 h-4 w-4" />{mutationPending ? "Saving..." : "Save Progress"}</Button><Button size="sm" disabled={!progressSummary.canComplete || mutationPending} title={progressSummary.canComplete ? undefined : "Complete every featured activity first"} onClick={() => void completeHuddle()} variant="outline"><CheckCircle2 className="mr-2 h-4 w-4" />Complete Huddle</Button></div></footer>
       {talkTrackOpen && <HuddleTalkTrackPanel guide={model.facilitatorGuide} onClose={() => setTalkTrackOpen(false)} />}
     </div>
   );
@@ -317,8 +320,39 @@ function MobileNav({ label, active, onClick }: { label: string; active: boolean;
   return <button type="button" onClick={onClick} className={cn("rounded-md border px-3 py-2 text-sm", active ? "border-[#0f6cbd] bg-[#e8f2ff] text-[#0f6cbd]" : "bg-white")}>{label}</button>;
 }
 
+/**
+ * Which AI tools the Huddle uses, most-used first. Agents are grouped by their shown name because the
+ * same tool can be declared under more than one id; a declared tool no activity uses still appears.
+ */
+function summarizeTools(model: HuddlePresentationModel): { name: string; activityCount: number }[] {
+  const nameOf = (agent: HuddlePresentationAgent) => agent.displayLabel?.trim() || agent.name;
+  const counts = new Map<string, number>();
+  [...model.agents.primary, ...model.agents.secondary].forEach((agent) => { if (!counts.has(nameOf(agent))) counts.set(nameOf(agent), 0); });
+  model.phases.forEach((phase) => phase.activities.forEach((activity) => {
+    new Set(activity.agents.map(nameOf)).forEach((name) => counts.set(name, (counts.get(name) ?? 0) + 1));
+  }));
+  return [...counts.entries()].map(([name, activityCount]) => ({ name, activityCount })).sort((left, right) => right.activityCount - left.activityCount || left.name.localeCompare(right.name));
+}
+
+/**
+ * High-level summary: the Huddle's featured activities, lettered A, B, C as in the downloaded HTML's
+ * "What you'll practice" card, alongside the AI tools it relies on.
+ */
+function OverviewSummary({ model }: { model: HuddlePresentationModel }) {
+  const tools = summarizeTools(model);
+  const featured = model.phases.flatMap((phase) => phase.activities).filter((activity) => activity.practiceTier !== "Extended");
+  return <div className="grid gap-4 lg:grid-cols-2">
+    <section className="rounded-xl border border-[#dfe3e8] bg-white p-5"><h4 className="flex items-center gap-2 font-semibold"><span className="flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-[#16233A]" aria-hidden="true"><span className="h-1.5 w-1.5 rounded-full bg-[#16233A]" /></span>What you&apos;ll practice</h4>
+      {featured.length === 0 ? <OptionalContent value={null} /> : <ol className="mt-3 divide-y divide-[#e6ecf1]">{featured.map((activity, index) => <li key={activity.externalId} className="flex items-start gap-3 py-3 first:pt-1 last:pb-0"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0f6cbd] text-xs font-bold text-white" aria-hidden="true">{index < 26 ? String.fromCharCode(65 + index) : index + 1}</span><span className="min-w-0"><span className="block text-sm font-semibold text-[#242424]">{activity.name}</span>{activity.description && <span className="mt-0.5 block text-sm leading-5 text-[#616161]">{activity.description}</span>}</span></li>)}</ol>}
+    </section>
+    <section className="rounded-xl border border-[#dfe3e8] bg-white p-5"><h4 className="font-semibold">Key AI tools</h4>
+      {tools.length === 0 ? <OptionalContent value={null} /> : <ul className="mt-3 flex flex-wrap gap-2">{tools.map((tool) => <li key={tool.name} className="inline-flex items-center gap-1.5 rounded border border-[#0f6cbd]/20 bg-[#e8f2ff] px-3 py-1.5 text-sm text-[#0f6cbd]"><Bot className="h-3.5 w-3.5" />{tool.name}</li>)}</ul>}
+    </section>
+  </div>;
+}
+
 function Overview({ model }: { model: HuddlePresentationModel }) {
-  return <div className="mx-auto max-w-4xl space-y-5"><div><p className="text-xs font-semibold uppercase tracking-wide text-[#0f6cbd]">Overview</p><h3 className="mt-1 text-2xl font-semibold">{model.identity.name}</h3><OptionalContent value={model.identity.description} /></div><div className="grid gap-4 md:grid-cols-2"><OverviewCard title="Today’s Objective" value={model.narrative.todayObjective} /><OverviewCard title="Use Case" value={model.narrative.useCase} /><OverviewCard title="Why It Matters" value={model.narrative.whyItMatters} /><OverviewCard title="Desired Outcome" value={model.narrative.desiredOutcome} /></div>{(model.audience.roleName || model.audience.audienceDescription) && <OverviewCard title="Audience" value={[model.audience.roleName, model.audience.audienceDescription].filter(Boolean).join(" — ")} />}{model.mcemStages.length > 0 && <section className="rounded-xl border border-[#dfe3e8] bg-white p-5"><h4 className="font-semibold">MCEM stages</h4><div className="mt-3 flex flex-wrap gap-2">{model.mcemStages.map((stage) => <span key={stage.externalId} className="rounded border border-[#0f6cbd]/20 bg-[#e8f2ff] px-3 py-1.5 text-sm text-[#0f6cbd]">{stage.name}</span>)}</div></section>}</div>;
+  return <div className="mx-auto max-w-4xl space-y-5"><div><p className="text-xs font-semibold uppercase tracking-wide text-[#0f6cbd]">Overview</p><h3 className="mt-1 text-2xl font-semibold">{model.identity.name}</h3><OptionalContent value={model.identity.description} /></div><OverviewSummary model={model} /><div className="grid gap-4 md:grid-cols-2"><OverviewCard title="Today’s Objective" value={model.narrative.todayObjective} /><OverviewCard title="Use Case" value={model.narrative.useCase} /><OverviewCard title="Why It Matters" value={model.narrative.whyItMatters} /><OverviewCard title="Desired Outcome" value={model.narrative.desiredOutcome} /></div>{(model.audience.roleName || model.audience.audienceDescription) && <OverviewCard title="Audience" value={[model.audience.roleName, model.audience.audienceDescription].filter(Boolean).join(" — ")} />}{model.mcemStages.length > 0 && <section className="rounded-xl border border-[#dfe3e8] bg-white p-5"><h4 className="font-semibold">MCEM stages</h4><div className="mt-3 flex flex-wrap gap-2">{model.mcemStages.map((stage) => <span key={stage.externalId} className="rounded border border-[#0f6cbd]/20 bg-[#e8f2ff] px-3 py-1.5 text-sm text-[#0f6cbd]">{stage.name}</span>)}</div></section>}</div>;
 }
 
 function OverviewCard({ title, value }: { title: string; value: string | null }) {

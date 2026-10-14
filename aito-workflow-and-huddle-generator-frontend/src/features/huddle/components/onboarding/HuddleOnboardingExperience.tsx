@@ -376,7 +376,7 @@ export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRo
 
           <div className="mt-7 flex flex-wrap gap-3">
             <Button size="lg" className="bg-[#0A6BBA] px-5 hover:bg-[#115EA3]" onClick={()=>document.getElementById('choose-experience')?.scrollIntoView({behavior:'smooth'})}>
-              Choose your experience<ArrowRight className="ml-2 h-4 w-4" />
+              Select your huddle role<ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="border-[#BFD6E5] bg-white/90 text-[#2A446F] hover:bg-[#F4F9FC]" onClick={()=>document.getElementById('how-huddles-work')?.scrollIntoView({behavior:'smooth'})}>
               How Huddles work
@@ -414,7 +414,7 @@ export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRo
     {/* Rich role cards remain available for users who want more context before choosing. */}
     <section id="choose-experience" className="scroll-mt-24 space-y-5">
       <div className="max-w-3xl">
-        <p className="text-xs font-bold uppercase tracking-[.16em] text-[#0A6BBA]">Choose Your Experience</p>
+        <p className="text-xs font-bold uppercase tracking-[.16em] text-[#0A6BBA]">Select your huddle role</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[#16233A] md:text-4xl">Choose how you want to use Huddles</h2>
         <p className="mt-2 text-sm leading-6 text-[#647185]">Select the experience that best matches your role in the Huddle motion. You can switch later.</p>
       </div>
@@ -441,9 +441,9 @@ export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRo
 
     <div id="how-huddles-work" className="scroll-mt-24"><HuddleJourney /></div>
 
-    <ThinkFeelDo />
-
     <section className="overflow-hidden rounded-[28px] border border-[#DCE6ED] bg-gradient-to-br from-[#F7FBFD] via-white to-[#EDF7F2] shadow-[0_14px_42px_rgba(22,35,58,.06)]"><div className="grid lg:grid-cols-[1.05fr_.95fr]"><div className="p-7 md:p-10"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#0A6BBA]">What is Frontier Accelerator?</p><h2 className="mt-3 text-3xl font-semibold text-[#16233A]">A practical path from AI awareness to adoption</h2><p className="mt-5 max-w-2xl text-base leading-8 text-[#637085]">Frontier Accelerator helps teams adopt AI through structured conversations, guided practice, and real-world application.</p><p className="mt-3 max-w-2xl text-base leading-8 text-[#637085]">Rather than learning tools in isolation, team members learn how AI supports the workflows they already use every day.</p><div className="mt-7 rounded-2xl border border-[#C5DFF0] bg-white p-5 shadow-sm"><div className="flex gap-4"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0A6BBA] text-white"><Lightbulb className="h-5 w-5"/></div><div><p className="font-semibold text-[#2A446F]">The motion principle</p><p className="mt-2 text-sm leading-6 text-[#657286]">Start with the job to be done, then apply the right AI experience to improve the workflow.</p></div></div></div></div><div className="border-t border-[#E2E9EE] p-7 md:p-10 lg:border-l lg:border-t-0"><h3 className="text-xl font-semibold text-[#16233A]">Why it exists</h3><div className="mt-6 grid gap-4 sm:grid-cols-2">{whyItExists.map(([title,body,Icon])=><article key={title} className="rounded-[20px] border border-[#DDE6EC] bg-white/75 p-5"><div className="flex items-center gap-3"><div className="rounded-xl bg-[#E2F1F9] p-2.5"><Icon className="h-5 w-5 text-[#0A6BBA]"/></div><h4 className="font-semibold text-[#16233A]">{title}</h4></div><p className="mt-4 text-sm leading-6 text-[#637085]">{body}</p></article>)}</div></div></div></section>
+
+    <ThinkFeelDo />
 
     <section className="space-y-5"><div><p className="text-xs font-bold uppercase tracking-[.16em] text-[#0A6BBA]">Learning Journey</p><h2 className="mt-2 text-3xl font-semibold text-[#16233A]">One motion. Three connected steps.</h2><p className="mt-2 text-sm text-[#647185]">Move from understanding the motion to role-based practice, then keep expanding through self-directed topics.</p></div><div className="relative rounded-[28px] border border-[#DDE6EC] bg-white p-6 md:p-8"><div className="absolute bottom-16 left-[12%] right-[12%] top-16 hidden rounded-full border-2 border-dashed border-[#C7DDE8] lg:block"/><div className="relative grid gap-4 lg:grid-cols-3">{journeySteps.map(([n,title,purpose,,outcome,Icon,surface],i)=><motion.article whileHover={{y:-4}} key={title} className="relative rounded-[22px] border border-[#DDE5EB] bg-white p-5 shadow-[0_10px_28px_rgba(22,35,58,.06)]"><div className="flex items-center justify-between"><div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{background:surface}}><Icon className="h-5 w-5 text-[#0A6BBA]"/></div><span className="text-xs font-bold tracking-[.14em] text-[#8390A0]">STEP {n}</span></div><h3 className="mt-5 text-xl font-semibold text-[#16233A]">{title}</h3><div className="mt-4 space-y-3"><div><p className="text-[11px] font-bold uppercase tracking-[.14em] text-[#8793A2]">Purpose</p><p className="mt-1 text-sm leading-6 text-[#5F6D80]">{purpose}</p></div><div className="rounded-xl bg-[#F7FAFC] p-3"><p className="text-[10px] font-bold uppercase tracking-[.12em] text-[#8793A2]">Outcome</p><p className="mt-1 text-sm font-medium leading-5 text-[#2A446F]">{outcome}</p></div></div>{i<2 && <div className="absolute -right-3 top-1/2 z-10 hidden h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border bg-white text-[#0A6BBA] shadow lg:flex">→</div>}</motion.article>)}</div></div></section>
 
@@ -454,9 +454,11 @@ export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRo
     <HuddleResourcesSection />
 
     {/* End-of-page next step, so the reader does not have to scroll back up to pick a role. */}
-    <div className="flex justify-end">
+    <div className="flex flex-wrap items-center justify-between gap-3">
+      {/* A real link, so hovering shows the address in the tooltip and the browser status bar. */}
+      <a href="https://www.microsoft.com/en-us/privacy/privacystatement" target="_blank" rel="noopener noreferrer" title="https://www.microsoft.com/en-us/privacy/privacystatement" className="inline-flex h-10 items-center rounded-lg border border-[#DCE6ED] bg-white px-4 text-sm font-semibold text-[#16233A] transition-colors hover:bg-[#F4F9FC]"><ShieldCheck className="mr-2 h-4 w-4 text-[#0A6BBA]" />Privacy</a>
       <Button size="lg" className="bg-[#0A6BBA] px-5 hover:bg-[#115EA3]" onClick={()=>document.getElementById('choose-experience')?.scrollIntoView({behavior:'smooth'})}>
-        Choose your experience<ArrowRight className="ml-2 h-4 w-4" />
+        Select your huddle role<ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </div>
   </motion.section>;
