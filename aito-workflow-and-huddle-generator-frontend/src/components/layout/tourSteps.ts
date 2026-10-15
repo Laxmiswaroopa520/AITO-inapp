@@ -166,8 +166,8 @@ function huddleSteps(persona: HuddlePersona | null, viewMode: HuddleViewMode, ta
   return targets.map((target) => huddleStep(persona, viewMode, target)).filter((step): step is TourStep => step !== null);
 }
 
-/** The header actions every Huddle page shares. Launch Planner is only rendered for Managers. */
-const HUDDLE_HEADER_TARGETS = ["huddle-breadcrumb", "huddle-in-a-box", "huddle-launch-planner", "huddle-resources"];
+/** Navigation and page orientation come first. Launch Planner is only rendered for Managers. Create your own Huddle is added last on each tab. */
+const HUDDLE_HEADER_TARGETS = ["huddle-breadcrumb", "huddle-sections", "huddle-launch-planner", "huddle-resources"];
 
 const HUDDLE_DETAIL_TARGETS = ["huddle-detail", "huddle-detail-html", "huddle-facilitator-hub", "huddle-detail-coach"];
 
@@ -175,17 +175,16 @@ const HUDDLE_DETAIL_TARGETS = ["huddle-detail", "huddle-detail-html", "huddle-fa
 const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
   orientation: [
     ...HUDDLE_HEADER_TARGETS,
-    "huddle-sections",
     "huddle-onboarding-start",
     "huddle-onboarding-walkthrough",
     "huddle-onboarding-helps",
     "huddle-onboarding-timeline",
     "huddle-onboarding-rhythm",
     "huddle-onboarding-continue",
+    "huddle-in-a-box",
   ],
   guided: [
     ...HUDDLE_HEADER_TARGETS,
-    "huddle-sections",
     "huddle-audience",
     "huddle-path-actions",
     "huddle-list",
@@ -194,10 +193,10 @@ const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
     "huddle-week-menu",
     "huddle-coming-soon",
     ...HUDDLE_DETAIL_TARGETS,
+    "huddle-in-a-box",
   ],
   evergreen: [
     ...HUDDLE_HEADER_TARGETS,
-    "huddle-sections",
     "huddle-filters",
     "huddle-continue",
     "huddle-plan-card",
@@ -211,7 +210,7 @@ const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
 };
 
 /** Shown before an experience is chosen, so there is no role to word the copy for. */
-const HUDDLE_LANDING_TARGETS = ["huddle-in-a-box", "huddle-resources", "huddle-agents", "huddle-experience", "huddle-journey", "huddle-readiness"];
+const HUDDLE_LANDING_TARGETS = ["huddle-resources", "huddle-agents", "huddle-experience", "huddle-journey", "huddle-readiness", "huddle-in-a-box"];
 
 const LAUNCH_PLANNER_STEPS: TourStep[] = [
   { target: "planner-config", title: "Configure your launch", content: "Fill in your team, cohort, start date, sponsor, and program lead. These are required. End date, managers, and facilitators are optional." },

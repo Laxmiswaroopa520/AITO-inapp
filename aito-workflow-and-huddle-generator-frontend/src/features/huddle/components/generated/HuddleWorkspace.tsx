@@ -321,17 +321,26 @@ function MobileNav({ label, active, onClick }: { label: string; active: boolean;
 }
 
 /**
- * Which AI tools the Huddle uses, most-used first. Agents are grouped by their shown name because the
- * same tool can be declared under more than one id; a declared tool no activity uses still appears.
+ * Which AI tools the Huddle uses, most-used first, split into the Huddle's primary and secondary tools.
+ * Agents are grouped by their shown name because the same tool can be declared under more than one id;
+ * a declared tool no activity uses still appears. A tool belongs to the list the Huddle declares it in.
  */
-function summarizeTools(model: HuddlePresentationModel): { name: string; activityCount: number }[] {
+function summarizeTools(model: HuddlePresentationModel): { primary: { name: string; activityCount: number }[]; secondary: { name: string; activityCount: number }[] } {
   const nameOf = (agent: HuddlePresentationAgent) => agent.displayLabel?.trim() || agent.name;
-  const counts = new Map<string, number>();
-  [...model.agents.primary, ...model.agents.secondary].forEach((agent) => { if (!counts.has(nameOf(agent))) counts.set(nameOf(agent), 0); });
+  const primaryIds = new Set(model.agents.primary.map((agent) => agent.externalId));
+  const secondaryIds = new Set(model.agents.secondary.map((agent) => agent.externalId));
+  const categoryOf = (agent: HuddlePresentationAgent): "primary" | "secondary" =>
+    primaryIds.has(agent.externalId) ? "primary" : secondaryIds.has(agent.externalId) ? "secondary" : agent.usageType === "Secondary" ? "secondary" : "primary";
+  const counts = { primary: new Map<string, number>(), secondary: new Map<string, number>() };
+  model.agents.primary.forEach((agent) => { if (!counts.primary.has(nameOf(agent))) counts.primary.set(nameOf(agent), 0); });
+  model.agents.secondary.forEach((agent) => { if (!counts.secondary.has(nameOf(agent))) counts.secondary.set(nameOf(agent), 0); });
   model.phases.forEach((phase) => phase.activities.forEach((activity) => {
-    new Set(activity.agents.map(nameOf)).forEach((name) => counts.set(name, (counts.get(name) ?? 0) + 1));
+    (["primary", "secondary"] as const).forEach((category) => {
+      new Set(activity.agents.filter((agent) => categoryOf(agent) === category).map(nameOf)).forEach((name) => counts[category].set(name, (counts[category].get(name) ?? 0) + 1));
+    });
   }));
-  return [...counts.entries()].map(([name, activityCount]) => ({ name, activityCount })).sort((left, right) => right.activityCount - left.activityCount || left.name.localeCompare(right.name));
+  const sorted = (map: Map<string, number>) => [...map.entries()].map(([name, activityCount]) => ({ name, activityCount })).sort((left, right) => right.activityCount - left.activityCount || left.name.localeCompare(right.name));
+  return { primary: sorted(counts.primary), secondary: sorted(counts.secondary) };
 }
 
 /**
@@ -345,8 +354,11 @@ function OverviewSummary({ model }: { model: HuddlePresentationModel }) {
     <section className="rounded-xl border border-[#dfe3e8] bg-white p-5"><h4 className="flex items-center gap-2 font-semibold"><span className="flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-[#16233A]" aria-hidden="true"><span className="h-1.5 w-1.5 rounded-full bg-[#16233A]" /></span>What you&apos;ll practice</h4>
       {featured.length === 0 ? <OptionalContent value={null} /> : <ol className="mt-3 divide-y divide-[#e6ecf1]">{featured.map((activity, index) => <li key={activity.externalId} className="flex items-start gap-3 py-3 first:pt-1 last:pb-0"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0f6cbd] text-xs font-bold text-white" aria-hidden="true">{index < 26 ? String.fromCharCode(65 + index) : index + 1}</span><span className="min-w-0"><span className="block text-sm font-semibold text-[#242424]">{activity.name}</span>{activity.description && <span className="mt-0.5 block text-sm leading-5 text-[#616161]">{activity.description}</span>}</span></li>)}</ol>}
     </section>
-    <section className="rounded-xl border border-[#dfe3e8] bg-white p-5"><h4 className="font-semibold">Key AI tools</h4>
-      {tools.length === 0 ? <OptionalContent value={null} /> : <ul className="mt-3 flex flex-wrap gap-2">{tools.map((tool) => <li key={tool.name} className="inline-flex items-center gap-1.5 rounded border border-[#0f6cbd]/20 bg-[#e8f2ff] px-3 py-1.5 text-sm text-[#0f6cbd]"><Bot className="h-3.5 w-3.5" />{tool.name}</li>)}</ul>}
+    <section className="rounded-xl border border-[#dfe3e8] bg-white p-5">
+      {tools.primary.length === 0 && tools.secondary.length === 0 ? <><h4 className="font-semibold">AI tools</h4><OptionalContent value={null} /></> : <div className="space-y-5">
+        {([["Primary AI tools", tools.primary], ["Secondary AI tools", tools.secondary]] as const).filter(([, list]) => list.length > 0).map(([title, list]) => <div key={title}><h4 className="font-semibold">{title}</h4>
+          <ul className="mt-3 flex flex-wrap gap-2">{list.map((tool) => <li key={tool.name} className="inline-flex items-center gap-1.5 rounded border border-[#0f6cbd]/20 bg-[#e8f2ff] px-3 py-1.5 text-sm text-[#0f6cbd]"><Bot className="h-3.5 w-3.5" />{tool.name}</li>)}</ul></div>)}
+      </div>}
     </section>
   </div>;
 }
