@@ -1393,11 +1393,12 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   );
   const usedDeclaredAgents = declaredAgents.filter((agent) => activityAgentExternalIds.has(agent.externalId));
 
-  // The Top 5 (in the official band order) that this Huddle actually uses, followed by
-  // whichever other used agents are not one of the five -- matching the "Top 5: ... . Also
-  // used: ... ." grouping in the AI Tools summary below and the order of the Resources tool grid.
+  // The Top 5 (in the official band order) that this Huddle lists as a primary or secondary agent,
+  // whether or not an activity calls on it, followed by whichever activity-used agents are not one
+  // of the five -- matching the "Top 5: ... . Also used: ... ." grouping in the AI Tools summary
+  // below and the order of the Resources tool grid.
   const topFiveUsedAgents = TOP_FIVE_AGENT_NAMES
-    .map((name) => usedDeclaredAgents.find((agent) => agentArtwork(agent.name)?.source === agentArtwork(name)?.source))
+    .map((name) => declaredAgents.find((agent) => agentArtwork(agent.name)?.source === agentArtwork(name)?.source))
     .filter((agent): agent is HuddlePresentationAgent => Boolean(agent));
   const alsoUsedAgents = usedDeclaredAgents.filter((agent) => !topFiveUsedAgents.includes(agent));
 
@@ -1417,8 +1418,8 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const aiToolsSummary = (() => {
     const topFiveNames = agentNames(topFiveUsedAgents);
     // "Also used" also lists the Huddle's secondary agents, even when no activity calls on them, so
-    // the summary matches the Secondary AI Tools shown in the app. The Top 5 band and the Resources
-    // tool grid keep the activity-used list (alsoUsedAgents / agents) and are unchanged.
+    // the summary matches the Secondary AI Tools shown in the app. A secondary agent that is one of
+    // the Top 5 is already in topFiveUsedAgents, so it is listed under "Top 5" rather than here.
     const secondaryAgents = [...model.agents.secondary]
       .filter((agent, index, all) => all.findIndex((candidate) => candidate.externalId === agent.externalId) === index)
       .sort((left, right) => left.displayOrder - right.displayOrder || left.externalId.localeCompare(right.externalId));
