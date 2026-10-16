@@ -10392,7 +10392,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -11373,7 +11373,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -15646,7 +15646,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -16901,7 +16901,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -17205,7 +17205,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -17337,7 +17337,7 @@
               "Brings permitted sales data and supported record actions into the flow of work, including on mobile. Deal Agent can assemble renewal facts and Deal Books from supported source systems; verify freshness, completeness, and current scenario availability. Review each proposed MSX write and your authority before confirming it."
             ],
             "usageType": "Primary",
-            "displayLabel": "CX Vitals, surfaced through Sales Agent",
+            "displayLabel": "CX Vitals",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -19561,7 +19561,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -23504,7 +23504,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -25421,7 +25421,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -25806,7 +25806,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -26108,7 +26108,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -27712,7 +27712,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -29407,7 +29407,7 @@
               "Brings permitted sales data and supported record actions into the flow of work, including on mobile. Deal Agent can assemble renewal facts and Deal Books from supported source systems; verify freshness, completeness, and current scenario availability. Review each proposed MSX write and your authority before confirming it."
             ],
             "usageType": "Primary",
-            "displayLabel": "CX Vitals, surfaced through Sales Agent",
+            "displayLabel": "CX Vitals",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -32135,7 +32135,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -32605,7 +32605,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -33340,7 +33340,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -139745,7 +139745,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": true,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -143922,7 +143922,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -144101,7 +144101,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -144174,7 +144174,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -144335,7 +144335,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -144915,7 +144915,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -144994,7 +144994,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -145319,7 +145319,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -145471,7 +145471,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": true,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -145625,7 +145625,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": true,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -146715,7 +146715,7 @@
               "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
             ],
             "usageType": "Primary",
-            "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+            "displayLabel": "ECIF Agent",
             "showAccessLink": false,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
@@ -146835,7 +146835,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -146908,7 +146908,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -146981,7 +146981,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -147054,7 +147054,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -147249,7 +147249,7 @@
                       "Reduces seller toil by bringing ECIF guidance and actions into one conversational flow; improves workscope completeness and first-pass quality; speeds the path from scope creation to IO/PO; and provides a connected view of requests, milestones, alerts, and delivery progress."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "ECIF Agent, surfaced through Sales Agent",
+                    "displayLabel": "ECIF Agent",
                     "showAccessLink": false,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent",
@@ -147924,7 +147924,7 @@
               "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
             ],
             "usageType": "Primary",
-            "displayLabel": "Deal Agent, surfaced through Sales Agent",
+            "displayLabel": "Deal Agent",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -148028,7 +148028,7 @@
                       "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "Deal Agent, surfaced through Sales Agent",
+                    "displayLabel": "Deal Agent",
                     "showAccessLink": true,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -148135,7 +148135,7 @@
                       "Brings deal facts, renewal context, Deal Books, and proposal work into the Sales Agent conversation instead of gathering them across separate portals. Keeps the capability visible while retaining one entry point and human review of commercial decisions."
                     ],
                     "usageType": "Primary",
-                    "displayLabel": "Deal Agent, surfaced through Sales Agent",
+                    "displayLabel": "Deal Agent",
                     "showAccessLink": true,
                     "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
                     "accessLinkLabel": "Open Sales Agent for Deal Agent",
@@ -148590,7 +148590,7 @@
               "Brings permitted sales data and supported record actions into the flow of work, including on mobile. Deal Agent can assemble renewal facts and Deal Books from supported source systems; verify freshness, completeness, and current scenario availability. Review each proposed MSX write and your authority before confirming it."
             ],
             "usageType": "Primary",
-            "displayLabel": "CX Vitals, surfaced through Sales Agent",
+            "displayLabel": "CX Vitals",
             "showAccessLink": true,
             "accessUrl": "https://m365.cloud.microsoft/chat/?titleId=P_280ba0c3-7951-e7a8-68d3-8d65f9ca8149",
             "accessLinkLabel": "Open Sales Agent",
