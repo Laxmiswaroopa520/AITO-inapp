@@ -438,7 +438,7 @@ export function HuddleOnboardingExperience({ persona, onSelectPersona, onStartRo
         {/* Immediate quick-start panel keeps a meaningful action above the fold. */}
         <div className="flex items-center border-t border-[#E1E9EF] bg-gradient-to-br from-[#F7FBFD]/90 to-[#EAF5F1]/90 p-6 md:p-8 lg:border-l lg:border-t-0 lg:p-9">
           <div data-tour="huddle-agents" className="w-full rounded-[24px] border border-white/80 bg-white/90 p-6 shadow-[0_16px_40px_rgba(42,68,111,.10)] backdrop-blur">
-            <p className="text-[11px] font-bold uppercase tracking-[.16em] text-[#0A6BBA]">Top 5 Agents</p>
+            <p className="text-[11px] font-bold uppercase tracking-[.16em] text-[#0A6BBA]">Top 5 MCAPS Agents</p>
             <h2 className="mt-2 text-xl font-semibold tracking-tight text-[#16233A]">Meet the agents that help you get work done</h2>
             <p className="mt-2 text-sm leading-5 text-[#647185]">Explore the core AI agents used across Frontier Accelerator. Each agent supports a different part of your workflow, from research and preparation to execution and follow-through.</p>
             <div className="mt-4 grid grid-cols-2 gap-3">

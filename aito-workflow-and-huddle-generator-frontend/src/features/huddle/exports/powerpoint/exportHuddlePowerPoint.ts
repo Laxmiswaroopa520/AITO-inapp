@@ -8,10 +8,10 @@ import type { HuddlePowerPoint, PowerPointExportOptions } from "./powerPoint.typ
 export function buildHuddlePowerPoint(model: HuddlePresentationModel): HuddlePowerPoint {
   const pptx = new PptxGenJS();
   pptx.layout = powerPointTheme.layout;
-  pptx.author = "AITO";
+  pptx.author = "Frontier Accelerator";
   pptx.subject = model.identity.name;
   pptx.title = `${model.identity.name} Huddle`;
-  pptx.company = "AITO";
+  pptx.company = "Frontier Accelerator";
   pptx.theme = {
     headFontFace: powerPointTheme.fonts.heading,
     bodyFontFace: powerPointTheme.fonts.body,

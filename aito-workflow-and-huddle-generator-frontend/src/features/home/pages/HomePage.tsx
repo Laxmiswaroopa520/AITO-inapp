@@ -60,7 +60,7 @@ export function HomePage() {
         <motion.header variants={itemVariants} className="mb-12 text-center">
           <div className="mb-5 inline-flex items-center">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 shadow-sm">
-              <img src={aitoLogo} alt="AITO" className="h-12 w-12 object-contain" />
+              <img src={aitoLogo} alt="Frontier Accelerator" className="h-12 w-12 object-contain" />
             </div>
           </div>
           <h1 className="mb-4 text-2xl font-bold tracking-tight text-foreground md:text-3xl">

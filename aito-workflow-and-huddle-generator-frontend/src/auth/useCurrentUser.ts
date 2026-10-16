@@ -4,7 +4,7 @@ import type { CurrentUser } from "./auth.types";
 const localUser: CurrentUser = {
   objectId: "local-user",
   email: null,
-  displayName: "AITO User",
+  displayName: "User",
   roles: [],
   isAuthenticated: true,
 };

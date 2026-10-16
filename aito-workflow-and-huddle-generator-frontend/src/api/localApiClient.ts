@@ -82,7 +82,7 @@ const HUDDLE_SESSIONS_KEY = "aito.local.huddle-sessions.v1";
 const LOCAL_USER: CurrentUser = {
   objectId: "local-user",
   email: null,
-  displayName: "AITO User",
+  displayName: "User",
   roles: [],
   isAuthenticated: true,
 };

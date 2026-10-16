@@ -24,8 +24,8 @@ export function CalendarReviewDialog({ open, onOpenChange, items }: CalendarRevi
   if (!open) return null;
   const update = (id: string, field: "subject" | "start" | "end", value: string) => setDraft(current => current.map(item => item.requestId === id ? { ...item, [field]: field === "subject" ? value : new Date(value).toISOString() } : item));
   const downloadIcs = () => {
-    const content = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//AITO//Workflow Schedule//EN", ...selected.flatMap(item => ["BEGIN:VEVENT", `UID:${item.requestId}@aito`, `DTSTART:${icsDate(item.start)}`, `DTEND:${icsDate(item.end)}`, `SUMMARY:${escapeIcs(item.subject)}`, `DESCRIPTION:${escapeIcs(item.body)}`, "END:VEVENT"]), "END:VCALENDAR"].join("\r\n");
-    const url = URL.createObjectURL(new Blob([content], { type: "text/calendar;charset=utf-8" })); const anchor = document.createElement("a"); anchor.href = url; anchor.download = "aito-workflow-schedule.ics"; anchor.click(); URL.revokeObjectURL(url);
+    const content = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Frontier Accelerator//Workflow Schedule//EN", ...selected.flatMap(item => ["BEGIN:VEVENT", `UID:${item.requestId}@aito`, `DTSTART:${icsDate(item.start)}`, `DTEND:${icsDate(item.end)}`, `SUMMARY:${escapeIcs(item.subject)}`, `DESCRIPTION:${escapeIcs(item.body)}`, "END:VEVENT"]), "END:VCALENDAR"].join("\r\n");
+    const url = URL.createObjectURL(new Blob([content], { type: "text/calendar;charset=utf-8" })); const anchor = document.createElement("a"); anchor.href = url; anchor.download = "frontier-accelerator-workflow-schedule.ics"; anchor.click(); URL.revokeObjectURL(url);
   };
   return <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="calendar-title">
     <div className="flex max-h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-background shadow-2xl">

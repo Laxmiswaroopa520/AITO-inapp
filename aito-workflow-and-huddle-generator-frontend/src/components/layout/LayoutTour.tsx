@@ -78,8 +78,10 @@ export function LayoutTour() {
     const update = () => {
       const element = findTarget(step.target);
       if (!element) { setRect(null); return; }
-      if (!element.closest("header")) element.scrollIntoView({ block: "center", behavior: "smooth" });
       const value = element.getBoundingClientRect();
+      // Header targets are usually already on screen, but a page header (e.g. Create your own huddle) can be scrolled out of view.
+      const offScreen = value.top < 0 || value.bottom > window.innerHeight;
+      if (!element.closest("header") || offScreen) element.scrollIntoView({ block: "center", behavior: "smooth" });
       setRect({ top: value.top, left: value.left, width: value.width, height: value.height });
     };
     update();
@@ -91,8 +93,8 @@ export function LayoutTour() {
 
   if (choosing) {
     const options = [
-      { key: "page", icon: ListChecks, title: "Page tips", detail: describe(choice.page.length, "What is on this page, written for your role."), steps: choice.page },
       { key: "layout", icon: LayoutDashboard, title: "Layout tips", detail: describe(choice.layout.length, "Navigation, mode switching, and search."), steps: choice.layout },
+      { key: "page", icon: ListChecks, title: "Page tips", detail: describe(choice.page.length, "What is on this page, written for your role."), steps: choice.page },
       { key: "all", icon: Sparkles, title: "Everything", detail: describe(choice.layout.length + choice.page.length, "The full walkthrough."), steps: [...choice.layout, ...choice.page] },
     ];
 

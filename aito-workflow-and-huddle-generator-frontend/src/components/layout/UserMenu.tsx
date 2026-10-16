@@ -8,7 +8,7 @@ export function UserMenu({ isWorkflowMode }: { isWorkflowMode: boolean }) {
   const currentUser = useCurrentUser();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
-  const name = currentUser.data?.displayName ?? "AITO User";
+  const name = currentUser.data?.displayName ?? "User";
   const email = currentUser.data?.email ?? "Local in-app mode";
 
   useEffect(() => {

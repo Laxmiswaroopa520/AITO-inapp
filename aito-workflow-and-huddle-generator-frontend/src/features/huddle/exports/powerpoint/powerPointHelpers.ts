@@ -62,7 +62,7 @@ export function addSlideFrame(slide: PptxGenJS.Slide, title: string, subtitle?: 
   slide.addShape("rect", { x: 0, y: 0, w: width, h: 0.12, fill: { color: colors.primary }, line: { color: colors.primary } });
   slide.addText(title, { x: 0.65, y: 0.38, w: 11.9, h: 0.48, fontFace: fonts.heading, fontSize: 24, bold: true, color: colors.navy, margin: 0, breakLine: false, fit: "shrink" });
   if (subtitle) slide.addText(subtitle, { x: 0.67, y: 0.92, w: 11.8, h: 0.3, fontFace: fonts.body, fontSize: 10.5, color: colors.muted, margin: 0, fit: "shrink" });
-  slide.addText("AITO  |  Huddle", { x: 0.65, y: height - 0.34, w: 3, h: 0.18, fontFace: fonts.body, fontSize: 8, color: colors.muted, margin: 0 });
+  slide.addText("Frontier Accelerator  |  Huddle", { x: 0.65, y: height - 0.34, w: 3, h: 0.18, fontFace: fonts.body, fontSize: 8, color: colors.muted, margin: 0 });
 }
 
 export function addSectionCard(slide: PptxGenJS.Slide, section: PowerPointSection, y: number, height: number): void {

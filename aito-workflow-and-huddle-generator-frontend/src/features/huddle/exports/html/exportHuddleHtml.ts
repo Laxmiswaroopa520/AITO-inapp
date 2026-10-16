@@ -1221,8 +1221,8 @@ function topFiveAgentBand(agents: readonly HuddlePresentationAgent[]): string {
       .filter((source): source is string => Boolean(source)),
   );
 
-  return `<section class="top-five-agent-band" aria-label="Top 5 agents">`
-    + `<div class="top-five-agent-band-label">Top 5 agents<span>Circle = included today</span></div>`
+  return `<section class="top-five-agent-band" aria-label="Top 5 MCAPS Agents">`
+    + `<div class="top-five-agent-band-label">Top 5 MCAPS Agents<span>Circle = included today</span></div>`
     + TOP_FIVE_AGENT_NAMES.map((name) => {
       const artwork = agentArtwork(name);
       const isUsed = artwork ? usedArtworkSources.has(artwork.source) : false;
@@ -1315,7 +1315,7 @@ function resourceHubToolCard(agent: HuddlePresentationAgent, isTopFive: boolean)
   // rather than a new data source or hardcoded list here. A "surfaced through" agent gets the
   // secondary badge only when the agent it is surfaced through is itself an official Top 5 agent.
   const badge = isTopFive
-    ? `<div class="resource-tool-badge">Top 5 agent</div>`
+    ? `<div class="resource-tool-badge">Top 5 MCAPS Agent</div>`
     : surfacedThroughName && isOfficialTopFiveAgentName(surfacedThroughName)
       ? `<div class="resource-tool-badge is-surfaced">Surfaced through Top 5 Agent</div>`
       : "";

@@ -4,7 +4,7 @@ import type { HuddleViewMode } from "@/features/huddle/store";
 export interface TourStep { target: string; title: string; content: string }
 
 const SHELL_TOP: TourStep[] = [
-  { target: "brand", title: "AITO home", content: "Return to the application landing page from anywhere." },
+  { target: "brand", title: "Home", content: "Return to the application landing page from anywhere." },
   { target: "mode-toggle", title: "Choose your mode", content: "Switch between Workflow and Huddle while each module keeps its own experience." },
 ];
 
@@ -17,7 +17,7 @@ const PROFILE: TourStep = { target: "user-menu", title: "Profile Settings & Feed
 const WORKFLOW_CONTENT: TourStep[] = [
   { target: "workflow-progress", title: "Workflow steps", content: "Move through role selection, activity selection, and your generated workflow." },
   { target: "role-selection", title: "Choose your role", content: "Filter the API-backed role catalog by segment and select the role that matches your work." },
-  { target: "workflow-benefits", title: "What you will get", content: "Review how AITO builds relevant activities, AI-tool guidance, and a balanced schedule." },
+  { target: "workflow-benefits", title: "What you will get", content: "Review how Frontier Accelerator builds relevant activities, AI-tool guidance, and a balanced schedule." },
   { target: "activity-select-all", title: "Select or clear all", content: "Selects every activity that matches your filters, or clears them. You can still tick activities one by one." },
   { target: "activity-filters", title: "Filter activities", content: "Narrow the list by AI tool or by how long an activity takes." },
   { target: "saved-workflows", title: "My Workflows", content: "Open, update, copy, favorite, or delete workflows you saved." },
@@ -117,7 +117,7 @@ const COMMON_TIPS: Record<string, CommonTip> = {
 };
 
 const HUDDLE_TITLES: Record<string, string> = {
-  "huddle-experience": "Choose your experience",
+  "huddle-experience": "Select your huddle role",
   "huddle-role": "Your experience",
   "huddle-breadcrumb": "Breadcrumb",
   "huddle-in-a-box": "Create your own Huddle",
@@ -210,7 +210,7 @@ const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
 };
 
 /** Shown before an experience is chosen, so there is no role to word the copy for. */
-const HUDDLE_LANDING_TARGETS = ["huddle-resources", "huddle-agents", "huddle-experience", "huddle-journey", "huddle-readiness", "huddle-in-a-box"];
+const HUDDLE_LANDING_TARGETS = ["huddle-agents", "huddle-experience", "huddle-journey", "huddle-in-a-box", "huddle-resources"];
 
 const LAUNCH_PLANNER_STEPS: TourStep[] = [
   { target: "planner-config", title: "Configure your launch", content: "Fill in your team, cohort, start date, sponsor, and program lead. These are required. End date, managers, and facilitators are optional." },

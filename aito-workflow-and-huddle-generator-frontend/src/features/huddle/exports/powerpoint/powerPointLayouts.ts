@@ -36,7 +36,7 @@ function addCover(pptx: PptxGenJS, model: HuddlePresentationModel): void {
   const { colors, fonts, height } = powerPointTheme;
   slide.background = { color: colors.navy };
   slide.addShape("rect", { x: 0, y: 0, w: 0.18, h: height, fill: { color: colors.primary }, line: { color: colors.primary } });
-  slide.addText("AITO HUDDLE", { x: 0.8, y: 0.65, w: 4, h: 0.3, fontFace: fonts.body, fontSize: 12, bold: true, color: "72D8FF", charSpacing: 2, margin: 0 });
+  slide.addText("FRONTIER ACCELERATOR HUDDLE", { x: 0.8, y: 0.65, w: 6, h: 0.3, fontFace: fonts.body, fontSize: 12, bold: true, color: "72D8FF", charSpacing: 2, margin: 0 });
   slide.addText(model.identity.name, { x: 0.8, y: 1.35, w: 10.9, h: 1.7, fontFace: fonts.heading, fontSize: 32, bold: true, color: colors.white, margin: 0, valign: "middle", fit: "shrink" });
   if (model.identity.description) slide.addText(model.identity.description, { x: 0.82, y: 3.2, w: 10.4, h: 1.05, fontFace: fonts.body, fontSize: 18, color: "DDEBF7", margin: 0, fit: "shrink" });
   const metadata = [model.identity.type, model.audience.roleName, model.identity.durationMinutes === null ? null : `${model.identity.durationMinutes} minutes`].filter(Boolean).join("  •  ");

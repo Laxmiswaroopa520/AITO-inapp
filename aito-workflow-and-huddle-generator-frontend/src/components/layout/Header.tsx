@@ -34,7 +34,7 @@ export function Header() {
   return <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
     <div className="mx-auto flex h-16 max-w-[1920px] items-center gap-6 px-4 lg:px-6">
       <button data-tour="brand" type="button" onClick={() => navigate("/")} className="flex items-center gap-2.5 transition-opacity hover:opacity-80">
-        <img src={aitoLogo} alt="AITO" className="h-12 w-12 shrink-0 object-contain" />
+        <img src={aitoLogo} alt="Frontier Accelerator" className="h-12 w-12 shrink-0 object-contain" />
         <span className="hidden text-left sm:flex"><strong className="whitespace-nowrap text-[16px] font-extrabold tracking-tight">Frontier Accelerator App</strong></span>
       </button>
 
