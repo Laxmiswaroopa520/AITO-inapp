@@ -1317,7 +1317,7 @@ function resourceHubToolCard(agent: HuddlePresentationAgent, isTopFive: boolean)
   const badge = isTopFive
     ? `<div class="resource-tool-badge">Top 5 MCAPS Agent</div>`
     : surfacedThroughName && isOfficialTopFiveAgentName(surfacedThroughName)
-      ? `<div class="resource-tool-badge is-surfaced">Surfaced through Top 5 Agent</div>`
+      ? `<div class="resource-tool-badge is-surfaced">Surfaced through Top 5 MCAPS Agents</div>`
       : "";
 
   return `<article class="resource-tool-card${isTopFive ? " top-five-resource" : ""}">`
