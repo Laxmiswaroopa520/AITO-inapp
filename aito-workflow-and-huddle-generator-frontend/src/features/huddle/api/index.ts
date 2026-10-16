@@ -2,6 +2,7 @@ export { getHuddleById } from "./getHuddleById";
 export { getHuddleCatalog } from "./getHuddleCatalog";
 export { getRecommendedPath } from "./getRecommendedPath";
 export { getHuddleVotes } from "./getHuddleVotes";
+export { getGlobalHuddleResources } from "./getGlobalHuddleResources";
 export { removeHuddleVote } from "./removeHuddleVote";
 export { setHuddleVote } from "./setHuddleVote";
 export { getHuddleSession } from "./getHuddleSession";

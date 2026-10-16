@@ -10,6 +10,7 @@ import type {
   HuddleDetailResponse,
   HuddleLaunchPlanResponse,
   HuddlePlanResponse,
+  HuddleResourceResponse,
   HuddleSessionResponse,
   HuddleUpcomingWeekResponse,
   HuddleVoteResponse,
@@ -33,6 +34,7 @@ interface StaticApiData {
     activities: Activity[];
   };
   huddle: {
+    roles: Role[];
     defaultCatalog: Record<string, HuddleCatalogItemResponse>;
     placementCatalog: Record<string, HuddleCatalogItemResponse>;
     defaultDetails: Record<string, HuddleDetailResponse>;
@@ -40,6 +42,10 @@ interface StaticApiData {
     rolePlacements: Record<string, Record<string, string>>;
     weeklyPaths: Record<string, Array<{ week: number; placementExternalId: string; topicExternalId: string }>>;
     additionalPaths: Record<string, Array<{ week: number; placementExternalId: string; topicExternalId: string }>>;
+    /** Topic and placement IDs retired by the workbook sync, mapped to the record that replaced them. */
+    legacyAliases?: { topics: Record<string, string>; placements: Record<string, string> };
+    /** Resources linked to no topic, activity or agent; shown globally in the Huddle Resources modal. */
+    globalResources?: HuddleResourceResponse[];
   };
 }
 
@@ -160,7 +166,12 @@ function allVotes(): Record<string, StoredVote> {
 }
 
 function voteResponse(externalId: string): HuddleVoteResponse {
-  const stored = allVotes()[externalId];
+  const votes = allVotes();
+  const retiredVote = Object.entries(DATA.huddle.legacyAliases?.topics ?? {})
+    .filter(([, replacement]) => replacement === externalId)
+    .map(([retired]) => votes[retired])
+    .find(Boolean);
+  const stored = votes[externalId] ?? retiredVote;
   return {
     huddleExternalId: externalId,
     upvotes: stored?.value === 1 ? 1 : 0,
@@ -294,19 +305,23 @@ function planResponse(roleExternalId: string): HuddlePlanResponse {
     placementExternalId: entry.placementExternalId,
   }));
   const recommendedByWeek = new Map(path.map((entry) => [entry.week, entry]));
-  const items = selected.map((item) => {
+  // Saved plans may name topics or placements that the workbook sync retired: follow the alias first, then
+  // fall back to the role's recommended huddle for that week, and drop an item only if nothing resolves.
+  const items = selected.flatMap((item) => {
     const recommended = recommendedByWeek.get(item.week);
-    const placementId = item.placementExternalId ?? recommended?.placementExternalId ?? DATA.huddle.rolePlacements[roleExternalId]?.[item.huddleExternalId] ?? null;
-    const huddle = placementId && DATA.huddle.placementCatalog[placementId]
-      ? DATA.huddle.placementCatalog[placementId]
-      : DATA.huddle.defaultCatalog[item.huddleExternalId];
-    if (!huddle) notFound(`Huddle '${item.huddleExternalId}' was not found.`);
-    return {
+    const topicId = canonicalTopicId(item.huddleExternalId);
+    const savedPlacementId = canonicalPlacementId(item.placementExternalId);
+    const placementId = savedPlacementId ?? recommended?.placementExternalId ?? DATA.huddle.rolePlacements[roleExternalId]?.[topicId] ?? null;
+    const huddle = (placementId ? DATA.huddle.placementCatalog[placementId] : undefined)
+      ?? DATA.huddle.defaultCatalog[topicId]
+      ?? (recommended ? DATA.huddle.placementCatalog[recommended.placementExternalId] : undefined);
+    if (!huddle) return [];
+    return [{
       week: item.week,
-      recommendedHuddleExternalId: recommended?.topicExternalId ?? item.huddleExternalId,
-      isCustomized: Boolean(recommended && (recommended.topicExternalId !== item.huddleExternalId || (item.placementExternalId && recommended.placementExternalId !== item.placementExternalId))),
+      recommendedHuddleExternalId: recommended?.topicExternalId ?? huddle.externalId,
+      isCustomized: Boolean(recommended && (recommended.topicExternalId !== huddle.externalId || (savedPlacementId && recommended.placementExternalId !== savedPlacementId))),
       huddle: clone(huddle),
-    };
+    }];
   });
   return {
     roleExternalId,
@@ -374,6 +389,40 @@ function sessionKey(externalId: string, placementExternalId: string | null): str
   return `${externalId}::${placementExternalId ?? "default"}`;
 }
 
+/** Maps a topic ID retired by the workbook sync to the topic that replaced it (other IDs pass through). */
+function canonicalTopicId(externalId: string): string {
+  return DATA.huddle.legacyAliases?.topics[externalId] ?? externalId;
+}
+
+/** Maps a placement ID retired by the workbook sync to its workbook replacement (other IDs pass through). */
+function canonicalPlacementId(placementExternalId: string | null | undefined): string | null {
+  if (!placementExternalId) return null;
+  return DATA.huddle.legacyAliases?.placements[placementExternalId] ?? placementExternalId;
+}
+
+/**
+ * Reads saved sessions and re-keys any saved under a topic ID that the workbook sync merged or renamed,
+ * so progress on a placement that still exists is kept. Sessions on removed placements are left untouched
+ * in storage (their content was replaced, so their progress is not carried over) and are not listed.
+ */
+function readSessions(): StoredSessions {
+  const stored = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
+  const next: StoredSessions = {};
+  let changed = false;
+  for (const [key, session] of Object.entries(stored)) {
+    const placementId = placementFromSessionKey(key);
+    const placement = placementId ? DATA.huddle.placementDetails[placementId] : undefined;
+    const topicId = placement?.externalId ?? canonicalTopicId(key.split("::")[0]);
+    const nextKey = sessionKey(topicId, placementId);
+    if (nextKey !== key) changed = true;
+    const candidate = nextKey === key ? session : { ...session, huddleExternalId: topicId };
+    const existing = next[nextKey];
+    if (!existing || existing.lastSavedAtUtc < candidate.lastSavedAtUtc) next[nextKey] = candidate;
+  }
+  if (changed) writeStorage(HUDDLE_SESSIONS_KEY, next);
+  return next;
+}
+
 function sessionActivities(externalId: string, placementExternalId: string | null) {
   const detail = placementExternalId
     ? DATA.huddle.placementDetails[placementExternalId]
@@ -436,11 +485,19 @@ function outlookDraftLink(subject: string, body: string): string {
   return `https://outlook.office.com/mail/deeplink/compose?${query.toString()}`;
 }
 
+/**
+ * Workflow Builder and Huddle keep separate role lists. A missing or empty module
+ * falls back to the Workflow list, which keeps unscoped callers on their previous behaviour.
+ */
+function rolesForModule(module: string | null): typeof DATA.reference.roles {
+  return module?.trim().toLowerCase() === "huddle" ? DATA.huddle.roles : DATA.reference.roles;
+}
+
 async function localGet(path: string): Promise<unknown> {
   const { pathname, searchParams } = parsePath(path);
   if (pathname === "/api/health") return { status: "Healthy", source: "InAppData" };
   if (pathname === "/api/auth/me") return clone(LOCAL_USER);
-  if (pathname === "/api/roles") return clone(DATA.reference.roles);
+  if (pathname === "/api/roles") return clone(rolesForModule(searchParams.get("module")));
   if (pathname === "/api/ai-tools") return clone(DATA.reference.aiTools);
   if (pathname === "/api/workflow-buckets") return clone(DATA.reference.workflowBuckets);
   if (pathname === "/api/activities") return activitiesFromQuery(searchParams);
@@ -458,6 +515,7 @@ async function localGet(path: string): Promise<unknown> {
     const roleExternalId = searchParams.get("roleExternalId") ?? "";
     return recommendedPath(roleExternalId);
   }
+  if (pathname === "/api/huddles/resources/global") return clone(DATA.huddle.globalResources ?? []);
   if (pathname === "/api/huddles/votes") {
     return Object.keys(DATA.huddle.defaultCatalog).map(voteResponse);
   }
@@ -468,8 +526,12 @@ async function localGet(path: string): Promise<unknown> {
     return readStorage<HuddleLaunchPlanResponse | null>(HUDDLE_LAUNCH_PLAN_KEY, null);
   }
   if (pathname === "/api/huddle-sessions/me/incomplete") {
-    const sessions = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
+    const sessions = readSessions();
     const result: IncompleteHuddleSessionResponse[] = Object.entries(sessions)
+      .filter(([key]) => {
+        const placementId = placementFromSessionKey(key);
+        return !placementId || Boolean(DATA.huddle.placementDetails[placementId]);
+      })
       .map(([key, stored]) => withFeaturedCounts(stored, placementFromSessionKey(key)))
       .filter((session) => session.sessionStatus === "InProgress")
       .map((session) => {
@@ -492,7 +554,7 @@ async function localGet(path: string): Promise<unknown> {
   if (pathname.startsWith("/api/huddles/") && pathname.endsWith("/session")) {
     const externalId = decodeURIComponent(pathname.split("/")[3]);
     const placementExternalId = searchParams.get("placementExternalId");
-    const stored = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
+    const stored = readSessions();
     const session = stored[sessionKey(externalId, placementExternalId)];
     return session ? clone(withFeaturedCounts(session, placementExternalId)) : notFound("No saved Huddle session exists yet.");
   }
@@ -572,7 +634,7 @@ async function localPost(path: string, body: unknown): Promise<unknown> {
     const { searchParams } = parsePath(path);
     const externalId = decodeURIComponent(pathname.split("/")[3]);
     const placementExternalId = searchParams.get("placementExternalId");
-    const sessions = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
+    const sessions = readSessions();
     const key = sessionKey(externalId, placementExternalId);
     const session = sessions[key] ?? createSession(externalId, placementExternalId);
     const now = new Date().toISOString();
@@ -613,7 +675,7 @@ async function localPut(path: string, body: unknown): Promise<unknown> {
     const activityExternalId = decodeURIComponent(parts[6]);
     const placementExternalId = searchParams.get("placementExternalId");
     const request = body as { isCompleted: boolean };
-    const sessions = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
+    const sessions = readSessions();
     const key = sessionKey(externalId, placementExternalId);
     const session = sessions[key] ?? createSession(externalId, placementExternalId);
     const now = new Date().toISOString();
@@ -631,7 +693,7 @@ async function localPut(path: string, body: unknown): Promise<unknown> {
     const externalId = decodeURIComponent(pathname.split("/")[3]);
     const placementExternalId = searchParams.get("placementExternalId");
     const request = body as { currentPhaseExternalId: string | null; facilitatorNotes: string | null };
-    const sessions = readStorage<StoredSessions>(HUDDLE_SESSIONS_KEY, {});
+    const sessions = readSessions();
     const key = sessionKey(externalId, placementExternalId);
     const session = sessions[key] ?? createSession(externalId, placementExternalId);
     session.currentPhaseExternalId = request.currentPhaseExternalId;

@@ -68,6 +68,8 @@ export const apiEndpoints = {
 
     votes: "/api/huddles/votes",
 
+    globalResources: "/api/huddles/resources/global",
+
     vote: (externalId: string): string =>
       `/api/huddles/${encodeURIComponent(externalId)}/vote`,
 

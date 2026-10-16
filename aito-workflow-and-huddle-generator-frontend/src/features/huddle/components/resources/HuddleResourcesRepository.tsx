@@ -1,10 +1,10 @@
-import { useQueries } from "@tanstack/react-query";
+import { useQueries, useQuery } from "@tanstack/react-query";
 import { BookOpen, ExternalLink, Library, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { useApiClient } from "@/api/useApiClient";
 import { Badge } from "@/components/ui/badge";
-import { getHuddleById } from "../../api";
+import { getGlobalHuddleResources, getHuddleById } from "../../api";
 import { huddleQueryKeys } from "../../hooks/huddleQueryKeys";
 import type {
   HuddleCatalogItemResponse,
@@ -40,11 +40,14 @@ function addResource(
   toolNames.forEach((name) => {
     if (name && !current.tools.includes(name)) current.tools.push(name);
   });
-  if (!current.huddles.includes(huddleName)) current.huddles.push(huddleName);
+  if (huddleName && !current.huddles.includes(huddleName)) current.huddles.push(huddleName);
   resources.set(resource.externalId, current);
 }
 
-function collectResources(details: readonly HuddleDetailResponse[]): RepositoryResource[] {
+function collectResources(
+  details: readonly HuddleDetailResponse[],
+  globalResources: readonly HuddleResourceResponse[],
+): RepositoryResource[] {
   const resources = new Map<string, RepositoryResource>();
 
   details.forEach((huddle) => {
@@ -64,6 +67,11 @@ function collectResources(details: readonly HuddleDetailResponse[]): RepositoryR
         });
       });
     });
+  });
+
+  // Resources linked to no topic, activity or AI tool: added once, skipping anything already collected above.
+  globalResources.forEach((resource) => {
+    if (!resources.has(resource.externalId)) addResource(resources, resource, "", []);
   });
 
   return [...resources.values()]
@@ -91,14 +99,23 @@ export function HuddleResourcesRepository({ open, catalog, onClose }: HuddleReso
     })),
   });
 
+  const globalResourcesQuery = useQuery({
+    queryKey: huddleQueryKeys.globalResources(),
+    queryFn: ({ signal }) => getGlobalHuddleResources(apiClient, signal),
+    enabled: open,
+    staleTime: 5 * 60 * 1000,
+    retry: 2,
+  });
+
   const details = useMemo(
     () => detailQueries.flatMap((query) => query.data ? [query.data] : []),
     [detailQueries],
   );
-  const resources = useMemo(() => collectResources(details), [details]);
+  const globalResources = globalResourcesQuery.data;
+  const resources = useMemo(() => collectResources(details, globalResources ?? []), [details, globalResources]);
   const tools = useMemo(() => [...new Set(resources.flatMap((resource) => resource.tools))].sort(), [resources]);
-  const isLoading = detailQueries.some((query) => query.isLoading);
-  const hasError = detailQueries.some((query) => query.isError);
+  const isLoading = detailQueries.some((query) => query.isLoading) || globalResourcesQuery.isLoading;
+  const hasError = detailQueries.some((query) => query.isError) || globalResourcesQuery.isError;
 
   const filtered = useMemo(() => {
     const query = search.trim().toLowerCase();

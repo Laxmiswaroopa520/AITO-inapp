@@ -18,6 +18,7 @@ export const huddleQueryKeys = {
     [...huddleQueryKeys.all, "recommended-path", roleExternalId] as const,
 
   votes: () => [...huddleQueryKeys.all, "votes"] as const,
+  globalResources: () => [...huddleQueryKeys.all, "global-resources"] as const,
   plan: (roleExternalId: string) =>
     [...huddleQueryKeys.all, "plan", roleExternalId] as const,
   // The placement is part of the key: the tracked activity set differs per placement, so the
