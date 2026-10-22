@@ -1646,7 +1646,8 @@ function downloadUrlFile(href: string, fileName: string): void {
 
 export function exportHuddleHtml(model: HuddlePresentationModel, options: HuddleHtmlExportOptions = {}): HtmlExportFile {
   if (isFrontierAcceleratorOrientation(model)) {
-    const fileName = options.fileName ?? safeHtmlFileName(huddleExportBaseName(model, new Date()), "FA-Huddle");
+    // Same page for every segment and role, so the name has no role: FA-Huddle_FrontierAcceleratorOrientation_<date>.
+    const fileName = options.fileName ?? safeHtmlFileName(`FA-Huddle_FrontierAcceleratorOrientation_${exportDateToken(new Date())}`, "FA-Huddle");
     downloadUrlFile(orientationHtmlUrl, fileName);
     // The page is downloaded from its asset URL, so there is no generated HTML to return.
     return { html: "", fileName };

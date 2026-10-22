@@ -182,8 +182,8 @@ export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onCh
             <span className={cn("text-sm font-medium", isChecked ? "text-[#115EA3]" : "text-foreground")}>{role.name}</span>
             {!multi && isChecked && <Check className="h-4 w-4 flex-none text-[#0F6CBD]" />}
           </span>
-          {/* Role descriptions are hidden for now. Uncomment to show them again.
-          <span className="mt-0.5 line-clamp-2 block text-xs text-muted-foreground">{role.description ?? "Description unavailable."}</span> */}
+          {/* Always rendered: a collapsed row hides whether the copy is missing or the field is. */}
+          <span className="mt-0.5 line-clamp-2 block text-xs text-muted-foreground">{role.descriptionSummary ?? role.description ?? "Description unavailable."}</span>
         </span>
       </button>
     );

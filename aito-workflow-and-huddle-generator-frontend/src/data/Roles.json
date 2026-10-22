@@ -4,7 +4,7 @@
     "Name": "Account Executive",
     "Abbreviation": "AE",
     "Segment": "Enterprise",
-    "Description": "Manages strategic enterprise accounts with complex multi-stakeholder deals and long sales cycles.",
+    "Description": "Owns Enterprise account priorities and commercial execution across pipeline, renewals, expansion, and customer conversations. Creates and qualifies opportunities, maintains evidence-backed forecasts, and coordinates the account team; technical, policy, and approval decisions remain with their accountable owners.",
     "SortOrder": 1,
     "IsActive": 1
   },
@@ -13,7 +13,7 @@
     "Name": "Account Technology Strategist",
     "Abbreviation": "ATS",
     "Segment": "Enterprise",
-    "Description": "Owns the technical strategy and solution roadmap for enterprise accounts.",
+    "Description": "Shapes Enterprise account technical strategy using stakeholder, workload, KPI, and risk insights. Prioritizes AI and Azure workloads, develops executive technical narratives, and aligns technical teams around readiness, impact, and customer decisions without assuming default implementation ownership.",
     "SortOrder": 2,
     "IsActive": 1
   },
@@ -22,7 +22,7 @@
     "Name": "Solution Sales Professional",
     "Abbreviation": "SSP",
     "Segment": "Enterprise",
-    "Description": "Drives solution-specific opportunities by shaping vision and leading value-based conversations.",
+    "Description": "Advances Enterprise solution-area opportunities through prospecting, discovery, proof, objection handling, and customer decisions. Builds value-based selling plans and competitive positioning, coordinating account owners, technical teams, partners, and investment preparation; funding decisions remain with authorized approvers.",
     "SortOrder": 3,
     "IsActive": 1
   },
@@ -31,7 +31,7 @@
     "Name": "Solution Engineer",
     "Abbreviation": "SE",
     "Segment": "Enterprise",
-    "Description": "Leads technical discovery, qualification, and execution of demos, PoCs, and solution designs.",
+    "Description": "Supports Enterprise opportunity decisions through technical discovery, agreed decision criteria, architecture options, and grounded technical responses. Designs demonstrations, workshops, and proofs of concept with success and exit criteria, addresses technical risks, and develops reusable assets distinct from post-sale architecture work.",
     "SortOrder": 4,
     "IsActive": 1
   },
@@ -40,7 +40,7 @@
     "Name": "Commercial Executive",
     "Abbreviation": "CE",
     "Segment": "Enterprise",
-    "Description": "Structures pricing, licensing, and commercial terms for deals and coordinates across team.",
+    "Description": "Leads Enterprise commercial strategy and negotiation by assessing structural exposure, commercial risk, and renewal options. Verifies licensing, policy, and approval boundaries against authoritative sources, prepares decision narratives, and coordinates approvals and execution without assuming policy or exception approval authority.",
     "SortOrder": 5,
     "IsActive": 1
   },
@@ -49,7 +49,7 @@
     "Name": "Cloud Solution Architect",
     "Abbreviation": "CSA",
     "Segment": "Enterprise",
-    "Description": "Designs and validates cloud and AI architectures for customer success.",
+    "Description": "Provides Enterprise technical advisory support for production architecture, validation, technical health, and cost optimization. Diagnoses consumption gaps against plans, recommends targeted interventions, and demonstrates technical progress and customer value without assuming ownership of every consumption shortfall.",
     "SortOrder": 6,
     "IsActive": 1
   },
@@ -58,7 +58,7 @@
     "Name": "Customer Success Account Manager",
     "Abbreviation": "CSAM",
     "Segment": "Enterprise",
-    "Description": "Drives customer adoption, expansion, and renewal through success planning.",
+    "Description": "Coordinates Enterprise customer success through outcome-based plans, milestones, and accepted owners. Combines health, usage, support, delivery, and stakeholder signals to align executives, orchestrate teams and partners, support adoption and growth planning, and manage delivery risks without owning technical architecture approval.",
     "SortOrder": 7,
     "IsActive": 1
   },
@@ -76,7 +76,7 @@
     "Name": "Digital Account Executive",
     "Abbreviation": "DAE",
     "Segment": "SME&C",
-    "Description": "Manages a high-volume portfolio of SME&C accounts through digital-first, scaled sales motions.",
+    "Description": "Manages SME&C territory coverage across direct and accepted partner-led routes, identifying uncovered gaps and prioritizing evidence-based prospecting. Leads customer outcome conversations, coordinates partner-led deals and forecasts, routes work to appropriate scale engines, and plans portfolio renewals and expansion.",
     "SortOrder": 9,
     "IsActive": 1
   },
@@ -85,7 +85,7 @@
     "Name": "Commercial Executive (SME&C)",
     "Abbreviation": "SMEC-CE",
     "Segment": "SME&C",
-    "Description": null,
+    "Description": "Engages early with the opportunity owner to shape executable commercial constructs across Microsoft and partner transaction routes. Navigates negotiation guardrails, coordinates owner-validated policy and licensing questions, routes approvals and exceptions, and hands off approved terms while addressing renewal commercial risk.",
     "SortOrder": 10,
     "IsActive": 1
   },
@@ -94,7 +94,7 @@
     "Name": "Digital Solution Area Specialist",
     "Abbreviation": "DSS",
     "Segment": "SME&C",
-    "Description": "Drives solution-area opportunities for SME&C customers through scaled, digital engagement models.",
+    "Description": "Develops SME&C solution-area pipeline starting with installed-base telemetry and contract events, supplemented by customer, partner, and marketing evidence. Shapes customer strategy and decision criteria, coordinates multiworkload routing and proof, and connects conversion, delivery, activation, renewal, and expansion.",
     "SortOrder": 11,
     "IsActive": 1
   },
@@ -103,7 +103,7 @@
     "Name": "Digital Solution Engineer",
     "Abbreviation": "DSE",
     "Segment": "SME&C",
-    "Description": "Leads technical discovery and solution demonstrations for SME&C accounts through digital-first engagements.",
+    "Description": "Consolidates existing SME&C discovery from account, specialist, partner, and customer inputs, validating decision criteria and gaps. Shapes viable architecture with delivery owners, runs the smallest useful proof, transfers technical decisions into delivery, reuses assets, and addresses partner technical capability gaps.",
     "SortOrder": 12,
     "IsActive": 1
   },
@@ -112,7 +112,7 @@
     "Name": "Digital Cloud Solution Architect",
     "Abbreviation": "DCSA",
     "Segment": "SME&C",
-    "Description": "Designs and validates cloud and AI architectures for SME&C customers at scale.",
+    "Description": "Assesses SME&C handoffs against coverage, sold outcomes, technical decisions, and accepted owners. Supports covered consumption portfolios through milestone readiness, partner and scale-engine handoffs, targeted adoption and technical interventions, attributed value evidence, and expansion hypotheses without assuming blanket customer or partner-delivery ownership.",
     "SortOrder": 13,
     "IsActive": 1
   },
@@ -121,7 +121,7 @@
     "Name": "Partner Solution Sales",
     "Abbreviation": "PSS",
     "Segment": "SME&C",
-    "Description": "Drives solution sales and pipeline growth for SME&C customers through the partner channel.",
+    "Description": "Plans solution-area sales with pinned SME&C partners, qualifying partner-originated demand using Microsoft-verifiable facts. Reconciles partner pipeline and forecasts, coordinates deal clinics, checks readiness before handoff, connects closed deals to delivery, and reviews performance and expansion opportunities.",
     "SortOrder": 14,
     "IsActive": 1
   },

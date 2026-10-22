@@ -4,6 +4,8 @@ export interface HuddleRoleResponse {
   abbreviation: string;
   segment: string | null;
   description: string | null;
+  /** Two-line version of description for the role dropdown. */
+  descriptionSummary?: string | null;
 }
 
 export interface HuddleResourceResponse {
