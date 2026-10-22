@@ -6,6 +6,8 @@ import { huddleGuideInteractions } from "./huddleGuideInteractions";
 import { huddleGuideStyles } from "./huddleGuideStyles";
 import { agentArtwork, frontierAcceleratorLogo } from "./huddleGuideAssets";
 import { HUDDLE_FONT_STACK } from "./fontStack";
+// ?url keeps this large hand-built page out of the JS bundle; it is only fetched when Week 1 is downloaded.
+import orientationHtmlUrl from "@/assets/huddle/orientation/orientation-preview.html?url";
 
 const text = (value: string | number) => escapeHtml(value);
 
@@ -1213,19 +1215,44 @@ function isOfficialTopFiveAgentName(name: string): boolean {
  */
 const SURFACED_THROUGH_PATTERN = /^(.+?),\s*surfaced through\s+(.+)$/i;
 
+/** Agents that are part of a Top 5 agent without saying so in a "surfaced through" label. */
+const TOP_FIVE_PART_OF = new Map<string, (typeof TOP_FIVE_AGENT_NAMES)[number]>([
+  ["sales home", "Sales Agent"],
+]);
+
+function officialTopFiveName(name: string): (typeof TOP_FIVE_AGENT_NAMES)[number] | null {
+  const source = agentArtwork(name)?.source;
+  return source ? TOP_FIVE_AGENT_NAMES.find((topName) => agentArtwork(topName)?.source === source) ?? null : null;
+}
+
+/**
+ * The Top 5 agent this agent counts under on the Overview (AI Tools line and Top 5 band): itself,
+ * the agent it is part of (Sales Home), or the Top 5 agent it is surfaced through (Deal Agent).
+ * Null when it is not part of the Top 5. The Resources tab keeps its own Top 5 check.
+ */
+function topFiveGroupName(agent: HuddlePresentationAgent): (typeof TOP_FIVE_AGENT_NAMES)[number] | null {
+  const own = officialTopFiveName(agent.name);
+  if (own) return own;
+  const partOf = TOP_FIVE_PART_OF.get(agent.name.trim().toLowerCase());
+  if (partOf) return partOf;
+  const surfacedThrough = (agent.displayLabel?.trim() || agent.name).match(SURFACED_THROUGH_PATTERN)?.[2].trim();
+  return surfacedThrough ? officialTopFiveName(surfacedThrough) : null;
+}
+
+/** Name on the Top 5 line: a "surfaced through" label is shortened to the agent's own name. */
+function topFiveLineName(agent: HuddlePresentationAgent): string {
+  const rawLabel = agent.displayLabel?.trim() || agent.name;
+  return rawLabel.match(SURFACED_THROUGH_PATTERN)?.[1].trim() ?? rawLabel;
+}
+
 /** "Top 5 agents" pill band shown on the Overview panel, mirroring the reference guide. */
-function topFiveAgentBand(agents: readonly HuddlePresentationAgent[]): string {
-  const usedArtworkSources = new Set(
-    agents
-      .map((agent) => agentArtwork(agent.name)?.source)
-      .filter((source): source is string => Boolean(source)),
-  );
+function topFiveAgentBand(usedTopFiveNames: ReadonlySet<string>): string {
 
   return `<section class="top-five-agent-band" aria-label="Top 5 MCAPS Agents">`
     + `<div class="top-five-agent-band-label">Top 5 MCAPS Agents<span>Circle = included today</span></div>`
     + TOP_FIVE_AGENT_NAMES.map((name) => {
       const artwork = agentArtwork(name);
-      const isUsed = artwork ? usedArtworkSources.has(artwork.source) : false;
+      const isUsed = usedTopFiveNames.has(name);
       const icon = artwork
         ? `<img class="top-five-agent-logo" src="${artwork.source}" alt="${text(name)}">`
         : `<span>${text(name.split(/\s+/).map((part) => part[0]).join("").slice(0, 3))}</span>`;
@@ -1416,7 +1443,6 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const commitPrompt = guide?.commitPrompt ?? model.commitmentPrompt;
   const topicName = model.identity.name;
   const aiToolsSummary = (() => {
-    const topFiveNames = agentNames(topFiveUsedAgents);
     // "Also used" also lists the Huddle's secondary agents, even when no activity calls on them, so
     // the summary matches the Secondary AI Tools shown in the app. A secondary agent that is one of
     // the Top 5 is already in topFiveUsedAgents, so it is listed under "Top 5" rather than here.
@@ -1424,7 +1450,15 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
       .filter((agent, index, all) => all.findIndex((candidate) => candidate.externalId === agent.externalId) === index)
       .sort((left, right) => left.displayOrder - right.displayOrder || left.externalId.localeCompare(right.externalId));
     const listedExternalIds = new Set([...topFiveUsedAgents, ...alsoUsedAgents].map((agent) => agent.externalId));
-    const alsoUsedNames = agentNames([...alsoUsedAgents, ...secondaryAgents.filter((agent) => !listedExternalIds.has(agent.externalId))]);
+    const otherAgents = [...alsoUsedAgents, ...secondaryAgents.filter((agent) => !listedExternalIds.has(agent.externalId))];
+    // Sales Home and agents surfaced through a Top 5 agent join the Top 5 line, grouped after the
+    // Top 5 agent they belong to in band order, instead of being listed under "Also used".
+    const topFiveGroup = [...topFiveUsedAgents, ...otherAgents.filter((agent) => topFiveGroupName(agent))]
+      .map((agent, index) => ({ agent, index, band: TOP_FIVE_AGENT_NAMES.indexOf(topFiveGroupName(agent) ?? "Sales Agent") }))
+      .sort((left, right) => left.band - right.band || left.index - right.index)
+      .map(({ agent }) => agent);
+    const topFiveNames = topFiveGroup.map(topFiveLineName).filter((name) => name.length > 0);
+    const alsoUsedNames = agentNames(otherAgents.filter((agent) => !topFiveGroupName(agent)));
     if (!topFiveNames.length && !alsoUsedNames.length) return "Not configured";
     const topFivePart = topFiveNames.length ? `Top 5: ${topFiveNames.join(", ")}.` : "";
     const alsoUsedPart = alsoUsedNames.length ? `Also used: ${alsoUsedNames.join(", ")}.` : "";
@@ -1454,15 +1488,13 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const generated = new Date();
   const generatedDate = generated.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const generatedTime = generated.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
-  const workflowExportName = compactFileToken(getWorkflowExportName(model)) || "Huddle";
-  const roleExportName = getRoleExportName(model);
-  const exportBaseName = `FA-Huddle_${workflowExportName}_${roleExportName}_${exportDateToken(generated)}`;
+  const exportBaseName = huddleExportBaseName(model, generated);
 
   const overviewPanel = `<section class="huddle-section-panel is-active" data-section-panel="overview">`
     + `<div class="overview-timing-band" aria-label="Today\u2019s Huddle"><div class="overview-timing-title">Today\u2019s Huddle</div><div class="overview-timing-steps">`
     + TEMPLATE.agenda.map((step, index) => `${index > 0 ? '<div class="overview-timing-arrow">\u2192</div>' : ""}<div class="overview-timing-step"><strong>${text(step.label)}</strong><span>\u00b7 ${step.minutes} min</span></div>`).join("")
     + `</div></div>`
-    + topFiveAgentBand(agents)
+    + topFiveAgentBand(new Set([...agents, ...model.agents.secondary].map(topFiveGroupName).filter((name): name is (typeof TOP_FIVE_AGENT_NAMES)[number] => name !== null)))
     + `<section class="hero-grid"><div class="hero-copy"><h1>${text(topicName)}</h1>${model.identity.description ? `<p class="hero-description">${text(model.identity.description)}</p>` : ""}`
     + `<div class="meta-strip">`
     + `<div class="meta-item"><span class="round-icon meta-icon">${ROLE_SVG}</span><span><small>Role</small><strong>${text(model.audience.roleName?.trim() || "Not specified")}</strong></span></div>`
@@ -1587,7 +1619,38 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   };
 }
 
+/** FA-Huddle_<Huddle>_<Role>_<date>, the base name every Huddle HTML download uses. */
+function huddleExportBaseName(model: HuddlePresentationModel, generated: Date): string {
+  const workflowExportName = compactFileToken(getWorkflowExportName(model)) || "Huddle";
+  return `FA-Huddle_${workflowExportName}_${getRoleExportName(model)}_${exportDateToken(generated)}`;
+}
+
+/**
+ * Week 1's Frontier Accelerator Orientation ships as one hand-built page for every segment and role
+ * instead of the generated export. Matched on the name prefix because some roles title it
+ * "...Orientation for Account Executives".
+ */
+function isFrontierAcceleratorOrientation(model: HuddlePresentationModel): boolean {
+  return model.identity.name.trim().toLowerCase().startsWith("frontier accelerator orientation");
+}
+
+function downloadUrlFile(href: string, fileName: string): void {
+  const anchor = document.createElement("a");
+  anchor.href = href;
+  anchor.download = fileName;
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+}
+
 export function exportHuddleHtml(model: HuddlePresentationModel, options: HuddleHtmlExportOptions = {}): HtmlExportFile {
+  if (isFrontierAcceleratorOrientation(model)) {
+    const fileName = options.fileName ?? safeHtmlFileName(huddleExportBaseName(model, new Date()), "FA-Huddle");
+    downloadUrlFile(orientationHtmlUrl, fileName);
+    // The page is downloaded from its asset URL, so there is no generated HTML to return.
+    return { html: "", fileName };
+  }
   const output = createHuddleHtmlExport(model, options);
   downloadHtmlFile(output.html, output.fileName);
   return output;

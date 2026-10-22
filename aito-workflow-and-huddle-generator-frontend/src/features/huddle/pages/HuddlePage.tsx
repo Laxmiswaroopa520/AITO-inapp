@@ -20,8 +20,6 @@ import { downloadHtmlFile } from "../exports/html/htmlTemplate";
 import huddleInABoxTemplateHtml from "@/assets/HuddleInBox/HuddleInABox_Template 1.html?raw";
 // import facilitatorGuideImage from "@/assets/huddle/guides/facilitator-guide.png";
 // import managerGuideImage from "@/assets/huddle/guides/manager-guide.png";
-// ?url keeps this 5.9 MB file out of the JS bundle; it is only fetched when Week 1's HTML is downloaded.
-import orientationPreviewHtmlUrl from "@/assets/huddle/orientation/orientation-preview.html?url";
 import { useCompleteHuddleSession, useCustomLearningPlan, useHuddleAudienceRoles, useHuddleById, useHuddleCatalog, useHuddleSession, useHuddleVotes, useIncompleteHuddleSessions, useLegacyHuddlePlanMigration, useMyHuddlePlan, useResetHuddlePlan, useSaveHuddlePlan, useSaveHuddleSession, useSetHuddleActivityCompletion, useSetHuddleVote } from "../hooks";
 import { huddlePersonaAtom, huddleViewModeAtom, selectedHuddleExternalIdAtom, selectedHuddleRoleExternalIdAtom, type HuddleViewMode } from "../store";
 import type { HuddleCatalogItemResponse, HuddlePlanResponse, HuddlePresentationModel, HuddleVoteResponse } from "../types";
@@ -60,23 +58,6 @@ const HUDDLE_GUIDES: Partial<Record<HuddlePersona, HuddleGuide>> = {
 };
 */
 
-/**
- * Week 1's Frontier Accelerator Orientation ships as a hand-built HTML page instead of the generated
- * export. Matched on the name prefix because some roles title it "...Orientation for Account Executives".
- */
-function isFrontierAcceleratorOrientation(huddle: HuddleCatalogItemResponse): boolean {
-  return huddle.name.trim().toLowerCase().startsWith("frontier accelerator orientation");
-}
-
-function downloadAssetFile(href: string, fileName: string): void {
-  const anchor = document.createElement("a");
-  anchor.href = href;
-  anchor.download = fileName;
-  anchor.style.display = "none";
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-}
 
 export function HuddlePage() {
   const navigate = useNavigate();
@@ -334,21 +315,15 @@ export function HuddlePage() {
     const placementExternalId = huddle.placementExternalId ?? null;
     try {
       // let downloaded: boolean; (only the paused week guide popup reads it)
-      if (isFrontierAcceleratorOrientation(huddle)) {
-        setFeedback(null);
-        downloadAssetFile(orientationPreviewHtmlUrl, "orientation-preview.html");
-        setFeedback({ kind: "success", message: "HTML downloaded successfully." });
-        // downloaded = true;
-      } else {
-        /* downloaded = */ await downloadHuddleHtml(async () => {
-          const detail = await queryClient.fetchQuery({
-            queryKey: huddleQueryKeys.detail(huddle.externalId, placementExternalId),
-            queryFn: ({ signal }) => getHuddleById(apiClient, huddle.externalId, placementExternalId, signal),
-            staleTime: 5 * 60 * 1000,
-          });
-          return createHuddlePresentationModel(detail, presentationAudience);
+      // Week 1 (Orientation) goes through the same export, which downloads its hand-built page.
+      /* downloaded = */ await downloadHuddleHtml(async () => {
+        const detail = await queryClient.fetchQuery({
+          queryKey: huddleQueryKeys.detail(huddle.externalId, placementExternalId),
+          queryFn: ({ signal }) => getHuddleById(apiClient, huddle.externalId, placementExternalId, signal),
+          staleTime: 5 * 60 * 1000,
         });
-      }
+        return createHuddlePresentationModel(detail, presentationAudience);
+      });
       // Week guide popup paused; see the note above HUDDLE_GUIDES.
       // const guide = persona ? HUDDLE_GUIDES[persona] : undefined;
       // if (downloaded && guide) setOpenGuide(guide);
