@@ -15,15 +15,20 @@ interface RecommendedPathCardProps {
   managementMenu: ReactNode;
   /** Lifts this card's action layer above the sibling cards while its menu is open. */
   managementMenuOpen?: boolean;
-  /** Passing null deselects (used when re-clicking the already-selected card). */
-  onSelect: (externalId: string | null, placementExternalId?: string | null) => void;
-  onVote: (externalId: string, value: -1 | 1 | null) => void;
+  /** Sends the week's placement too: one topic can sit on several weeks of a Role Path. */
+  onSelect: (externalId: string, placementExternalId?: string) => void;
+  onVote: (externalId: string, value: -1 | 1 | null, name?: string) => void;
   htmlExportPending: boolean;
   /** True while any week card is downloading, so downloads never overlap. */
   htmlExportDisabled: boolean;
   onExportHtml: () => void;
-  /** Marks this card's HTML and vote controls as walkthrough targets (first card only). */
+  /** Marks this card's controls as the walkthrough targets; only the first card sets it. */
   tourFirst?: boolean;
+  /**
+   * Replace Huddle pop-up only: the button shown on the right. The card then drops its week circle,
+   * its "Week N" line and the HTML, vote and menu controls, and the card body is not clickable.
+   */
+  replacementAction?: ReactNode;
 }
 
 function agentLabel(names: string[]): string {
@@ -45,29 +50,39 @@ export function RecommendedPathCard({
   htmlExportDisabled,
   onExportHtml,
   tourFirst = false,
+  replacementAction,
 }: RecommendedPathCardProps) {
   const card = mapHuddleCatalogItemToCard(huddle);
+  const isReplacement = replacementAction !== undefined;
+  const Body = isReplacement ? "div" : "button";
 
   return (
     <article
       className={cn(
-        "group relative grid grid-cols-[58px_minmax(0,1fr)] items-start gap-3 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200 before:absolute before:-bottom-4 before:left-[39px] before:top-8 before:w-px before:bg-[#C7E0F4] last:before:hidden sm:grid-cols-[58px_minmax(0,1fr)_auto]",
+        "group relative grid items-start gap-3 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200",
+        isReplacement
+          ? "grid-cols-[minmax(0,1fr)] sm:grid-cols-[minmax(0,1fr)_auto]"
+          // Below 1536px (a Surface at 150-200% scaling, a zoomed Edge window) the buttons sit on the
+          // title row only, so the description, details and AI tools use the card's full width.
+          // From 1536px the original three-column layout is unchanged.
+          : "grid-cols-[58px_minmax(0,1fr)] before:absolute before:-bottom-4 before:left-[39px] before:top-8 before:w-px before:bg-[#C7E0F4] last:before:hidden 2xl:grid-cols-[58px_minmax(0,1fr)_auto]",
         managementMenuOpen && "z-50",
         selected
           ? "border-[#0F6CBD] bg-[#0F6CBD]/[0.035] ring-2 ring-[#0F6CBD]/15"
           : "border-[#E1DFDD] hover:-translate-y-0.5 hover:border-[#0F6CBD]/60 hover:bg-[#F5F9FF] hover:shadow-md",
       )}
     >
-      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#0F6CBD] text-sm font-bold text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
-        W{week}
-      </div>
+      {!isReplacement && (
+        <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#0F6CBD] text-sm font-bold text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
+          W{week}
+        </div>
+      )}
 
-      <button
-        type="button"
+      <Body
+        {...(isReplacement ? {} : { type: "button" as const, onClick: () => onSelect(huddle.externalId, huddle.placementExternalId ?? undefined) })}
         className="min-w-0 text-left focus-visible:outline-none"
-        onClick={() => onSelect(selected ? null : huddle.externalId, huddle.placementExternalId)}
       >
-        <span className="flex flex-wrap items-center gap-2">
+        <span className={cn("flex flex-wrap items-center gap-2", !isReplacement && "sm:min-h-8 sm:pr-[316px] 2xl:min-h-0 2xl:pr-0")}>
           <span className="text-base font-semibold leading-5 text-[#242424] transition-colors group-hover:text-[#115EA3]">
             {card.title}
           </span>
@@ -83,9 +98,11 @@ export function RecommendedPathCard({
         </span>
 
         <span className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
-            <CalendarDays className="h-3.5 w-3.5" />Week {week}
-          </span>
+          {!isReplacement && (
+            <span className="flex items-center gap-1">
+              <CalendarDays className="h-3.5 w-3.5" />Week {week}
+            </span>
+          )}
           <span className="flex items-center gap-1">
             <Clock className="h-3.5 w-3.5" />
             {card.durationMinutes === null ? "Duration unavailable" : `${card.durationMinutes} minutes`}
@@ -105,43 +122,47 @@ export function RecommendedPathCard({
         <span className="mt-3 block rounded-lg border border-[#C7E0F4] bg-[#F5F9FF] px-3 py-2.5">
           <span className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-[minmax(170px,0.9fr)_minmax(0,1.6fr)]">
             <span className="min-w-0">
-              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Primary AI Tool</span>
+              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Top 5 MCAPS Agents</span>
               <span className="mt-1 block truncate whitespace-nowrap text-sm font-semibold text-[#0F6CBD]">
                 <Bot className="mr-1 inline h-3.5 w-3.5" />{agentLabel(card.primaryAgentNames)}
               </span>
             </span>
             <span className="min-w-0 border-t border-[#D6E7F7] pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
-              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Secondary AI Tools</span>
+              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Additional AI Tools</span>
               <span className="mt-1 block truncate whitespace-nowrap text-sm text-[#424242]">
                 {agentLabel(card.secondaryAgentNames)}
               </span>
             </span>
           </span>
         </span>
-      </button>
+      </Body>
 
-      <div className="col-span-2 flex items-center justify-end gap-1 pt-1 sm:col-span-1 sm:pt-0">
+      {isReplacement ? (
+        <div className="flex items-center justify-end pt-1 sm:pt-0">{replacementAction}</div>
+      ) : (
+      <div className="col-span-2 flex items-center justify-end gap-1 pt-1 sm:absolute sm:right-4 sm:top-4 sm:pt-0 2xl:static 2xl:col-span-1">
         <button
           type="button"
-          data-tour={tourFirst ? "huddle-week-html" : undefined}
           disabled={htmlExportDisabled}
           onClick={(event) => { event.stopPropagation(); onExportHtml(); }}
           className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-white px-2 text-xs font-semibold text-[#242424] transition-colors hover:bg-[#F5F9FF] disabled:opacity-50"
           title={`Download ${card.title} as HTML`}
           aria-label={`Download ${card.title} as HTML`}
           aria-busy={htmlExportPending}
+          data-tour={tourFirst ? "huddle-week-html" : undefined}
         >
           {htmlExportPending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}HTML
         </button>
         <HuddleVoteControls
-          tour={tourFirst}
           huddleName={card.title}
           vote={vote}
           disabled={votePending}
-          onVote={(value) => onVote(huddle.externalId, value)}
+          onVote={(value) => onVote(huddle.externalId, value, card.title)}
+          tour={tourFirst}
         />
         {managementMenu}
       </div>
+      )}
     </article>
   );
 }

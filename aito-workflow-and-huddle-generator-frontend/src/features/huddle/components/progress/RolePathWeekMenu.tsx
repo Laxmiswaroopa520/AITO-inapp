@@ -1,29 +1,24 @@
 import { useCallback, useRef, useState } from "react";
-import { ChevronRight, MoreHorizontal } from "lucide-react";
+import { ChevronDown, ChevronRight, SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDismissOnOutside } from "../../hooks/useDismissOnOutside";
-
-interface ReplacementOption {
-  externalId: string;
-  name: string;
-}
 
 interface RolePathWeekMenuProps {
   week: number;
   weeks: readonly number[];
-  replacements: readonly ReplacementOption[];
   isCustomized: boolean;
   disabled: boolean;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onMoveToWeek: (week: number) => void;
-  onReplace: (externalId: string) => void;
+  /** Opens the Replace Huddle pop-up for this week. */
+  onOpenReplace: () => void;
   onReset: () => void;
-  /** Marks the trigger as the walkthrough target (first card only, so the target stays unique). */
-  tour?: boolean;
+  /** Marks the menu button as the walkthrough target; only the first week sets it. */
+  tourFirst?: boolean;
 }
 
-type Submenu = "week" | "huddle";
+type Submenu = "week";
 
 const ROW =
   "flex w-full items-center justify-between gap-3 rounded px-3 py-2 text-left text-sm hover:bg-[#F5F9FF] disabled:pointer-events-none disabled:opacity-40";
@@ -33,9 +28,8 @@ const SUBMENU_ITEM =
   "block w-full rounded px-3 py-2 text-left text-sm hover:bg-[#F5F9FF] disabled:pointer-events-none disabled:opacity-40";
 
 /**
- * "Move to week" and "Replace Huddle" live in flyout submenus rather than inline
- * selects, so the panel stays short and the long Huddle list scrolls in its own
- * column. Submenus fly out to the right of the panel.
+ * "Move to week" lives in a flyout submenu to the right of the panel. "Replace Huddle"
+ * opens the Replace Huddle pop-up, which shows each candidate as a full Huddle card.
  */
 export function RolePathWeekMenu(props: RolePathWeekMenuProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -54,18 +48,21 @@ export function RolePathWeekMenu(props: RolePathWeekMenuProps) {
     <div ref={containerRef} className="relative">
       <button
         type="button"
-        data-tour={props.tour ? "huddle-week-menu" : undefined}
         disabled={props.disabled}
         onClick={() => {
           setSubmenu(null);
           props.onOpenChange(!props.open);
         }}
-        className="flex h-8 w-8 items-center justify-center rounded-md bg-white text-muted-foreground hover:bg-[#E8F2FF] disabled:opacity-40"
+        className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-white px-2.5 text-xs font-semibold text-[#242424] transition-colors hover:bg-[#F5F9FF] disabled:opacity-40"
+        title="Move, Replace, or Reset a Huddle"
         aria-label={`Manage Week ${props.week}`}
+        data-tour={props.tourFirst ? "huddle-week-menu" : undefined}
         aria-haspopup="menu"
         aria-expanded={props.open}
       >
-        <MoreHorizontal className="h-4 w-4" />
+        <SlidersHorizontal className="h-3.5 w-3.5" />
+        Manage
+        <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", props.open && "rotate-180")} />
       </button>
       {props.open && (
         <div role="menu" className="absolute right-0 z-50 mt-1 w-60 rounded-lg border border-[#E1DFDD] bg-white p-1 shadow-xl">
@@ -79,7 +76,7 @@ export function RolePathWeekMenu(props: RolePathWeekMenuProps) {
               aria-haspopup="menu"
               aria-expanded={submenu === "week"}
             >
-              <span>Move to week</span>
+              <span>Move to Week</span>
               <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
             </button>
             {submenu === "week" && (
@@ -102,39 +99,18 @@ export function RolePathWeekMenu(props: RolePathWeekMenuProps) {
             )}
           </div>
 
-          <div className="relative" onMouseEnter={() => setSubmenu("huddle")}>
-            <button
-              type="button"
-              onClick={() => toggleSubmenu("huddle")}
-              className={cn(ROW, submenu === "huddle" && "bg-[#F5F9FF]")}
-              aria-haspopup="menu"
-              aria-expanded={submenu === "huddle"}
-            >
-              <span>Replace Huddle</span>
-              <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
-            </button>
-            {submenu === "huddle" && (
-              <div role="menu" className={cn(SUBMENU_PANEL, "max-h-80 w-80 overflow-y-auto")}>
-                {props.replacements.length === 0 ? (
-                  <p className="px-3 py-2 text-sm text-muted-foreground">Every Huddle is already on this path.</p>
-                ) : (
-                  props.replacements.map((candidate) => (
-                    <button
-                      key={candidate.externalId}
-                      type="button"
-                      onClick={() => {
-                        props.onReplace(candidate.externalId);
-                        close();
-                      }}
-                      className={SUBMENU_ITEM}
-                    >
-                      {candidate.name}
-                    </button>
-                  ))
-                )}
-              </div>
-            )}
-          </div>
+          <button
+            type="button"
+            onMouseEnter={() => setSubmenu(null)}
+            onClick={() => {
+              close();
+              props.onOpenReplace();
+            }}
+            className={ROW}
+            aria-haspopup="dialog"
+          >
+            <span>Replace Huddle</span>
+          </button>
 
           <div className="my-1 h-px bg-[#E1DFDD]" />
 
@@ -147,7 +123,7 @@ export function RolePathWeekMenu(props: RolePathWeekMenuProps) {
             }}
             className={SUBMENU_ITEM}
           >
-            Reset this week
+            Reset This Week
           </button>
         </div>
       )}

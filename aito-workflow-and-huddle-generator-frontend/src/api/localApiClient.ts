@@ -194,6 +194,9 @@ function huddleCatalog(searchParams: URLSearchParams): HuddleCatalogItemResponse
     .split(",")
     .map((value) => value.trim())
     .filter(Boolean);
+  // The Huddle page's own option for "also include Role Path topics": with a role, that role's Role
+  // Path; without one, every role's. Mirrors the API's includeRolePathTopics.
+  const includeRolePath = searchParams.get("includeRolePathTopics") === "true";
   const role = searchParams.get("roleExternalId");
   const placementRole = searchParams.get("placementRoleExternalId");
   const focus = searchParams.get("focusAreaExternalId");
@@ -212,7 +215,7 @@ function huddleCatalog(searchParams: URLSearchParams): HuddleCatalogItemResponse
   let items: HuddleCatalogItemResponse[];
   if (additionalRole) {
     const seen = new Set<string>();
-    items = (DATA.huddle.additionalPaths[additionalRole] ?? [])
+    items = [...(DATA.huddle.additionalPaths[additionalRole] ?? []), ...(includeRolePath ? DATA.huddle.weeklyPaths[additionalRole] ?? [] : [])]
       .filter((entry) => !seen.has(entry.placementExternalId) && seen.add(entry.placementExternalId))
       .map((entry) => DATA.huddle.placementCatalog[entry.placementExternalId])
       .filter(Boolean);
@@ -230,7 +233,7 @@ function huddleCatalog(searchParams: URLSearchParams): HuddleCatalogItemResponse
       .filter(Boolean);
   } else if (additionalOnly) {
     const seen = new Set<string>();
-    items = Object.values(DATA.huddle.additionalPaths).flat()
+    items = [...Object.values(DATA.huddle.additionalPaths).flat(), ...(includeRolePath ? Object.values(DATA.huddle.weeklyPaths).flat() : [])]
       .filter((entry) => !seen.has(entry.placementExternalId) && seen.add(entry.placementExternalId))
       .map((entry) => DATA.huddle.placementCatalog[entry.placementExternalId])
       .filter(Boolean);

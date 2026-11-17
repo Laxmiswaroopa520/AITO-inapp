@@ -17,6 +17,11 @@ const completeGuide: HuddlePresentationFacilitatorGuide = {
   reflectPrompt: null,
   commitPrompt: null,
   bringBackEvidence: [],
+  exampleScenario: null,
+  roleWorkflowContext: null,
+  facilitatorPreparation: null,
+  facilitationWatchouts: null,
+  managerFacilitatorAlignment: null,
 };
 
 function render(guide: HuddlePresentationFacilitatorGuide | null): string {
@@ -63,6 +68,11 @@ describe("HuddleTalkTrackPanel", () => {
       reflectPrompt: null,
       commitPrompt: null,
       bringBackEvidence: [],
+      exampleScenario: null,
+      roleWorkflowContext: null,
+      facilitatorPreparation: null,
+      facilitationWatchouts: null,
+      managerFacilitatorAlignment: null,
     });
 
     expect(markup.match(/Content unavailable/g)).toHaveLength(5);
@@ -104,5 +114,42 @@ describe("HuddleTalkTrackPanel", () => {
     expect(markup).not.toContain("AI assistance");
     expect(markup).not.toContain("no approved AI backend is configured");
     expect(markup).not.toContain('disabled=""');
+  });
+
+  it("shows the Before-the-Huddle facilitator content only when the placement has it", () => {
+    expect(render(completeGuide)).not.toContain("Before the Huddle");
+
+    const markup = render({ ...completeGuide, roleWorkflowContext: "Workflow context", facilitatorPreparation: "Prep step", facilitationWatchouts: "Watch the clock", exampleScenario: "Scenario text" });
+
+    expect(markup).toContain("Before the Huddle");
+    expect(markup).toContain("Workflow context");
+    expect(markup).toContain("Prep step");
+    expect(markup).toContain("Scenario text");
+    expect(markup).toContain("Watch the clock");
+  });
+
+  it("renders the Manager Hub talk track with manager and shared content", () => {
+    const markup = renderToStaticMarkup(
+      <HuddleTalkTrackPanel
+        hub="manager"
+        guide={{ ...completeGuide, managerFacilitatorAlignment: "Shared alignment", exampleScenario: "Shared scenario" }}
+        managerGuide={{ managerTeamRelevance: "Team relevance", managerPreparationGuidance: "Manager prep", managerDuringHuddleGuidance: "During guidance", managerFollowThroughQuestions: "Follow-through question" }}
+        onClose={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Manager Talk Track");
+    ["Team relevance", "Manager prep", "Shared alignment", "Shared scenario", "During guidance", "Follow-through question"]
+      .forEach((text) => expect(markup).toContain(text));
+    expect(markup.indexOf("Before the Huddle")).toBeLessThan(markup.indexOf("During the Huddle"));
+    expect(markup.indexOf("During the Huddle")).toBeLessThan(markup.indexOf("After the Huddle"));
+    expect(markup).not.toContain("Guide introduction");
+  });
+
+  it("shows an unavailable state on the Manager Hub when the placement has no manager content", () => {
+    const markup = renderToStaticMarkup(<HuddleTalkTrackPanel hub="manager" guide={completeGuide} managerGuide={null} onClose={() => undefined} />);
+
+    expect(markup).toContain("Manager guidance");
+    expect(markup).toContain("Content unavailable");
   });
 });

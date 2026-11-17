@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useAtom } from "jotai";
 import { useQueryClient } from "@tanstack/react-query";
-import { AlertTriangle, Box, CalendarDays, CheckCircle2, ChevronRight, HelpCircle, Home, Library, Users, X } from "lucide-react";
+import { AlertTriangle, Box, CalendarDays, CheckCircle2, ChevronRight, HelpCircle, Home, Library, Sparkles, Users, X } from "lucide-react";
 import { useNavigate } from "react-router";
 import { cn } from "@/lib/utils";
 import { useApiClient } from "@/api/useApiClient";
@@ -13,19 +13,20 @@ import { HuddleCatalog, HuddleDownvoteDialog, HuddleFilterBar } from "../compone
 import { HuddleDetailPanel, /* HuddleGuideImageDialog, */ HuddlePreviewDialog, HuddleWorkspace } from "../components/generated";
 import { MeetCoachDialog } from "../components/coach";
 import { SuggestAgentEditDialog } from "../components/agents/SuggestAgentEditDialog";
-import { HuddleInABoxDialog } from "../components/huddleInABox";
+import type { HuddleHubKind } from "../components/talk-track";
 import { HuddleOnboardingExperience } from "../components/onboarding";
-import { HuddleResourcesRepository } from "../components/resources";
-import { RecommendedPath } from "../components/progress";
+import { HuddleInABoxDialog } from "../components/huddleInABox";
 import { downloadHtmlFile } from "../exports/html/htmlTemplate";
 import huddleInABoxTemplateHtml from "@/assets/HuddleInBox/HuddleInABox_Template 1.html?raw";
-// import facilitatorGuideImage from "@/assets/huddle/guides/facilitator-guide.png";
-// import managerGuideImage from "@/assets/huddle/guides/manager-guide.png";
+import { HuddleResourcesRepository } from "../components/resources";
+import { RecommendedPath } from "../components/progress";
 import { useCompleteHuddleSession, useCustomLearningPlan, useHuddleAudienceRoles, useHuddleById, useHuddleCatalog, useHuddleSession, useHuddleVotes, useIncompleteHuddleSessions, useLegacyHuddlePlanMigration, useMyHuddlePlan, useResetHuddlePlan, useSaveHuddlePlan, useSaveHuddleSession, useSetHuddleActivityCompletion, useSetHuddleVote } from "../hooks";
 import { huddlePersonaAtom, huddleViewModeAtom, selectedHuddleExternalIdAtom, selectedHuddleRoleExternalIdAtom, type HuddleViewMode } from "../store";
 import type { HuddleCatalogItemResponse, HuddlePlanResponse, HuddlePresentationModel, HuddleVoteResponse } from "../types";
 import type { HuddlePersona } from "../types/huddlePersona.types";
 import { createHuddlePresentationModel } from "../mappers";
+// import facilitatorGuideImage from "@/assets/huddle/guides/facilitator-guide.png";
+// import managerGuideImage from "@/assets/huddle/guides/manager-guide.png";
 
 /**
  * The onboarding page has no tab of its own: it still opens first when a persona is chosen, and
@@ -42,54 +43,64 @@ const NAVIGATION_ITEMS: { id: HuddleViewMode; label: string }[] = [
  */
 const SHOW_LAUNCH_PLANNER = false;
 
+/**
+ * The hub button for each experience that has one. Facilitators and Managers open the same
+ * HuddleWorkspace under their own label; an experience with no entry (Team Member) never sees it.
+ */
+const HUB_ENTRIES = new Map<HuddlePersona, { label: string; title: string; kind: HuddleHubKind }>([
+  ["facilitator", { label: "Facilitator Hub", title: "For Facilitators", kind: "facilitator" }],
+  ["manager", { label: "Manager Hub", title: "For Managers", kind: "manager" }],
+]);
+
 const initialFilters = { focusArea: "", agent: "", sort: "default", search: "" };
 
 /*
  * Week guide popup is paused for now: a Role Path week's HTML button only downloads the HTML.
  * To bring the popup back, uncomment this block, the two guide image imports, HuddleGuideImageDialog
- * in the generated import, the openGuide state, the setOpenGuide call in exportRolePathHuddleHtml,
+ * in the generated import, the openGuide state, the guide lines in exportRolePathHuddleHtml,
  * and the dialog render near the end of the page.
  *
 type HuddleGuide = { title: string; imageSrc: string; fileName: string };
 
 // The one-page guide that goes with a Role Path week's HTML. Team Members get none.
-const HUDDLE_GUIDES: Partial<Record<HuddlePersona, HuddleGuide>> = {
-  manager: { title: "How to Lead a Huddle - Manager Guide", imageSrc: managerGuideImage, fileName: "How to Lead a Huddle - Manager Guide.png" },
-  facilitator: { title: "How a Huddle Runs - Facilitator Guide", imageSrc: facilitatorGuideImage, fileName: "How a Huddle Runs - Facilitator Guide.png" },
-};
-*/
+const HUDDLE_GUIDES = new Map<HuddlePersona, HuddleGuide>([
+  ["manager", { title: "How to Lead a Huddle - Manager Guide", imageSrc: managerGuideImage, fileName: "How to Lead a Huddle - Manager Guide.png" }],
+  ["facilitator", { title: "How a Huddle Runs - Facilitator Guide", imageSrc: facilitatorGuideImage, fileName: "How a Huddle Runs - Facilitator Guide.png" }],
+]);
 
+function downloadAssetFile(href: string, fileName: string): void {
+  const anchor = document.createElement("a");
+  anchor.href = href;
+  anchor.download = fileName;
+  anchor.style.display = "none";
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+}
+*/
 
 export function HuddlePage() {
   const navigate = useNavigate();
   const [viewMode, setViewMode] = useAtom(huddleViewModeAtom);
   const [selectedExternalId, setSelectedExternalId] = useAtom(selectedHuddleExternalIdAtom);
   const [selectedRoleExternalId, setSelectedRoleExternalId] = useAtom(selectedHuddleRoleExternalIdAtom);
-  // All Topics can list several placements of the same topic (one per role), and a role's own
-  // Role Path can also repeat a topic across two or three weeks (the same underlying workflow
-  // staged over multiple placements). The topic id alone (selectedExternalId) can no longer say
-  // which placement's content to open, so a card click -- from either tab -- also records its own
-  // placementExternalId here, tagged to the topic id it belongs to so a value from a previous
-  // selection is never reused for a different topic (see selectedPlacementExternalId below).
-  const [selectedCatalogSelection, setSelectedCatalogSelection] = useState<{ externalId: string; placementExternalId: string | null } | null>(null);
-  const selectFromCatalog = (externalId: string | null, placementExternalId: string | null = null) => {
-    setSelectedExternalId(externalId);
-    setSelectedCatalogSelection(externalId ? { externalId, placementExternalId } : null);
-  };
+  // The placement an All Topics card was clicked for. All Topics shows one card per placement, so
+  // the same topic can have a Role Path card and an Additional card; the detail panel must open the
+  // one that was clicked. Only honored while it names the selected topic (see selectedPlacementExternalId).
+  const [catalogSelection, setCatalogSelection] = useState<{ externalId: string; placementExternalId: string | null } | null>(null);
   const [filters, setFilters] = useState(initialFilters);
   const [audienceRoleIds, setAudienceRoleIds] = useState<string[]>([]);
-  // Tracks whether the reader has explicitly interacted with the All Topics audience
-  // picker (a checkbox, Select All/Deselect All, or Clear). Until they have, an empty
-  // audienceRoleIds means "nothing chosen yet" and the Role Path role is inherited below.
-  // Once they have, an empty audienceRoleIds means "explicitly cleared" and must not be
-  // re-inflated back to that inherited role -- see evergreenAudienceDisplayIds and
-  // additionalRoleExternalId.
-  const [audienceRoleIdsTouched, setAudienceRoleIdsTouched] = useState(false);
-  /** The segment picked in the All Topics Segment dropdown, or null for All Segments. */
-  const [evergreenSegment, setEvergreenSegment] = useState<string | null>(null);
-  const handleAudienceRoleIdsChange = (ids: string[]) => {
-    setAudienceRoleIdsTouched(true);
-    setAudienceRoleIds(ids);
+  // Once the reader has explicitly changed the All Topics Audience picker (checked/
+  // unchecked a role, used Select All, or Clear), stop silently falling back to the
+  // Role Path role below -- otherwise clearing or deselecting down to zero roles was
+  // immediately re-displayed (and re-filtered) as if the Role Path role were still
+  // picked, which read as "Clear"/deselect doing nothing.
+  const [audienceTouched, setAudienceTouched] = useState(false);
+  const handleAudienceChange = (selectedIds: string[]) => {
+    setAudienceTouched(true);
+    setAudienceRoleIds(selectedIds);
+    setSelectedExternalId(null); // a topic highlighted under the previous audience must not carry over
+    setCatalogSelection(null);
   };
   const [downvoteTarget, setDownvoteTarget] = useState<{ id: string; name: string } | null>(null);
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
@@ -101,7 +112,7 @@ export function HuddlePage() {
   const queryClient = useQueryClient();
   const apiClient = useApiClient();
   const [coachContext, setCoachContext] = useState<{ externalId: string; name: string } | null>(null);
-  // Manager-only Suggest edit form for the selected Huddle's AI tools (see SuggestAgentEditDialog).
+  // Admin PoC: the Manager-only Suggest edits form for the selected Huddle (see SuggestAgentEditDialog).
   const [agentEditOpen, setAgentEditOpen] = useState(false);
   const [persona, setPersona] = useAtom(huddlePersonaAtom);
   const [resourcesOpen, setResourcesOpen] = useState(false);
@@ -109,7 +120,7 @@ export function HuddlePage() {
   const [exportPending, setExportPending] = useState(false);
   const [feedback, setFeedback] = useState<{ kind: "success" | "error"; message: string } | null>(null);
 
-  // Mirrors the auto-dismissing acknowledgment pattern used elsewhere in Huddle (see
+  // Mirrors the auto-dismissing acknowledgement pattern used elsewhere in Huddle (see
   // HuddleWorkspace's own `feedback` banner) so a download/export confirmation reads like a
   // toast instead of a banner the reader has to dismiss by hand.
   useEffect(() => {
@@ -118,78 +129,41 @@ export function HuddlePage() {
     return () => window.clearTimeout(timer);
   }, [feedback]);
 
-  // Read directly from /api/roles instead of deriving from the catalog read: the audience
-  // picker used to wait on every topic in the catalog just to list eight roles, so it could
-  // not appear until the heaviest read on the page finished. See useHuddleAudienceRoles.
-  const audienceRolesQuery = useHuddleAudienceRoles();
-  const roles = useMemo(
-    () => [...(audienceRolesQuery.data ?? [])].sort((left, right) => left.name.localeCompare(right.name)),
-    [audienceRolesQuery.data],
-  );
-
-  const referenceCatalogQuery = useHuddleCatalog({});
-  // "Only All Topics" opts out of the default projection below and back into the plain
-  // Additional_Content-only set, scoped to the chosen audience or, while nothing has been
-  // touched here yet, inherited from the reader's Role Path role -- exactly how All Topics
-  // behaved before this default projection existed.
-  const evergreenOnlyAllTopics = filters.sort === "only-all-topics";
+  // All Topics is the workbook's Additional_Content sheet, scoped to the chosen audience or
+  // to the reader's own Role Path role. It is not "every topic whose AlignedRoles mentions me",
+  // which is what previously surfaced a role's own Role Path topics under All Topics.
+  const additionalRoleExternalId = (audienceRoleIds.length === 1 ? audienceRoleIds[0] : (audienceTouched ? undefined : selectedRoleExternalId)) ?? undefined;
   // All Topics silently inherits the Role Path role above when no explicit audience has
   // been chosen here (see additionalRoleExternalId). Reflect that inherited role in the picker
   // itself too, so it doesn't read "Select Audience" while a role is actually filtering the list.
-  const evergreenAudienceDisplayIds = !audienceRoleIdsTouched && audienceRoleIds.length === 0 && selectedRoleExternalId ? [selectedRoleExternalId] : audienceRoleIds;
-  const additionalRoleExternalId = (audienceRoleIds.length === 1 ? audienceRoleIds[0] : audienceRoleIdsTouched ? undefined : selectedRoleExternalId) ?? undefined;
-  // A segment picked in All Topics with no role ticked filters strictly to that segment: only
-  // cards whose roles include one of the segment's roles are shown (see evergreenCatalogData).
-  // A segment with no Huddles of its own, such as Manager today, shows the empty state.
-  const segmentRoleIds = useMemo(
-    () => (evergreenSegment
-      ? roles.filter((role) => (role.segment ?? "Other") === evergreenSegment && role.name !== "All Roles").map((role) => role.externalId)
-      : []),
-    [roles, evergreenSegment],
-  );
-  const segmentFilterActive = evergreenAudienceDisplayIds.length === 0 && segmentRoleIds.length > 0;
+  const evergreenAudienceDisplayIds = !audienceTouched && audienceRoleIds.length === 0 && selectedRoleExternalId ? [selectedRoleExternalId] : audienceRoleIds;
   const evergreenAudienceNote = null;
   //const evergreenAudienceNote = audienceRoleIds.length === 0 && selectedRoleExternalId ? "Matches your Role Path audience" : null;
-  // All Topics' default projection: the Additional Content set plus the applicable Role
-  // Path (weekly) topics -- every role's when no audience is showing as selected in the
-  // picker, or just the audience role(s) shown as selected (evergreenAudienceDisplayIds
-  // already carries the same inherited-role fallback the picker itself displays) once one
-  // or more are. Leaving both params unset when no role is in scope lets the plain
-  // "default catalog" projection -- already precomputed as that exact union -- come back
-  // untouched. See localApiClient's huddleCatalog for the merge itself.
-  const evergreenRolePathRoleIds = segmentFilterActive ? segmentRoleIds : evergreenAudienceDisplayIds;
   // Only the All Topics tab reads this. It used to run unconditionally alongside
-  // referenceCatalogQuery on every visit to the Huddle page -- two full catalog reads in
+  // referenceCatalogQuery on every visit to the Huddle page -- two full catalogue reads in
   // parallel, competing for the same backend and database, before the reader had even chosen a
   // tab. Scoping it to its own tab (the same pattern already used for the Role Path query below)
   // halves that redundant load on first paint.
   const evergreenQuery = useHuddleCatalog(
     {
-      additionalContentRoleExternalId: evergreenOnlyAllTopics ? additionalRoleExternalId : undefined,
-      additionalContentOnly: evergreenOnlyAllTopics
-        ? (additionalRoleExternalId === undefined ? true : undefined)
-        : (evergreenRolePathRoleIds.length > 0 ? true : undefined),
-      rolePathRoleExternalIds: !evergreenOnlyAllTopics && evergreenRolePathRoleIds.length > 0 ? evergreenRolePathRoleIds.join(",") : undefined,
+      additionalContentRoleExternalId: additionalRoleExternalId,
+      additionalContentOnly: additionalRoleExternalId === undefined ? true : undefined,
+      // Default (no audience, or Clear/deselect): the All Topics content plus every applicable
+      // Role Path topic (every role's when additionalRoleExternalId is unset, otherwise just the
+      // selected audience's).
+      includeRolePathTopics: true,
+      // One card per placement, each with its own placement's content, instead of one card per topic.
+      placementScoped: true,
       focusAreaExternalId: filters.focusArea || undefined,
       agentExternalId: filters.agent || undefined,
       search: filters.search || undefined,
-      sort: (evergreenOnlyAllTopics ? "default" : (filters.sort || "default")) as "default" | "most-upvoted" | "role-relevance",
+      sort: (filters.sort || "default") as "default" | "most-upvoted",
     },
     viewMode === "evergreen",
   );
-  // All Topics only lists Huddles assigned to the audience in scope: the picked role(s), or every
-  // role of the picked segment when no role is picked. A card stays when its roles include any of
-  // them. "All Roles" is not listed on any card, so picking it leaves the list unrestricted.
-  const evergreenFilterRoleIds = segmentFilterActive ? segmentRoleIds : evergreenAudienceDisplayIds;
-  const evergreenCatalogData = useMemo(() => {
-    if (!evergreenQuery.data || evergreenFilterRoleIds.length === 0) return evergreenQuery.data;
-    const allRolesSelected = roles.some((role) => role.name === "All Roles" && evergreenFilterRoleIds.includes(role.externalId));
-    if (allRolesSelected) return evergreenQuery.data;
-    const inScope = new Set(evergreenFilterRoleIds);
-    return evergreenQuery.data.filter((item) => item.roles.some((role) => inScope.has(role.externalId)));
-  }, [evergreenQuery.data, evergreenFilterRoleIds, roles]);
   const incompleteSessionsQuery = useIncompleteHuddleSessions();
   const customLearningPlan = useCustomLearningPlan(persona);
+  const hubEntry = persona ? HUB_ENTRIES.get(persona) ?? null : null;
   const personaLabel = persona === "team-member" ? "Team Member" : persona ? `${persona[0].toUpperCase()}${persona.slice(1)}` : null;
   const saveSessionMutation = useSaveHuddleSession();
   const activityCompletionMutation = useSetHuddleActivityCompletion();
@@ -197,26 +171,42 @@ export function HuddlePage() {
   // Only the Role Path tab reads the Role Path. A role can legitimately have no weekly path,
   // and a role-path problem must not reach a tab that does not show it.
   const recommendedPathQuery = useMyHuddlePlan(selectedRoleExternalId, viewMode === "guided");
+  // The full catalogue is the heaviest read on the page and nothing needs it to draw the Role
+  // Path (it feeds swap/reset, filters, the downvote name and Resources). Hold it back only while
+  // the Role Path loads, so the two no longer compete. It loads on All Topics (filters), when
+  // Resources opens, or once the Role Path has finished or failed (swap/reset/downvote names). The
+  // view mode starts as "orientation" before switching to Role Path, so a "not guided" test would
+  // start the full read at page load; the Onboarding view itself does not use the catalogue.
+  const referenceCatalogQuery = useHuddleCatalog(
+    {},
+    viewMode === "evergreen" || resourcesOpen || recommendedPathQuery.isSuccess || recommendedPathQuery.isError,
+  );
+  // Replace and Reset on a Role Path week offer only the selected role's own placements (its Role
+  // Path and Additional content). The unscoped catalogue above gives each topic its first placement
+  // from any role, which the save endpoint rightly rejects for this role's path.
+  const rolePathCatalogQuery = useHuddleCatalog(
+    { additionalContentRoleExternalId: selectedRoleExternalId ?? undefined, includeRolePathTopics: true, placementScoped: true },
+    viewMode === "guided" && Boolean(selectedRoleExternalId) && (recommendedPathQuery.isSuccess || recommendedPathQuery.isError),
+  );
+  const rolePathCatalog = useMemo(
+    () => (rolePathCatalogQuery.data ?? []).filter((item) => item.placementExternalId && item.placementSegmentRoleExternalId === selectedRoleExternalId),
+    [rolePathCatalogQuery.data, selectedRoleExternalId],
+  );
   // Which placement to open. The same topic sits on several role paths with different activities,
   // so the detail read has to name one, otherwise the API aggregates every role: a topic on five
-  // placements comes back with fifteen phases. Role Path and catalog cards both carry the id.
+  // placements comes back with fifteen phases. Role Path and catalogue cards both carry the id.
   const selectedPlacementExternalId = useMemo(() => {
     if (!selectedExternalId) return null;
-    if (selectedCatalogSelection?.externalId === selectedExternalId) return selectedCatalogSelection.placementExternalId;
+    // A clicked card names its own placement. On the Role Path one topic can sit on several weeks
+    // (WF-PIPE on Weeks 3 and 4), so the clicked week wins over the first week with that topic.
+    // Switching tabs clears the selection, so one tab's pick never carries into the other.
+    if (catalogSelection?.externalId === selectedExternalId && catalogSelection.placementExternalId) return catalogSelection.placementExternalId;
     const fromPath = recommendedPathQuery.data?.items.find((item) => item.huddle.externalId === selectedExternalId);
     if (fromPath?.huddle.placementExternalId) return fromPath.huddle.placementExternalId;
     const fromCatalog = evergreenQuery.data?.find((item) => item.externalId === selectedExternalId);
     return fromCatalog?.placementExternalId ?? null;
-  }, [selectedExternalId, recommendedPathQuery.data, evergreenQuery.data, selectedCatalogSelection]);
+  }, [selectedExternalId, recommendedPathQuery.data, evergreenQuery.data, catalogSelection]);
   const detailQuery = useHuddleById(selectedExternalId, selectedPlacementExternalId);
-  // "Week 5 · Account Executive" for a Role Path week, shown on the edit form and the Admin dashboard.
-  const editContextLabel = useMemo(() => {
-    if (!selectedPlacementExternalId) return null;
-    const week = recommendedPathQuery.data?.items.find((item) => item.huddle.placementExternalId === selectedPlacementExternalId)?.week;
-    if (week === undefined) return null;
-    const roleName = roles.find((role) => role.externalId === selectedRoleExternalId)?.name;
-    return roleName ? `Week ${week} · ${roleName}` : `Week ${week}`;
-  }, [selectedPlacementExternalId, recommendedPathQuery.data, roles, selectedRoleExternalId]);
   // The session is scoped to the same placement. Without it the API counts every activity on the
   // topic across every role path, which is where "3 of 22" came from on a five-activity Huddle.
   const sessionQuery = useHuddleSession(selectedExternalId, selectedPlacementExternalId);
@@ -226,7 +216,22 @@ export function HuddlePage() {
   const voteMutation = useSetHuddleVote();
   useLegacyHuddlePlanMigration(selectedRoleExternalId, recommendedPathQuery.data, referenceCatalogQuery.data);
 
-  // The audience list has its own pending and error states now, independent of the catalog.
+  // Read directly from /api/roles instead of deriving from the catalogue read: the audience
+  // picker used to wait on every topic in the catalogue just to list eight roles, so it could
+  // not appear until the heaviest read on the page finished. See useHuddleAudienceRoles.
+  const audienceRolesQuery = useHuddleAudienceRoles();
+  const roles = useMemo(
+    () => [...(audienceRolesQuery.data ?? [])].sort((left, right) => left.name.localeCompare(right.name)),
+    [audienceRolesQuery.data],
+  );
+  // Audiences are segment roles (SR-ENT-AE) but a topic's aligned roles are global roles (ROLE-AE),
+  // so the All Topics multi-audience filter matches topics on the global role behind each audience.
+  const audienceAlignedRoleIds = useMemo(
+    () => roles.filter((role) => audienceRoleIds.includes(role.externalId)).map((role) => role.roleExternalId ?? role.externalId),
+    [roles, audienceRoleIds],
+  );
+
+  // The audience list has its own pending and error states now, independent of the catalogue.
   const rolesLoading = audienceRolesQuery.isPending;
   const rolesErrorMessage = audienceRolesQuery.isError
     ? "Audience roles could not be loaded. Refresh to try again."
@@ -237,13 +242,13 @@ export function HuddlePage() {
     const agents = new Map<string, string>();
     referenceCatalogQuery.data?.forEach((huddle) => {
       if (huddle.focusAreaExternalId && huddle.focusAreaName) focusAreas.set(huddle.focusAreaExternalId, huddle.focusAreaName);
-      [...huddle.primaryAgents, ...huddle.secondaryAgents].forEach((agent) => agents.set(agent.externalId, agent.name));
+      [...huddle.primaryAgents, ...huddle.secondaryAgents, ...(huddle.unclassifiedAgents ?? [])].forEach((agent) => agents.set(agent.externalId, agent.name));
     });
     const sortOptions = (entries: [string, string][]) => entries.sort((left, right) => left[1].localeCompare(right[1])).map(([value, label]) => ({ value, label }));
     return { focusAreas: sortOptions([...focusAreas]), agents: sortOptions([...agents]) };
   }, [referenceCatalogQuery.data]);
 
-  const filterKey = `${evergreenSegment ?? ""}|${audienceRoleIds.join(",")}|${filters.focusArea}|${filters.agent}|${filters.sort}|${filters.search}`;
+  const filterKey = `${audienceRoleIds.join(",")}|${filters.focusArea}|${filters.agent}|${filters.sort}|${filters.search}`;
   const votes = useMemo(() => new Map<string, HuddleVoteResponse>((votesQuery.data ?? []).map((vote) => [vote.huddleExternalId, vote])), [votesQuery.data]);
   const presentationAudience = useMemo(() => {
     const roleExternalId = viewMode === "guided" ? selectedRoleExternalId : audienceRoleIds.length === 1 ? audienceRoleIds[0] : null;
@@ -256,32 +261,64 @@ export function HuddlePage() {
     const current = sessionQuery.data ?? await saveSessionMutation.mutateAsync({ externalId: selectedExternalId!, request: { currentPhaseExternalId, facilitatorNotes, rowVersion: null }, placementExternalId: selectedPlacementExternalId });
     return activityCompletionMutation.mutateAsync({ externalId: selectedExternalId!, activityExternalId, request: { isCompleted, rowVersion: current.rowVersion }, placementExternalId: selectedPlacementExternalId });
   };
-  const completeSession = () => completeSessionMutation.mutateAsync({ externalId: selectedExternalId!, request: { rowVersion: sessionQuery.data!.rowVersion }, placementExternalId: selectedPlacementExternalId });
-  const continueLearning = (externalId: string) => { setSelectedExternalId(externalId); setSelectedCatalogSelection(null); setWorkspaceOpen(true); };
-  const savePlan = (plan: HuddlePlanResponse) => savePlanMutation.mutate({ optimisticPlan: plan, request: { roleExternalId: plan.roleExternalId, rowVersion: recommendedPathQuery.data?.rowVersion ?? null, items: plan.items.map((item) => ({ week: item.week, huddleExternalId: item.huddle.externalId, placementExternalId: item.huddle.placementExternalId ?? null })) } });
+  // A Huddle with no Featured activities (the shared Week 1 orientation) has nothing to tick off, so
+  // there may be no session yet. Save one first, then complete it at session level.
+  const completeSession = async () => {
+    const current = sessionQuery.data ?? await saveSessionMutation.mutateAsync({ externalId: selectedExternalId!, request: { currentPhaseExternalId: null, facilitatorNotes: null, rowVersion: null }, placementExternalId: selectedPlacementExternalId });
+    return completeSessionMutation.mutateAsync({ externalId: selectedExternalId!, request: { rowVersion: current.rowVersion }, placementExternalId: selectedPlacementExternalId });
+  };
+  const continueLearning = (externalId: string) => { setCatalogSelection(null); setSelectedExternalId(externalId); setWorkspaceOpen(true); };
+  // All Topics or Role Path card click: select this card's topic and placement, or clear when it is already the open card.
+  const selectCatalogCard = (externalId: string, placementExternalId?: string) => {
+    const isOpen = selectedExternalId === externalId && (placementExternalId === undefined || selectedPlacementExternalId === placementExternalId);
+    if (isOpen) {
+      setCatalogSelection(null);
+      setSelectedExternalId(null);
+      return;
+    }
+    setCatalogSelection({ externalId, placementExternalId: placementExternalId ?? null });
+    setSelectedExternalId(externalId);
+  };
+  // successMessage (Replace Huddle) shows in the same green toast as the HTML download, only once the save succeeds.
+  const savePlan = (plan: HuddlePlanResponse, successMessage?: string) => savePlanMutation.mutate(
+    { optimisticPlan: plan, request: { roleExternalId: plan.roleExternalId, rowVersion: recommendedPathQuery.data?.rowVersion ?? null, items: plan.items.map((item) => ({ week: item.week, huddleExternalId: item.huddle.externalId, placementExternalId: item.huddle.placementExternalId ?? null })) } },
+    { onSuccess: () => { if (successMessage) setFeedback({ kind: "success", message: successMessage }); } },
+  );
   const resetPlan = () => {
     const plan = recommendedPathQuery.data;
     if (!plan) return;
     const items = plan.items.map((item) => ({ ...item, isCustomized: false, huddle: referenceCatalogQuery.data?.find((candidate) => candidate.externalId === item.recommendedHuddleExternalId) ?? item.huddle }));
     resetPlanMutation.mutate({ roleExternalId: plan.roleExternalId, optimisticPlan: { ...plan, rowVersion: null, isCustomized: false, items } });
   };
-  const changeViewMode = (mode: HuddleViewMode) => { setViewMode(mode); setSelectedExternalId(null); setSelectedCatalogSelection(null); setWorkspaceOpen(false); setPreviewOpen(false); };
+  const changeViewMode = (mode: HuddleViewMode) => { setViewMode(mode); setCatalogSelection(null); setSelectedExternalId(null); setWorkspaceOpen(false); setPreviewOpen(false); };
   const selectPersona = (nextPersona: HuddlePersona) => {
     setPersona(nextPersona);
-    selectFromCatalog(null);
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   };
   const changePersona = () => {
     setPersona(null);
-    selectFromCatalog(null);
     setViewMode("orientation");
     window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   };
   const changeFilter = (name: "focusArea" | "agent" | "sort" | "search", value: string) => setFilters((current) => ({ ...current, [name]: value }));
-  const setVote = (externalId: string, value: -1 | 1 | null) => {
+  // All Topics "Clear All Filters": back to the state the page opens with, where the audience follows the Role Path role.
+  const audienceFiltered = audienceTouched || audienceRoleIds.length > 0;
+  const hasActiveFilters = audienceFiltered || filters.focusArea !== initialFilters.focusArea || filters.agent !== initialFilters.agent || filters.sort !== initialFilters.sort || filters.search !== initialFilters.search;
+  const clearAllFilters = () => {
+    setFilters(initialFilters);
+    setAudienceRoleIds([]);
+    setAudienceTouched(false);
+    if (audienceFiltered) {
+      // As in handleAudienceChange: a topic highlighted under the previous audience must not carry over.
+      setSelectedExternalId(null);
+      setCatalogSelection(null);
+    }
+  };
+  // name is the title shown on the card that was clicked, so the pop-up always matches that card.
+  const setVote = (externalId: string, value: -1 | 1 | null, name?: string) => {
     if (value === -1) {
       const huddle = referenceCatalogQuery.data?.find((item) => item.externalId === externalId);
-      setDownvoteTarget({ id: externalId, name: huddle?.name ?? "this Huddle" });
+      setDownvoteTarget({ id: externalId, name: name ?? huddle?.name ?? "this Huddle" });
       return;
     }
     voteMutation.mutate({ externalId, request: value === null ? null : { value, downvoteReasons: null, comment: null } });
@@ -325,9 +362,8 @@ export function HuddlePage() {
     setCardHtmlExportId(huddle.externalId);
     const placementExternalId = huddle.placementExternalId ?? null;
     try {
-      // let downloaded: boolean; (only the paused week guide popup reads it)
       // Week 1 (Orientation) goes through the same export, which downloads its hand-built page.
-      /* downloaded = */ await downloadHuddleHtml(async () => {
+      /* const downloaded = */ await downloadHuddleHtml(async () => {
         const detail = await queryClient.fetchQuery({
           queryKey: huddleQueryKeys.detail(huddle.externalId, placementExternalId),
           queryFn: ({ signal }) => getHuddleById(apiClient, huddle.externalId, placementExternalId, signal),
@@ -336,8 +372,11 @@ export function HuddlePage() {
         return createHuddlePresentationModel(detail, presentationAudience);
       });
       // Week guide popup paused; see the note above HUDDLE_GUIDES.
-      // const guide = persona ? HUDDLE_GUIDES[persona] : undefined;
-      // if (downloaded && guide) setOpenGuide(guide);
+      // const guide = persona ? HUDDLE_GUIDES.get(persona) : undefined;
+      // if (downloaded && guide) {
+      //   downloadAssetFile(guide.imageSrc, guide.fileName);
+      //   setOpenGuide(guide);
+      // }
     } finally {
       setCardHtmlExportId(null);
     }
@@ -353,10 +392,19 @@ export function HuddlePage() {
     }
   };
 
-  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} facilitatorHub={persona === "facilitator"} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={() => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })} onSuggestAgentEdit={persona === "manager" ? () => setAgentEditOpen(true) : undefined} />;
+  // Admin PoC: "Week 5 · Account Executive" for a Role Path week, shown on the edit form and the Admin dashboard.
+  const editContextLabel = (() => {
+    if (!selectedPlacementExternalId) return null;
+    const week = recommendedPathQuery.data?.items.find((item) => item.huddle.placementExternalId === selectedPlacementExternalId)?.week;
+    if (week === undefined) return null;
+    const roleName = roles.find((role) => role.externalId === selectedRoleExternalId)?.name;
+    return roleName ? `Week ${week} · ${roleName}` : `Week ${week}`;
+  })();
+  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} hub={hubEntry} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={persona === "team-member" ? undefined : () => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })}  onSuggestAgentEdit={persona === "manager" ? () => setAgentEditOpen(true) : undefined} />;
 
   return (
     <div className="mx-auto max-w-[1540px] space-y-6 p-4 [font-family:var(--aito-font-sans)] lg:p-6">
+
       <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
           {persona && (
@@ -374,12 +422,10 @@ export function HuddlePage() {
                 <Home className="h-3.5 w-3.5" aria-hidden="true" />
                 Home
               </button>
-
               <ChevronRight
                 className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50"
                 aria-hidden="true"
               />
-
               {viewMode === "orientation" ? (
                 <span
                   className="px-1.5 py-0.5 text-muted-foreground"
@@ -404,7 +450,6 @@ export function HuddlePage() {
             <span className="rounded-xl bg-[#E8F2FF] p-2">
               <Users className="h-6 w-6 text-[#0F6CBD]" />
             </span>
-
             <h1 className="text-2xl font-bold lg:text-3xl">
               {persona ? personaLabel : "Huddles"}
             </h1>
@@ -428,7 +473,6 @@ export function HuddlePage() {
               <HelpCircle className="mr-2 h-4 w-4" />
               Help and Tips
             </button>
-
             <span
               role="tooltip"
               className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 rounded-lg border bg-white p-2.5 text-xs font-medium leading-4 text-[#242424] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
@@ -436,7 +480,6 @@ export function HuddlePage() {
               Not sure where to go? Take a quick tour of this page.
             </span>
           </span>
-
           <span className="group relative inline-flex shrink-0">
             <button
               type="button"
@@ -447,7 +490,6 @@ export function HuddlePage() {
               <Box className="mr-2 h-4 w-4" />
               Create Your Own Huddle
             </button>
-
             <span
               role="tooltip"
               className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 rounded-lg border bg-white p-2.5 text-xs font-medium leading-4 text-[#242424] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
@@ -478,13 +520,27 @@ export function HuddlePage() {
             <Library className="mr-2 h-4 w-4" />
             Resources
           </button>
+
+          {selectedExternalId && hubEntry && (
+            <button
+              type="button"
+              data-tour="huddle-facilitator-hub"
+              title={hubEntry.title}
+              onClick={() => setWorkspaceOpen(true)}
+              className="inline-flex h-10 items-center rounded-lg border bg-white px-4 text-sm font-semibold hover:bg-muted"
+            >
+              <Sparkles className="mr-2 h-4 w-4" />
+              {hubEntry.label}
+            </button>
+          )}
         </div>
       </header>
+
       {feedback && (
         <div
           role="status"
           className={cn(
-            "fixed bottom-6 right-6 z-[110] flex max-w-sm items-start gap-2 rounded-lg border p-3 text-sm shadow-lg",
+            "fixed bottom-6 right-6 z-[100] flex max-w-sm items-start gap-2 rounded-lg border p-3 text-sm shadow-lg",
             feedback.kind === "success" ? "border-green-200 bg-green-50 text-green-900" : "border-red-200 bg-red-50 text-red-900",
           )}
         >
@@ -499,13 +555,13 @@ export function HuddlePage() {
           </button>
         </div>
       )}
-      {persona && <div className="space-y-4"><nav data-tour="huddle-sections" aria-label="Huddle sections" className="inline-flex flex-wrap items-center gap-1 rounded-xl border border-border/80 bg-muted/40 p-1.5 shadow-sm">{NAVIGATION_ITEMS.map((item) => <button key={item.id} type="button" onClick={() => changeViewMode(item.id)} className={cn("rounded-lg px-5 py-2 text-sm font-semibold transition-all duration-200", viewMode === item.id ? "border border-[#0F6CBD] bg-[#0F6CBD] text-white shadow-md shadow-[#0F6CBD]/20" : "text-muted-foreground hover:bg-white/80 hover:text-foreground")}>{item.label}</button>)}</nav>{viewMode === "guided" && <div data-tour="huddle-audience"><HuddleAudienceSelect mode="single" roles={roles} loading={rolesLoading} errorMessage={rolesErrorMessage} selectedIds={selectedRoleExternalId ? [selectedRoleExternalId] : []} onChange={(selectedIds) => { setSelectedRoleExternalId(selectedIds[0] ?? null); setSelectedExternalId(null); setSelectedCatalogSelection(null); }} /></div>}{viewMode === "evergreen" && <div data-tour="huddle-filters"><HuddleFilterBar filters={filters} options={options} roles={roles} rolesLoading={rolesLoading} rolesErrorMessage={rolesErrorMessage} audienceRoleIds={evergreenAudienceDisplayIds} onAudienceChange={handleAudienceRoleIdsChange} audienceSegment={evergreenSegment} onAudienceSegmentChange={setEvergreenSegment} audienceNote={evergreenAudienceNote} onFilterChange={changeFilter} /></div>}</div>}
+      {persona && <div className="space-y-4"><nav data-tour="huddle-sections" aria-label="Huddle sections" className="inline-flex flex-wrap items-center gap-1 rounded-xl border border-border/80 bg-muted/40 p-1.5 shadow-sm">{NAVIGATION_ITEMS.map((item) => <button key={item.id} type="button" onClick={() => changeViewMode(item.id)} className={cn("rounded-lg px-5 py-2 text-sm font-semibold transition-all duration-200", viewMode === item.id ? "border border-[#0F6CBD] bg-[#0F6CBD] text-white shadow-md shadow-[#0F6CBD]/20" : "text-muted-foreground hover:bg-white/80 hover:text-foreground")}>{item.label}</button>)}</nav>{viewMode === "guided" && <div data-tour="huddle-audience"><HuddleAudienceSelect mode="single" roles={roles} loading={rolesLoading} errorMessage={rolesErrorMessage} selectedIds={selectedRoleExternalId ? [selectedRoleExternalId] : []} onChange={(selectedIds) => { setSelectedRoleExternalId(selectedIds[0] ?? null); setSelectedExternalId(null); }} /></div>}{viewMode === "evergreen" && <div data-tour="huddle-filters"><HuddleFilterBar filters={filters} options={options} roles={roles} rolesLoading={rolesLoading} rolesErrorMessage={rolesErrorMessage} audienceRoleIds={evergreenAudienceDisplayIds} onAudienceChange={handleAudienceChange} audienceNote={evergreenAudienceNote} onFilterChange={changeFilter} onClearAll={clearAllFilters} canClearAll={hasActiveFilters} /></div>}</div>}
 
       {viewMode === "orientation" && <HuddleOnboardingExperience key={persona ?? "choose-experience"} persona={persona} onSelectPersona={selectPersona} onChangePersona={changePersona} onStartRolePath={() => changeViewMode("guided")} onAdditionalTopics={() => changeViewMode("evergreen")} />}
-      {persona && viewMode !== "orientation" && <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px]"><div data-tour="huddle-list" className="min-w-0">{viewMode === "guided" ? <RecommendedPath data={recommendedPathQuery.data} roleName={presentationAudience.roleName} catalog={referenceCatalogQuery.data ?? []} isLoading={recommendedPathQuery.isLoading} error={recommendedPathQuery.error} mutationError={savePlanMutation.error ?? resetPlanMutation.error} selectedExternalId={selectedExternalId} selectedPlacementExternalId={selectedPlacementExternalId} hasRole={Boolean(selectedRoleExternalId)} votes={votes} votePending={voteMutation.isPending} savePending={savePlanMutation.isPending || resetPlanMutation.isPending} onSelect={selectFromCatalog} onVote={setVote} htmlExportExternalId={cardHtmlExportId} onExportHtml={(huddle) => void exportRolePathHuddleHtml(huddle)} onSave={savePlan} onReset={resetPlan} onRetry={() => void recommendedPathQuery.refetch()} /> : <HuddleCatalog data={evergreenCatalogData} isLoading={evergreenQuery.isLoading} error={evergreenQuery.error} selectedExternalId={selectedExternalId} selectedPlacementExternalId={selectedPlacementExternalId} audienceRoleIds={evergreenOnlyAllTopics ? audienceRoleIds : []} filterKey={filterKey} filtersActive={Boolean(filters.focusArea || filters.agent || filters.search)} votes={votes} votePending={voteMutation.isPending} continueLearning={incompleteSessionsQuery.data} plan={customLearningPlan} planAudienceLabel={personaLabel} onSelect={selectFromCatalog} onVote={setVote} onRetry={() => void evergreenQuery.refetch()} onContinue={continueLearning} onCloseDetails={() => selectFromCatalog(null)} onCreateOwnHuddle={() => setHuddleInABoxOpen(true)} htmlExportExternalId={cardHtmlExportId} onExportHtml={(huddle) => void exportRolePathHuddleHtml(huddle)} />}</div><div data-tour="huddle-detail">{detailPanel}</div></div>}
-      {/* Week guide popup paused. {openGuide && <HuddleGuideImageDialog title={openGuide.title} imageSrc={openGuide.imageSrc} downloadFileName={openGuide.fileName} onClose={() => setOpenGuide(null)} />} */}
-      {downvoteTarget && <HuddleDownvoteDialog huddleName={downvoteTarget.name} onCancel={() => setDownvoteTarget(null)} onSubmit={(downvoteReasons, comment) => { voteMutation.mutate({ externalId: downvoteTarget.id, request: { value: -1, downvoteReasons, comment } }); setDownvoteTarget(null); }} />}
-      {workspaceOpen && presentationModel && !sessionQuery.isLoading && <HuddleWorkspace key={presentationModel.identity.externalId} model={presentationModel} session={sessionQuery.data} sessionLoading={sessionQuery.isLoading} sessionError={sessionError} mutationPending={saveSessionMutation.isPending || activityCompletionMutation.isPending || completeSessionMutation.isPending} onRefreshSession={async () => (await sessionQuery.refetch()).data} onSaveSession={saveSession} onSetActivityCompletion={setActivityCompletion} onCompleteSession={completeSession} onMeetCoach={() => setCoachContext({ externalId: presentationModel.identity.externalId, name: presentationModel.identity.name })} onPreviewSlides={() => setPreviewOpen(true)} onClose={() => setWorkspaceOpen(false)} />}
+    {persona && viewMode !== "orientation" && <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_420px]"><div data-tour="huddle-list" className="min-w-0">{viewMode === "guided" ? <RecommendedPath data={recommendedPathQuery.data} roleName={presentationAudience.roleName} catalog={rolePathCatalog} isLoading={recommendedPathQuery.isLoading} error={recommendedPathQuery.error} mutationError={savePlanMutation.error ?? resetPlanMutation.error} selectedExternalId={selectedExternalId} selectedPlacementExternalId={selectedPlacementExternalId} hasRole={Boolean(selectedRoleExternalId)} votes={votes} votePending={voteMutation.isPending} savePending={savePlanMutation.isPending || resetPlanMutation.isPending} onSelect={selectCatalogCard} onVote={setVote} htmlExportExternalId={cardHtmlExportId} onExportHtml={(huddle) => void exportRolePathHuddleHtml(huddle)} onSave={savePlan} onReset={resetPlan} onRetry={() => void recommendedPathQuery.refetch()} /> : <HuddleCatalog data={evergreenQuery.data} isLoading={evergreenQuery.isLoading} error={evergreenQuery.error} selectedExternalId={selectedExternalId} selectedPlacementExternalId={selectedPlacementExternalId} audienceRoleIds={audienceRoleIds} audienceAlignedRoleIds={audienceAlignedRoleIds} filterKey={filterKey} filtersActive={Boolean(filters.focusArea || filters.agent || filters.search)} votes={votes} votePending={voteMutation.isPending} continueLearning={incompleteSessionsQuery.data} plan={customLearningPlan} planAudienceLabel={personaLabel} onSelect={selectCatalogCard} onVote={setVote} onRetry={() => void evergreenQuery.refetch()} onContinue={continueLearning} onCloseDetails={() => { setCatalogSelection(null); setSelectedExternalId(null); }} onCreateOwnHuddle={() => setHuddleInABoxOpen(true)} htmlExportExternalId={cardHtmlExportId} onExportHtml={(huddle) => void exportRolePathHuddleHtml(huddle)} />}</div><div data-tour="huddle-detail">{detailPanel}</div></div>}
+      {/* Week guide popup paused. {openGuide && <HuddleGuideImageDialog title={openGuide.title} imageSrc={openGuide.imageSrc} onClose={() => setOpenGuide(null)} />} */}
+      {downvoteTarget && <HuddleDownvoteDialog huddleName={downvoteTarget.name} onCancel={() => setDownvoteTarget(null)} onSubmit={(downvoteReasons, comment) => { voteMutation.mutate({ externalId: downvoteTarget.id, request: { value: -1, downvoteReasons, comment } }, { onSuccess: () => setFeedback({ kind: "success", message: "Feedback submitted successfully." }), onError: () => setFeedback({ kind: "error", message: "Unable to submit your feedback." }) }); setDownvoteTarget(null); }} />}
+      {workspaceOpen && presentationModel && !sessionQuery.isLoading && <HuddleWorkspace key={presentationModel.identity.externalId} model={presentationModel} session={sessionQuery.data} sessionLoading={sessionQuery.isLoading} sessionError={sessionError} mutationPending={saveSessionMutation.isPending || activityCompletionMutation.isPending || completeSessionMutation.isPending} onRefreshSession={async () => (await sessionQuery.refetch()).data} onSaveSession={saveSession} onSetActivityCompletion={setActivityCompletion} onCompleteSession={completeSession} onMeetCoach={persona === "team-member" ? undefined : () => setCoachContext({ externalId: presentationModel.identity.externalId, name: presentationModel.identity.name })} onPreviewSlides={() => setPreviewOpen(true)} onClose={() => setWorkspaceOpen(false)} hub={hubEntry?.kind} />}
       {previewOpen && presentationModel && <HuddlePreviewDialog open model={presentationModel} onClose={() => setPreviewOpen(false)} />}
       {coachContext && <MeetCoachDialog open huddleExternalId={coachContext.externalId} huddleName={coachContext.name} onClose={() => setCoachContext(null)} />}
       {agentEditOpen && persona === "manager" && detailQuery.data && <SuggestAgentEditDialog
@@ -515,8 +571,8 @@ export function HuddlePage() {
         onClose={() => setAgentEditOpen(false)}
         onSubmitted={(message) => setFeedback({ kind: "success", message })}
       />}
-      <HuddleResourcesRepository open={resourcesOpen} catalog={referenceCatalogQuery.data ?? []} onClose={() => setResourcesOpen(false)} />
       <HuddleInABoxDialog open={huddleInABoxOpen} onClose={() => setHuddleInABoxOpen(false)} onDownload={downloadHuddleInABoxTemplate} />
+      <HuddleResourcesRepository open={resourcesOpen} catalog={referenceCatalogQuery.data ?? []} onClose={() => setResourcesOpen(false)} />
     </div>
   );
 }

@@ -1,9 +1,16 @@
 export interface HuddleCatalogCardViewModel {
   id: string;
-  /** The specific placement this card renders, when it is placement-scoped (see mapHuddleCatalogItemToCard).
-   *  Null for a genuinely unscoped card. Distinguishes cards that share the same topic id
-   *  (`id`) but represent different role placements of that topic. */
+  /** The placement this card opens, or null for a topic-scoped card. */
   placementExternalId: string | null;
+  /**
+   * Identifies the card itself: the placement when there is one, otherwise the topic. Two cards for
+   * the same topic (a Role Path and an Additional placement) have different keys.
+   */
+  cardKey: string;
+  /** Placement-scoped catalog only: the role the placement belongs to. */
+  placementRoleExternalId: string | null;
+  /** Placement-scoped catalog only: "Role Path · Week 3 · AE" style label; null otherwise. */
+  placementLabel: string | null;
   title: string;
   description: string | null;
   category: string;

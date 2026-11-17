@@ -14,7 +14,7 @@ function model(overrides: Partial<HuddlePresentationModel> = {}): HuddlePresenta
     identity: { externalId: "huddle-1", name: "Accelerate a Strategic Deal", description: "Apply AI to prepare a grounded, decision-ready deal review.", type: "Prescriptive", durationMinutes: 30 },
     audience: { roleExternalId: "seller", roleName: "Seller", audienceDescription: "Customer-facing sellers." },
     narrative: { todayObjective: "Prepare a concise deal inspection.", useCase: "A priority opportunity needs alignment.", whyItMatters: "Focused preparation improves decision quality.", desiredOutcome: "An agreed action plan." },
-    agents: { primary: [agent], secondary: [{ ...agent, externalId: "agent-2", name: "Researcher", usageType: "Secondary", displayOrder: 2 }] },
+    agents: { primary: [agent], secondary: [{ ...agent, externalId: "agent-2", name: "Researcher", usageType: "Secondary", displayOrder: 2 }], unclassified: [] },
     mcemStages: [{ externalId: "stage-1", name: "Inspire and Design", description: null, displayOrder: 1 }],
     phases: [
       { externalId: "phase-1", name: "Preparation", description: "Ground the Huddle in current evidence.", durationMinutes: 10, displayOrder: 1, activities: [{ externalId: "activity-1", name: "Create a deal inspection", description: "Review the current opportunity.", durationMinutes: 10, displayOrder: 1, prompt: "Create a grounded deal inspection.", expectedOutput: "A decision-ready deal brief.", humanCheckpoint: "Verify assumptions and sources.", requiredContext: "Current opportunity data.", bestFitJob: "Strategic opportunity review.", practiceTier: "Featured", executionMethod: "Prompt", activitySteps: [], whyThisMatters: null, launchUrl: null, launchLabel: null, prerequisiteActivityExternalId: null, prerequisiteActivityName: null, agents: [agent], resources: [resource] }] },
@@ -22,6 +22,7 @@ function model(overrides: Partial<HuddlePresentationModel> = {}): HuddlePresenta
       { externalId: "phase-3", name: "Commit to Action", description: "Agree ownership and next steps.", durationMinutes: 10, displayOrder: 3, activities: [{ externalId: "activity-3", name: "Confirm next actions", description: null, durationMinutes: 10, displayOrder: 1, prompt: "Assign owners and dates.", expectedOutput: "Owned action list.", humanCheckpoint: "Confirm owner agreement.", requiredContext: null, bestFitJob: null, practiceTier: "Featured", executionMethod: "Prompt", activitySteps: [], whyThisMatters: null, launchUrl: null, launchLabel: null, prerequisiteActivityExternalId: null, prerequisiteActivityName: null, agents: [], resources: [] }] },
     ],
     facilitatorGuide: null,
+    managerGuide: null,
     resources: [resource], reflectionPrompt: "What changed in your understanding?", commitmentPrompt: "What will you do next?", keyTakeaway: null,
     contentAvailability: { narrativeComplete: true, facilitatorGuideAvailable: false, phasesAvailable: true, activitiesAvailable: true, agentsAvailable: true, resourcesAvailable: true, reflectionAvailable: true, commitmentAvailable: true, missingFields: [] },
     ...overrides,
@@ -55,7 +56,7 @@ describe("Huddle PowerPoint export", () => {
       ["02-missing-narrative.pptx", model({ narrative: { todayObjective: null, useCase: null, whyItMatters: null, desiredOutcome: null } })],
       ["03-long-prompt.pptx", model({ phases: [{ ...model().phases[0], activities: [{ ...model().phases[0].activities[0], prompt: longPrompt }] }] })],
       ["04-multiple-phases.pptx", model()],
-      ["05-multiple-agents.pptx", model({ agents: { primary: [agent, { ...agent, externalId: "agent-3", name: "Sales Agent", displayOrder: 2 }], secondary: [{ ...agent, externalId: "agent-4", name: "Researcher", displayOrder: 3 }, { ...agent, externalId: "agent-5", name: "Analyst", displayOrder: 4 }] } })],
+      ["05-multiple-agents.pptx", model({ agents: { primary: [agent, { ...agent, externalId: "agent-3", name: "Sales Agent", displayOrder: 2 }], secondary: [{ ...agent, externalId: "agent-4", name: "Researcher", displayOrder: 3 }, { ...agent, externalId: "agent-5", name: "Analyst", displayOrder: 4 }], unclassified: [] } })],
       ["06-multiple-resources.pptx", model({ resources: Array.from({ length: 8 }, (_, index) => ({ ...resource, externalId: `resource-${index + 1}`, title: `Approved resource ${index + 1}`, displayOrder: index + 1 })) })],
     ];
     for (const [fileName, input] of examples) await buildHuddlePowerPoint(input).writeFile({ fileName: path.join(outputDirectory, fileName) });

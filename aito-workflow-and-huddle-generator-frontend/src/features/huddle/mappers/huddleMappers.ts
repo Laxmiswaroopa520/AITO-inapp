@@ -5,6 +5,7 @@ import type {
   RecommendedHuddlePathResponse,
   RecommendedHuddleWeekViewModel,
 } from "../types";
+import { distinctAgentDisplayNames } from "./agentDisplay";
 
 /**
  * The MCEM stage number lives in the stage's own external ID (MCEM-01..MCEM-05).
@@ -38,12 +39,35 @@ export function formatMcemStageLabel(stages: readonly HuddleMcemStageResponse[])
   return `MCEM Stage: ${joinAsList(parts)}`;
 }
 
+const PATH_SECTION_LABELS: Readonly<Record<string, string>> = {
+  "SEC-ROLEPATH": "Role Path",
+  "SEC-ORIENTATION": "Role Path",
+  "SEC-ADDITIONAL": "Additional",
+};
+
+/**
+ * Labels a placement-scoped card with where its content comes from, so two cards for the same topic
+ * can be told apart: "Role Path · Week 3 · Account Executive" or "Additional · Account Executive".
+ * Null for a card that did not come from the placement-scoped catalog.
+ */
+export function formatPlacementLabel(response: HuddleCatalogItemResponse): string | null {
+  const section = response.placementPathSection ? PATH_SECTION_LABELS[response.placementPathSection] ?? null : null;
+  if (!section) return null;
+  const parts = [section];
+  if (section === "Role Path" && response.placementSequence != null) parts.push(`Week ${response.placementSequence}`);
+  if (response.placementAudienceName) parts.push(response.placementAudienceName);
+  return parts.join(" \u00b7 ");
+}
+
 export function mapHuddleCatalogItemToCard(
   response: HuddleCatalogItemResponse,
 ): HuddleCatalogCardViewModel {
   return {
     id: response.externalId,
     placementExternalId: response.placementExternalId ?? null,
+    cardKey: response.placementExternalId ?? response.externalId,
+    placementRoleExternalId: response.placementSegmentRoleExternalId ?? null,
+    placementLabel: formatPlacementLabel(response),
     // A placement's own title and description win. The workbook's Role_Paths sheet gives each week
     // a RoleTopicName and RoleTopicDescription written for that role, and showing the generic topic
     // name instead flattened exactly the role-specific content the path exists to carry: AE week 7
@@ -70,8 +94,10 @@ export function mapHuddleCatalogItemToCard(
     audienceLabel: response.roles.length === 0
       ? "Audience unavailable"
       : response.roles.map((role) => role.abbreviation || role.name).join(", "),
-    primaryAgentNames: response.primaryAgents.map((agent) => agent.name),
-    secondaryAgentNames: response.secondaryAgents.map((agent) => agent.name),
+    // Shown names: "ECIF Agent (surfaced through Sales Agent)" rather than the bare agent name, and
+    // CX Vitals next to Sales Agent rather than a second "Sales Agent".
+    primaryAgentNames: distinctAgentDisplayNames(response.primaryAgents),
+    secondaryAgentNames: distinctAgentDisplayNames(response.secondaryAgents),
     primaryAccessUrl: response.primaryAgents.find((agent) => agent.showAccessLink)?.accessUrl ?? null,
     primaryAccessLabel: response.primaryAgents.find((agent) => agent.showAccessLink)?.accessLinkLabel ?? null,
   };

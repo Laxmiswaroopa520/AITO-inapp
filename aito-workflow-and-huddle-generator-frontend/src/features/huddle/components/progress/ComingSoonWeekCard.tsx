@@ -3,8 +3,8 @@ import type { HuddleUpcomingWeekResponse } from "../../types";
 
 interface ComingSoonWeekCardProps {
   upcoming: HuddleUpcomingWeekResponse;
-  /** Marks the card as the walkthrough target (first Coming Soon card only). */
-  tour?: boolean;
+  /** Marks the card as the walkthrough target; only the first upcoming week sets it. */
+  tourFirst?: boolean;
 }
 
 /**
@@ -12,11 +12,11 @@ interface ComingSoonWeekCardProps {
  * reads as part of the same path, but it is not selectable, votable or manageable, and its HTML action is
  * disabled.
  */
-export function ComingSoonWeekCard({ upcoming, tour = false }: ComingSoonWeekCardProps) {
+export function ComingSoonWeekCard({ upcoming, tourFirst = false }: ComingSoonWeekCardProps) {
   return (
     <article
-      data-tour={tour ? "huddle-coming-soon" : undefined}
       aria-disabled="true"
+      data-tour={tourFirst ? "huddle-coming-soon" : undefined}
       className="relative grid grid-cols-[58px_minmax(0,1fr)] items-start gap-3 rounded-xl border border-[#E1DFDD] bg-white p-4 shadow-sm before:absolute before:-bottom-4 before:left-[39px] before:top-8 before:w-px before:bg-[#C7E0F4] last:before:hidden sm:grid-cols-[58px_minmax(0,1fr)_auto]"
     >
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-[#0F6CBD] text-sm font-bold text-white shadow-sm">
@@ -47,13 +47,13 @@ export function ComingSoonWeekCard({ upcoming, tour = false }: ComingSoonWeekCar
         <span className="mt-3 block rounded-lg border border-[#C7E0F4] bg-[#F5F9FF] px-3 py-2.5">
           <span className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-[minmax(170px,0.9fr)_minmax(0,1.6fr)]">
             <span className="min-w-0">
-              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Primary AI Tool</span>
+              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Top 5 MCAPS Agents</span>
               <span className="mt-1 block truncate whitespace-nowrap text-sm font-semibold text-[#0F6CBD]">
                 <Bot className="mr-1 inline h-3.5 w-3.5" />Coming soon
               </span>
             </span>
             <span className="min-w-0 border-t border-[#D6E7F7] pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
-              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Secondary AI Tools</span>
+              <span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Additional AI Tools</span>
               <span className="mt-1 block truncate whitespace-nowrap text-sm text-[#424242]">Coming soon</span>
             </span>
           </span>

@@ -42,7 +42,8 @@ export interface HuddlePresentationAgent {
   keyBenefits: readonly string[];
   usageType: string;
   displayLabel: string | null;
-  showAccessLink: boolean;
+  /** Null when the workbook leaves the setting blank (unprovided). */
+  showAccessLink: boolean | null;
   accessUrl: string | null;
   accessLinkLabel: string | null;
   displayOrder: number;
@@ -107,6 +108,19 @@ export interface HuddlePresentationFacilitatorGuide {
   reflectPrompt: string | null;
   commitPrompt: string | null;
   bringBackEvidence: readonly string[];
+  exampleScenario: string | null;
+  roleWorkflowContext: string | null;
+  facilitatorPreparation: string | null;
+  facilitationWatchouts: string | null;
+  managerFacilitatorAlignment: string | null;
+}
+
+/** The placement's Manager Hub content. Shared fields (alignment, example scenario) come from the facilitator guide. */
+export interface HuddlePresentationManagerGuide {
+  managerTeamRelevance: string | null;
+  managerPreparationGuidance: string | null;
+  managerDuringHuddleGuidance: string | null;
+  managerFollowThroughQuestions: string | null;
 }
 
 export interface HuddlePresentationContentAvailability {
@@ -128,10 +142,13 @@ export interface HuddlePresentationModel {
   agents: {
     primary: readonly HuddlePresentationAgent[];
     secondary: readonly HuddlePresentationAgent[];
+    /** Usage type left blank in the workbook: listed without a Primary or Secondary label. */
+    unclassified: readonly HuddlePresentationAgent[];
   };
   mcemStages: readonly HuddlePresentationMcemStage[];
   phases: readonly HuddlePresentationPhase[];
   facilitatorGuide: HuddlePresentationFacilitatorGuide | null;
+  managerGuide: HuddlePresentationManagerGuide | null;
   resources: readonly HuddlePresentationResource[];
   reflectionPrompt: string | null;
   commitmentPrompt: string | null;

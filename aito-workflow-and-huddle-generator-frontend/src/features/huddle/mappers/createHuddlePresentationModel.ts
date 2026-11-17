@@ -132,6 +132,7 @@ export function createHuddlePresentationModel(
     agents: {
       primary: mapAgents(detail.primaryAgents),
       secondary: mapAgents(detail.secondaryAgents),
+      unclassified: mapAgents(detail.unclassifiedAgents ?? []),
     },
     mcemStages: [...detail.mcemStages].sort(byDisplayOrderThenExternalId).map(mapMcemStage),
     phases: [...detail.phases].sort(byDisplayOrderThenExternalId).map(mapPhase),
@@ -150,7 +151,18 @@ export function createHuddlePresentationModel(
       reflectPrompt: detail.facilitatorGuide.reflectPrompt,
       commitPrompt: detail.facilitatorGuide.commitPrompt,
       bringBackEvidence: [...detail.facilitatorGuide.bringBackEvidence],
+      exampleScenario: detail.facilitatorGuide.exampleScenario ?? null,
+      roleWorkflowContext: detail.facilitatorGuide.roleWorkflowContext ?? null,
+      facilitatorPreparation: detail.facilitatorGuide.facilitatorPreparation ?? null,
+      facilitationWatchouts: detail.facilitatorGuide.facilitationWatchouts ?? null,
+      managerFacilitatorAlignment: detail.facilitatorGuide.managerFacilitatorAlignment ?? null,
     },
+    managerGuide: detail.managerGuide ? {
+      managerTeamRelevance: detail.managerGuide.managerTeamRelevance,
+      managerPreparationGuidance: detail.managerGuide.managerPreparationGuidance,
+      managerDuringHuddleGuidance: detail.managerGuide.managerDuringHuddleGuidance,
+      managerFollowThroughQuestions: detail.managerGuide.managerFollowThroughQuestions,
+    } : null,
     resources: mapResources(detail.topicResources),
     // The placement's guide is the real source; the topic-level columns have no workbook column
     // behind them and are null for all V4 content. Kept as a fallback for pre-V4 topics.

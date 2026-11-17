@@ -3,6 +3,7 @@ import { useSetAtom } from "jotai";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { useHuddleCatalog } from "@/features/huddle/hooks";
+import { distinctAgentDisplayNames } from "@/features/huddle/mappers/agentDisplay";
 import { huddleViewModeAtom, selectedHuddleExternalIdAtom } from "@/features/huddle/store";
 import { useActivities } from "@/features/workflow-builder/hooks/useActivities";
 import { useAiTools } from "@/features/workflow-builder/hooks/useAiTools";
@@ -109,7 +110,7 @@ function HuddleResults({ query, open, activeIndex, setActiveIndex, finish }: Res
   const results = useMemo<SearchResult[]>(() => (catalog.data ?? []).slice(0, 10).map((huddle) => ({
     id: huddle.externalId,
     title: huddle.name,
-    subtitle: huddle.description ?? ([huddle.focusAreaName, ...huddle.primaryAgents.map((agent) => agent.name)].filter(Boolean).join(" · ") || "Published Huddle"),
+    subtitle: huddle.description ?? ([huddle.focusAreaName, ...distinctAgentDisplayNames(huddle.primaryAgents)].filter(Boolean).join(" · ") || "Published Huddle"),
     label: huddle.type,
     icon: Users,
     activate: () => {

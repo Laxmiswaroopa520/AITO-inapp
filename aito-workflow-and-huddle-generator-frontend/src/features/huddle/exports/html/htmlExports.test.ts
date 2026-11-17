@@ -12,9 +12,9 @@ const huddle: HuddlePresentationModel = {
   identity: { externalId: "topic-1", name: '<img src=x onerror="alert(1)"> Strategic Huddle', description: "A governed <review>.", type: "Prescriptive", durationMinutes: 30 },
   audience: { roleExternalId: "seller", roleName: "Seller & Lead", audienceDescription: null },
   narrative: { todayObjective: "Prepare safely.", useCase: null, whyItMatters: null, desiredOutcome: null },
-  agents: { primary: [], secondary: [] }, mcemStages: [],
+  agents: { primary: [], secondary: [], unclassified: [] }, mcemStages: [],
   phases: [{ externalId: "phase-1", name: "Preparation", description: null, durationMinutes: 30, displayOrder: 1, activities: [{ externalId: "activity-1", name: "Review", description: null, durationMinutes: 30, displayOrder: 1, prompt: "<script>alert('x')</script> " + "Long content. ".repeat(200), expectedOutput: "Safe output", humanCheckpoint: null, requiredContext: null, bestFitJob: null, practiceTier: "Featured", executionMethod: "Prompt", activitySteps: [], whyThisMatters: null, launchUrl: null, launchLabel: null, prerequisiteActivityExternalId: null, prerequisiteActivityName: null, agents: [], resources: [{ externalId: "bad", title: "Unsafe link", description: null, url: "javascript:alert(1)", type: null, linkLabel: null, displayOrder: 1 }] }] }],
-  facilitatorGuide: null, resources: [], reflectionPrompt: null, commitmentPrompt: null, keyTakeaway: null,
+  facilitatorGuide: null, managerGuide: null, resources: [], reflectionPrompt: null, commitmentPrompt: null, keyTakeaway: null,
   contentAvailability: { narrativeComplete: false, facilitatorGuideAvailable: false, phasesAvailable: true, activitiesAvailable: true, agentsAvailable: false, resourcesAvailable: true, reflectionAvailable: false, commitmentAvailable: false, missingFields: ["useCase"] },
 };
 

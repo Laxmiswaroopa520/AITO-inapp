@@ -4,8 +4,16 @@ export interface HuddleRoleResponse {
   abbreviation: string;
   segment: string | null;
   description: string | null;
-  /** Two-line version of description for the role dropdown. */
-  descriptionSummary?: string | null;
+  /** Huddle audiences only: the segment role's organization grouping (for example ATU, STU, CSU). */
+  shortDescription?: string | null;
+  organizationCode?: string | null;
+  organizationDisplayName?: string | null;
+  organizationDisplayOrder?: number | null;
+  organizationRoleDisplayOrder?: number | null;
+  /** "IndividualRole" or "AllOrganization"; null when the workbook leaves it blank. */
+  audienceKind?: string | null;
+  /** Huddle audiences only: the global role behind the segment role (ROLE-AE for SR-USPSI-AE). */
+  roleExternalId?: string | null;
 }
 
 export interface HuddleResourceResponse {
@@ -26,9 +34,11 @@ export interface HuddleAgentResponse {
   whatItHelpsYouDo: string | null;
   whenToUseIt: string | null;
   keyBenefits: string[];
+  /** Primary, Secondary, Surfaced, Alternate, or Unclassified when the workbook leaves it blank. */
   usageType: string;
   displayLabel: string | null;
-  showAccessLink: boolean;
+  /** Null when the workbook leaves the setting blank (unprovided), distinct from an explicit false. */
+  showAccessLink: boolean | null;
   accessUrl: string | null;
   accessLinkLabel: string | null;
   displayOrder: number;
@@ -51,6 +61,8 @@ export interface HuddleCatalogItemResponse {
   roles: HuddleRoleResponse[];
   primaryAgents: HuddleAgentResponse[];
   secondaryAgents: HuddleAgentResponse[];
+  /** Topic agents whose usage type the workbook leaves blank; never shown as Primary or Secondary. */
+  unclassifiedAgents?: HuddleAgentResponse[] | null;
   mcemStages: HuddleMcemStageResponse[];
   activityCount: number;
   /** Placement to open for this card. Null when the item did not come from a role path. */
@@ -62,6 +74,16 @@ export interface HuddleCatalogItemResponse {
   roleTopicName: string | null;
   /** Role-facing description from Role_Paths.RoleTopicDescription. */
   roleTopicDescription: string | null;
+  /** Placement-scoped catalog only: the role the placement belongs to (e.g. SR-ENT-AE). */
+  placementSegmentRoleExternalId?: string | null;
+  /** Placement-scoped catalog only: that role's display name. */
+  placementAudienceName?: string | null;
+  /** Placement-scoped catalog only: that role's segment name. */
+  placementSegmentName?: string | null;
+  /** Placement-scoped catalog only: SEC-ROLEPATH, SEC-ORIENTATION or SEC-ADDITIONAL. */
+  placementPathSection?: string | null;
+  /** Placement-scoped catalog only: the placement's sequence (the week on a role path). */
+  placementSequence?: number | null;
 }
 
 export interface HuddleMcemStageResponse {
@@ -120,6 +142,20 @@ export interface HuddleFacilitatorGuideResponse {
   reflectPrompt: string | null;
   commitPrompt: string | null;
   bringBackEvidence: string[];
+  /** Facilitator Hub content added by the 10.26 workbook. Null when the placement has none. */
+  exampleScenario?: string | null;
+  roleWorkflowContext?: string | null;
+  facilitatorPreparation?: string | null;
+  facilitationWatchouts?: string | null;
+  managerFacilitatorAlignment?: string | null;
+}
+
+/** The placement's Manager Hub content (workbook sheet Manager_Hub). */
+export interface HuddleManagerGuideResponse {
+  managerTeamRelevance: string | null;
+  managerPreparationGuidance: string | null;
+  managerDuringHuddleGuidance: string | null;
+  managerFollowThroughQuestions: string | null;
 }
 
 export interface HuddleContentAvailabilityResponse {
@@ -160,8 +196,11 @@ export interface HuddleDetailResponse {
   mcemStages: HuddleMcemStageResponse[];
   primaryAgents: HuddleAgentResponse[];
   secondaryAgents: HuddleAgentResponse[];
+  /** Topic agents whose usage type the workbook leaves blank; never shown as Primary or Secondary. */
+  unclassifiedAgents?: HuddleAgentResponse[] | null;
   phases: HuddlePhaseResponse[];
   facilitatorGuide: HuddleFacilitatorGuideResponse | null;
+  managerGuide?: HuddleManagerGuideResponse | null;
   topicResources: HuddleResourceResponse[];
   reflectionPrompt: string | null;
   commitmentPrompt: string | null;
@@ -210,12 +249,15 @@ export interface HuddleCatalogFilters {
   /** Restricts the result to additional content across every role. */
   additionalContentOnly?: boolean;
   /**
-   * Comma-separated role external IDs whose Role Path (weekly) topics should be folded
-   * into the additional-content result above, deduped by topic. Used for All Topics'
-   * default projection (Additional_Content plus the applicable Role Path topics), which
-   * is otherwise identical to additionalContentOnly's plain Additional_Content set.
+   * Also includes each role's Role Path topics in the result (every role's when
+   * additionalContentRoleExternalId is unset), so All Topics can show both.
    */
-  rolePathRoleExternalIds?: string;
+  includeRolePathTopics?: boolean;
+  /**
+   * Returns one item per placement instead of one per topic, each carrying its own placement's
+   * title, description, counts and tools. Used by All Topics so a card always opens its own placement.
+   */
+  placementScoped?: boolean;
   focusAreaExternalId?: string;
   agentExternalId?: string;
   type?: string;
@@ -246,14 +288,17 @@ export interface HuddlePlanResponse {
   isCustomized: boolean;
   rowVersion: string | null;
   items: HuddlePlanItemResponse[];
-  /** Common weeks shown after the last real week. Only present for roles that have a weekly path. */
+  /**
+   * Common weeks shown after the last real week. The API does not send this yet, so the Role Path
+   * falls back to src/data/commonRolePathWeeks.json (see components/progress/commonRolePathWeeks.ts).
+   */
   upcomingWeeks?: HuddleUpcomingWeekResponse[];
 }
 
 export interface SaveHuddlePlanRequest {
   roleExternalId: string;
   rowVersion: string | null;
-  items: { week: number; huddleExternalId: string; placementExternalId?: string | null }[];
+  items: { week: number; huddleExternalId: string }[];
 }
 
 export interface HuddleSessionActivityProgressResponse {

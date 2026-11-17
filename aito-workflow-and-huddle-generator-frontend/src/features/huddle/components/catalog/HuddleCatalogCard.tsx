@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { Bot, Clock, Download, ExternalLink, ListChecks, Loader2, MoreHorizontal, Presentation, Target, Users } from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Bot, Clock, Download, ListChecks, Loader2, MoreHorizontal, Presentation, Target, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useDismissOnOutside } from "../../hooks/useDismissOnOutside";
 import type { HuddleCatalogCardViewModel, HuddleVoteResponse } from "../../types";
 import { HuddleVoteControls } from "./HuddleVoteControls";
 
@@ -10,23 +11,19 @@ interface HuddleCatalogCardProps {
   vote?: HuddleVoteResponse;
   votePending?: boolean;
   week?: number;
-  /** Passing null deselects (used when re-activating an already-selected card), which
-   * hides the detail panel -- see HuddlePage's hasSelection={Boolean(selectedExternalId)}.
-   * The optional second argument names the exact placement being opened -- All Topics can
-   * list several placements of the same topic (one per role), so the topic id alone is not
-   * enough to say which one's content the detail panel should load. */
-  onSelect: (externalId: string | null, placementExternalId?: string | null) => void;
-  onVote: (externalId: string, value: -1 | 1 | null) => void;
-  primaryAccessUrl?: string | null;
+  /** Called with the topic and, for a placement-scoped card, the placement the card opens. */
+  onSelect: (externalId: string, placementExternalId?: string) => void;
+  onVote: (externalId: string, value: -1 | 1 | null, name?: string) => void;
   showManagementMenu?: boolean;
   /** Renders the custom learning plan checkbox when provided. */
   planChecked?: boolean;
-  onTogglePlan?: (externalId: string) => void;
+  /** Called with the card's own key (its placement when it has one), never just the topic. */
+  onTogglePlan?: (cardKey: string) => void;
   /** Renders the same HTML download button the Role Path week cards have when provided. */
   onExportHtml?: () => void;
   htmlExportPending?: boolean;
   htmlExportDisabled?: boolean;
-  /** Marks this card's controls as walkthrough targets (first card only, so targets stay unique). */
+  /** Marks this card's controls as the walkthrough targets; only the first card sets it. */
   tourFirst?: boolean;
 }
 
@@ -34,31 +31,32 @@ function agentLabel(names: string[]): string {
   return names.length === 0 ? "None" : names.join(", ");
 }
 
-export function HuddleCatalogCard({ huddle, selected, vote, votePending, week, onSelect, onVote, primaryAccessUrl, showManagementMenu = false, planChecked = false, onTogglePlan, onExportHtml, htmlExportPending = false, htmlExportDisabled = false, tourFirst = false }: HuddleCatalogCardProps) {
+export function HuddleCatalogCard({ huddle, selected, vote, votePending, week, onSelect, onVote, showManagementMenu = false, planChecked = false, onTogglePlan, onExportHtml, htmlExportPending = false, htmlExportDisabled = false, tourFirst = false }: HuddleCatalogCardProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  // Clicking anywhere outside this card's menu (including another card's menu button) or pressing Escape closes it.
+  const menuRef = useRef<HTMLDivElement | null>(null);
+  useDismissOnOutside(menuOpen, menuRef, useCallback(() => setMenuOpen(false), []));
 
   // A single activation path for the card: tick the plan checkbox and make this the
   // Huddle shown in the detail panel. The checkbox and the card body must never
   // disagree, so every click routes through here.
   //
-  // Checking a topic (nextChecked === true) is allowed to open its detail panel.
-  // Unchecking a topic must never open (or reopen) a detail panel for it -- it should
-  // only close the panel when this card is the one currently shown. Basing the
-  // decision on `selected` alone (the old behavior) reopened whichever topic was just
-  // unchecked once a different/no topic was showing, since an unselected card's own
-  // `selected` prop is always false.
+  // `onSelect` only toggles the shared single-selection state (select this huddle, or clear
+  // it when this huddle is already the one selected) -- it has no independent "set" mode. With
+  // no plan checkbox, that toggle is exactly what a card click should do (click again to close).
+  // With a checkbox, we must only let that toggle fire when it actually needs to flip the
+  // selection to match the checkbox's new state: checking an unselected topic should select it,
+  // and unchecking the currently-selected topic should clear it -- but unchecking a topic that
+  // was never the one shown in the detail panel must leave the panel alone, not reopen it.
+  const placementExternalId = huddle.placementExternalId ?? undefined;
   const activate = () => {
-    if (onTogglePlan) {
-      const nextChecked = !planChecked;
-      onTogglePlan(huddle.placementExternalId ?? huddle.id);
-      if (nextChecked) {
-        onSelect(huddle.id, huddle.placementExternalId);
-      } else if (selected) {
-        onSelect(null);
-      }
+    if (!onTogglePlan) {
+      onSelect(huddle.id, placementExternalId);
       return;
     }
-    onSelect(selected ? null : huddle.id, huddle.placementExternalId);
+    const nextChecked = !planChecked;
+    onTogglePlan(huddle.cardKey);
+    if (nextChecked !== selected) onSelect(huddle.id, placementExternalId);
   };
 
   return (
@@ -72,16 +70,29 @@ export function HuddleCatalogCard({ huddle, selected, vote, votePending, week, o
                 {week !== undefined && <span className="rounded-full bg-[#E8F2FF] px-2 py-0.5 text-[11px] font-bold text-[#0F6CBD]">W{week}</span>}
                 <span className={cn("font-semibold", selected && "text-[#115EA3]")}>{huddle.title}</span>
               </span>
+              {huddle.placementLabel && <span className="mt-1 block text-[11px] font-semibold text-[#616161]">{huddle.placementLabel}</span>}
             </div>
-            <div className="flex items-center gap-1" onClick={(event) => event.stopPropagation()}>{onExportHtml && <button type="button" data-tour={tourFirst ? "huddle-card-html" : undefined} disabled={htmlExportDisabled} onClick={onExportHtml} className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-white px-2 text-xs font-semibold text-[#242424] transition-colors hover:bg-[#F5F9FF] disabled:opacity-50" title={`Download ${huddle.title} as HTML`} aria-label={`Download ${huddle.title} as HTML`} aria-busy={htmlExportPending}>{htmlExportPending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}HTML</button>}<HuddleVoteControls tour={tourFirst} huddleName={huddle.title} vote={vote} disabled={votePending} onVote={(value) => onVote(huddle.id, value)} />{showManagementMenu && <div className="relative"><button type="button" aria-label={`Manage ${huddle.title}`} aria-expanded={menuOpen} data-tour={tourFirst ? "huddle-card-menu" : undefined} onClick={() => setMenuOpen((open) => !open)} className="flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:bg-muted"><MoreHorizontal className="h-4 w-4" /></button>{menuOpen && <div className="absolute right-0 z-20 mt-1 w-44 rounded-lg border bg-white p-1 shadow-xl"><button type="button" onClick={() => { onSelect(huddle.id, huddle.placementExternalId); setMenuOpen(false); }} className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-[#F5F9FF]"><Presentation className="h-4 w-4" />View details</button>{primaryAccessUrl && <a href={primaryAccessUrl} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-[#F5F9FF]"><ExternalLink className="h-4 w-4" />Open AI Tool</a>}</div>}</div>}</div>
+            <div className="flex items-center gap-1" onClick={(event) => event.stopPropagation()}>{onExportHtml && <button type="button" disabled={htmlExportDisabled} onClick={onExportHtml} className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-white px-2 text-xs font-semibold text-[#242424] transition-colors hover:bg-[#F5F9FF] disabled:opacity-50" title={`Download ${huddle.title} as HTML`} aria-label={`Download ${huddle.title} as HTML`} aria-busy={htmlExportPending}>{htmlExportPending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />}HTML</button>}<HuddleVoteControls tour={tourFirst} huddleName={huddle.title} vote={vote} disabled={votePending} onVote={(value) => onVote(huddle.id, value, huddle.title)} />{showManagementMenu && <div ref={menuRef} className="relative"><button type="button" data-tour={tourFirst ? "huddle-card-menu" : undefined} aria-label={`Manage ${huddle.title}`} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground hover:bg-muted"><MoreHorizontal className="h-4 w-4" /></button>{menuOpen && <div className="absolute right-0 z-20 mt-1 w-44 rounded-lg border bg-white p-1 shadow-xl"><button type="button" onClick={() => { onSelect(huddle.id, placementExternalId); setMenuOpen(false); }} className="flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-[#F5F9FF]"><Presentation className="h-4 w-4" />View Details</button></div>}</div>}</div>
           </div>
           <div className="block w-full text-left">
             <span className="mt-1 block min-h-10 line-clamp-2 text-sm text-muted-foreground">{huddle.description ?? "Description unavailable."}</span>
             <span className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground"><span className="flex items-center gap-1"><Clock className="h-3 w-3" />{huddle.durationMinutes === null ? "Duration unavailable" : `${huddle.durationMinutes} min`}</span><span className="flex items-center gap-1"><Users className="h-3 w-3" />{huddle.audienceLabel}</span><span className="flex items-center gap-1"><ListChecks className="h-3 w-3" />{huddle.activityCount} {huddle.activityCount === 1 ? "activity" : "activities"}</span>{huddle.mcemStageLabel && <span className="flex items-center gap-1"><Target className="h-3 w-3" />{huddle.mcemStageLabel}</span>}</span>
-            <span className="mt-3 grid grid-cols-1 gap-3 rounded-lg border border-[#C7E0F4] bg-[#F5F9FF] p-3 sm:grid-cols-2"><span><span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Primary AI Tool</span><span className="mt-1 block text-sm font-semibold text-[#0F6CBD]"><Bot className="mr-1 inline h-3.5 w-3.5" />{agentLabel(huddle.primaryAgentNames)}</span></span><span className="border-t border-[#D6E7F7] pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0"><span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Secondary AI Tools</span><span className="mt-1 block text-sm text-[#424242]">{agentLabel(huddle.secondaryAgentNames)}</span></span></span>
+            <span className="mt-3 grid grid-cols-1 gap-3 rounded-lg border border-[#C7E0F4] bg-[#F5F9FF] p-3 sm:grid-cols-2"><span><span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Top 5 MCAPS Agents</span><span className="mt-1 block text-sm font-semibold text-[#0F6CBD]"><Bot className="mr-1 inline h-3.5 w-3.5" />{agentLabel(huddle.primaryAgentNames)}</span></span><span className="border-t border-[#D6E7F7] pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0"><span className="block text-[10px] font-semibold uppercase tracking-wide text-[#616161]">Additional AI Tools</span><span className="mt-1 block text-sm text-[#424242]">{agentLabel(huddle.secondaryAgentNames)}</span></span></span>
           </div>
         </div>
       </div>
     </article>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+

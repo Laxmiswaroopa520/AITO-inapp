@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from "react";
-import { ChevronDown, Search } from "lucide-react";
+import { ChevronDown, RotateCcw, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useDismissOnOutside } from "../../hooks/useDismissOnOutside";
 import { HuddleAudienceSelect } from "../audience";
@@ -19,21 +20,16 @@ interface HuddleFilterBarProps {
   onAudienceChange: (selectedIds: string[]) => void;
   /** Small explanatory line under the Audience picker, e.g. when its selection was inherited rather than chosen here. */
   audienceNote?: string | null;
-  /** The segment picked in the Segment dropdown (null = All Segments), kept here so it survives tab switches. */
-  audienceSegment?: string | null;
-  onAudienceSegmentChange?: (segment: string | null) => void;
   onFilterChange: (name: "focusArea" | "agent" | "sort" | "search", value: string) => void;
+  /** Resets every filter (audience, focus area, AI tool, sort, search) to its default. The button shows only when this is passed. */
+  onClearAll?: () => void;
+  /** False when every filter is already at its default, so the button is disabled. */
+  canClearAll?: boolean;
 }
 
 const SORT_OPTIONS: HuddleFilterOption[] = [
-  { value: "role-relevance", label: "Role relevance" },
-  { value: "most-upvoted", label: "Most upvoted" },
-  { value: "default", label: "Default order" },
-  /**
-   * All Topics normally also shows the applicable Role Path topics alongside the
-   * Additional Content set. This opts back out to the Additional Content-only view.
-   */
-  { value: "only-all-topics", label: "Only All Topics" },
+  { value: "default", label: "All Topics" },
+  { value: "most-upvoted", label: "Upvoted" },
 ];
 
 /**
@@ -95,17 +91,24 @@ function FilterSelect({ label, value, options, allLabel, showAllOption = true, o
  * Sits above the main content grid so the filters span the full page width, matching
  * the governed reference layout, rather than being confined to the topic column.
  */
-export function HuddleFilterBar({ filters, options, roles, rolesLoading = false, rolesErrorMessage = null, audienceRoleIds, onAudienceChange, audienceNote = null, audienceSegment = null, onAudienceSegmentChange, onFilterChange }: HuddleFilterBarProps) {
+export function HuddleFilterBar({ filters, options, roles, rolesLoading = false, rolesErrorMessage = null, audienceRoleIds, onAudienceChange, audienceNote = null, onFilterChange, onClearAll, canClearAll = true }: HuddleFilterBarProps) {
   return (
+    <>
+    {onClearAll && (
+      <div className="mb-1 flex justify-end">
+        <Button type="button" size="sm" variant="ghost" disabled={!canClearAll} onClick={onClearAll}><RotateCcw className="mr-1.5 h-3.5 w-3.5" />Clear All Filters</Button>
+      </div>
+    )}
     <div className="grid grid-cols-1 items-end gap-3 md:grid-cols-2 lg:grid-cols-6">
       {/* Segment + Role sit side by side, so the audience takes two columns. */}
       <div className="min-w-0 md:col-span-2">
-        <HuddleAudienceSelect mode="multi" roles={roles} loading={rolesLoading} errorMessage={rolesErrorMessage} selectedIds={audienceRoleIds} onChange={onAudienceChange} note={audienceNote} initialSegment={audienceSegment} onSegmentChange={onAudienceSegmentChange} />
+        <HuddleAudienceSelect mode="multi" roles={roles} loading={rolesLoading} errorMessage={rolesErrorMessage} selectedIds={audienceRoleIds} onChange={onAudienceChange} note={audienceNote} />
       </div>
       <FilterSelect label="Focus Area" value={filters.focusArea} options={options.focusAreas} allLabel="All Focus Areas" onChange={(value) => onFilterChange("focusArea", value)} />
       <FilterSelect label="AI Tool" value={filters.agent} options={options.agents} allLabel="All AI Tools" onChange={(value) => onFilterChange("agent", value)} />
-      <FilterSelect label="Sort" value={filters.sort} options={SORT_OPTIONS} allLabel="Default order" showAllOption={false} onChange={(value) => onFilterChange("sort", value)} />
+      <FilterSelect label="Sort" value={filters.sort} options={SORT_OPTIONS} allLabel="All Topics" showAllOption={false} onChange={(value) => onFilterChange("sort", value)} />
       <label className="block min-w-0"><span className="mb-1.5 block text-xs font-semibold tracking-wide text-muted-foreground">Search</span><span className="relative block"><Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" /><input value={filters.search} onChange={(event) => onFilterChange("search", event.target.value)} placeholder="Search Huddles" className="h-10 w-full rounded-md border border-input bg-white pl-9 pr-3 text-sm outline-none focus:ring-2 focus:ring-[#0F6CBD]" /></span></label>
     </div>
+    </>
   );
 }

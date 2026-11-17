@@ -1,12 +1,17 @@
 import { useEffect } from "react";
 import { ArrowDown, ArrowUp, Bot, Clock, Target, Trash2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatMcemStageLabel } from "../../mappers";
+import { distinctAgentDisplayNames, formatMcemStageLabel } from "../../mappers";
 import type { HuddleCatalogItemResponse } from "../../types";
 
 interface CustomLearningPlanDialogProps {
   /** Selected huddles already in the facilitator's chosen order. */
   huddles: readonly HuddleCatalogItemResponse[];
+  /**
+   * The plan entry behind each huddle, in the same order. A topic can be in the plan more than once
+   * (one entry per placement), so rows are keyed and removed by this rather than the topic id.
+   */
+  itemKeys?: readonly string[];
   exporting: boolean;
   onMove: (index: number, direction: -1 | 1) => void;
   onRemove: (externalId: string) => void;
@@ -19,7 +24,7 @@ function agentLabel(names: readonly string[]): string {
   return names.length === 0 ? "None" : names.join(", ");
 }
 
-export function CustomLearningPlanDialog({ huddles, exporting, onMove, onRemove, onClear, onExport, onClose }: CustomLearningPlanDialogProps) {
+export function CustomLearningPlanDialog({ huddles, itemKeys, exporting, onMove, onRemove, onClear, onExport, onClose }: CustomLearningPlanDialogProps) {
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -53,13 +58,13 @@ export function CustomLearningPlanDialog({ huddles, exporting, onMove, onRemove,
           ) : (
             <ol className="space-y-3">
               {huddles.map((huddle, index) => (
-                <li key={huddle.placementExternalId ?? huddle.externalId} className="grid gap-4 rounded-2xl border border-[#E0E6ED] bg-white p-4 md:grid-cols-[42px_1fr_auto] md:items-center">
+                <li key={itemKeys?.at(index) ?? huddle.externalId} className="grid gap-4 rounded-2xl border border-[#E0E6ED] bg-white p-4 md:grid-cols-[42px_1fr_auto] md:items-center">
                   <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#E8F2FF] text-sm font-bold text-[#0F6CBD]">{index + 1}</span>
                   <div className="min-w-0">
                     <p className="font-semibold text-[#16233A]">{huddle.roleTopicName ?? huddle.name}</p>
-                    <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{huddle.description ?? "Description unavailable."}</p>
+                    <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{huddle.roleTopicDescription ?? huddle.description ?? "Description unavailable."}</p>
                     <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1"><Bot className="h-3 w-3" />{agentLabel(huddle.primaryAgents.map((agent) => agent.name))}</span>
+                      <span className="flex items-center gap-1"><Bot className="h-3 w-3" />{agentLabel(distinctAgentDisplayNames(huddle.primaryAgents))}</span>
                       <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{huddle.durationMinutes === null ? "Duration unavailable" : `${huddle.durationMinutes} min`}</span>
                       {formatMcemStageLabel(huddle.mcemStages ?? []) && <span className="flex items-center gap-1"><Target className="h-3 w-3" />{formatMcemStageLabel(huddle.mcemStages ?? [])}</span>}
                     </div>
@@ -67,7 +72,7 @@ export function CustomLearningPlanDialog({ huddles, exporting, onMove, onRemove,
                   <div className="flex gap-1">
                     <Button variant="outline" size="icon" title="Move up" aria-label={`Move ${huddle.name} up`} disabled={index === 0} onClick={() => onMove(index, -1)}><ArrowUp className="h-4 w-4" /></Button>
                     <Button variant="outline" size="icon" title="Move down" aria-label={`Move ${huddle.name} down`} disabled={index === huddles.length - 1} onClick={() => onMove(index, 1)}><ArrowDown className="h-4 w-4" /></Button>
-                    <Button variant="ghost" size="icon" title="Remove" aria-label={`Remove ${huddle.name} from the plan`} onClick={() => onRemove(huddle.placementExternalId ?? huddle.externalId)}><Trash2 className="h-4 w-4" /></Button>
+                    <Button variant="ghost" size="icon" title="Remove" aria-label={`Remove ${huddle.name} from the plan`} onClick={() => onRemove(itemKeys?.at(index) ?? huddle.externalId)}><Trash2 className="h-4 w-4" /></Button>
                   </div>
                 </li>
               ))}

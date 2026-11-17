@@ -9,11 +9,6 @@ import { dateKey, formatCoachDateTime, formatCoachTime, getBrowserTimeZone, getS
 type Step = "coach" | "availability" | "review" | "confirmation";
 interface MeetCoachDialogProps { open: boolean; huddleExternalId: string; huddleName: string; onClose: () => void }
 
-// Coach directory/booking is fully implemented below for V2, but no approved Coach data is
-// configured yet for this release. Rather than removing the feature, this flag short-circuits
-// the dialog to a simple "Coming Soon" message -- flip it to false once Coach data is ready.
-const COACH_COMING_SOON = true;
-
 function availabilityWindow() {
   const start = new Date();
   start.setUTCSeconds(0, 0);
@@ -23,7 +18,30 @@ function availabilityWindow() {
   return { startUtc: start.toISOString(), endUtc: end.toISOString() };
 }
 
-export function MeetCoachDialog({ open, huddleExternalId, huddleName, onClose }: MeetCoachDialogProps) {
+/**
+ * Coach booking is built but ships in Version 2: the approved Coach directory is not configured yet,
+ * so the first request the booking flow makes (GET coaches) is answered with 503 "The approved Coach
+ * directory has not been configured". Until then every Meet with a Coach entry point opens a
+ * coming-soon notice and no Coach request is sent. Set to true to restore the booking flow unchanged.
+ */
+const COACH_BOOKING_ENABLED = false;
+
+export function MeetCoachDialog(props: MeetCoachDialogProps) {
+  if (!props.open) return null;
+  return COACH_BOOKING_ENABLED ? <CoachBookingDialog {...props} /> : <CoachComingSoonDialog onClose={props.onClose} />;
+}
+
+function CoachComingSoonDialog({ onClose }: { onClose: () => void }) {
+  return <div role="dialog" aria-modal="true" aria-labelledby="coach-coming-soon-title" aria-describedby="coach-coming-soon-body" className="fixed inset-0 z-[70] flex items-center justify-center bg-black/45 p-3 sm:p-6">
+    <div className="w-full max-w-md overflow-hidden rounded-xl bg-white shadow-2xl">
+      <header className="flex items-start justify-between border-b px-5 py-4"><h2 id="coach-coming-soon-title" className="flex items-center gap-2 text-lg font-semibold"><CalendarClock className="h-5 w-5 text-[#0F6CBD]"/>Request Coaching Assistance</h2><Button variant="ghost" size="icon" onClick={onClose} aria-label="Close Request Coaching Assistance"><X className="h-4 w-4"/></Button></header>
+      <div id="coach-coming-soon-body" className="px-5 py-6"><p className="font-semibold">Coach booking is not available yet.</p><p className="mt-1 text-sm text-muted-foreground">This capability is planned for a future release.</p></div>
+      <footer className="flex justify-end border-t px-5 py-3"><Button onClick={onClose} className="bg-[#0F6CBD] hover:bg-[#115EA3]">Close</Button></footer>
+    </div>
+  </div>;
+}
+
+function CoachBookingDialog({ open, huddleExternalId, huddleName, onClose }: MeetCoachDialogProps) {
   const [step, setStep] = useState<Step>("coach");
   const [coach, setCoach] = useState<CoachResponse | null>(null);
   const [duration, setDuration] = useState(30);
@@ -47,14 +65,6 @@ export function MeetCoachDialog({ open, huddleExternalId, huddleName, onClose }:
   }, [availability.data?.slots, timeZone]);
 
   if (!open) return null;
-  if (COACH_COMING_SOON) {
-    return <div role="dialog" aria-modal="true" aria-label="Meet with a Coach" className="fixed inset-0 z-[70] flex items-center justify-center bg-black/45 p-3 sm:p-6">
-      <div className="flex max-h-[94vh] w-full max-w-[1100px] flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
-        <header className="flex items-start justify-between border-b px-5 py-4"><div><h2 className="flex items-center gap-2 text-lg font-semibold"><CalendarClock className="h-5 w-5 text-[#0F6CBD]"/>Meet with a Coach</h2><p className="mt-1 text-xs text-muted-foreground">Get practical guidance for “{huddleName}”.</p></div><Button variant="ghost" size="icon" onClick={onClose} aria-label="Close Coach booking"><X className="h-4 w-4"/></Button></header>
-        <main className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-6"><State icon={<CalendarClock className="h-6 w-6"/>} title="Coming Soon" body="Meet with a Coach will be available in a future release."/></main>
-      </div>
-    </div>;
-  }
   const selectCoach = (value: CoachResponse) => { setCoach(value); setSlot(null); setSelectedDate(null); setStep("availability"); };
   const selectSlot = (value: CoachAvailabilitySlotResponse) => { setSlot(value); setBookingRequestId(crypto.randomUUID()); };
   const confirm = async () => {
@@ -63,17 +73,17 @@ export function MeetCoachDialog({ open, huddleExternalId, huddleName, onClose }:
     setStep("confirmation");
   };
 
-  return <div role="dialog" aria-modal="true" aria-label="Meet with a Coach" className="fixed inset-0 z-[70] flex items-center justify-center bg-black/45 p-3 sm:p-6">
+  return <div role="dialog" aria-modal="true" aria-label="Request Coaching Assistance" className="fixed inset-0 z-[70] flex items-center justify-center bg-black/45 p-3 sm:p-6">
     <div className="flex max-h-[94vh] w-full max-w-[1100px] flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
-      <header className="flex items-start justify-between border-b px-5 py-4"><div><h2 className="flex items-center gap-2 text-lg font-semibold"><CalendarClock className="h-5 w-5 text-[#0F6CBD]"/>Meet with a Coach</h2><p className="mt-1 text-xs text-muted-foreground">Get practical guidance for “{huddleName}”.</p></div><Button variant="ghost" size="icon" onClick={onClose} aria-label="Close Coach booking"><X className="h-4 w-4"/></Button></header>
+      <header className="flex items-start justify-between border-b px-5 py-4"><div><h2 className="flex items-center gap-2 text-lg font-semibold"><CalendarClock className="h-5 w-5 text-[#0F6CBD]"/>Request Coaching Assistance</h2><p className="mt-1 text-xs text-muted-foreground">Get practical guidance for “{huddleName}”.</p></div><Button variant="ghost" size="icon" onClick={onClose} aria-label="Close Coach booking"><X className="h-4 w-4"/></Button></header>
       {step !== "confirmation" && <div className="border-b bg-[#F5F9FF] px-5 py-3"><div className="mx-auto flex max-w-xl items-center justify-between text-xs font-semibold">{["Coach", "Availability", "Review"].map((label, index) => { const active = ["coach", "availability", "review"].indexOf(step) >= index; return <span key={label} className={cn("flex items-center gap-2", active ? "text-[#0F6CBD]" : "text-muted-foreground")}><span className={cn("flex h-7 w-7 items-center justify-center rounded-full border", active && "border-[#0F6CBD] bg-[#0F6CBD] text-white")}>{index + 1}</span>{label}</span>; })}</div></div>}
       <main className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-6">
         {step === "coach" && <CoachStep data={coaches.data} loading={coaches.isLoading} error={coaches.error} onRetry={() => void coaches.refetch()} onSelect={selectCoach}/>} 
         {step === "availability" && coach && <section><h3 className="text-xl font-semibold">Choose a time with {coach.displayName}</h3><div className="mt-4 grid gap-3 sm:grid-cols-2"><label className="text-sm font-medium">Duration<select className="mt-1 h-10 w-full rounded-md border bg-white px-3" value={duration} onChange={(event) => { setDuration(Number(event.target.value)); setSlot(null); }}><option value={30}>30 minutes</option><option value={60}>60 minutes</option></select></label><label className="text-sm font-medium">Display time zone<select className="mt-1 h-10 w-full rounded-md border bg-white px-3" value={timeZone} onChange={(event) => { setTimeZone(event.target.value); setSlot(null); setSelectedDate(null); }}>{zones.map((zone) => <option key={zone} value={zone}>{zone}</option>)}</select></label></div><AvailabilityBody loading={availability.isLoading} error={availability.error} groups={groupedSlots} selectedDate={selectedDate} timeZone={timeZone} slot={slot} onDate={setSelectedDate} onSlot={selectSlot} onRetry={() => void availability.refetch()}/></section>}
         {step === "review" && coach && slot && <section className="mx-auto max-w-2xl space-y-5"><div><p className="text-xs font-semibold uppercase tracking-wide text-[#0F6CBD]">Review</p><h3 className="mt-1 text-xl font-semibold">Confirm your coaching session</h3></div><div className="rounded-xl border bg-[#F5F9FF] p-5"><p className="font-semibold">{huddleName}</p><p className="mt-3 text-sm"><strong>Coach:</strong> {coach.displayName}</p><p className="mt-2 text-sm"><strong>When:</strong> {formatCoachDateTime(slot.startUtc, timeZone)}</p><p className="mt-2 text-sm"><strong>Duration:</strong> {duration} minutes</p></div><label className="block text-sm font-medium">Question or context (optional)<textarea value={question} maxLength={2000} onChange={(event) => setQuestion(event.target.value)} className="mt-1 min-h-28 w-full rounded-md border p-3" placeholder="What would you like guidance on?"/></label>{booking.error && <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-800">{booking.error.message}</p>}</section>}
-        {step === "confirmation" && booking.data && <section className="mx-auto max-w-xl py-8 text-center"><span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-700"><Check className="h-7 w-7"/></span><h3 className="mt-4 text-2xl font-semibold">Your coaching session is booked</h3><p className="mt-2 text-muted-foreground">The real calendar event was created successfully.</p><div className="mt-5 rounded-xl border bg-[#F5F9FF] p-5 text-left"><p className="font-semibold">{booking.data.coachDisplayName}</p><p className="mt-2 text-sm">{formatCoachDateTime(booking.data.startUtc, timeZone)}</p></div>{booking.data.joinUrl && <Button asChild className="mt-5 bg-[#0F6CBD] hover:bg-[#115EA3]"><a href={booking.data.joinUrl} target="_blank" rel="noreferrer">Open Teams meeting<ExternalLink className="ml-2 h-4 w-4"/></a></Button>}</section>}
+        {step === "confirmation" && booking.data && <section className="mx-auto max-w-xl py-8 text-center"><span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-700"><Check className="h-7 w-7"/></span><h3 className="mt-4 text-2xl font-semibold">Your coaching session is booked</h3><p className="mt-2 text-muted-foreground">The real calendar event was created successfully.</p><div className="mt-5 rounded-xl border bg-[#F5F9FF] p-5 text-left"><p className="font-semibold">{booking.data.coachDisplayName}</p><p className="mt-2 text-sm">{formatCoachDateTime(booking.data.startUtc, timeZone)}</p></div>{booking.data.joinUrl && <Button asChild className="mt-5 bg-[#0F6CBD] hover:bg-[#115EA3]"><a href={booking.data.joinUrl} target="_blank" rel="noreferrer">Open Teams Meeting<ExternalLink className="ml-2 h-4 w-4"/></a></Button>}</section>}
       </main>
-      <footer className="flex justify-between border-t px-5 py-3">{step !== "coach" && step !== "confirmation" ? <Button variant="ghost" onClick={() => setStep(step === "review" ? "availability" : "coach")}><ArrowLeft className="mr-2 h-4 w-4"/>Back</Button> : <span/>}{step === "availability" && <Button disabled={!slot} onClick={() => setStep("review")} className="bg-[#0F6CBD] hover:bg-[#115EA3]">Review<ArrowRight className="ml-2 h-4 w-4"/></Button>}{step === "review" && <Button disabled={booking.isPending} onClick={() => void confirm()} className="bg-[#0F6CBD] hover:bg-[#115EA3]">{booking.isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin"/>}Book session</Button>}{step === "confirmation" && <Button onClick={onClose}>Done</Button>}</footer>
+      <footer className="flex justify-between border-t px-5 py-3">{step !== "coach" && step !== "confirmation" ? <Button variant="ghost" onClick={() => setStep(step === "review" ? "availability" : "coach")}><ArrowLeft className="mr-2 h-4 w-4"/>Back</Button> : <span/>}{step === "availability" && <Button disabled={!slot} onClick={() => setStep("review")} className="bg-[#0F6CBD] hover:bg-[#115EA3]">Review<ArrowRight className="ml-2 h-4 w-4"/></Button>}{step === "review" && <Button disabled={booking.isPending} onClick={() => void confirm()} className="bg-[#0F6CBD] hover:bg-[#115EA3]">{booking.isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin"/>}Book Session</Button>}{step === "confirmation" && <Button onClick={onClose}>Done</Button>}</footer>
     </div>
   </div>;
 }
