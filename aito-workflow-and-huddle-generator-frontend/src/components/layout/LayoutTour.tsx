@@ -13,10 +13,16 @@ interface TourChoice { layout: TourStep[]; page: TourStep[] }
 
 const EMPTY_CHOICE: TourChoice = { layout: [], page: [] };
 
-/** First element for a tour target that is actually laid out; hidden (responsive) copies are skipped. */
+/**
+ * The first element for a target that is actually on screen. Responsive controls can leave a
+ * hidden element in the DOM (or a hidden twin of a visible one), and a step pointed at it would
+ * spotlight nothing.
+ */
 function findTarget(target: string): HTMLElement | null {
-  const matches = Array.from(document.querySelectorAll<HTMLElement>(`[data-tour="${target}"]`));
-  return matches.find(element => { const box = element.getBoundingClientRect(); return box.width > 0 && box.height > 0; }) ?? null;
+  return Array.from(document.querySelectorAll<HTMLElement>(`[data-tour="${target}"]`)).find((element) => {
+    const box = element.getBoundingClientRect();
+    return box.width > 0 && box.height > 0;
+  }) ?? null;
 }
 
 function describe(count: number, summary: string): string {
@@ -49,8 +55,8 @@ export function LayoutTour() {
 
   useEffect(() => {
     const start = () => {
-      // Filtered against the DOM on open, so conditional controls (Launch Planner,
-      // Generate Huddle) never leave a step pointing at nothing.
+      // Filtered against the DOM on open, so conditional or responsive controls (Launch Planner,
+      // Facilitator Hub, the search box on narrow screens) never leave a step pointing at nothing.
       const onPage = (candidate: TourStep) => findTarget(candidate.target) !== null;
       const pathname = location.pathname;
       const next: TourChoice = {
@@ -79,10 +85,18 @@ export function LayoutTour() {
       const element = findTarget(step.target);
       if (!element) { setRect(null); return; }
       const value = element.getBoundingClientRect();
+      const inHeader = element.closest("header") !== null;
+      // Below the fixed app header: page targets are clipped to this so the spotlight never lights the header (search, help, user menu).
+      const headerBottom = inHeader ? 0 : document.querySelector<HTMLElement>("header.fixed")?.getBoundingClientRect().bottom ?? 0;
+      // A target taller than the screen (e.g. the Selected Huddle column) is only scrolled into view, not centred, so the page does not jump.
+      const tall = value.height > window.innerHeight - headerBottom;
       // Header targets are usually already on screen, but a page header (e.g. Create your own huddle) can be scrolled out of view.
       const offScreen = value.top < 0 || value.bottom > window.innerHeight;
-      if (!element.closest("header") || offScreen) element.scrollIntoView({ block: "center", behavior: "smooth" });
-      setRect({ top: value.top, left: value.left, width: value.width, height: value.height });
+      if (!inHeader || offScreen) element.scrollIntoView({ block: tall ? "nearest" : "center", behavior: "smooth" });
+      // Spotlight only the part of the target that is on screen.
+      const top = Math.max(value.top, headerBottom + 8);
+      const bottom = Math.min(value.bottom, window.innerHeight - 8);
+      setRect({ top, left: value.left, width: value.width, height: Math.max(0, bottom - top) });
     };
     update();
     const timeout = window.setTimeout(update, 350);
@@ -124,19 +138,28 @@ export function LayoutTour() {
   const desiredLeft = rect ? rect.left + rect.width / 2 - cardWidth / 2 : window.innerWidth / 2 - cardWidth / 2;
   const left = Math.max(16, Math.min(desiredLeft, window.innerWidth - cardWidth - 16));
   const below = rect ? rect.top + rect.height + 16 : 96;
-  const top = below + 220 < window.innerHeight ? below : Math.max(80, (rect?.top ?? 300) - 236);
+  const above = (rect?.top ?? 300) - 236;
+  // Below the target, else above it. A target too tall for either (e.g. the Selected Huddle panel) gets
+  // the card beside it, so the card does not cover the content it describes.
+  const sideLeft = rect ? rect.left - cardWidth - 24 : -1;
+  const sideRight = rect ? rect.left + rect.width + 24 : -1;
+  const fitsBelow = below + 220 < window.innerHeight;
+  const beside = !fitsBelow && above < 80 && rect !== null
+    ? sideLeft >= 16 ? sideLeft : sideRight + cardWidth <= window.innerWidth - 16 ? sideRight : null
+    : null;
+  const top = beside !== null && rect ? Math.min(rect.top, window.innerHeight - 236) : fitsBelow ? below : Math.max(80, above);
 
   return createPortal(<motion.div className="fixed inset-0 z-[100]" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
     <svg className="pointer-events-none absolute inset-0 h-full w-full"><defs><mask id="aito-layout-tour-mask"><rect width="100%" height="100%" fill="white" />{rect && <rect x={rect.left - 8} y={rect.top - 8} width={rect.width + 16} height={rect.height + 16} rx="12" fill="black" />}</mask></defs><rect width="100%" height="100%" fill="rgba(0,0,0,.62)" mask="url(#aito-layout-tour-mask)" /></svg>
     {rect && <div className="pointer-events-none absolute rounded-xl ring-2 ring-primary" style={{ top: rect.top - 8, left: rect.left - 8, width: rect.width + 16, height: rect.height + 16 }} />}
     <button type="button" aria-label="Close tour" className="absolute inset-0 cursor-default" onClick={close} />
-    <motion.section key={index} role="dialog" aria-modal="true" aria-label="Application tour" className="absolute rounded-2xl border border-border bg-card p-5 text-card-foreground shadow-2xl" style={{ width: cardWidth, top, left }} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} onClick={event => event.stopPropagation()}>
+    <motion.section key={index} role="dialog" aria-modal="true" aria-label="Application tour" className="absolute rounded-2xl border border-border bg-card p-5 text-card-foreground shadow-2xl" style={{ width: cardWidth, top, left: beside ?? left }} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} onClick={event => event.stopPropagation()}>
       <button type="button" aria-label="Close tour" onClick={close} className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>
       <p className="mb-1 text-xs font-semibold text-primary">Step {index + 1} of {steps.length}</p>
       <h2 className="mb-1.5 font-semibold text-foreground">{step.title}</h2>
       <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{step.content}</p>
       <div className="flex items-center justify-between">
-        <button type="button" onClick={() => setChoosing(true)} className="text-xs text-muted-foreground hover:text-foreground">Change tips</button>
+        <button type="button" onClick={() => setChoosing(true)} className="text-xs text-muted-foreground hover:text-foreground">Change Tips</button>
         <div className="flex gap-2">{index > 0 && <Button type="button" variant="outline" size="sm" onClick={() => setIndex(value => value - 1)}><ArrowLeft className="h-3.5 w-3.5" />Back</Button>}<Button type="button" size="sm" onClick={() => index === steps.length - 1 ? close() : setIndex(value => value + 1)}>{index === steps.length - 1 ? "Done" : "Next"}{index < steps.length - 1 && <ArrowRight className="h-3.5 w-3.5" />}</Button></div>
       </div>
     </motion.section>

@@ -159,8 +159,8 @@ export function WorkflowBucketSection({
           }
         >
           {allSelected
-            ? "Clear bucket"
-            : "Select all"}
+            ? "Clear Bucket"
+            : "Select All"}
         </Button>
       </header>
 

@@ -37,8 +37,8 @@ export function ContinueLearningList({ items, onContinue }: ContinueLearningList
         >
           <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", expanded && "rotate-180")} />
           {expanded
-            ? "Show only the most recent"
-            : `Show ${older.length} more in progress`}
+            ? "Show Only the Most Recent"
+            : `Show ${older.length} More in Progress`}
         </button>
       )}
     </div>

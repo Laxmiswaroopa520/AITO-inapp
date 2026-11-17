@@ -340,6 +340,7 @@ export function LaunchPlannerPage() {
               className="mt-1 shrink-0 border-[#CFDEE8] bg-white text-[#2A446F]"
               onClick={() => navigate('/huddle')}
               aria-label="Back to Huddles"
+              data-tour="planner-back"
             >
               <ArrowLeft className="h-4 w-4" />
             </Button>
@@ -362,7 +363,7 @@ export function LaunchPlannerPage() {
           <div className="flex flex-wrap items-center gap-2">
             <Button data-tour="planner-export" variant="outline" className="border-[#0A6BBA] bg-white text-[#0A6BBA] hover:bg-[#E2F1F9]" onClick={exportPackage} disabled={!generated}>
               <Download className="mr-2 h-4 w-4" />
-              Export launch package
+              Export Launch Package
             </Button>
           </div>
         </div>
@@ -422,7 +423,7 @@ export function LaunchPlannerPage() {
                 </div>
                 <div className="md:col-span-2 flex justify-end border-t border-[#E5ECF1] pt-5">
                   <Button data-tour="planner-generate" onClick={generatePlan} className="h-11 bg-[#0A6BBA] px-6 text-white hover:bg-[#095D9F]">
-                    <Sparkles className="mr-2 h-4 w-4" /> Generate launch plan
+                    <Sparkles className="mr-2 h-4 w-4" /> Generate Launch Plan
                   </Button>
                 </div>
               </CardContent>
@@ -473,9 +474,9 @@ export function LaunchPlannerPage() {
                       <div className="mb-1.5 flex items-center justify-between gap-2 text-xs"><span className="font-medium text-[#5B6E82]">Launch readiness</span><span className="font-semibold text-[#1E3252]">{progress}%</span></div>
                       <Progress value={progress} className="h-2" />
                     </div>
-                    <Button variant="outline" className="border-[#CFDEE8] bg-white" onClick={() => setGeneratedDraft(false)}>Edit setup</Button>
+                    <Button variant="outline" className="border-[#CFDEE8] bg-white" onClick={() => setGeneratedDraft(false)}>Edit Setup</Button>
                     <Button variant="outline" className="border-[#F0BFBA] bg-white text-[#B42318] hover:bg-[#FDF3F2] hover:text-[#8F1D14]" onClick={() => setResetConfirmOpen(true)}>
-                      <RotateCcw className="mr-2 h-4 w-4" />Reset planner
+                      <RotateCcw className="mr-2 h-4 w-4" />Reset Planner
                     </Button>
                   </div>
                 </div>
@@ -641,7 +642,7 @@ export function LaunchPlannerPage() {
                                         );
                                       })}
                                       {events.length > 2 && (
-                                        <button type="button" onClick={() => openMilestone(events[2].milestone)} className="px-1 text-[10px] font-medium text-[#0A6BBA] hover:underline">+{events.length - 2} more</button>
+                                        <button type="button" onClick={() => openMilestone(events[2].milestone)} className="px-1 text-[10px] font-medium text-[#0A6BBA] hover:underline">+{events.length - 2} More</button>
                                       )}
                                     </div>
                                   </div>
@@ -693,7 +694,7 @@ export function LaunchPlannerPage() {
                       <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#1A6B62]" /> Personalized email templates</div>
                       <div className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#1A6B62]" /> Teams, calendar, agenda, and talking points</div>
                     </div>
-                    <Button onClick={exportPackage} className="mt-5 w-full bg-[#0A6BBA] text-white hover:bg-[#095D9F]"><Download className="mr-2 h-4 w-4" />Generate launch package</Button>
+                    <Button onClick={exportPackage} className="mt-5 w-full bg-[#0A6BBA] text-white hover:bg-[#095D9F]"><Download className="mr-2 h-4 w-4" />Generate Launch Package</Button>
                     <p className="mt-2 text-center text-[11px] leading-4 text-[#8292A1]">Exports as a polished HTML package that can be shared directly or printed to PDF.</p>
                   </CardContent>
                 </Card>
@@ -771,7 +772,7 @@ export function LaunchPlannerPage() {
                                     void openOutlookDraft(subject, body);
                                   }}
                                 >
-                                  <Send className="mr-2 h-3.5 w-3.5" /> Open Outlook draft
+                                  <Send className="mr-2 h-3.5 w-3.5" /> Open Outlook Draft
                                 </Button>
                               )}
                             </div>
@@ -819,7 +820,7 @@ export function LaunchPlannerPage() {
           <div className="flex justify-end gap-2">
             <Button variant="outline" onClick={() => setResetConfirmOpen(false)}>Cancel</Button>
             <Button className="bg-[#B42318] text-white hover:bg-[#8F1D14]" disabled={resetLaunchPlan.isPending} onClick={resetPlanner}>
-              {resetLaunchPlan.isPending ? 'Resetting...' : 'Reset planner'}
+              {resetLaunchPlan.isPending ? 'Resetting...' : 'Reset Planner'}
             </Button>
           </div>
         </DialogContent>

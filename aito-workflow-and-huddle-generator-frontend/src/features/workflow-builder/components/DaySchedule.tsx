@@ -25,6 +25,7 @@ import {
 import {
   Button,
 } from "@/components/ui/button";
+import { PROMPT_COPIED_MESSAGE, showToast } from "@/components/feedback/showToast";
 
 import {
   DAY_ZONES,
@@ -217,6 +218,7 @@ export function DaySchedule({
     }
 
     await navigator.clipboard.writeText(prompt);
+    showToast(PROMPT_COPIED_MESSAGE);
     setCopiedActivityId(activity.id);
 
     window.setTimeout(() => {
@@ -283,7 +285,7 @@ export function DaySchedule({
           <div>
             <h2 className="text-lg font-bold">Your Day at a Glance</h2>
             <p className="text-sm text-muted-foreground">
-              {activities.length} activities · {formatDuration(totalDuration)} total
+              {activities.length} {activities.length === 1 ? "activity" : "activities"} · {formatDuration(totalDuration)} total
             </p>
           </div>
         </div>
@@ -305,7 +307,7 @@ export function DaySchedule({
             );
           })}
           {headerActions}
-          <Button type="button" data-tour="workflow-calendar" size="sm" disabled={!calendarItems.length} onClick={() => setCalendarOpen(true)} className="ml-1 gap-2"><CalendarDays className="h-4 w-4" />Add to my calendar</Button>
+          <Button type="button" data-tour="workflow-calendar" size="sm" disabled={!calendarItems.length} onClick={() => setCalendarOpen(true)} className="ml-1 gap-2"><CalendarDays className="h-4 w-4" />Add to My Calendar</Button>
         </div>
       </div>
 
@@ -327,10 +329,10 @@ export function DaySchedule({
             <button
               type="button"
               onClick={() => toggleZone(zone.id)}
-              className={`flex w-full items-start justify-between gap-4 rounded-2xl border bg-gradient-to-r p-5 text-left ${style.gradient} ${isExpanded ? "rounded-b-none" : ""}`}
+              className={`flex w-full flex-wrap items-start justify-between gap-4 rounded-2xl border bg-gradient-to-r p-5 text-left ${style.gradient} ${isExpanded ? "rounded-b-none" : ""}`}
               aria-expanded={isExpanded}
             >
-              <span className="flex min-w-0 items-start gap-4">
+              <span className="flex min-w-0 flex-1 basis-64 items-start gap-4">
                 <span className={`rounded-xl p-3 ${style.iconClassName}`}>
                   <ZoneIcon className="h-6 w-6" />
                 </span>
@@ -358,7 +360,7 @@ export function DaySchedule({
                 </span>
               </span>
               <span className="flex shrink-0 items-center gap-3">
-                <Badge className="gap-1.5 border-transparent bg-secondary px-3 py-1.5 text-sm text-secondary-foreground">
+                <Badge className={`gap-1.5 border-transparent px-3 py-1.5 text-sm ${items.length === 0 ? "bg-background/60 font-medium text-muted-foreground" : "bg-secondary text-secondary-foreground"}`}>
                   <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
                   {items.length} {items.length === 1 ? "task" : "tasks"}
                 </Badge>

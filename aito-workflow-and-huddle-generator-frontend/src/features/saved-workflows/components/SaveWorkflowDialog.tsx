@@ -52,7 +52,7 @@ interface SaveWorkflowDialogProps {
 export function SaveWorkflowDialog({
   open,
   title = "Save workflow",
-  submitLabel = "Save workflow",
+  submitLabel = "Save Workflow",
   initialName = "",
   initialDescription = null,
   roleExternalId,

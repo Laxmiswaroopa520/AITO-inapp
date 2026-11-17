@@ -145,7 +145,7 @@ export function ActivityFilters({
               className="h-3.5 w-3.5"
             />
 
-            Clear filters
+            Clear Filters
           </Button>
         )}
       </div>

@@ -2,6 +2,7 @@ import { ArrowRight, CalendarDays, Lightbulb, Sparkles } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import { PROMPT_COPIED_MESSAGE, showToast } from "@/components/feedback/showToast";
 import type { Activity } from "../types/activity.types";
 import type { TimelineView } from "../types/timeline.types";
 import { TIMELINE_LABELS } from "../types/timeline.types";
@@ -37,6 +38,7 @@ export function TimelineBucketView({ activities, timeline, headerActions }: Time
     const prompt = activity.beginnerPrompt ?? activity.advancedPrompt;
     if (!prompt) return;
     await navigator.clipboard.writeText(prompt);
+    showToast(PROMPT_COPIED_MESSAGE);
     setCopiedActivityId(activity.id);
     window.setTimeout(() => setCopiedActivityId(current => current === activity.id ? null : current), 1600);
   };
@@ -51,7 +53,7 @@ export function TimelineBucketView({ activities, timeline, headerActions }: Time
           </div>
           <div className="flex flex-wrap items-center gap-2">
             {headerActions}
-            <Button type="button" data-tour="workflow-calendar" size="sm" disabled={!calendarItems.length} onClick={() => setCalendarOpen(true)}><CalendarDays className="mr-2 h-4 w-4" />Add to my calendar</Button>
+            <Button type="button" data-tour="workflow-calendar" size="sm" disabled={!calendarItems.length} onClick={() => setCalendarOpen(true)}><CalendarDays className="mr-2 h-4 w-4" />Add to My Calendar</Button>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">

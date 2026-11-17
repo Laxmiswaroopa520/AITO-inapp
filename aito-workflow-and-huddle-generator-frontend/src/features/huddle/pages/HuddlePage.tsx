@@ -363,7 +363,7 @@ export function HuddlePage() {
             <nav
               data-tour="huddle-breadcrumb"
               aria-label="Huddle breadcrumb"
-              className="mb-1.5 flex min-w-0 items-center gap-1 text-sm font-medium"
+              className="-mt-2 mb-3.5 flex min-w-0 items-center gap-1 text-sm font-medium"
             >
               <button
                 type="button"
@@ -417,7 +417,7 @@ export function HuddlePage() {
           </p>
         </div>
 
-        <div className="flex flex-nowrap shrink-0 items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-2">
           {/* Same action as the header's "?" icon, placed where a reader who is unsure where to go will see it. */}
           <span className="group relative inline-flex shrink-0">
             <button
@@ -426,7 +426,7 @@ export function HuddlePage() {
               className="inline-flex h-10 items-center rounded-lg border bg-white px-3 text-sm font-semibold hover:bg-muted"
             >
               <HelpCircle className="mr-2 h-4 w-4" />
-              Help and tips
+              Help and Tips
             </button>
 
             <span
@@ -442,17 +442,18 @@ export function HuddlePage() {
               type="button"
               data-tour="huddle-in-a-box"
               onClick={() => setHuddleInABoxOpen(true)}
-              className="inline-flex h-10 items-center rounded-lg border border-[#0A6BBA] bg-white px-3 text-sm font-semibold text-[#0A6BBA] hover:bg-[#E2F1F9]"
+              className="inline-flex h-10 items-center rounded-lg border border-[#0A6BBA] bg-white px-4 text-sm font-semibold text-[#0A6BBA] hover:bg-[#E2F1F9]"
             >
               <Box className="mr-2 h-4 w-4" />
-              Create your own huddle
+              Create Your Own Huddle
             </button>
 
             <span
               role="tooltip"
               className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 rounded-lg border bg-white p-2.5 text-xs font-medium leading-4 text-[#242424] opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
             >
-              Not finding the role, workflow, practice, or tool you're looking for? Try creating your own huddle content!
+              Not finding the role, workflow, practice, or tool you&apos;re
+              looking for? Try creating your own Huddle content!
             </span>
           </span>
 
@@ -461,7 +462,7 @@ export function HuddlePage() {
               type="button"
               data-tour="huddle-launch-planner"
               onClick={() => navigate("/huddle/launch-planner")}
-              className="inline-flex h-10 items-center rounded-lg border border-[#C7C7C7] bg-[#F0F0F0] px-3 text-sm font-semibold text-[#616161] hover:bg-[#E6E6E6] shrink-0"
+              className="inline-flex h-10 items-center rounded-lg border border-[#0A6BBA] bg-white px-4 text-sm font-semibold text-[#0A6BBA] hover:bg-[#E2F1F9]"
             >
               <CalendarDays className="mr-2 h-4 w-4" />
               Launch Planner
@@ -472,7 +473,7 @@ export function HuddlePage() {
             type="button"
             data-tour="huddle-resources"
             onClick={() => setResourcesOpen(true)}
-            className="inline-flex h-10 items-center rounded-lg border bg-white px-3 text-sm font-semibold hover:bg-muted shrink-0"
+            className="inline-flex h-10 items-center rounded-lg border bg-white px-4 text-sm font-semibold hover:bg-muted"
           >
             <Library className="mr-2 h-4 w-4" />
             Resources

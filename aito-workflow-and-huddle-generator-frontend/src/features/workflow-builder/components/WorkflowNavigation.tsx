@@ -83,7 +83,7 @@ export function WorkflowNavigation({
                 aria-hidden="true"
               />
 
-              Start again
+              Start Again
             </Button>
           )}
 

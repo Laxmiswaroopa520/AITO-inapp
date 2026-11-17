@@ -261,7 +261,7 @@ export function ActivitySelectionStep({
             className="mt-5"
             onClick={onBack}
           >
-            Select another role
+            Select Another Role
           </Button>
         </div>
       </section>

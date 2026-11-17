@@ -8,10 +8,20 @@ const SHELL_TOP: TourStep[] = [
   { target: "mode-toggle", title: "Choose your mode", content: "Switch between Workflow and Huddle while each module keeps its own experience." },
 ];
 
-const WORKFLOW_SEARCH: TourStep = { target: "global-search", title: "Search", content: "Find activities, prompts, and tools from the current experience." };
-const HUDDLE_SEARCH: TourStep = { target: "global-search", title: "Search Huddles", content: "Type two or more letters to find Huddles and tools. Choosing a result opens that Huddle in All Topics." };
-const HELP: TourStep = { target: "help", title: "Page tips", content: "Reopen these tips any time. They change with your role and the tab you are on." };
+/** Search searches different things in each module, so its tip is worded per module. */
+function shellBottom(isHuddleRoute: boolean): TourStep[] {
+  return [
+    isHuddleRoute
+      ? { target: "global-search", title: "Search Huddles", content: "Type two or more letters to find Huddles and tools. Choosing a result opens that Huddle in All Topics." }
+      : { target: "global-search", title: "Search", content: "Type at least two letters to find roles, activities, and AI tools. Choose a result to jump to it in the workflow builder." },
+    { target: "help", title: "Page tips", content: "Reopen these tips any time. They change with your role and the tab you are on." },
+  ];
+}
+
+/** Last layout step: the profile menu, which holds the account name and Send feedback (no sign-in in the in-app build). */
 const PROFILE: TourStep = { target: "user-menu", title: "Profile Settings & Feedback", content: "Open your profile menu to see your account details and find Send feedback to share ideas or report a problem." };
+
+const WORKFLOW_HEADER: TourStep[] = [];
 
 /** Workflow tips are matched to the step on screen: a target that is not rendered is dropped when the tour opens. */
 const WORKFLOW_CONTENT: TourStep[] = [
@@ -30,203 +40,162 @@ const WORKFLOW_CONTENT: TourStep[] = [
   { target: "workflow-calendar", title: "Add to my calendar", content: "Opens a review of your scheduled activities before anything is added to your calendar." },
 ];
 
-/** Copy is written per role, because each one uses this page for a different job. A key a role does not have is simply not shown to that role. */
+const SAVED_WORKFLOWS_CONTENT: TourStep[] = [
+  { target: "saved-filters", title: "Find a workflow", content: "Search your saved workflows by name, or show favorites only." },
+  { target: "saved-list", title: "Your saved workflows", content: "Open a workflow to view it, Edit to change it, Save As to keep a copy, or Delete to remove it. The star marks a favorite." },
+];
+
+const LAUNCH_PLANNER_CONTENT: TourStep[] = [
+  { target: "planner-back", title: "Back to Huddles", content: "Return to the Huddle page." },
+  { target: "planner-config", title: "Configure the launch", content: "Enter the team, cohort, start date, sponsor, and program lead. Fields marked * are required; the planner works out every other date from the start date." },
+  { target: "planner-generate", title: "Generate launch plan", content: "Build the launch timeline, readiness checklist, and communication assets from your details." },
+  { target: "planner-status", title: "Launch status", content: "See your launch readiness. Edit setup returns to the form, and Reset planner starts over after you confirm." },
+  { target: "planner-next", title: "What to do next", content: "The next incomplete actions, ordered by launch date. Select one to open its checklist and communication assets." },
+  { target: "planner-views", title: "Timeline or calendar", content: "View the communication plan as a timeline or a monthly calendar. Select any item to open its details." },
+  { target: "planner-export", title: "Export launch package", content: "Bundle the plan into one package for sharing or print/PDF. It is available once you have generated a plan." },
+];
+
+/** How the filters work; each role adds why it would use them. */
+const FILTERS_HOW = "Narrow the list by audience, focus area, AI tool, or keyword, and use Sort to reorder it. Audience lets you pick more than one role, and Sort > Only All Topics hides the Role Path Huddles.";
+
+/** The breadcrumb's role name returns to that role's first tab (Onboarding, or Orientation for Team Members). */
+function breadcrumbTip(roleLabel: string, startTab: string): string {
+  return `Home returns to the Huddle landing page, where you can choose a different experience. From Role Path or All Topics, select ${roleLabel} to return to ${startTab}.`;
+}
+
+/**
+ * Copy that depends on the role. A target a role never sees has no entry for that role, so its
+ * step is dropped for it (Launch Planner is Manager-only, Facilitator Hub is Facilitator-only).
+ * `huddle-list` is not read from here; see HUDDLE_LIST_TIPS.
+ */
 const HUDDLE_TIPS: Record<HuddlePersona, Record<string, string>> = {
   manager: {
     "huddle-role": "You are set up as a Manager. Switch experience here if you are standing in for someone else.",
-    "huddle-sections": "Role Path is the recommended week-by-week plan for your team's role, and All Topics is where you build extra learning plans.",
-    "huddle-launch-planner": "Opens the Launch Planner, for Managers only. Turn a start date into a launch timeline, readiness checklist, and communication package.",
-    "huddle-audience": "Pick the audience role. The recommended Huddles change to match it. Use each week's menu to move, replace, or reset a Huddle.",
+    "huddle-breadcrumb": breadcrumbTip("Manager", "Onboarding"),
+    "huddle-sections": "Use Role Path to explore recommended Huddles for your team's role, or select All Topics to discover additional Huddles and build a custom learning plan.",
+    "huddle-launch-planner": "Plan the rollout for your team. The Launch Planner turns a start date into a launch timeline, readiness checklist, and communication plan.",
+    "huddle-audience": "Pick the audience role. The recommended Huddles change to match it, and you can move, replace, or reset weeks.",
+    "huddle-filters": `${FILTERS_HOW} Use them to narrow the catalog before you choose topics for your team.`,
     "huddle-detail": "Check the outcome, resources, and takeaways so you know what your team walks away with.",
   },
   facilitator: {
     "huddle-role": "You are set up as a Facilitator. Switch experience here if your role changes.",
-    "huddle-sections": "Role Path is the week-by-week sequence you run, and All Topics is where you assemble your own running order.",
-    "huddle-audience": "Pick the audience you are facilitating for. The recommended Huddles follow that role. Use each week's menu to move, replace, or reset a Huddle.",
+    "huddle-breadcrumb": breadcrumbTip("Facilitator", "Onboarding"),
+    "huddle-sections": "Use Role Path to explore recommended Huddles for your team's role, or select All Topics to discover additional Huddles and build a custom learning plan.",
+    "huddle-audience": "Pick the audience you are facilitating for. The recommended Huddles follow that role.",
+    "huddle-filters": `${FILTERS_HOW} Use them to find the topic that fits the room.`,
+    "huddle-facilitator-hub": "Open the Facilitator Hub for the selected Huddle: a full-screen workspace with the talk track, activities, notes, and progress. It appears once you select a Huddle.",
     "huddle-detail": "Open Resources and Takeaways before the session. This is your prep view.",
-    "huddle-facilitator-hub": "Facilitators only. Opens the full-screen Facilitator Hub for the selected Huddle, with the talk track, phase timings, and activity checkpoints you run from. Use Save Progress to keep your place.",
   },
   "team-member": {
     "huddle-role": "You are set up as a Team Member. Switch experience here if your role changes.",
-    "huddle-sections": "Role Path is your week-by-week plan, and All Topics has extra Huddles for your role.",
-    "huddle-audience": "Pick your role so the recommended Huddles match the work you actually do. Use each week's menu to move, replace, or reset a Huddle.",
+    "huddle-breadcrumb": breadcrumbTip("Team Member", "Orientation"),
+    "huddle-sections": "Use Role Path to explore recommended Huddles for your role, or select All Topics to discover additional Huddles and build a custom learning plan.",
+    "huddle-audience": "Pick your role so the recommended Huddles match the work you actually do.",
+    "huddle-filters": `${FILTERS_HOW} Use them to find a topic you want to work through.`,
     "huddle-detail": "Read the outcome and today's objective before you start, so you know what you are aiming for.",
   },
 };
 
-const HUDDLE_LIST_TIPS: Record<HuddlePersona, Partial<Record<HuddleViewMode, string>>> = {
+/** The list means something different on Role Path (weeks) and All Topics (a catalog). */
+const HUDDLE_LIST_TIPS: Record<HuddlePersona, { guided: string; evergreen: string }> = {
   manager: {
-    guided: "Each card is one week of the plan. Select a card to open its details on the right.",
-    evergreen: "Browse additional Huddles. Select a card to open its details on the right.",
+    guided: "Your Role Path in week order. Select a week to review its Huddle in the panel before committing your team to it.",
+    evergreen: "Additional Huddles for your audience. Select a card to review it before committing your team to it.",
   },
   facilitator: {
-    guided: "Each card shows the week, activity count, and AI tools so you know how long a session will run. Select one to open it on the right.",
-    evergreen: "Scan the activity counts to find a topic that fits the room. Select a card to open its details on the right.",
+    guided: "Your Role Path in week order. Select a week to see its phases and activity count, so you know how long the session will run.",
+    evergreen: "Additional Huddles for your audience. Select a card to see its phases and activity count, so you know how long the session will run.",
   },
   "team-member": {
-    guided: "Each card is one week of your plan. Select a card to read its outcome and objective on the right.",
-    evergreen: "Browse extra Huddles for your role. Select a card to read about it on the right.",
+    guided: "Your Role Path in week order. Select a week to read what the Huddle covers.",
+    evergreen: "Additional Huddles for your role. Pick the topics you want to learn for your own plan, and select a card to read more.",
   },
 };
 
-const ROLE_NAMES: Record<HuddlePersona, string> = { manager: "Manager", facilitator: "Facilitator", "team-member": "Team Member" };
-
-/** Only Managers and Facilitators receive a one-page guide with a Role Path / All Topics HTML download. */
-const HTML_GUIDE_NOTE: Record<HuddlePersona, string> = {
-  manager: " The one-page 'How to Lead a Huddle' guide also downloads and opens in a popup.",
-  facilitator: " The one-page 'How a Huddle Runs' guide also downloads and opens in a popup.",
-  "team-member": "",
-};
-
-type CommonTip = string | ((persona: HuddlePersona | null, viewMode: HuddleViewMode) => string | null);
-
-/** Copy that is the same for every role, or that only varies a little. */
-const COMMON_TIPS: Record<string, CommonTip> = {
-  "huddle-breadcrumb": (_persona, viewMode) => viewMode === "orientation"
-    ? "Home returns to the Huddle landing page, where you choose your experience. From Role Path or All Topics, select the role name here to come back to this onboarding page."
-    : "Home returns to the Huddle landing page, where you choose your experience. The role name takes you back to your onboarding page.",
-  "huddle-in-a-box": "Can't find your role, workflow, practice, or tool? Create your own Huddle opens Huddle in a Box. Download its HTML template, open it in your browser, then customize it and run it with your team.",
-  "huddle-in-a-box-footer": "Same option as the header button. If the topics above don't cover what your team needs, open Huddle in a Box to download a template and create your own.",
-  "huddle-resources": "Search and browse playbooks, guides, AI tool resources, facilitator support, and Huddle materials in one place.",
-  "huddle-filters": "Pick one or more audiences, then narrow by Focus Area, AI Tool, or keyword. Sort by Role relevance or Most upvoted, or choose Only All Topics to hide the Role Path topics and show just the additional ones.",
-  "huddle-continue": "Resume a Huddle you started. Continue reopens it in the full-screen workspace. If several are in progress, 'Show more in progress' expands the rest.",
-  "huddle-plan-select": "Tick a topic to add it to your Custom Learning Plan and open its details. Your picks are saved for this role on this device. Once you tick one, the plan bar appears above the list.",
-  "huddle-plan-card": "Your Custom Learning Plan. The badge shows how many topics you ticked. Build Learning Plan opens a dialog to reorder, remove, or export them, Export Learning Plan downloads the plan as HTML, and Clear Selection unticks everything.",
-  "huddle-path-actions": "Reset restores the recommended Huddle for every week and is available once you customize the plan. Export Learning Plan downloads the whole path as an HTML file. A Customized badge appears when you change the plan.",
-  "huddle-week-html": (persona) => `Downloads this week's Huddle as an HTML file without opening it first.${persona ? HTML_GUIDE_NOTE[persona] : ""}`,
-  "huddle-card-html": (persona) => `Downloads this topic as an HTML file without opening it first, the same as the Role Path cards. To download the Huddle open on the right, use the HTML button in its panel.${persona ? HTML_GUIDE_NOTE[persona] : ""}`,
-  "huddle-week-menu": "Manage Week. Move to week reorders this Huddle into another week. Replace Huddle swaps in a different Huddle from the catalog. Reset this week restores the recommended Huddle, and is available once the week is Customized.",
-  "huddle-vote": "Thumbs up or down tells us which Huddles help. A thumbs down asks you for a reason. Select your vote again to remove it.",
-  "huddle-coming-soon": "Weeks marked Coming soon have no Huddle yet. They can't be opened, moved, replaced, rated, or downloaded until they are released.",
-  "huddle-detail-html": "Downloads the selected Huddle as an HTML file. Select a Huddle first, then use this button at the bottom of the panel.",
-  "huddle-detail-coach": "Meet with a Coach is coming soon. For now it opens a Coming Soon message, and booking isn't available yet.",
-  "huddle-onboarding-start": "Explore Role Path takes you to your week-by-week plan.",
-  "huddle-onboarding-walkthrough": (persona) => persona === "manager"
-    ? "Opens the one-page 'How to Lead a Huddle' guide as an image, with a Download button."
-    : persona === "facilitator"
-      ? "Opens the one-page 'How a Huddle Runs' guide as an image, with a Download button."
-      : null,
-  "huddle-onboarding-helps": (persona) => `A summary of how this app supports you as a ${persona ? ROLE_NAMES[persona] : "participant"}.`,
-  "huddle-onboarding-timeline": "Your action plan: what to do at each stage of the program, in order.",
-  "huddle-onboarding-rhythm": "What to do before, during, and after each Huddle, so the weekly routine stays consistent.",
-  "huddle-onboarding-continue": "Ready to continue? Go straight to your Role Path, or choose Explore All Topics to browse additional Huddles.",
+/**
+ * Copy that reads the same for every role. huddle-breadcrumb and huddle-filters are worded per role
+ * in HUDDLE_TIPS (role copy wins in huddleStep), so they are not repeated here.
+ */
+const COMMON_TIPS: Record<string, string> = {
   "huddle-experience": "Choose how you take part: Manager, Facilitator, or Team Member. Everything after this is worded for that role.",
-  "huddle-agents": "The core AI agents used across Frontier Accelerator, with what each one helps you do.",
-  "huddle-journey": "The three connected steps of the motion: understand it, practice by role, then keep expanding through self-directed topics.",
-  "huddle-readiness": "Complete these checks before your first role-based Huddle.",
+  "huddle-resources": "Search and browse playbooks, guides, AI tool resources, facilitator support, and Huddle materials in one place.",
+  "huddle-in-a-box": "Can't find your role, workflow, practice, or tool? Create your own Huddle opens Huddle in a Box. Download its HTML template, open it in your browser, then customize it and run it with your team.",
+  "huddle-onboarding-helps": "See how this app supports your role.",
+  "huddle-onboarding-start": "The main button opens your Role Path. Explore All Topics opens the additional Huddles.",
+  "huddle-agents": "Meet the core AI agents used across Frontier Accelerator and what each one helps with.",
+  "huddle-journey": "See the stages a team moves through, from getting ready to making the Huddle rhythm its own.",
+  "huddle-learning-journey": "Three connected steps: understand the motion, practice through your Role Path, then keep growing with All Topics.",
+  "huddle-readiness": "A checklist to work through before your first role-based Huddle.",
+  "huddle-path-actions": "Export Learning Plan downloads your Role Path as an HTML table of weeks and Huddles. Reset restores the recommended Huddle in every week and is available only after you have changed the path.",
+  "huddle-week-html": "Download this week's Huddle as an HTML file. You do not need to select it first.",
+  "huddle-week-menu": "Manage this week. Move to week places the Huddle in another week and shifts the rest, Replace Huddle swaps in a different Huddle, and Reset this week restores the recommended one. A Customized label marks weeks you have changed.",
+  "huddle-vote": "Thumbs up or down tells us what is useful. Click your vote again to remove it. A downvote asks you to say why before it is saved.",
+  "huddle-coming-soon": "Upcoming weeks show the full path, but they have no Huddle yet. They cannot be opened, voted on, managed, or downloaded.",
+  "huddle-continue": "Resume a Huddle you started. Continue opens it where you left off, and if more than one is in progress you can expand the list to pick another.",
+  "huddle-plan-card": "Your custom plan. Build Learning Plan opens a dialog where you reorder topics with the arrows or remove them, Export Learning Plan downloads it as HTML, and Clear Selection empties it. It appears after you tick a topic.",
+  "huddle-plan-select": "Tick a card to add its Huddle to your own learning plan. The number of selected topics shows above the list.",
+  "huddle-card-menu": "The three-dot menu opens View details.",
+  "huddle-detail-html": "Select a Huddle, then use HTML to download the one shown here as a single HTML file.",
+  "huddle-detail-coach": "Request Coaching Assistance: choose a coach, pick a time that works for both calendars, review, and confirm a session about this Huddle.",
 };
 
 const HUDDLE_TITLES: Record<string, string> = {
-  "huddle-experience": "Select your huddle role",
+  "huddle-experience": "Select your Huddle role",
+  "huddle-in-a-box": "Create your own Huddle",
   "huddle-role": "Your experience",
   "huddle-breadcrumb": "Breadcrumb",
-  "huddle-in-a-box": "Create your own Huddle",
-  "huddle-in-a-box-footer": "Create your own Huddle",
-  "huddle-sections": "The two sections",
+  "huddle-sections": "Explore Huddle Topics",
   "huddle-launch-planner": "Launch Planner",
   "huddle-audience": "Audience",
-  "huddle-filters": "Filters and sorting",
+  "huddle-filters": "Filters",
+  "huddle-onboarding-helps": "How this app helps",
+  "huddle-onboarding-start": "Where to go next",
+  "huddle-agents": "Top 5 MCAPS Agents",
+  "huddle-journey": "Your Huddle Journey",
+  "huddle-learning-journey": "Learning Journey",
+  "huddle-readiness": "Before you begin",
+  "huddle-path-actions": "Reset and export",
   "huddle-continue": "Continue Learning",
-  "huddle-plan-select": "Select topics",
   "huddle-plan-card": "Custom Learning Plan",
-  "huddle-path-actions": "Role Path actions",
+  "huddle-plan-select": "Add to your plan",
   "huddle-list": "Huddle list",
   "huddle-week-html": "Download as HTML",
-  "huddle-card-html": "Download as HTML",
-  "huddle-week-menu": "Manage this week",
-  "huddle-vote": "Rate a Huddle",
-  "huddle-coming-soon": "Coming soon weeks",
+  "huddle-week-menu": "Manage Week",
+  "huddle-vote": "Vote",
+  "huddle-card-menu": "Card menu",
+  "huddle-coming-soon": "Coming soon",
   "huddle-detail": "Selected Huddle",
   "huddle-detail-html": "HTML",
+  "huddle-detail-coach": "Request Coaching Assistance",
   "huddle-facilitator-hub": "Facilitator Hub",
-  "huddle-detail-coach": "Meet with a Coach",
   "huddle-resources": "Resources library",
-  "huddle-onboarding-start": "Start here",
-  "huddle-onboarding-walkthrough": "HTML Walkthrough",
-  "huddle-onboarding-helps": "How this app helps",
-  "huddle-onboarding-timeline": "Your action plan",
-  "huddle-onboarding-rhythm": "The Huddle rhythm",
-  "huddle-onboarding-continue": "Ready to continue?",
-  "huddle-agents": "Top 5 Agents",
-  "huddle-journey": "Learning journey",
-  "huddle-readiness": "Before you begin",
 };
 
-/** Returns null when the role has no copy for this target, so the step is left out for that role. */
+/** What each tab can show, in page order. Targets that are absent from the page are dropped by the caller. */
+const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
+  orientation: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-sections", "huddle-onboarding-helps", "huddle-onboarding-start"],
+  // In-app: the Facilitator Hub button sits in the Selected Huddle panel (beside the coach button), so its step follows the panel.
+  guided: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-sections", "huddle-audience", "huddle-path-actions", "huddle-list", "huddle-week-html", "huddle-week-menu", "huddle-vote", "huddle-coming-soon", "huddle-detail", "huddle-detail-html", "huddle-facilitator-hub", "huddle-detail-coach"],
+  evergreen: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-sections", "huddle-filters", "huddle-continue", "huddle-plan-card", "huddle-list", "huddle-plan-select", "huddle-vote", "huddle-card-menu", "huddle-detail", "huddle-detail-html", "huddle-facilitator-hub", "huddle-detail-coach"],
+};
+
+/** Used before an experience is chosen, so there is no role to word the copy for. */
+// The Learning Journey and Before you begin (readiness) sections are deliberately not toured.
+const HUDDLE_LANDING_TARGETS = ["huddle-experience", "huddle-in-a-box", "huddle-resources", "huddle-agents", "huddle-journey"];
+
+/** Role copy first, then the shared copy; a step with no copy for this role does not exist for it. */
 function huddleStep(persona: HuddlePersona | null, viewMode: HuddleViewMode, target: string): TourStep | null {
-  const common = COMMON_TIPS[target];
-  const resolvedCommon = typeof common === "function" ? common(persona, viewMode) : common;
-  const content = (persona ? HUDDLE_TIPS[persona][target] : undefined)
-    ?? (target === "huddle-list" && persona ? HUDDLE_LIST_TIPS[persona][viewMode] : undefined)
-    ?? resolvedCommon;
+  const listTips = persona ? HUDDLE_LIST_TIPS[persona] : null;
+  const content = target === "huddle-list"
+    ? listTips?.[viewMode === "guided" ? "guided" : "evergreen"]
+    : (persona ? HUDDLE_TIPS[persona][target] : undefined) ?? COMMON_TIPS[target];
   return content ? { target, title: HUDDLE_TITLES[target] ?? target, content } : null;
 }
 
 function huddleSteps(persona: HuddlePersona | null, viewMode: HuddleViewMode, targets: string[]): TourStep[] {
   return targets.map((target) => huddleStep(persona, viewMode, target)).filter((step): step is TourStep => step !== null);
 }
-
-/** Navigation and page orientation come first. Launch Planner is only rendered for Managers. Create your own Huddle is added last on each tab. */
-const HUDDLE_HEADER_TARGETS = ["huddle-breadcrumb", "huddle-sections", "huddle-launch-planner", "huddle-resources"];
-
-const HUDDLE_DETAIL_TARGETS = ["huddle-detail", "huddle-detail-html", "huddle-facilitator-hub", "huddle-detail-coach"];
-
-/** Page tips per tab, in the order the controls appear on screen. */
-const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
-  orientation: [
-    ...HUDDLE_HEADER_TARGETS,
-    "huddle-onboarding-start",
-    "huddle-onboarding-walkthrough",
-    "huddle-onboarding-helps",
-    "huddle-onboarding-timeline",
-    "huddle-onboarding-rhythm",
-    "huddle-onboarding-continue",
-    "huddle-in-a-box",
-  ],
-  guided: [
-    ...HUDDLE_HEADER_TARGETS,
-    "huddle-audience",
-    "huddle-path-actions",
-    "huddle-list",
-    "huddle-week-html",
-    "huddle-vote",
-    "huddle-week-menu",
-    "huddle-coming-soon",
-    ...HUDDLE_DETAIL_TARGETS,
-    "huddle-in-a-box",
-  ],
-  evergreen: [
-    ...HUDDLE_HEADER_TARGETS,
-    "huddle-filters",
-    "huddle-continue",
-    "huddle-plan-card",
-    "huddle-list",
-    "huddle-plan-select",
-    "huddle-card-html",
-    "huddle-vote",
-    ...HUDDLE_DETAIL_TARGETS,
-    "huddle-in-a-box-footer",
-  ],
-};
-
-/** Shown before an experience is chosen, so there is no role to word the copy for. */
-const HUDDLE_LANDING_TARGETS = ["huddle-agents", "huddle-experience", "huddle-journey", "huddle-in-a-box", "huddle-resources"];
-
-const LAUNCH_PLANNER_STEPS: TourStep[] = [
-  { target: "planner-config", title: "Configure your launch", content: "Fill in your team, cohort, start date, sponsor, and program lead. These are required. End date, managers, and facilitators are optional." },
-  { target: "planner-generate", title: "Generate the plan", content: "Generate launch plan builds your timeline, readiness checklist, and communications once the required fields are filled in." },
-  { target: "planner-export", title: "Export launch package", content: "Available after you generate a plan. Downloads one HTML package you can share or print to PDF." },
-  { target: "planner-status", title: "Readiness and setup", content: "Launch readiness shows your progress. Edit setup returns to the form, and Reset planner clears the plan after you confirm." },
-  { target: "planner-next", title: "What to do next", content: "Your next milestones. Select one to open its checklist and communication templates." },
-  { target: "planner-views", title: "Timeline or calendar", content: "Switch between a Timeline and a Calendar of the launch plan. Select any item to open its communication assets." },
-];
-
-/** Shown in place of the role-worded step until an experience is chosen. */
-const CHOOSE_ROLE_STEP: TourStep = {
-  target: "huddle-role",
-  title: "Select your huddle role",
-  content: "Select how you want to use Huddles. Choose Manager to plan team learning, Facilitator to prepare and lead Huddles, or Team Member to follow a guided learning journey and practice AI. You can switch experiences later.",
-};
 
 interface ResolveTourStepsInput {
   isHuddleRoute: boolean;
@@ -235,20 +204,75 @@ interface ResolveTourStepsInput {
   pathname: string;
 }
 
+/** Shown in place of the role-worded step until an experience is chosen. */
+const CHOOSE_ROLE_STEP: TourStep = {
+  target: "huddle-role",
+  title: "Select your Huddle role",
+  content: "Select how you want to use Huddles. Choose Manager to plan team learning, Facilitator to prepare and lead Huddles, or Team Member to follow a guided learning journey and practice AI. You can switch experiences later.",
+};
+
 /** The application shell: navigation, mode switching, search, and this help control. */
 export function resolveLayoutSteps({ isHuddleRoute, persona, viewMode }: ResolveTourStepsInput): TourStep[] {
-  const roleStep = persona ? huddleStep(persona, viewMode, "huddle-role") : null;
-  const moduleHeader = isHuddleRoute ? [roleStep ?? CHOOSE_ROLE_STEP] : [];
-  return [...SHELL_TOP, ...moduleHeader, isHuddleRoute ? HUDDLE_SEARCH : WORKFLOW_SEARCH, HELP, PROFILE];
+  const moduleHeader = isHuddleRoute
+    ? [persona ? huddleStep(persona, viewMode, "huddle-role") : CHOOSE_ROLE_STEP].filter((step): step is TourStep => step !== null)
+    : WORKFLOW_HEADER;
+  return [...SHELL_TOP, ...moduleHeader, ...shellBottom(isHuddleRoute), PROFILE];
 }
+
+/** The Role Path / All Topics switch tip, worded exactly as on Role Path and All Topics (HUDDLE_TIPS). */
+function sectionsStep(persona: HuddlePersona): TourStep {
+  return { target: "huddle-sections", title: HUDDLE_TITLES["huddle-sections"], content: HUDDLE_TIPS[persona]["huddle-sections"] };
+}
+
+/** Role page tips (after choosing an experience, before opening Role Path or All Topics), as in AITO-inapp. */
+const ROLE_PAGE_TIPS = new Map<HuddlePersona, TourStep[]>([
+  ["manager", [
+    { target: "huddle-breadcrumb", title: "Breadcrumb", content: "Home returns to the Huddle landing page, where you choose your experience. From Role Path or All Topics, select the role name here to come back to this onboarding page." },
+    sectionsStep("manager"),
+    { target: "huddle-launch-planner", title: "Launch Planner", content: "Opens the Launch Planner, for Managers only. Turn a start date into a launch timeline, readiness checklist, and communication package." },
+    { target: "huddle-resources", title: "Resources library", content: "Search and browse playbooks, guides, AI tool resources, facilitator support, and Huddle materials in one place." },
+    { target: "huddle-onboarding-start", title: "Start here", content: "Explore Role Path takes you to your week-by-week plan." },
+    { target: "huddle-onboarding-walkthrough", title: "HTML Walkthrough", content: "Opens the one-page 'How to Lead a Huddle' guide as an image, with a Download button." },
+    { target: "huddle-onboarding-helps", title: "How this app helps", content: "A summary of how this app supports you as a Manager." },
+    { target: "huddle-onboarding-timeline", title: "Your action plan", content: "Your action plan: what to do at each stage of the program, in order." },
+    { target: "huddle-onboarding-rhythm", title: "The Huddle rhythm", content: "What to do before, during, and after each Huddle, so the weekly routine stays consistent." },
+    { target: "huddle-onboarding-continue", title: "Ready to continue?", content: "Ready to continue? Go straight to your Role Path, or choose Explore All Topics to browse additional Huddles." },
+    { target: "huddle-in-a-box", title: "Create your own Huddle", content: "Can't find your role, workflow, practice, or tool? Create your own Huddle opens Huddle in a Box. Download its HTML template, open it in your browser, then customize it and run it with your team." },
+  ]],
+  ["facilitator", [
+    { target: "huddle-breadcrumb", title: "Breadcrumb", content: "Home returns to the Huddle landing page, where you choose your experience. From Role Path or All Topics, select the role name here to come back to this onboarding page." },
+    sectionsStep("facilitator"),
+    { target: "huddle-resources", title: "Resources library", content: "Search and browse playbooks, guides, AI tool resources, facilitator support, and Huddle materials in one place." },
+    { target: "huddle-onboarding-start", title: "Start here", content: "Explore Role Path takes you to your week-by-week plan." },
+    { target: "huddle-onboarding-walkthrough", title: "HTML Walkthrough", content: "Opens the one-page 'How a Huddle Runs' guide as an image, with a Download button." },
+    { target: "huddle-onboarding-helps", title: "How this app helps", content: "A summary of how this app supports you as a Facilitator." },
+    { target: "huddle-onboarding-timeline", title: "Your action plan", content: "Your action plan: what to do at each stage of the program, in order." },
+    { target: "huddle-onboarding-rhythm", title: "The Huddle rhythm", content: "What to do before, during, and after each Huddle, so the weekly routine stays consistent." },
+    { target: "huddle-onboarding-continue", title: "Ready to continue?", content: "Ready to continue? Go straight to your Role Path, or choose Explore All Topics to browse additional Huddles." },
+    { target: "huddle-in-a-box", title: "Create your own Huddle", content: "Can't find your role, workflow, practice, or tool? Create your own Huddle opens Huddle in a Box. Download its HTML template, open it in your browser, then customize it and run it with your team." },
+  ]],
+  ["team-member", [
+    { target: "huddle-breadcrumb", title: "Breadcrumb", content: "Home returns to the Huddle landing page, where you choose your experience. From Role Path or All Topics, select the role name here to come back to this onboarding page." },
+    sectionsStep("team-member"),
+    { target: "huddle-resources", title: "Resources library", content: "Search and browse playbooks, guides, AI tool resources, facilitator support, and Huddle materials in one place." },
+    { target: "huddle-onboarding-start", title: "Start here", content: "Explore Role Path takes you to your week-by-week plan." },
+    { target: "huddle-onboarding-helps", title: "How this app helps", content: "A summary of how this app supports you as a Team Member." },
+    { target: "huddle-onboarding-timeline", title: "Your action plan", content: "Your action plan: what to do at each stage of the program, in order." },
+    { target: "huddle-onboarding-rhythm", title: "The Huddle rhythm", content: "What to do before, during, and after each Huddle, so the weekly routine stays consistent." },
+    { target: "huddle-onboarding-continue", title: "Ready to continue?", content: "Ready to continue? Go straight to your Role Path, or choose Explore All Topics to browse additional Huddles." },
+    { target: "huddle-in-a-box", title: "Create your own Huddle", content: "Can't find your role, workflow, practice, or tool? Create your own Huddle opens Huddle in a Box. Download its HTML template, open it in your browser, then customize it and run it with your team." },
+  ]],
+]);
 
 /**
  * What is on the page right now, worded for the signed-in role. Targets that are absent
  * are dropped by the caller, so conditional controls need no special casing here.
  */
 export function resolvePageSteps({ isHuddleRoute, persona, viewMode, pathname }: ResolveTourStepsInput): TourStep[] {
+  if (pathname.startsWith("/huddle/launch-planner")) return LAUNCH_PLANNER_CONTENT;
+  if (pathname === "/workflows" || pathname.startsWith("/workflows/")) return SAVED_WORKFLOWS_CONTENT;
   if (!isHuddleRoute) return WORKFLOW_CONTENT;
-  if (pathname.startsWith("/huddle/launch-planner")) return LAUNCH_PLANNER_STEPS;
+  if (persona && viewMode === "orientation") return ROLE_PAGE_TIPS.get(persona) ?? huddleSteps(persona, viewMode, HUDDLE_PAGE_TARGETS.orientation);
   if (!persona) return huddleSteps(null, viewMode, HUDDLE_LANDING_TARGETS);
   return huddleSteps(persona, viewMode, HUDDLE_PAGE_TARGETS[viewMode]);
 }

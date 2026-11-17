@@ -102,7 +102,7 @@ export function WorkflowHistoryFilters({
         onClick={() => onFavoritesOnlyChange(!favoritesOnly)}
       >
         <Star className="h-4 w-4" fill={favoritesOnly ? "currentColor" : "none"} />
-        Favorites only
+        Favorites Only
       </button>
 
       {hasFilters && (

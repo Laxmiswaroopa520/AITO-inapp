@@ -121,7 +121,7 @@ export function WorkflowBucketList({
           className="mt-5"
           onClick={onClearFilters}
         >
-          Clear filters
+          Clear Filters
         </Button>
       </div>
     );

@@ -2,6 +2,7 @@ import {
   ArrowLeftRight,
   CalendarRange,
   Copy,
+  Info,
   ListChecks,
   Save,
   SlidersHorizontal,
@@ -64,10 +65,20 @@ import {
 } from "./DaySchedule";
 
 import { TimelineBucketView } from "./TimelineBucketView";
-import { TimelineToggle } from "./TimelineToggle";
 import type { TimelineView } from "../types/timeline.types";
-import { TIMELINE_LABELS } from "../types/timeline.types";
-import { filterActivitiesByTimeline } from "../utils/filterActivitiesByTimeline";
+import { TIMELINE_LABELS, TIMELINE_OPTIONS } from "../types/timeline.types";
+import {
+  homeTimelineFor,
+} from "../utils/filterActivitiesByTimeline";
+
+// How the info message names the activities of each frequency view.
+const FREQUENCY_NAMES: Record<TimelineView, string> = {
+  day: "daily",
+  week: "weekly",
+  month: "monthly",
+  quarter: "quarterly",
+  year: "yearly or as-needed",
+};
 
 import {
   WorkflowNavigation,
@@ -133,7 +144,14 @@ export function WorkflowSummary({
     ? activities.filter(activity => activity.category === categoryFilter)
     : activities;
 
-  const timelineActivities = filterActivitiesByTimeline(categoryFilteredActivities, timelineView);
+  // Each view shows only the activities of its own frequency (Day: Daily, Week: Weekly, and so on;
+  // Year also holds as-needed ones), so the five counts add up to the selected total.
+  const timelineActivities = categoryFilteredActivities.filter(activity => homeTimelineFor(activity) === timelineView);
+  const frequencyCounts = Object.fromEntries(TIMELINE_OPTIONS.map(option => [
+    option.value,
+    categoryFilteredActivities.filter(activity => homeTimelineFor(activity) === option.value).length,
+  ])) as Record<TimelineView, number>;
+  const remainingActivityCount = categoryFilteredActivities.length - timelineActivities.length;
   const timelineDuration = timelineActivities.reduce(
     (sum, activity) => sum + activity.durationMinutes,
     0,
@@ -445,22 +463,57 @@ export function WorkflowSummary({
           </div>
         )}
 
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{TIMELINE_LABELS[timelineView]}</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {timelineActivities.length} activities from {activities.length} selected · {role.name}
-          </p>
-        </div>
-        <TimelineToggle value={timelineView} onChange={setTimelineView} />
+      <div className="mt-6">
+        <h1 className="text-2xl font-bold tracking-tight">Your Workflow</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {activities.length} selected {activities.length === 1 ? "activity" : "activities"} organized across different frequencies · {role.name}
+        </p>
       </div>
 
-      <div data-tour="workflow-view-tabs" className="mt-5 flex flex-wrap items-center gap-2" role="tablist" aria-label="Workflow view">
+      <div data-tour="workflow-timeline-toggle" className="mt-4 grid grid-cols-5 gap-1.5 sm:gap-3" role="tablist" aria-label="Activity frequency">
+        {TIMELINE_OPTIONS.map(option => {
+          const isActive = option.value === timelineView;
+          const count = frequencyCounts[option.value];
+          return (
+            <button
+              key={option.value}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => setTimelineView(option.value)}
+              className={cn(
+                "flex min-w-0 flex-col items-center gap-0.5 rounded-xl border px-1 py-2 transition-colors sm:py-2.5",
+                isActive
+                  ? "border-primary/30 bg-primary/10"
+                  : "border-border bg-card hover:bg-primary/5",
+              )}
+            >
+              <span className={cn("text-xs font-semibold sm:text-sm", isActive ? "text-primary" : "text-muted-foreground")}>{option.label}</span>
+              <span className={cn("text-lg font-bold leading-tight sm:text-xl", isActive ? "text-primary" : "text-foreground")}>{count}</span>
+              <span className="text-[10px] text-muted-foreground sm:text-xs">{count === 1 ? "Activity" : "Activities"}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 flex items-start gap-3 rounded-xl bg-primary/5 px-4 py-3 text-sm leading-relaxed text-muted-foreground">
+        <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+        <span>
+          Showing{" "}
+          <strong className="font-semibold text-foreground">
+            {timelineActivities.length} {FREQUENCY_NAMES[timelineView]} {timelineActivities.length === 1 ? "activity" : "activities"}
+          </strong>{" "}
+          out of {categoryFilteredActivities.length} selected.
+          {remainingActivityCount > 0 && " Choose another frequency above to view the remaining activities."}
+        </span>
+      </div>
+
+      <div data-tour="workflow-view-tabs" className="mt-4 flex flex-wrap items-center gap-2" role="tablist" aria-label="Workflow view">
         {(
           [
             { id: "filters" as const, label: "Filters", icon: SlidersHorizontal },
-            { id: "day" as const, label: "Your Day", icon: CalendarRange },
-            { id: "list" as const, label: `${categoryFilteredActivities.length} activities`, icon: ListChecks },
+            { id: "day" as const, label: TIMELINE_LABELS[timelineView], icon: CalendarRange },
+            { id: "list" as const, label: `${categoryFilteredActivities.length} Activities`, icon: ListChecks },
           ]
         ).map(tab => {
           const TabIcon = tab.icon;
@@ -503,7 +556,7 @@ export function WorkflowSummary({
                   : "border-border text-muted-foreground hover:text-foreground",
               )}
             >
-              All categories
+              All Categories
             </button>
 
             {availableCategories.map(category => {
@@ -733,7 +786,7 @@ export function WorkflowSummary({
                             ? "Cancel"
                             : swapSourceActivityId === null
                               ? "Swap"
-                              : "Swap here"}
+                              : "Swap Here"}
                         </span>
                       </Button>
                     </article>
@@ -805,8 +858,8 @@ export function WorkflowSummary({
         }
         submitLabel={
           saveDialogMode === "save-as"
-            ? "Save copy"
-            : "Save workflow"
+            ? "Save Copy"
+            : "Save Workflow"
         }
         initialName={
           initialDialogName

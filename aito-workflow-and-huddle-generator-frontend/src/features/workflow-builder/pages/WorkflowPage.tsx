@@ -213,7 +213,7 @@ export function WorkflowPage() {
                 workflow.restartWorkflow
               }
             >
-              Return to role selection
+              Return to Role Selection
             </Button>
           </div>
         </div>

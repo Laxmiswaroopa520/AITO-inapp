@@ -74,6 +74,46 @@ const FREQUENCY_ORDER = new Map([
   ["Quarterly", 4],
 ]);
 
+// Start of each zone, in minutes after midnight (8:30 AM, 11:30 AM, 3:30 PM).
+const ZONE_START_MINUTES: Record<DayZoneId, number> = {
+  morning: 8 * 60 + 30,
+  midday: 11 * 60 + 30,
+  "late-day": 15 * 60 + 30,
+};
+
+function formatClockTime(
+  minutesAfterMidnight: number,
+): string {
+  const hours24 = Math.floor(minutesAfterMidnight / 60) % 24;
+  const minutes = minutesAfterMidnight % 60;
+  const suffix = hours24 >= 12 ? "PM" : "AM";
+  const hours12 = hours24 % 12 === 0 ? 12 : hours24 % 12;
+
+  return `${hours12}:${String(minutes).padStart(2, "0")} ${suffix}`;
+}
+
+/**
+ * The zone an activity belongs in. The activity's trigger context is the explicit scheduling
+ * signal and wins: preparation before a meeting goes first thing, follow-up after a meeting goes
+ * at the end of the day. Otherwise the category decides, as before.
+ */
+function getPreferredZone(
+  activity: Activity,
+): DayZoneId {
+  const trigger =
+    activity.triggerContext.trim().toLowerCase();
+
+  if (trigger === "premeeting") {
+    return "morning";
+  }
+
+  if (trigger === "postmeeting") {
+    return "late-day";
+  }
+
+  return getDefaultZone(activity.category);
+}
+
 function getDefaultZone(
   category: string,
 ): DayZoneId {
@@ -102,27 +142,60 @@ function getZoneDefinition(
   ) as DayZoneDefinition;
 }
 
+/**
+ * Start times for a zone's activities, back to back from the zone's start using each activity's
+ * real duration, so no two activities share or overlap a slot. These are the same start times the
+ * "Add to my calendar" items use.
+ */
 function assignTimeSlots(
   zoneId: DayZoneId,
   items: ScheduledActivity[],
 ): ScheduledActivity[] {
-  const definition =
-    getZoneDefinition(zoneId);
+  let cursor = ZONE_START_MINUTES[zoneId];
 
-  return items.map((item, index) => ({
-    ...item,
-    zoneId,
-    timeSlot:
-      definition.timeSlots[
-        Math.min(
-          index,
-          definition.timeSlots.length - 1,
-        )
-      ],
-  }));
+  return items.map(item => {
+    const timeSlot = formatClockTime(cursor);
+    cursor += item.activity.durationMinutes;
+
+    return {
+      ...item,
+      zoneId,
+      timeSlot,
+    };
+  });
 }
 
-function createInitialSchedule(
+/**
+ * The zone an activity is placed in: its preferred zone while that still has room, otherwise the
+ * next zone later in the day with room, then an earlier one. Only when every zone is full does an
+ * activity go over capacity, into the zone with the most room left, so nothing is ever dropped.
+ */
+function chooseZone(
+  preferred: DayZoneId,
+  durationMinutes: number,
+  usedMinutes: Record<DayZoneId, number>,
+): DayZoneId {
+  const preferredIndex =
+    DAY_ZONES.findIndex(zone => zone.id === preferred);
+  const candidates = [
+    ...DAY_ZONES.slice(preferredIndex),
+    ...DAY_ZONES.slice(0, preferredIndex).reverse(),
+  ];
+  const fitting = candidates.find(zone =>
+    usedMinutes[zone.id] + durationMinutes <= zone.capacityMinutes,
+  );
+
+  if (fitting) {
+    return fitting.id;
+  }
+
+  return [...DAY_ZONES].sort((left, right) =>
+    (right.capacityMinutes - usedMinutes[right.id]) -
+    (left.capacityMinutes - usedMinutes[left.id]),
+  )[0].id;
+}
+
+export function createInitialSchedule(
   activities: Activity[],
 ): DaySchedule {
   const schedule: DaySchedule = {
@@ -148,9 +221,19 @@ function createInitialSchedule(
       );
     });
 
+  const usedMinutes: Record<DayZoneId, number> = {
+    morning: 0,
+    midday: 0,
+    "late-day": 0,
+  };
+
   for (const activity of orderedActivities) {
-    const zoneId =
-      getDefaultZone(activity.category);
+    const zoneId = chooseZone(
+      getPreferredZone(activity),
+      activity.durationMinutes,
+      usedMinutes,
+    );
+    usedMinutes[zoneId] += activity.durationMinutes;
 
     schedule[zoneId].push({
       activity,
