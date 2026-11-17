@@ -9,6 +9,15 @@
       "requestId": "af2fe7a5-9a83-4cc8-9aec-8d2f287cb383"
     }
   },
-  "placements": {},
+  "placements": {
+    "AE-PIPE-1": {
+      "version": 1,
+      "fields": {
+        "roleTopicDescription": "Use certified business data and MSX context to find where pipeline quality, stage evidence, dates, or next steps misrepresent reality in it."
+      },
+      "confirmedAtUtc": "2026-11-17T09:26:08.724Z",
+      "requestId": "0189eca3-312a-4eb7-be8c-bea121b711e4"
+    }
+  },
   "topics": {}
 }

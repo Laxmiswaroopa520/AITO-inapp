@@ -41,6 +41,48 @@
       "submittedAtUtc": "2026-11-17T05:41:03.900Z",
       "confirmedAtUtc": "2026-11-17T06:30:34.322Z",
       "confirmedVersion": 2
+    },
+    {
+      "id": "0189eca3-312a-4eb7-be8c-bea121b711e4",
+      "entityType": "placement",
+      "entityExternalId": "AE-PIPE-1",
+      "entityName": "Inspect Pipeline Signal Quality and Build Trust",
+      "topicExternalId": "WF-X-PIPE-01",
+      "topicName": "Inspect Pipeline Signal Quality and Build Trust",
+      "contextLabel": "Week 3 · Account Executive",
+      "baseVersion": 0,
+      "before": {
+        "roleTopicDescription": "Use certified business data and MSX context to find where pipeline quality, stage evidence, dates, or next steps misrepresent reality."
+      },
+      "proposed": {
+        "roleTopicDescription": "Use certified business data and MSX context to find where pipeline quality, stage evidence, dates, or next steps misrepresent reality in it."
+      },
+      "status": "Confirmed",
+      "submittedBy": "Manager",
+      "submittedAtUtc": "2026-11-17T09:24:37.980Z",
+      "confirmedAtUtc": "2026-11-17T09:26:08.724Z",
+      "confirmedVersion": 1
+    },
+    {
+      "id": "5aafbdda-66a4-4261-a37f-9f27d28b219b",
+      "entityType": "placement",
+      "entityExternalId": "AE-PIPE-1",
+      "entityName": "Inspect Pipeline Signal Quality and Build Trust",
+      "topicExternalId": "WF-X-PIPE-01",
+      "topicName": "Inspect Pipeline Signal Quality and Build Trust",
+      "contextLabel": "Week 3 · Account Executive",
+      "baseVersion": 1,
+      "before": {
+        "roleTopicDescription": "Use certified business data and MSX context to find where pipeline quality, stage evidence, dates, or next steps misrepresent reality in it."
+      },
+      "proposed": {
+        "roleTopicDescription": "Use certified business data and MSX context to find where pipeline quality, stage evidence, dates, or next steps misrepresent reality."
+      },
+      "status": "Pending",
+      "submittedBy": "Manager",
+      "submittedAtUtc": "2026-11-17T09:41:57.546Z",
+      "confirmedAtUtc": null,
+      "confirmedVersion": null
     }
   ]
 }
