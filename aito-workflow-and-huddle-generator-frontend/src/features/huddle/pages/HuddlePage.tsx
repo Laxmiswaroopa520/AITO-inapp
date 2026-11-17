@@ -12,6 +12,7 @@ import { HuddleCatalog, HuddleDownvoteDialog, HuddleFilterBar } from "../compone
 // HuddleGuideImageDialog is paused with the week guide popup below.
 import { HuddleDetailPanel, /* HuddleGuideImageDialog, */ HuddlePreviewDialog, HuddleWorkspace } from "../components/generated";
 import { MeetCoachDialog } from "../components/coach";
+import { SuggestAgentEditDialog } from "../components/agents/SuggestAgentEditDialog";
 import { HuddleInABoxDialog } from "../components/huddleInABox";
 import { HuddleOnboardingExperience } from "../components/onboarding";
 import { HuddleResourcesRepository } from "../components/resources";
@@ -100,6 +101,8 @@ export function HuddlePage() {
   const queryClient = useQueryClient();
   const apiClient = useApiClient();
   const [coachContext, setCoachContext] = useState<{ externalId: string; name: string } | null>(null);
+  // Manager-only Suggest edit form for the selected Huddle's AI tools (see SuggestAgentEditDialog).
+  const [agentEditOpen, setAgentEditOpen] = useState(false);
   const [persona, setPersona] = useAtom(huddlePersonaAtom);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [huddleInABoxOpen, setHuddleInABoxOpen] = useState(false);
@@ -206,6 +209,14 @@ export function HuddlePage() {
     return fromCatalog?.placementExternalId ?? null;
   }, [selectedExternalId, recommendedPathQuery.data, evergreenQuery.data, selectedCatalogSelection]);
   const detailQuery = useHuddleById(selectedExternalId, selectedPlacementExternalId);
+  // "Week 5 · Account Executive" for a Role Path week, shown on the edit form and the Admin dashboard.
+  const editContextLabel = useMemo(() => {
+    if (!selectedPlacementExternalId) return null;
+    const week = recommendedPathQuery.data?.items.find((item) => item.huddle.placementExternalId === selectedPlacementExternalId)?.week;
+    if (week === undefined) return null;
+    const roleName = roles.find((role) => role.externalId === selectedRoleExternalId)?.name;
+    return roleName ? `Week ${week} · ${roleName}` : `Week ${week}`;
+  }, [selectedPlacementExternalId, recommendedPathQuery.data, roles, selectedRoleExternalId]);
   // The session is scoped to the same placement. Without it the API counts every activity on the
   // topic across every role path, which is where "3 of 22" came from on a five-activity Huddle.
   const sessionQuery = useHuddleSession(selectedExternalId, selectedPlacementExternalId);
@@ -342,7 +353,7 @@ export function HuddlePage() {
     }
   };
 
-  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} facilitatorHub={persona === "facilitator"} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={() => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })} />;
+  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} facilitatorHub={persona === "facilitator"} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={() => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })} onSuggestAgentEdit={persona === "manager" ? () => setAgentEditOpen(true) : undefined} />;
 
   return (
     <div className="mx-auto max-w-[1540px] space-y-6 p-4 [font-family:var(--aito-font-sans)] lg:p-6">
@@ -496,6 +507,13 @@ export function HuddlePage() {
       {workspaceOpen && presentationModel && !sessionQuery.isLoading && <HuddleWorkspace key={presentationModel.identity.externalId} model={presentationModel} session={sessionQuery.data} sessionLoading={sessionQuery.isLoading} sessionError={sessionError} mutationPending={saveSessionMutation.isPending || activityCompletionMutation.isPending || completeSessionMutation.isPending} onRefreshSession={async () => (await sessionQuery.refetch()).data} onSaveSession={saveSession} onSetActivityCompletion={setActivityCompletion} onCompleteSession={completeSession} onMeetCoach={() => setCoachContext({ externalId: presentationModel.identity.externalId, name: presentationModel.identity.name })} onPreviewSlides={() => setPreviewOpen(true)} onClose={() => setWorkspaceOpen(false)} />}
       {previewOpen && presentationModel && <HuddlePreviewDialog open model={presentationModel} onClose={() => setPreviewOpen(false)} />}
       {coachContext && <MeetCoachDialog open huddleExternalId={coachContext.externalId} huddleName={coachContext.name} onClose={() => setCoachContext(null)} />}
+      {agentEditOpen && persona === "manager" && detailQuery.data && <SuggestAgentEditDialog
+        key={`${detailQuery.data.externalId}-${detailQuery.data.placementExternalId ?? ""}`}
+        detail={detailQuery.data}
+        contextLabel={editContextLabel}
+        onClose={() => setAgentEditOpen(false)}
+        onSubmitted={(message) => setFeedback({ kind: "success", message })}
+      />}
       <HuddleResourcesRepository open={resourcesOpen} catalog={referenceCatalogQuery.data ?? []} onClose={() => setResourcesOpen(false)} />
       <HuddleInABoxDialog open={huddleInABoxOpen} onClose={() => setHuddleInABoxOpen(false)} onDownload={downloadHuddleInABoxTemplate} />
     </div>

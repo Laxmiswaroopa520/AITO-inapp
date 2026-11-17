@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   Compass,
+  LayoutDashboard,
   ListChecks,
   Map,
   Save,
@@ -107,6 +108,17 @@ export function HomePage() {
           You can switch modes anytime from the top navigation.
         </motion.p>
       </motion.div>
+
+      {/* Admin dashboard entry, pinned to the top-right corner. Proof of concept: there is no sign-in,
+          so the current user is treated as the admin. */}
+      <button
+        type="button"
+        onClick={() => navigate("/admin")}
+        className="absolute right-6 top-6 z-10 inline-flex h-9 items-center rounded-lg border bg-white px-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+      >
+        <LayoutDashboard className="mr-2 h-4 w-4" />
+        Admin
+      </button>
 
       {/* Pinned to the page's bottom-right corner. A real link, so hovering shows the address in the
           tooltip and the browser status bar. */}

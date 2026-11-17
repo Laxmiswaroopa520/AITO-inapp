@@ -32,6 +32,10 @@ import {
 } from "@/features/home";
 
 import {
+  AdminDashboardPage,
+} from "@/features/admin";
+
+import {
   ReferenceDataDiagnosticPage,
 } from "@/features/workflow-builder/pages/ReferenceDataDiagnosticPage";
 
@@ -42,6 +46,19 @@ export const router =
       element: (
         <ProtectedRoute>
           <HomePage />
+        </ProtectedRoute>
+      ),
+    },
+
+    /*
+     * Admin dashboard (proof of concept): reviews and confirms AI tool edits suggested by Managers.
+     * Outside AppLayout, so it has its own header instead of the Workflow/Huddle navigation.
+     */
+    {
+      path: "admin",
+      element: (
+        <ProtectedRoute>
+          <AdminDashboardPage />
         </ProtectedRoute>
       ),
     },

@@ -1,0 +1,46 @@
+{
+  "requests": [
+    {
+      "id": "fa4841ff-9ae3-44ec-9108-cf3ddd4b29a5",
+      "entityType": "agent",
+      "entityExternalId": "AGT-001",
+      "entityName": "Sales Agent",
+      "topicExternalId": "WF-X-PLAN-01",
+      "topicName": "Prioritize Accounts and Build an Actionable Account Plan",
+      "contextLabel": null,
+      "baseVersion": 0,
+      "before": {
+        "whatItIs": "Orchestrator"
+      },
+      "proposed": {
+        "whatItIs": "Orchestrators"
+      },
+      "status": "Confirmed",
+      "submittedBy": "Manager",
+      "submittedAtUtc": "2026-11-16T14:16:00.302Z",
+      "confirmedAtUtc": "2026-11-16T14:36:15.657Z",
+      "confirmedVersion": 1
+    },
+    {
+      "id": "af2fe7a5-9a83-4cc8-9aec-8d2f287cb383",
+      "entityType": "agent",
+      "entityExternalId": "AGT-001",
+      "entityName": "Sales Agent",
+      "topicExternalId": "WF-X-PLAN-01",
+      "topicName": "Prioritize Accounts and Build an Actionable Account Plan",
+      "contextLabel": null,
+      "baseVersion": 1,
+      "before": {
+        "whatItIs": "Orchestrators"
+      },
+      "proposed": {
+        "whatItIs": "Orchestrator"
+      },
+      "status": "Confirmed",
+      "submittedBy": "Manager",
+      "submittedAtUtc": "2026-11-17T05:41:03.900Z",
+      "confirmedAtUtc": "2026-11-17T06:30:34.322Z",
+      "confirmedVersion": 2
+    }
+  ]
+}

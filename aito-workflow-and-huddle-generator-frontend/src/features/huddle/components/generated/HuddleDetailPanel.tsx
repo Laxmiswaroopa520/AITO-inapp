@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BookOpen, Download, ExternalLink, Eye, Layers3, ListChecks, MoreHorizontal, Presentation, Sparkles, Target, Users } from "lucide-react";
+import { BookOpen, Download, ExternalLink, Eye, Layers3, ListChecks, MoreHorizontal, Pencil, Presentation, Sparkles, Target, Users } from "lucide-react";
 import { ErrorState } from "@/components/feedback/ErrorState";
 import { LoadingSpinner } from "@/components/feedback/LoadingSpinner";
 import { cn } from "@/lib/utils";
@@ -25,9 +25,11 @@ interface HuddleDetailPanelProps {
   onExportHtml: () => void;
   onExportPowerPoint: () => void;
   onMeetCoach: () => void;
+  /** Manager-only: opens the edit form for this Huddle's week content and AI tools. Hidden when absent. */
+  onSuggestAgentEdit?: () => void;
 }
 
-export function HuddleDetailPanel({ data, isLoading, error, hasSelection, facilitatorHub = false, onRetry, onOpenWorkspace: openWorkspace, onPreview, onExportHtml, onExportPowerPoint, onMeetCoach }: HuddleDetailPanelProps) {
+export function HuddleDetailPanel({ data, isLoading, error, hasSelection, facilitatorHub = false, onRetry, onOpenWorkspace: openWorkspace, onPreview, onExportHtml, onExportPowerPoint, onMeetCoach, onSuggestAgentEdit }: HuddleDetailPanelProps) {
   // `exportPending` stays declared on the props interface below (callers still pass it) but is no
   // longer read here -- PowerPoint export is temporarily disabled, see the "Download PPT" menu item.
   const [activeTab, setActiveTab] = useState<DetailTab>("overview");
@@ -56,7 +58,7 @@ export function HuddleDetailPanel({ data, isLoading, error, hasSelection, facili
 
   return <aside className="sticky top-[88px] max-h-[calc(100vh-104px)] w-full self-start overflow-y-auto rounded-xl border bg-white shadow-sm [font-family:var(--aito-font-sans)]">
     <header className="space-y-4 rounded-t-xl border-b bg-gradient-to-br from-[#F8FBFF] via-white to-[#F3FAF3] p-5">
-      <div><div className="mb-2 flex flex-wrap items-center gap-2"><span className="text-xs text-muted-foreground">Selected Huddle</span></div><h2 className="text-xl font-bold leading-7 text-[#242424]">{data.roleTopicName ?? data.name}</h2><p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{data.roleTopicDescription ?? data.description ?? "Description unavailable."}</p></div>
+      <div><div className="mb-2 flex flex-wrap items-center justify-between gap-2"><span className="text-xs text-muted-foreground">Selected Huddle</span>{onSuggestAgentEdit && <button type="button" onClick={onSuggestAgentEdit} className="inline-flex h-7 items-center gap-1 rounded-md border bg-white px-2 text-xs font-semibold text-[#0F6CBD] transition-colors hover:bg-[#E8F2FF]"><Pencil className="h-3.5 w-3.5" aria-hidden="true" />Edit</button>}</div><h2 className="text-xl font-bold leading-7 text-[#242424]">{data.roleTopicName ?? data.name}</h2><p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{data.roleTopicDescription ?? data.description ?? "Description unavailable."}</p></div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground"><span className="flex items-center gap-1.5"><Layers3 className="h-3.5 w-3.5" />{data.phases.length} phases</span><span className="flex items-center gap-1.5"><ListChecks className="h-3.5 w-3.5" />{activityCount} activities</span>{mcemStageLabel && <span className="flex items-center gap-1.5"><Target className="h-3.5 w-3.5" />{mcemStageLabel}</span>}</div>
     </header>
 

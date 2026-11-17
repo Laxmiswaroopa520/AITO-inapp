@@ -1,0 +1,14 @@
+{
+  "agents": {
+    "AGT-001": {
+      "version": 2,
+      "fields": {
+        "whatItIs": "Orchestrator"
+      },
+      "confirmedAtUtc": "2026-11-17T06:30:34.322Z",
+      "requestId": "af2fe7a5-9a83-4cc8-9aec-8d2f287cb383"
+    }
+  },
+  "placements": {},
+  "topics": {}
+}
