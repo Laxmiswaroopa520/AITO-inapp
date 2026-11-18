@@ -121,10 +121,10 @@ export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onCh
   const containerRef = useRef<HTMLDivElement | null>(null);
   const segmentContainerRef = useRef<HTMLDivElement | null>(null);
   const multi = mode === "multi";
-  // Sub-segments (Enterprise: ATU, STU, CSU, Services Sales, Other) are offered in the Segment
-  // dropdown for All Topics only. Role Path picks the whole segment, and its Role dropdown lists
-  // every role in it, grouped as before.
-  const useSubSegments = multi;
+  // Sub-segments (Enterprise: ATU, STU, CSU, Services Sales, Other) are no longer offered in the
+  // Segment dropdown, in Role Path or All Topics. Both pick the whole segment, and the Role dropdown
+  // lists every role in it, grouped by sub-segment as before.
+  const useSubSegments = false;
 
   useDismissOnOutside(open, containerRef, useCallback(() => setOpen(false), []));
   useDismissOnOutside(segmentOpen, segmentContainerRef, useCallback(() => setSegmentOpen(false), []));
@@ -203,8 +203,8 @@ export function HuddleAudienceSelect({ roles, mode = "single", selectedIds, onCh
     if (segment !== null) {
       const kept = selected.filter((role) => roleSegment(role) === segment && (organization === null || roleOrganization(role) === organization)).map((role) => role.externalId);
       if (kept.length !== selectedIds.length) onChange(kept);
-      // Role Path needs a role next, so move straight on to the role list.
-      if (!multi) setOpen(true);
+      // A role comes next, so move straight on to the segment's role list (Role Path and All Topics alike).
+      setOpen(true);
     } else if (selectedIds.length > 0) {
       // "All Segments" resets the audience. Keeping the roles would also snap the Segment
       // dropdown straight back to their segment (see activeSegment above).

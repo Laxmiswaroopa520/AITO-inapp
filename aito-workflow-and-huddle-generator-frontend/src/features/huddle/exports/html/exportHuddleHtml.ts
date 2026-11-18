@@ -6,8 +6,11 @@ import { huddleGuideInteractions } from "./huddleGuideInteractions";
 import { huddleGuideStyles } from "./huddleGuideStyles";
 import { agentArtwork, frontierAcceleratorLogo } from "./huddleGuideAssets";
 import { HUDDLE_FONT_STACK } from "./fontStack";
+import { agentDisplayKey, surfacedThrough } from "../../mappers/agentDisplay";
 // ?url keeps this large hand-built page out of the JS bundle; it is only fetched when Week 1 is downloaded.
 import orientationHtmlUrl from "@/assets/huddle/orientation/orientation-preview.html?url";
+// Same for Week 9: fetched only when the shared Week 9 Huddle is downloaded.
+import transitionHtmlUrl from "@/assets/huddle/transition/transition-preview.html?url";
 
 const text = (value: string | number) => escapeHtml(value);
 
@@ -82,6 +85,7 @@ function exportDateToken(date: Date): string {
 }
 
 /** Pure-CSS Copilot glyph, used when an agent has no inlined logo. */
+const COPILOT_MARK = '<span class="copilot-mark" aria-hidden="true"><span class="copilot-loop copilot-loop-a"></span><span class="copilot-loop copilot-loop-b"></span></span>';
 
 /**
  * Export-only UI/UX corrections layered on top of the base Huddle stylesheet.
@@ -94,6 +98,10 @@ function exportDateToken(date: Date): string {
  * reference mockup supplied for this Huddle export. Every rule below is presentation
  * only -- no data-fetching, mapping, or template-copy logic changed as part of this.
  */
+// Hides the Preparation section's "Facilitator to bring into the conversation" card in this HTML
+// export only. The checklist data and its template copy are kept; set to true to restore the card.
+const SHOW_PREPARATION_BRING_CARD = false;
+
 const HUDDLE_EXPORT_STYLE_FIXES = `
   /* Consistent typography across the exported Huddle. */
   .huddle-page,
@@ -274,21 +282,35 @@ const HUDDLE_EXPORT_STYLE_FIXES = `
   }
 
 
-  /* Preparation follows the same Microsoft four-color visual language as Explore & Practice. */
-  .preparation-session-card {
-    border-left: 4px solid #F25022;
-  }
-
-  .preparation-talking-card {
-    border-left: 4px solid #7FBA00;
+  /* Each Preparation card has a left stripe split into the four Microsoft colors, top to
+     bottom: red, green, blue, yellow. The stripe is a 4px gradient painted under a
+     transparent left border, so it follows the card's rounded corners; the white layer
+     beneath keeps the other thin borders their normal color. */
+  .preparation-session-card,
+  .preparation-talking-card,
+  .preparation-discuss-card {
+    border-left: 4px solid transparent;
+    background:
+      linear-gradient(to bottom,
+        #F25022 0 25%,
+        #7FBA00 25% 50%,
+        #00A4EF 50% 75%,
+        #FFB900 75% 100%) left top / 4px 100% no-repeat border-box,
+      #ffffff border-box;
   }
 
   .preparation-discuss-card {
-    border-left: 4px solid #00A4EF;
+    /* Third of three cards: span the row rather than sit alone at half width. */
+    grid-column: 1 / -1;
   }
 
   .preparation-bring-card {
-    border-left: 4px solid #FFB900;
+    border-left: 4px solid var(--blue);
+  }
+
+  /* With the Facilitator to bring card hidden, Discuss before practicing takes the full row. */
+  .stage-content-grid > .preparation-discuss-card {
+    grid-column: 1 / -1;
   }
 
   /* Closed details point down; expanded details point up. */
@@ -408,25 +430,42 @@ const HUDDLE_EXPORT_STYLE_FIXES = `
     background: #e3f0ff;
   }
 
+  /* Same button without a URL yet: keeps its place but does not look or act clickable. */
+  .activity-open-tool.is-placeholder,
+  .activity-open-tool.is-placeholder:hover {
+    border-color: #c7dcf3;
+    background: #eef6ff;
+    cursor: default;
+  }
+
   .activity-practice-grid > .activity-detail-card:only-child {
     grid-column: 1 / -1;
   }
 
-  /* Four activity detail cards use the four Microsoft brand colors consistently. */
-  .context-required-card {
-    border-left: 4px solid #F25022;
+  /* Context Required and Why This Matters sit between the AI tool row and the prompt. */
+  .activity-before-prompt-grid {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Explore & Practice activity cards use the same four-color Microsoft stripe as the
+     Preparation cards: red, green, blue, yellow top to bottom on the left edge. */
+  .context-required-card,
+  .activity-why-card,
+  .expected-output-card,
+  .human-checkpoint-card {
+    border-left: 4px solid transparent;
+    background:
+      linear-gradient(to bottom,
+        #F25022 0 25%,
+        #7FBA00 25% 50%,
+        #00A4EF 50% 75%,
+        #FFB900 75% 100%) left top / 4px 100% no-repeat border-box,
+      #ffffff border-box;
   }
 
   .activity-wiifm-card {
     border-left: 4px solid #7FBA00;
-  }
-
-  .expected-output-card {
-    border-left: 4px solid #00A4EF;
-  }
-
-  .human-checkpoint-card {
-    border-left: 4px solid #FFB900;
   }
 
   .activity-detail-card > p {
@@ -741,6 +780,13 @@ const HUDDLE_EXPORT_STYLE_FIXES = `
     background: #e3f0ff;
   }
 
+  .resource-tool-open.is-placeholder,
+  .resource-tool-open.is-placeholder:hover {
+    border-color: #c7dcf3;
+    background: #eef6ff;
+    cursor: default;
+  }
+
   .resource-tool-details {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -798,6 +844,19 @@ const HUDDLE_EXPORT_STYLE_FIXES = `
     font-size: 10.5px;
     font-weight: 600;
     line-height: 1.25;
+  }
+
+  .resource-group + .resource-group {
+    margin-top: 18px;
+  }
+
+  .resource-group-heading {
+    margin: 0 2px 8px;
+    color: #243a5e;
+    font-family: ${HUDDLE_FONT_STACK};
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
   }
 
   .resource-link-grid {
@@ -1099,6 +1158,8 @@ const HUDDLE_EXPORT_STYLE_FIXES = `
 
   }
 
+  /* "Why This Matters" (activity-why-card) takes its four-color stripe from the shared
+     Explore & Practice card rule above. */
 `;
 
 /**
@@ -1155,9 +1216,8 @@ const TEMPLATE = {
     "What did you observe about how the team applied AI during this Huddle?",
     "What support, coaching, access, or follow-up would help the team make progress before the next Huddle?",
   ],
-  weeklyPulse: "How useful was this week\u2019s huddle for helping you apply AI in your work (Scale of 1-10)?",
-  // Short lead-in shown above the Weekly Pulse question, same template-furniture category.
   weeklyPulseIntro: "Rate this week\u2019s Huddle before you close.",
+  weeklyPulse: "How useful was this week\u2019s Huddle for helping you apply AI in your work (Scale of 1-10)?",
 } as const;
 
 function agentNames(agents: readonly HuddlePresentationAgent[]): string[] {
@@ -1180,9 +1240,14 @@ function resourceRows(resources: readonly HuddlePresentationResource[]): string 
   }).join("")}</ul>`;
 }
 
-/** Agent brand mark shared by the activity tool-action rows and the resource hub cards. */
-function agentBrandMark(agent: HuddlePresentationAgent, className: string, labelOverride?: string): string {
-  const label = labelOverride ?? (agent.displayLabel?.trim() || agent.name);
+/**
+ * Agent brand mark shared by the activity tool-action rows and the resource hub cards.
+ * When an agent has no known artwork, this renders an empty, correctly sized placeholder
+ * (the parent-scoped `.agent-logo-placeholder` CSS rules) instead of a generic fallback logo,
+ * so the icon slot stays empty rather than showing an unrelated brand mark.
+ */
+function agentBrandMark(agent: HuddlePresentationAgent, className: string): string {
+  const label = agent.displayLabel?.trim() || agent.name;
   const artwork = agentArtwork(agent.name);
   return artwork
     ? `<img class="${className} ${artwork.className}" src="${artwork.source}" alt="${text(label)}">`
@@ -1190,75 +1255,58 @@ function agentBrandMark(agent: HuddlePresentationAgent, className: string, label
 }
 
 /**
- * The five agents Frontier Accelerator promotes org-wide. There is no governance table or
- * config file for this list in the app's data model (no HuddlePlacements-style source exists),
- * so it is a fixed, self-contained list here -- move it to a shared config if the content
- * model ever gains a place for it. A pill is "Used in huddle" when this Huddle's own agent
- * list resolves to the same brand artwork as the official agent, so small label differences
- * (e.g. "Sales Copilot" vs "Sales Agent") still match correctly via the existing agentArtwork
- * lookup instead of a second, duplicate name-matching rule.
+ * Top 5 MCAPS Agents and Additional AI Tools come from the API: agents.primary and
+ * agents.secondary, which the backend reads from the selected placement's own
+ * HuddleActivityAgents.UsageType (Primary = Top 5 MCAPS Agents, Secondary = Additional AI Tools).
+ * The export never decides membership itself, never folds one agent into another (Sales Home is
+ * shown as its own tool, wherever the workbook places it), and keeps no list of agent names.
+ * agentArtwork is used only to pick a logo.
  */
-const TOP_FIVE_AGENT_NAMES = ["Researcher", "Cowork", "Scout", "Sales Agent", "Agent J.ai"] as const;
-
-/** True when `name` resolves (via the existing agentArtwork lookup) to one of the official Top 5. */
-function isOfficialTopFiveAgentName(name: string): boolean {
-  const source = agentArtwork(name)?.source;
-  if (!source) return false;
-  return TOP_FIVE_AGENT_NAMES.some((topName) => agentArtwork(topName)?.source === source);
+/** Shown name of an agent: the workbook DisplayLabel when present, else the agent name. */
+function agentDisplayName(agent: HuddlePresentationAgent): string {
+  return agent.displayLabel?.trim() || agent.name;
 }
 
 /**
- * A handful of agents (ECIF Agent, Deal Agent, CX Vitals) are tagged in HuddleActivityAgents /
- * HuddleTopicAgents with a DisplayLabel of the form "X, surfaced through Y" rather than a plain
- * name -- our own data's way of recording that this agent is reached through another one. Parsed
- * here instead of hardcoded per-agent, so it applies to any agent tagged this way.
+ * The Top 5 MCAPS Agents, in band order. The Overview band always shows all five; a pill gets the
+ * Primary highlight ("Used in Huddle") when the agent qualifies as Primary in this Huddle.
  */
-const SURFACED_THROUGH_PATTERN = /^(.+?),\s*surfaced through\s+(.+)$/i;
+const TOP_FIVE_AGENT_NAMES = ["Researcher", "Cowork", "Scout", "Sales Agent", "Agent J.ai"] as const;
 
-/** Agents that are part of a Top 5 agent without saying so in a "surfaced through" label. */
-const TOP_FIVE_PART_OF = new Map<string, (typeof TOP_FIVE_AGENT_NAMES)[number]>([
-  ["sales home", "Sales Agent"],
-]);
-
+/** The Top 5 agent a name resolves to through the existing agentArtwork lookup, or null. */
 function officialTopFiveName(name: string): (typeof TOP_FIVE_AGENT_NAMES)[number] | null {
   const source = agentArtwork(name)?.source;
   return source ? TOP_FIVE_AGENT_NAMES.find((topName) => agentArtwork(topName)?.source === source) ?? null : null;
 }
 
 /**
- * The Top 5 agent this agent counts under on the Overview (AI Tools line and Top 5 band): itself,
- * the agent it is part of (Sales Home), or the Top 5 agent it is surfaced through (Deal Agent).
- * Null when it is not part of the Top 5. The Resources tab keeps its own Top 5 check.
+ * Which Top 5 agents get the Primary highlight. Used for highlighting only: the names listed in the
+ * AI Tools line stay the API's own labels. A Primary agent highlights itself; a Primary capability
+ * surfaced through another agent ("Deal Agent (surfaced through Sales Agent)", ECIF Agent, CX Vitals)
+ * highlights the agent it is surfaced through (Sales Agent).
  */
-function topFiveGroupName(agent: HuddlePresentationAgent): (typeof TOP_FIVE_AGENT_NAMES)[number] | null {
-  const own = officialTopFiveName(agent.name);
-  if (own) return own;
-  const partOf = TOP_FIVE_PART_OF.get(agent.name.trim().toLowerCase());
-  if (partOf) return partOf;
-  const surfacedThrough = (agent.displayLabel?.trim() || agent.name).match(SURFACED_THROUGH_PATTERN)?.[2].trim();
-  return surfacedThrough ? officialTopFiveName(surfacedThrough) : null;
-}
-
-/** Name on the Top 5 line: a "surfaced through" label is shortened to the agent's own name. */
-function topFiveLineName(agent: HuddlePresentationAgent): string {
-  const rawLabel = agent.displayLabel?.trim() || agent.name;
-  return rawLabel.match(SURFACED_THROUGH_PATTERN)?.[1].trim() ?? rawLabel;
+function highlightedTopFiveNames(primaryAgents: readonly HuddlePresentationAgent[]): Set<string> {
+  const names = new Set<string>();
+  primaryAgents.forEach((agent) => {
+    const official = officialTopFiveName(surfacedThrough(agent.displayLabel)?.host ?? agent.name);
+    if (official) names.add(official);
+  });
+  return names;
 }
 
 /** "Top 5 agents" pill band shown on the Overview panel, mirroring the reference guide. */
-function topFiveAgentBand(usedTopFiveNames: ReadonlySet<string>): string {
-
+function topFiveAgentBand(highlightedNames: ReadonlySet<string>): string {
   return `<section class="top-five-agent-band" aria-label="Top 5 MCAPS Agents">`
     + `<div class="top-five-agent-band-label">Top 5 MCAPS Agents<span>Circle = included today</span></div>`
     + TOP_FIVE_AGENT_NAMES.map((name) => {
       const artwork = agentArtwork(name);
-      const isUsed = usedTopFiveNames.has(name);
+      const isUsed = highlightedNames.has(name);
       const icon = artwork
         ? `<img class="top-five-agent-logo" src="${artwork.source}" alt="${text(name)}">`
         : `<span>${text(name.split(/\s+/).map((part) => part[0]).join("").slice(0, 3))}</span>`;
       return `<div class="top-five-agent-pill${isUsed ? " is-featured" : ""}">`
         + `<span class="top-five-agent-icon">${icon}</span>`
-        + `<span><strong class="top-five-agent-title">${text(name)}</strong>${isUsed ? `<small class="top-five-agent-status">Used in huddle</small>` : ""}</span>`
+        + `<span><strong class="top-five-agent-title">${text(name)}</strong>${isUsed ? `<small class="top-five-agent-status">Used in Huddle</small>` : ""}</span>`
         + `</div>`;
     }).join("")
     + `</section>`;
@@ -1270,37 +1318,46 @@ function activityToolActions(agents: readonly HuddlePresentationAgent[]): string
   return `<div class="activity-tool-actions">`
     + agents.map((agent) => {
       const label = agent.displayLabel?.trim() || agent.name;
-      // Show the link whenever we have a real URL for this agent -- the ShowAgentAccessLink
-      // flag in HuddleActivityAgents/HuddleTopicAgents is 0 for effectively every row in the
-      // current data even where AccessUrl is populated, which was hiding real, working links.
       const accessUrl = safeExternalUrl(agent.accessUrl);
+      const openLabel = `${text(agent.accessLinkLabel?.trim() || `Open ${label}`)} \u2197`;
+      // Every tool row carries the Open button. Until the agent has an access URL it is a
+      // non-clickable placeholder; once accessUrl arrives it becomes a real link with no change here.
+      const openTool = accessUrl
+        ? `<a class="activity-open-tool" href="${text(accessUrl)}" target="_blank" rel="noopener noreferrer">${openLabel}</a>`
+        : `<span class="activity-open-tool is-placeholder" aria-disabled="true" title="Link coming soon">${openLabel}</span>`;
       return `<div class="activity-tool-action">`
         + `<span class="activity-tool-kicker">AI Tool</span>`
         + `<span class="activity-tool-logo">${agentBrandMark(agent, "activity-agent-logo")}</span>`
         + `<strong class="activity-tool-name">${text(label)}</strong>`
-        + `${accessUrl ? `<a class="activity-open-tool" href="${text(accessUrl)}" target="_blank" rel="noopener noreferrer">${text(agent.accessLinkLabel?.trim() || `Open ${label}`)} \u2197</a>` : ""}`
+        + openTool
         + `</div>`;
     }).join("")
     + `</div>`;
 }
 
 function activityCard(activity: HuddlePresentationActivity, index: number, tier: "featured" | "optional"): string {
-  const tools = agentNames(activity.agents);
+  // The prompt is written for the activity's Primary tool, so only that tool gets a row. Secondary
+  // tools still appear in Resources. An activity with no Primary link keeps the tools it has.
+  const primaryAgents = activity.agents.filter((agent) => agent.usageType === "Primary");
+  const promptAgents = primaryAgents.length > 0 ? primaryAgents : activity.agents;
+  const tools = agentNames(promptAgents);
   const promptTarget = tools[0] ?? "your AI tool";
-  const toolActions = activityToolActions(activity.agents);
+  const toolActions = activityToolActions(promptAgents);
   const promptBlock = activity.prompt
-    ? `<div class="activity-prompt-block">${toolActions}<div class="prompt-label-row"><span class="prompt-label">Try this prompt in ${text(promptTarget)}.</span><button type="button" class="copy-button scenario-copy-button" data-copy="${text(activity.prompt)}" aria-label="Copy prompt" title="Copy prompt">${COPY_SVG}</button></div><div class="scenario-prompt-scroll">${text(activity.prompt)}</div></div>`
-    : `<div class="activity-prompt-block">${toolActions}${placeholder("No recommended prompt is configured for this activity yet.")}</div>`;
+    ? `<div class="activity-prompt-block"><div class="prompt-label-row"><span class="prompt-label">Try this prompt in ${text(promptTarget)}.</span><button type="button" class="copy-button scenario-copy-button" data-copy="${text(activity.prompt)}" aria-label="Copy prompt" title="Copy prompt">${COPY_SVG}</button></div><div class="scenario-prompt-scroll">${text(activity.prompt)}</div></div>`
+    : `<div class="activity-prompt-block">${placeholder("No recommended prompt is configured for this activity yet.")}</div>`;
 
   return `<details class="practice-activity-card" data-practice-tier="${tier}"${index === 0 && tier === "featured" ? " open" : ""}>`
     + `<summary class="practice-activity-summary"><span class="activity-letter">${text(activityLetter(index))}</span>`
     + `<span class="practice-activity-heading"><strong>${text(activity.name)}</strong>${activity.description ? `<small>${text(activity.description)}</small>` : ""}</span>`
     + `<span class="scenario-chevron">${CHEVRON_SVG}</span></summary>`
-    + `<div class="practice-activity-body">${promptBlock}`
-    + `<div class="activity-practice-grid">`
-    + `<section class="activity-detail-card context-required-card"><h3>Context Required</h3>${activity.requiredContext ? `<p>${text(activity.requiredContext)}</p>` : placeholder("Required context is not configured for this activity yet.")}</section>`
-    + `<section class="activity-detail-card activity-wiifm-card"><h3>Why This Matters</h3>${activity.whyThisMatters ? `<p>${text(activity.whyThisMatters)}</p>` : placeholder("Why this matters is not configured for this activity yet.")}</section>`
+    // Order: the AI tool row, then Context Required and the activity's own Why This Matters, then
+    // the prompt itself, with Expected output and Human checkpoint below it.
+    + `<div class="practice-activity-body">${toolActions}<div class="activity-practice-grid activity-before-prompt-grid">`
+    + `<section class="activity-detail-card context-required-card"><h3>Context Required</h3>${activity.requiredContext ? questionList([activity.requiredContext], "") : placeholder("Required context is not configured for this activity yet.")}</section>`
+    + `<section class="activity-detail-card activity-why-card"><h3>Why This Matters</h3>${activity.whyThisMatters ? questionList([activity.whyThisMatters], "") : placeholder("Why this matters is not configured for this activity yet.")}</section>`
     + `</div>`
+    + promptBlock
     + `<div class="activity-output-grid">`
     + `<section class="activity-output-card expected-output-card"><span class="activity-eyebrow">Expected output</span>${activity.expectedOutput ? `<p>${text(activity.expectedOutput)}</p>` : placeholder("Not configured yet.")}</section>`
     + `<section class="activity-output-card human-checkpoint-card"><span class="activity-eyebrow">Human checkpoint</span>${activity.humanCheckpoint ? `<p>${text(activity.humanCheckpoint)}</p>` : placeholder("Not configured yet.")}</section>`
@@ -1313,23 +1370,18 @@ function activityCard(activity: HuddlePresentationActivity, index: number, tier:
 
 /** Resource-hub tool card (Resources tab). Same agent fields the old AI Tools tab used, restyled. */
 function resourceHubToolCard(agent: HuddlePresentationAgent, isTopFive: boolean): string {
-  const rawLabel = agent.displayLabel?.trim() || agent.name;
-  const surfacedThroughMatch = rawLabel.match(SURFACED_THROUGH_PATTERN);
-  const label = surfacedThroughMatch ? surfacedThroughMatch[1].trim() : rawLabel;
-  const surfacedThroughName = surfacedThroughMatch ? surfacedThroughMatch[2].trim() : null;
-
-  const brandMark = agentBrandMark(agent, "agent-logo", label);
-  // Show the link whenever we have a real URL for this agent (see activityToolActions for why
-  // ShowAgentAccessLink is no longer the gate).
+  const label = agentDisplayName(agent);
+  // The badge follows the API group the agent came from: Primary = Top 5 MCAPS Agent,
+  // Secondary = Additional AI Tool.
+  const badge = isTopFive
+    ? `<div class="resource-tool-badge">Top 5 MCAPS Agent</div>`
+    : `<div class="resource-tool-badge is-surfaced">Additional AI Tool</div>`;
+  const brandMark = agentBrandMark(agent, "agent-logo");
   const accessUrl = safeExternalUrl(agent.accessUrl);
-  // WhatItIs is the short category ("Orchestrator", "Domain agent", ...) and belongs under the
-  // agent name; ShortDescription is the long paragraph and belongs in the "What it is" detail
-  // box below -- these two were swapped. When the agent is only reached through another one,
-  // that relationship (from our own DisplayLabel data) replaces the category line instead.
-  const identitySubtitle = surfacedThroughName
-    ? `Surfaced through ${text(surfacedThroughName)}.`
-    : agent.whatItIs?.trim() || "Microsoft AI experience";
-  const whatItIsDetail = agent.shortDescription?.trim() || null;
+  const openLabel = `${text(agent.accessLinkLabel?.trim() || `Open ${label}`)} ↗`;
+  // The short "what it is" label sits under the name; the longer description fills the What it is box.
+  const identitySubtitle = agent.whatItIs?.trim() || "Microsoft AI experience";
+  const whatItIs = agent.shortDescription?.trim() || null;
   const helps = agent.whatItHelpsYouDo?.trim() || null;
   const when = agent.whenToUseIt?.trim() || null;
 
@@ -1337,29 +1389,47 @@ function resourceHubToolCard(agent: HuddlePresentationAgent, isTopFive: boolean)
     ? `<div class="resource-tool-detail ${className}"><strong>${text(heading)}</strong><p>${text(value)}</p></div>`
     : "";
 
-  // Badge reuses the Top 5 membership the Overview band already computes (topFiveUsedAgents,
-  // matched by agentArtwork the same way topFiveAgentBand matches -- see createHuddleHtmlExport)
-  // rather than a new data source or hardcoded list here. A "surfaced through" agent gets the
-  // secondary badge only when the agent it is surfaced through is itself an official Top 5 agent.
-  const badge = isTopFive
-    ? `<div class="resource-tool-badge">Top 5 MCAPS Agent</div>`
-    : surfacedThroughName && isOfficialTopFiveAgentName(surfacedThroughName)
-      ? `<div class="resource-tool-badge is-surfaced">Surfaced through Top 5 MCAPS Agents</div>`
-      : "";
-
   return `<article class="resource-tool-card${isTopFive ? " top-five-resource" : ""}">`
     + `<div class="resource-tool-badge-slot">${badge}</div>`
     + `<div class="resource-tool-head"><span class="resource-tool-logo">${brandMark}</span>`
     + `<div class="resource-tool-identity"><h3>${text(label)}</h3><span>${text(identitySubtitle)}</span></div>`
-    + `${accessUrl ? `<a class="resource-tool-open" href="${text(accessUrl)}" target="_blank" rel="noopener noreferrer">${text(agent.accessLinkLabel?.trim() || `Open ${label}`)} \u2197</a>` : ""}`
+    // Always shown, like the activity tool rows: a placeholder until the agent has an access URL.
+    + (accessUrl
+      ? `<a class="resource-tool-open" href="${text(accessUrl)}" target="_blank" rel="noopener noreferrer">${openLabel}</a>`
+      : `<span class="resource-tool-open is-placeholder" aria-disabled="true" title="Link coming soon">${openLabel}</span>`)
     + `</div>`
     + `<div class="resource-tool-details">`
-    + detail("what-it-is", "What it is", whatItIsDetail)
+    + detail("what-it-is", "What it is", whatItIs)
     + detail("", "What it helps you do", helps)
     + detail("", "When to use it", when)
     + `</div>`
     + `${agent.keyBenefits.length ? `<ul class="resource-tool-benefits">${agent.keyBenefits.map((benefit) => `<li>\u2713 ${text(benefit)}</li>`).join("")}</ul>` : ""}`
     + `</article>`;
+}
+
+/**
+ * Supporting resources grouped by the AI tool each one is linked to (the agent's own resources),
+ * in the order the AI tools are shown above. A resource linked to several tools appears once, under
+ * the first; resources linked only to the topic or an activity go under "Other resources". With no
+ * agent-linked resources the plain grid is kept, without headings.
+ */
+function groupedResourceHubLinks(resources: readonly HuddlePresentationResource[], agents: readonly HuddlePresentationAgent[]): string {
+  const placed = new Set<string>();
+  const groups: { name: string; resources: HuddlePresentationResource[] }[] = [];
+  agents.forEach((agent) => {
+    const linked = resources.filter((resource) => !placed.has(resource.externalId)
+      && agent.resources.some((agentResource) => agentResource.externalId === resource.externalId));
+    if (linked.length === 0) return;
+    linked.forEach((resource) => placed.add(resource.externalId));
+    // Sales Agent and its "surfaced through Sales Agent" capabilities are one agent, so they share a group.
+    const existing = groups.find((group) => group.name === agent.name);
+    if (existing) existing.resources.push(...linked);
+    else groups.push({ name: agent.name, resources: linked });
+  });
+  if (groups.length === 0) return resourceHubLinks(resources);
+  const other = resources.filter((resource) => !placed.has(resource.externalId));
+  if (other.length > 0) groups.push({ name: "Other resources", resources: other });
+  return groups.map((group) => `<section class="resource-group"><h4 class="resource-group-heading">${text(group.name)}</h4>${resourceHubLinks(group.resources)}</section>`).join("");
 }
 
 /** Resource-hub link card (Resources tab, "Supporting resources"). */
@@ -1399,37 +1469,16 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const optionalActivities: readonly HuddlePresentationActivity[] =
     allActivities.filter((activity) => activity.practiceTier === "Extended");
 
-  // "Used" means an activity actually calls on the agent -- not just that the Huddle's
-  // author-curated agents.primary/secondary tags mention it. Those tags can list an agent no
-  // activity actually uses, which used to make it show as "Used in huddle" in the Top 5 band
-  // (and in the AI Tools summary / Resources tool grid below) even though nothing in the
-  // Huddle calls on it. Matching by externalId (rather than agentArtwork/name) is required here:
-  // agentArtwork only recognizes 8 hardcoded name patterns, so any agent whose name doesn't match
-  // one of those patterns (e.g. "Sales Home", "MSXI Assist V2") was silently treated as unused
-  // even when an activity genuinely used it. externalId is a stable identifier every agent has,
-  // so this covers all agents correctly. agentArtwork remains the right tool for cosmetic lookups
-  // (logo selection, Top 5 band matching below) -- this change only affects "used" determination.
-  const declaredAgents = [...model.agents.primary, ...model.agents.secondary]
-    .filter((agent, index, all) => all.findIndex((candidate) => candidate.externalId === agent.externalId) === index)
-    .sort((left, right) => left.displayOrder - right.displayOrder || left.externalId.localeCompare(right.externalId));
-
-  const activityAgentExternalIds = new Set(
-    allActivities
-      .flatMap((activity) => activity.agents)
-      .map((agent) => agent.externalId),
-  );
-  const usedDeclaredAgents = declaredAgents.filter((agent) => activityAgentExternalIds.has(agent.externalId));
-
-  // The Top 5 (in the official band order) that this Huddle lists as a primary or secondary agent,
-  // whether or not an activity calls on it, followed by whichever activity-used agents are not one
-  // of the five -- matching the "Top 5: ... . Also used: ... ." grouping in the AI Tools summary
-  // below and the order of the Resources tool grid.
-  const topFiveUsedAgents = TOP_FIVE_AGENT_NAMES
-    .map((name) => declaredAgents.find((agent) => agentArtwork(agent.name)?.source === agentArtwork(name)?.source))
-    .filter((agent): agent is HuddlePresentationAgent => Boolean(agent));
-  const alsoUsedAgents = usedDeclaredAgents.filter((agent) => !topFiveUsedAgents.includes(agent));
-
-  const agents = [...topFiveUsedAgents, ...alsoUsedAgents];
+  // Top 5 MCAPS Agents = the API's agents.primary; Additional AI Tools = agents.secondary. Both are
+  // already scoped to this placement's own activities (HuddleActivityAgents.UsageType). The export
+  // keeps the API order, drops repeats by agent and shown name (so "CX Vitals (surfaced through
+  // Sales Agent)" stays one item next to Sales Agent), and never moves an agent between groups.
+  const distinctAgents = (list: readonly HuddlePresentationAgent[], exclude: ReadonlySet<string> = new Set()) =>
+    list.filter((agent, index, all) => !exclude.has(agentDisplayKey(agent))
+      && all.findIndex((candidate) => agentDisplayKey(candidate) === agentDisplayKey(agent)) === index);
+  const topFiveAgents = distinctAgents(model.agents.primary);
+  const additionalAgents = distinctAgents(model.agents.secondary, new Set(topFiveAgents.map(agentDisplayKey)));
+  const agents = [...topFiveAgents, ...additionalAgents];
 
   const resources = [...model.resources, ...allActivities.flatMap((activity) => activity.resources), ...agents.flatMap((agent) => agent.resources)]
     .filter((resource, index, all) => all.findIndex((candidate) => candidate.externalId === resource.externalId) === index)
@@ -1443,29 +1492,18 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const commitPrompt = guide?.commitPrompt ?? model.commitmentPrompt;
   const topicName = model.identity.name;
   const aiToolsSummary = (() => {
-    // "Also used" also lists the Huddle's secondary agents, even when no activity calls on them, so
-    // the summary matches the Secondary AI Tools shown in the app. A secondary agent that is one of
-    // the Top 5 is already in topFiveUsedAgents, so it is listed under "Top 5" rather than here.
-    const secondaryAgents = [...model.agents.secondary]
-      .filter((agent, index, all) => all.findIndex((candidate) => candidate.externalId === agent.externalId) === index)
-      .sort((left, right) => left.displayOrder - right.displayOrder || left.externalId.localeCompare(right.externalId));
-    const listedExternalIds = new Set([...topFiveUsedAgents, ...alsoUsedAgents].map((agent) => agent.externalId));
-    const otherAgents = [...alsoUsedAgents, ...secondaryAgents.filter((agent) => !listedExternalIds.has(agent.externalId))];
-    // Sales Home and agents surfaced through a Top 5 agent join the Top 5 line, grouped after the
-    // Top 5 agent they belong to in band order, instead of being listed under "Also used".
-    const topFiveGroup = [...topFiveUsedAgents, ...otherAgents.filter((agent) => topFiveGroupName(agent))]
-      .map((agent, index) => ({ agent, index, band: TOP_FIVE_AGENT_NAMES.indexOf(topFiveGroupName(agent) ?? "Sales Agent") }))
-      .sort((left, right) => left.band - right.band || left.index - right.index)
-      .map(({ agent }) => agent);
-    const topFiveNames = topFiveGroup.map(topFiveLineName).filter((name) => name.length > 0);
-    const alsoUsedNames = agentNames(otherAgents.filter((agent) => !topFiveGroupName(agent)));
-    if (!topFiveNames.length && !alsoUsedNames.length) return "Not configured";
-    const topFivePart = topFiveNames.length ? `Top 5: ${topFiveNames.join(", ")}.` : "";
-    const alsoUsedPart = alsoUsedNames.length ? `Also used: ${alsoUsedNames.join(", ")}.` : "";
-    // Render "Also used" on its own line under "Top 5" -- the .meta-item strong
-    // rule already sets white-space: pre-line for this, so a literal newline
-    // (not <br>) is enough, and escapeHtml() leaves newlines untouched.
-    return [topFivePart, alsoUsedPart].filter(Boolean).join("\n");
+    const shownIds = new Set(agents.map(agentDisplayKey));
+    const topFiveNames = agentNames(topFiveAgents);
+    const additionalNames = agentNames(additionalAgents);
+    // Tools whose usage type the workbook leaves blank are listed on their own line, never as
+    // Top 5 MCAPS Agents or Additional AI Tools.
+    const unclassifiedNames = agentNames(distinctAgents(model.agents.unclassified, shownIds));
+    if (!topFiveNames.length && !additionalNames.length && !unclassifiedNames.length) return "Not configured";
+    const topFivePart = topFiveNames.length ? `Top 5 MCAPS Agents: ${topFiveNames.join(", ")}.` : "";
+    const additionalPart = additionalNames.length ? `Additional AI Tools: ${additionalNames.join(", ")}.` : "";
+    const unclassifiedPart = unclassifiedNames.length ? `Usage not specified: ${unclassifiedNames.join(", ")}.` : "";
+    // Each part starts on its own line; .meta-item strong uses white-space: pre-line to honour it.
+    return [topFivePart, additionalPart, unclassifiedPart].filter(Boolean).join("\n");
   })();
   const stageName = (index: number, fallback: string) => phases[index]?.name?.trim() || fallback;
   const stageDescription = (index: number) => phases[index]?.description ?? null;
@@ -1494,7 +1532,7 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
     + `<div class="overview-timing-band" aria-label="Today\u2019s Huddle"><div class="overview-timing-title">Today\u2019s Huddle</div><div class="overview-timing-steps">`
     + TEMPLATE.agenda.map((step, index) => `${index > 0 ? '<div class="overview-timing-arrow">\u2192</div>' : ""}<div class="overview-timing-step"><strong>${text(step.label)}</strong><span>\u00b7 ${step.minutes} min</span></div>`).join("")
     + `</div></div>`
-    + topFiveAgentBand(new Set([...agents, ...model.agents.secondary].map(topFiveGroupName).filter((name): name is (typeof TOP_FIVE_AGENT_NAMES)[number] => name !== null)))
+    + topFiveAgentBand(highlightedTopFiveNames(topFiveAgents))
     + `<section class="hero-grid"><div class="hero-copy"><h1>${text(topicName)}</h1>${model.identity.description ? `<p class="hero-description">${text(model.identity.description)}</p>` : ""}`
     + `<div class="meta-strip">`
     + `<div class="meta-item"><span class="round-icon meta-icon">${ROLE_SVG}</span><span><small>Role</small><strong>${text(model.audience.roleName?.trim() || "Not specified")}</strong></span></div>`
@@ -1538,12 +1576,12 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
       + `<section class="stage-content-card preparation-session-card"><h3>Session introduction</h3>${guide?.sessionIntroduction ? questionList([guide.sessionIntroduction], "") : placeholder("No session introduction is configured for this Huddle yet.")}</section>`
       + `<section class="stage-content-card preparation-talking-card"><h3>Key Talking Points</h3>${questionList(guide?.keyTalkingPoints ?? [], "No key talking points are configured for this Huddle yet.")}</section>`
       + `<section class="stage-content-card preparation-discuss-card"><h3>Discuss before practicing</h3>${questionList(guide?.discussionQuestions ?? [], "No discussion questions are configured for this Huddle yet.")}</section>`
-      + `<section class="stage-content-card preparation-checklist preparation-bring-card"><h3>Facilitator to bring into the conversation</h3>${questionList(guide?.preparationChecklist?.length ? guide.preparationChecklist : TEMPLATE.bringIntoTheConversation, "")}</section>`
+      + (!SHOW_PREPARATION_BRING_CARD ? "" : `<section class="stage-content-card preparation-checklist preparation-bring-card"><h3>Facilitator to bring into the conversation</h3>${questionList(guide?.preparationChecklist?.length ? guide.preparationChecklist : TEMPLATE.bringIntoTheConversation, "")}</section>`)
       + `</div>`)
     + `</section>`;
 
   const practicePanel = `<section class="huddle-section-panel" data-section-panel="practice">`
-    + stageShell(topicName, 2, stageName(1, "Explore & Practice"), stageDescription(1) ?? "Work through the Huddle activities using a real scenario. Adapt the prompt, inspect the output, and keep human judgment explicit.",
+    + stageShell(topicName, 2, stageName(1, "Explore & Practice"), stageDescription(1) ?? "Prompts are starting points for dialogue and brainstorming, not one-size-fits-all solutions. Apply human judgment throughout: use a real scenario where appropriate, adapt prompts to your context, and critically review outputs before using them.",
       `<div class="featured-activities-header"><div><h3>Featured activities</h3><p>Start with these priority activities for today\u2019s Huddle.</p></div><span class="activity-tier-badge">Featured</span></div>`
       + `<div class="practice-activity-stack" data-activity-tier="featured">${featuredActivities.length
         ? featuredActivities.map((activity, index) => activityCard(activity, index, "featured")).join("")
@@ -1569,7 +1607,7 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
   const closingPanel = `<section class="huddle-section-panel" data-section-panel="closing">`
     + `<section class="card stage-shell">`
     + `<div class="stage-topic-context"><span>TODAY\u2019S TOPIC</span><strong>${text(topicName)}</strong></div>`
-    + `<div class="stage-header"><div><span class="stage-kicker">Closing</span><h2>Closing & Next Steps</h2><p>Close the loop on today\u2019s Huddle, capture the manager reflection, and take a quick weekly pulse.</p></div></div>`
+    + `<div class="stage-header"><div><span class="stage-kicker">Closing</span><h2>Closing & Next Steps</h2><p>Close the loop on today\u2019s Huddle and capture a quick reflection.</p></div></div>`
     + `<div class="closing-grid">`
     + `<section class="closing-card full-width"><h3>Close the Huddle</h3>${questionList(TEMPLATE.closeTheHuddle, "")}</section>`
     + `<section class="closing-card"><h3>Manager Reflection</h3>${questionList(TEMPLATE.managerReflection, "")}</section>`
@@ -1579,17 +1617,17 @@ export function createHuddleHtmlExport(model: HuddlePresentationModel, options: 
     // Facilitator Notes (removed from this export) used to be the last panel, and this footer
     // was rendered at its end. Closing & Next Steps is now the last panel, so the footer moved
     // here with it.
-    + `<footer class="page-footer"><div class="generated-badge"><span>Generated from the Frontier Accelerator App</span><i></i><span>${text(generatedDate)}</span><b>\u2022</b><span>${text(generatedTime)}</span></div><span class="page-number">1</span></footer>`
+    + `<footer class="page-footer"><div class="generated-badge">${COPILOT_MARK}<span>Generated from the Frontier Accelerator App</span><i></i><span>${text(generatedDate)}</span><b>\u2022</b><span>${text(generatedTime)}</span></div><span class="page-number">1</span></footer>`
     + `</section>`;
 
   // Resources now doubles as the resource hub: the AI tools grid that used to be its own
   // "AI Tools" tab (same `agents` array, same fields), followed by the supporting-resource
   // link cards (same `resources` array that resourceRows() used before).
   const resourcesPanel = `<section class="huddle-section-panel" data-section-panel="resources">`
-    + `<div class="resource-section-heading resource-section-heading-first"><div><h3>AI tools used in this Huddle</h3><p>Activity-mapped agents are shown in governed order, with official Top 5 agents and Sales Agent experiences identified where applicable.</p></div><span class="resources-hub-count">${agents.length} ${agents.length === 1 ? "AI tool" : "AI tools"} \u00b7 ${topFiveUsedAgents.length} ${topFiveUsedAgents.length === 1 ? "Top 5 agent" : "Top 5 agents"} \u00b7 ${resources.length} ${resources.length === 1 ? "resource" : "resources"}</span></div>`
-    + `${agents.length ? `<div class="resource-tool-grid">${agents.map((agent) => resourceHubToolCard(agent, topFiveUsedAgents.includes(agent))).join("")}</div>` : placeholder("No AI tools are configured for this Huddle yet.")}`
+    + `<div class="resource-section-heading resource-section-heading-first"><div><h3>AI tools used in this Huddle</h3><p>Tools used across the ${text(stageName(1, "Explore & Practice"))} activities.</p></div><span class="resources-hub-count">${agents.length} ${agents.length === 1 ? "AI tool" : "AI tools"} \u00b7 ${topFiveAgents.length} ${topFiveAgents.length === 1 ? "Top 5 MCAPS Agent" : "Top 5 MCAPS Agents"} \u00b7 ${resources.length} ${resources.length === 1 ? "resource" : "resources"}</span></div>`
+    + `${agents.length ? `<div class="resource-tool-grid">${agents.map((agent) => resourceHubToolCard(agent, topFiveAgents.includes(agent))).join("")}</div>` : placeholder("No AI tools are configured for this Huddle yet.")}`
     + `<div class="resource-section-heading"><div><h3>Supporting resources</h3><p>Use portfolio, role, topic, activity, and agent resources that support this Huddle.</p></div></div>`
-    + `${resources.length ? resourceHubLinks(resources) : placeholder("No resources are configured for this Huddle yet.")}`
+    + `${resources.length ? groupedResourceHubLinks(resources, agents) : placeholder("No resources are configured for this Huddle yet.")}`
     + `</section>`;
 
   const body = `<article class="huddle-page segmented-huddle-page workflow-huddle-page" id="huddle-1">`
@@ -1634,6 +1672,15 @@ function isFrontierAcceleratorOrientation(model: HuddlePresentationModel): boole
   return model.identity.name.trim().toLowerCase().startsWith("frontier accelerator orientation");
 }
 
+/**
+ * Week 9 (topic WF-TRANSITION, "Reflect on Our Progress & Plan What's Next") is also one hand-built
+ * page for every segment and role. Matched on the topic ID, which every role's Week 9 placement
+ * shares, because each role carries its own placement title.
+ */
+function isWeek9Transition(model: HuddlePresentationModel): boolean {
+  return model.identity.externalId.trim().toUpperCase() === "WF-TRANSITION";
+}
+
 function downloadUrlFile(href: string, fileName: string): void {
   const anchor = document.createElement("a");
   anchor.href = href;
@@ -1650,6 +1697,12 @@ export function exportHuddleHtml(model: HuddlePresentationModel, options: Huddle
     const fileName = options.fileName ?? safeHtmlFileName(`FA-Huddle_FrontierAcceleratorOrientation_${exportDateToken(new Date())}`, "FA-Huddle");
     downloadUrlFile(orientationHtmlUrl, fileName);
     // The page is downloaded from its asset URL, so there is no generated HTML to return.
+    return { html: "", fileName };
+  }
+  if (isWeek9Transition(model)) {
+    // Same page for every segment and role, so the name has no role: FA-Huddle_ReflectOnOurProgressAndPlanWhatsNext_<date>.
+    const fileName = options.fileName ?? safeHtmlFileName(`FA-Huddle_ReflectOnOurProgressAndPlanWhatsNext_${exportDateToken(new Date())}`, "FA-Huddle");
+    downloadUrlFile(transitionHtmlUrl, fileName);
     return { html: "", fileName };
   }
   const output = createHuddleHtmlExport(model, options);
