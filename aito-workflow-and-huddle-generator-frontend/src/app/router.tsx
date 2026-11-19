@@ -36,6 +36,10 @@ import {
 } from "@/features/admin";
 
 import {
+  ADMIN_APP_ENABLED,
+} from "@/config/featureFlags";
+
+import {
   ReferenceDataDiagnosticPage,
 } from "@/features/workflow-builder/pages/ReferenceDataDiagnosticPage";
 
@@ -58,7 +62,8 @@ export const router =
       path: "admin",
       element: (
         <ProtectedRoute>
-          <AdminDashboardPage />
+          {/* Hidden for the demo: see ADMIN_APP_ENABLED in config/featureFlags.ts. */}
+          {ADMIN_APP_ENABLED ? <AdminDashboardPage /> : <Navigate to="/" replace />}
         </ProtectedRoute>
       ),
     },

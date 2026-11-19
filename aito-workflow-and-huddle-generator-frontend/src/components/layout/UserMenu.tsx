@@ -1,4 +1,4 @@
-import { ChevronDown, MessageCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useCurrentUser } from "@/auth/useCurrentUser";
 import { cn } from "@/lib/utils";
@@ -26,7 +26,6 @@ export function UserMenu({ isWorkflowMode }: { isWorkflowMode: boolean }) {
     </button>
     {open && <div className="absolute right-0 top-[calc(100%+8px)] z-[90] w-56 overflow-hidden rounded-xl border border-border bg-background shadow-lg">
       <div className="border-b border-border px-4 py-3"><p className="truncate text-sm font-semibold">{name}</p><p className="truncate text-xs text-muted-foreground">{email}</p></div>
-      <button type="button" className="flex w-full items-center gap-2.5 px-4 py-2.5 text-left text-sm hover:bg-accent"><MessageCircle className="h-4 w-4 text-muted-foreground" />Send feedback</button>
     </div>}
   </div>;
 }

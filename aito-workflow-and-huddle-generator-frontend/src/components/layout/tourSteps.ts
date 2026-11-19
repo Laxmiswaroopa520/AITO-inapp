@@ -18,45 +18,45 @@ function shellBottom(isHuddleRoute: boolean): TourStep[] {
   ];
 }
 
-/** Last layout step: the profile menu, which holds the account name and Send feedback (no sign-in in the in-app build). */
-const PROFILE: TourStep = { target: "user-menu", title: "Profile Settings & Feedback", content: "Open your profile menu to see your account details and find Send feedback to share ideas or report a problem." };
+/** Last layout step: the profile menu, which shows the account name (no sign-in or sign-out in the in-app build). */
+const PROFILE: TourStep = { target: "user-menu", title: "Profile", content: "Open your profile menu to see your account details." };
 
 const WORKFLOW_HEADER: TourStep[] = [];
 
 /** Workflow tips are matched to the step on screen: a target that is not rendered is dropped when the tour opens. */
 const WORKFLOW_CONTENT: TourStep[] = [
   { target: "workflow-progress", title: "Workflow steps", content: "Move through role selection, activity selection, and your generated workflow." },
-  { target: "role-selection", title: "Choose your role", content: "Filter the API-backed role catalog by segment and select the role that matches your work." },
+  { target: "role-selection", title: "Choose your role", content: "Filter the roles by segment and select the role that matches your work." },
   { target: "workflow-benefits", title: "What you will get", content: "Review how Frontier Accelerator builds relevant activities, AI-tool guidance, and a balanced schedule." },
   { target: "activity-select-all", title: "Select or clear all", content: "Selects every activity that matches your filters, or clears them. You can still tick activities one by one." },
   { target: "activity-filters", title: "Filter activities", content: "Narrow the list by AI tool or by how long an activity takes." },
   { target: "saved-workflows", title: "My Workflows", content: "Open, update, copy, favorite, or delete workflows you saved." },
   { target: "activity-build", title: "Build My Day", content: "Turns your selected activities into a schedule. It stays disabled until you select at least one." },
   { target: "activity-list", title: "Choose activities", content: "Tick the activities you want in your day. Expand an activity to read its details before you decide." },
-  { target: "workflow-navigation", title: "Edit or start again", content: "Edit Activities goes back to your selection. Start again begins a new workflow." },
+  { target: "workflow-navigation", title: "Edit or start again", content: "Edit Activities goes back to your selection. Start Again begins a new workflow." },
   { target: "workflow-timeline-toggle", title: "Timeline range", content: "Switch your schedule between Day, Week, Month, Quarter, and Year." },
   { target: "workflow-view-tabs", title: "Schedule views", content: "Move between your filters, your day's schedule, and the full list of selected activities." },
   { target: "workflow-save", title: "Save your workflow", content: "Save this workflow to My Workflows. When you reopen a saved one you can Update it or Save As a copy." },
-  { target: "workflow-calendar", title: "Add to my calendar", content: "Opens a review of your scheduled activities before anything is added to your calendar." },
+  { target: "workflow-calendar", title: "Add to My Calendar", content: "Opens a review of your scheduled activities before anything is added to your calendar." },
 ];
 
 const SAVED_WORKFLOWS_CONTENT: TourStep[] = [
-  { target: "saved-filters", title: "Find a workflow", content: "Search your saved workflows by name, or show favorites only." },
+  { target: "saved-filters", title: "Find a workflow", content: "Search your saved workflows by name, or turn on Favorites Only." },
   { target: "saved-list", title: "Your saved workflows", content: "Open a workflow to view it, Edit to change it, Save As to keep a copy, or Delete to remove it. The star marks a favorite." },
 ];
 
 const LAUNCH_PLANNER_CONTENT: TourStep[] = [
   { target: "planner-back", title: "Back to Huddles", content: "Return to the Huddle page." },
   { target: "planner-config", title: "Configure the launch", content: "Enter the team, cohort, start date, sponsor, and program lead. Fields marked * are required; the planner works out every other date from the start date." },
-  { target: "planner-generate", title: "Generate launch plan", content: "Build the launch timeline, readiness checklist, and communication assets from your details." },
-  { target: "planner-status", title: "Launch status", content: "See your launch readiness. Edit setup returns to the form, and Reset planner starts over after you confirm." },
+  { target: "planner-generate", title: "Generate Launch Plan", content: "Build the launch timeline, readiness checklist, and communication assets from your details." },
+  { target: "planner-status", title: "Launch status", content: "See your launch readiness. Edit Setup returns to the form, and Reset Planner starts over after you confirm." },
   { target: "planner-next", title: "What to do next", content: "The next incomplete actions, ordered by launch date. Select one to open its checklist and communication assets." },
   { target: "planner-views", title: "Timeline or calendar", content: "View the communication plan as a timeline or a monthly calendar. Select any item to open its details." },
-  { target: "planner-export", title: "Export launch package", content: "Bundle the plan into one package for sharing or print/PDF. It is available once you have generated a plan." },
+  { target: "planner-export", title: "Export Launch Package", content: "Bundle the plan into one package for sharing or print/PDF. It is available once you have generated a plan." },
 ];
 
 /** How the filters work; each role adds why it would use them. */
-const FILTERS_HOW = "Narrow the list by audience, focus area, AI tool, or keyword, and use Sort to reorder it. Audience lets you pick more than one role, and Sort > Only All Topics hides the Role Path Huddles.";
+const FILTERS_HOW = "Narrow the list by segment and role, focus area, AI tool, or keyword. Role lets you pick more than one role, Sort shows All Topics, or Upvoted to put the most upvoted first, and Clear All Filters resets everything.";
 
 /** The breadcrumb's role name returns to that role's first tab (Onboarding, or Orientation for Team Members). */
 function breadcrumbTip(roleLabel: string, startTab: string): string {
@@ -65,7 +65,8 @@ function breadcrumbTip(roleLabel: string, startTab: string): string {
 
 /**
  * Copy that depends on the role. A target a role never sees has no entry for that role, so its
- * step is dropped for it (Launch Planner is Manager-only, Facilitator Hub is Facilitator-only).
+ * step is dropped for it (Launch Planner is Manager-only; the hub button is Manager Hub for Managers,
+ * Facilitator Hub for Facilitators, and absent for Team Members).
  * `huddle-list` is not read from here; see HUDDLE_LIST_TIPS.
  */
 const HUDDLE_TIPS: Record<HuddlePersona, Record<string, string>> = {
@@ -76,6 +77,7 @@ const HUDDLE_TIPS: Record<HuddlePersona, Record<string, string>> = {
     "huddle-launch-planner": "Plan the rollout for your team. The Launch Planner turns a start date into a launch timeline, readiness checklist, and communication plan.",
     "huddle-audience": "Pick the audience role. The recommended Huddles change to match it, and you can move, replace, or reset weeks.",
     "huddle-filters": `${FILTERS_HOW} Use them to narrow the catalog before you choose topics for your team.`,
+    "huddle-facilitator-hub": "Open the Manager Hub for the selected Huddle: a full-screen workspace with the manager talk track, guidance for each stage, activities, notes, and progress. It appears once you select a Huddle.",
     "huddle-detail": "Check the outcome, resources, and takeaways so you know what your team walks away with.",
   },
   facilitator: {
@@ -129,13 +131,13 @@ const COMMON_TIPS: Record<string, string> = {
   "huddle-readiness": "A checklist to work through before your first role-based Huddle.",
   "huddle-path-actions": "Export Learning Plan downloads your Role Path as an HTML table of weeks and Huddles. Reset restores the recommended Huddle in every week and is available only after you have changed the path.",
   "huddle-week-html": "Download this week's Huddle as an HTML file. You do not need to select it first.",
-  "huddle-week-menu": "Manage this week. Move to week places the Huddle in another week and shifts the rest, Replace Huddle swaps in a different Huddle, and Reset this week restores the recommended one. A Customized label marks weeks you have changed.",
+  "huddle-week-menu": "Manage this week. Move to Week places the Huddle in another week and shifts the rest, Replace Huddle swaps in a different Huddle, and Reset This Week restores the recommended one. A Customized label marks weeks you have changed.",
   "huddle-vote": "Thumbs up or down tells us what is useful. Click your vote again to remove it. A downvote asks you to say why before it is saved.",
   "huddle-coming-soon": "Upcoming weeks show the full path, but they have no Huddle yet. They cannot be opened, voted on, managed, or downloaded.",
   "huddle-continue": "Resume a Huddle you started. Continue opens it where you left off, and if more than one is in progress you can expand the list to pick another.",
   "huddle-plan-card": "Your custom plan. Build Learning Plan opens a dialog where you reorder topics with the arrows or remove them, Export Learning Plan downloads it as HTML, and Clear Selection empties it. It appears after you tick a topic.",
   "huddle-plan-select": "Tick a card to add its Huddle to your own learning plan. The number of selected topics shows above the list.",
-  "huddle-card-menu": "The three-dot menu opens View details.",
+  "huddle-card-menu": "The three-dot menu opens View Details.",
   "huddle-detail-html": "Select a Huddle, then use HTML to download the one shown here as a single HTML file.",
   "huddle-detail-coach": "Request Coaching Assistance: choose a coach, pick a time that works for both calendars, review, and confirm a session about this Huddle.",
 };
@@ -172,12 +174,16 @@ const HUDDLE_TITLES: Record<string, string> = {
   "huddle-resources": "Resources library",
 };
 
+/** Titles that differ by role: the hub button reads Manager Hub for Managers. */
+const HUDDLE_ROLE_TITLES: Partial<Record<HuddlePersona, Record<string, string>>> = {
+  manager: { "huddle-facilitator-hub": "Manager Hub" },
+};
+
 /** What each tab can show, in page order. Targets that are absent from the page are dropped by the caller. */
 const HUDDLE_PAGE_TARGETS: Record<HuddleViewMode, string[]> = {
   orientation: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-sections", "huddle-onboarding-helps", "huddle-onboarding-start"],
-  // In-app: the Facilitator Hub button sits in the Selected Huddle panel (beside the coach button), so its step follows the panel.
-  guided: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-sections", "huddle-audience", "huddle-path-actions", "huddle-list", "huddle-week-html", "huddle-week-menu", "huddle-vote", "huddle-coming-soon", "huddle-detail", "huddle-detail-html", "huddle-facilitator-hub", "huddle-detail-coach"],
-  evergreen: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-sections", "huddle-filters", "huddle-continue", "huddle-plan-card", "huddle-list", "huddle-plan-select", "huddle-vote", "huddle-card-menu", "huddle-detail", "huddle-detail-html", "huddle-facilitator-hub", "huddle-detail-coach"],
+  guided: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-facilitator-hub", "huddle-sections", "huddle-audience", "huddle-path-actions", "huddle-list", "huddle-week-html", "huddle-week-menu", "huddle-vote", "huddle-coming-soon", "huddle-detail", "huddle-detail-html", "huddle-detail-coach"],
+  evergreen: ["huddle-breadcrumb", "huddle-launch-planner", "huddle-resources", "huddle-facilitator-hub", "huddle-sections", "huddle-filters", "huddle-continue", "huddle-plan-card", "huddle-list", "huddle-plan-select", "huddle-vote", "huddle-card-menu", "huddle-detail", "huddle-detail-html", "huddle-detail-coach"],
 };
 
 /** Used before an experience is chosen, so there is no role to word the copy for. */
@@ -190,7 +196,8 @@ function huddleStep(persona: HuddlePersona | null, viewMode: HuddleViewMode, tar
   const content = target === "huddle-list"
     ? listTips?.[viewMode === "guided" ? "guided" : "evergreen"]
     : (persona ? HUDDLE_TIPS[persona][target] : undefined) ?? COMMON_TIPS[target];
-  return content ? { target, title: HUDDLE_TITLES[target] ?? target, content } : null;
+  const title = (persona ? HUDDLE_ROLE_TITLES[persona]?.[target] : undefined) ?? HUDDLE_TITLES[target] ?? target;
+  return content ? { target, title, content } : null;
 }
 
 function huddleSteps(persona: HuddlePersona | null, viewMode: HuddleViewMode, targets: string[]): TourStep[] {

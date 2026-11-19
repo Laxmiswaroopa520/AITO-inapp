@@ -135,7 +135,7 @@ export function HuddleResourcesRepository({ open, catalog, onClose }: HuddleReso
         <header className="flex items-start justify-between border-b border-[#E0E6ED] bg-[#F7FAFC] p-6">
           <div className="flex gap-3">
             <span className="rounded-xl bg-[#E2F1F9] p-2.5"><Library className="h-5 w-5 text-[#0A6BBA]" /></span>
-            <div><h2 id="huddle-resources-title" className="text-xl font-semibold text-[#16233A]">Huddle Resources</h2><p className="mt-1 text-sm text-[#647185]">Search and browse playbooks, guides, AI tool resources, facilitator support, and Huddle materials.</p></div>
+            <div><h2 id="huddle-resources-title" className="text-xl font-semibold text-[#16233A]">Huddle Resources</h2><p className="mt-1 text-sm text-[#647185]">Search and browse AI tool resources, Huddle materials, playbooks, and guides.</p></div>
           </div>
           <button type="button" className="rounded-lg p-2 text-[#526176] hover:bg-white" onClick={onClose} aria-label="Close Huddle Resources"><X className="h-5 w-5" /></button>
         </header>
@@ -164,7 +164,7 @@ export function HuddleResourcesRepository({ open, catalog, onClose }: HuddleReso
                 ))}
               </div>
             ) : (
-              <div className="rounded-2xl border border-dashed border-[#D7E4EC] bg-white p-10 text-center"><Library className="mx-auto h-8 w-8 text-[#73869A]" /><p className="mt-3 font-medium text-[#16233A]">No matching resources found.</p><p className="mt-1 text-sm text-[#647185]">Try another search or AI Tool filter. If all filters are clear, no published resources are currently mapped in the API.</p></div>
+              <div className="rounded-2xl border border-dashed border-[#D7E4EC] bg-white p-10 text-center"><Library className="mx-auto h-8 w-8 text-[#73869A]" /><p className="mt-3 font-medium text-[#16233A]">No matching resources found.</p><p className="mt-1 text-sm text-[#647185]">We couldn't find any resources matching your search. Try a different keyword or change your filters.</p></div>
             )}
           </div>
         </div>

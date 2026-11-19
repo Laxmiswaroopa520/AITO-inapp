@@ -13,6 +13,7 @@ import { HuddleCatalog, HuddleDownvoteDialog, HuddleFilterBar } from "../compone
 import { HuddleDetailPanel, /* HuddleGuideImageDialog, */ HuddlePreviewDialog, HuddleWorkspace } from "../components/generated";
 import { MeetCoachDialog } from "../components/coach";
 import { SuggestAgentEditDialog } from "../components/agents/SuggestAgentEditDialog";
+import { MANAGER_EDIT_ENABLED } from "@/config/featureFlags";
 import type { HuddleHubKind } from "../components/talk-track";
 import { HuddleOnboardingExperience } from "../components/onboarding";
 import { HuddleInABoxDialog } from "../components/huddleInABox";
@@ -400,7 +401,7 @@ export function HuddlePage() {
     const roleName = roles.find((role) => role.externalId === selectedRoleExternalId)?.name;
     return roleName ? `Week ${week} · ${roleName}` : `Week ${week}`;
   })();
-  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} hub={hubEntry} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={persona === "team-member" ? undefined : () => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })}  onSuggestAgentEdit={persona === "manager" ? () => setAgentEditOpen(true) : undefined} />;
+  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} hub={hubEntry} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={persona === "team-member" ? undefined : () => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })}  onSuggestAgentEdit={MANAGER_EDIT_ENABLED && persona === "manager" ? () => setAgentEditOpen(true) : undefined} />;
 
   return (
     <div className="mx-auto max-w-[1540px] space-y-6 p-4 [font-family:var(--aito-font-sans)] lg:p-6">

@@ -16,6 +16,7 @@ import { useNavigate } from "react-router";
 
 import aitoLogo from "@/assets/AITO New Logo.png";
 import { cn } from "@/lib/utils";
+import { ADMIN_APP_ENABLED } from "@/config/featureFlags";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -110,15 +111,17 @@ export function HomePage() {
       </motion.div>
 
       {/* Admin dashboard entry, pinned to the top-right corner. Proof of concept: there is no sign-in,
-          so the current user is treated as the admin. */}
-      <button
-        type="button"
-        onClick={() => navigate("/admin")}
-        className="absolute right-6 top-6 z-10 inline-flex h-9 items-center rounded-lg border bg-white px-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
-      >
-        <LayoutDashboard className="mr-2 h-4 w-4" />
-        Admin
-      </button>
+          so the current user is treated as the admin. Hidden for the demo: see ADMIN_APP_ENABLED in config/featureFlags.ts. */}
+      {ADMIN_APP_ENABLED && (
+        <button
+          type="button"
+          onClick={() => navigate("/admin")}
+          className="absolute right-6 top-6 z-10 inline-flex h-9 items-center rounded-lg border bg-white px-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
+        >
+          <LayoutDashboard className="mr-2 h-4 w-4" />
+          Admin
+        </button>
+      )}
 
       {/* Pinned to the page's bottom-right corner. A real link, so hovering shows the address in the
           tooltip and the browser status bar. */}
