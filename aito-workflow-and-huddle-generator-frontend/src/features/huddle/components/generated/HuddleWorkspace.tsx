@@ -14,6 +14,7 @@ import {
   FileDown,
   FileText,
   Flag,
+  Pencil,
   Home,
   Info,
   Layers,
@@ -69,6 +70,8 @@ interface HuddleWorkspaceProps {
   onClose: () => void;
   /** The hub that opened this workspace; the Manager Hub shows the manager talk track. */
   hub?: HuddleHubKind;
+  /** Admin PoC: opens the Suggest edits form (week content and AI tools) for this Huddle. Hidden when absent. */
+  onSuggestEdit?: () => void;
 }
 
 // Temporarily hidden. Set to true to bring back the Preview slides and PowerPoint footer buttons.
@@ -216,7 +219,7 @@ function ActivityField({ label, value, tone = "default" }: { label: string; valu
   return <section className={cn("rounded-lg border bg-white py-3 pl-5 pr-4", tone === "blue" && "bg-[#F7FBFF] shadow-[inset_3px_0_0_#0F6CBD]", tone === "tan" && "bg-[#FCF8F4] shadow-[inset_3px_0_0_#A0673A]", tone === "default" && "shadow-[inset_3px_0_0_#C9D3DD]")}><p className={cn("text-xs font-semibold uppercase tracking-wide", tone === "blue" ? "text-[#0F6CBD]" : tone === "tan" ? "text-[#704214]" : "text-[#616161]")}>{label}</p><p className="mt-1.5 whitespace-pre-wrap text-sm leading-6 text-[#242424]">{value}</p></section>;
 }
 
-export function HuddleWorkspace({ model, session, sessionLoading, sessionError, mutationPending, onRefreshSession, onSaveSession, onSetActivityCompletion, onCompleteSession, onMeetCoach, onPreviewSlides, onClose, hub = "facilitator" }: HuddleWorkspaceProps) {
+export function HuddleWorkspace({ model, session, sessionLoading, sessionError, mutationPending, onRefreshSession, onSaveSession, onSetActivityCompletion, onCompleteSession, onMeetCoach, onPreviewSlides, onClose, hub = "facilitator", onSuggestEdit }: HuddleWorkspaceProps) {
   // The hub always opens on Overview so the facilitator starts from the summary of what the Huddle
   // covers. The phase below is still pre-selected, so Huddle Flow opens where the session left off.
   const [section, setSection] = useState<WorkspaceSection>("overview");
@@ -389,6 +392,7 @@ export function HuddleWorkspace({ model, session, sessionLoading, sessionError, 
           </div>
           {/* On phones the title needs the width; Save Progress and Complete Huddle stay in the footer. */}
           <div className="hidden flex-shrink-0 items-center gap-2 pl-2 sm:flex">
+            {onSuggestEdit && <Button variant="outline" size="sm" className="border-[#D1DCE6] text-[#0F6CBD]" onClick={onSuggestEdit}><Pencil className="mr-2 h-4 w-4" />Edit</Button>}
             <Button variant="outline" size="sm" className="border-[#D1DCE6] text-[#242424]" disabled={sessionLoading || mutationPending} onClick={() => void saveProgress()}><FileText className="mr-2 h-4 w-4" />{mutationPending ? "Saving..." : "Save Progress"}</Button>
             <Button size="sm" disabled={!progressSummary.canComplete || mutationPending} title={completeTitle} onClick={() => void completeHuddle()} className="flex-shrink-0 bg-[#0F6CBD] text-white hover:bg-[#115EA3]"><CheckCircle2 className="mr-2 h-4 w-4" />Complete Huddle</Button>
           </div>

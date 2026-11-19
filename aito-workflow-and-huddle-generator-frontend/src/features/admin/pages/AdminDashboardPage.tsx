@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, Bot, CalendarDays, CheckCircle2, ChevronRight, Clock3, History, LayoutGrid, Layers3, Link2, ListChecks, Loader2, ShieldCheck } from "lucide-react";
+import { ArrowLeft, Bot, CalendarDays, CheckCircle2, ChevronRight, Clock3, History, LayoutGrid, Layers3, Link2, ListChecks, Loader2, Presentation, ShieldCheck, Table2, Users } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router";
 import aitoLogo from "@/assets/AITO New Logo.png";
 import { cn } from "@/lib/utils";
@@ -25,8 +25,11 @@ interface AdminCategory {
 const CATEGORIES: readonly AdminCategory[] = [
   { id: "week-content", title: "Week content", description: "Titles, outcomes, objectives and takeaways", icon: CalendarDays, entityTypes: ["placement", "topic"] },
   { id: "ai-tools", title: "AI tools", description: "Tool descriptions and links", icon: Bot, entityTypes: ["agent"] },
+  { id: "manager-hub", title: "Manager Hub", description: "Manager guidance before, during and after the Huddle", icon: Users, entityTypes: ["hubGuide", "hubGuideShared"] },
+  { id: "facilitator-hub", title: "Facilitator Hub", description: "Facilitator guide before, during and after the Huddle", icon: Presentation, entityTypes: ["facilitatorGuide", "facilitatorGuideShared"] },
   { id: "activities", title: "Activities", description: "Phases and tasks", icon: ListChecks, entityTypes: null },
   { id: "resources", title: "Resources", description: "Links and assets", icon: Link2, entityTypes: null },
+  { id: "workbook-import", title: "Workbook Import", description: "Bulk content updates", icon: Table2, entityTypes: null },
 ];
 
 // Confirming reloads the page (so the app re-reads the confirmed data). This carries the success
@@ -82,7 +85,8 @@ export function AdminDashboardPage() {
   const pending = requests.filter((request) => request.status === "Pending");
   const confirmed = requests.filter((request) => request.status === "Confirmed");
   const approved = contentEdits.data?.approved;
-  const editedItems = Object.keys(approved?.agents ?? {}).length + Object.keys(approved?.placements ?? {}).length + Object.keys(approved?.topics ?? {}).length;
+  const editedItems = [approved?.agents, approved?.placements, approved?.topics, approved?.hubGuides, approved?.hubGuidesShared, approved?.facilitatorGuides, approved?.facilitatorGuidesShared]
+    .reduce((total, section) => total + Object.keys(section ?? {}).length, 0);
 
   const categoryRequests = category ? requests.filter((request) => inCategory(category, request)) : [];
   const categoryPending = categoryRequests.filter((request) => request.status === "Pending");
@@ -122,7 +126,7 @@ export function AdminDashboardPage() {
                   <span className="rounded-full border border-[#0F6CBD]/20 bg-[#F5F9FF] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#0F6CBD]">Concept</span>
                 </div>
                 <h1 className="mt-0.5 text-2xl font-bold tracking-tight text-[#16233A]">Admin dashboard</h1>
-                <p className="mt-1 text-sm text-muted-foreground">Review edits suggested by Managers. An edit reaches the app only after you confirm it.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Review edits suggested by Managers, Facilitators and Team Members. An edit reaches the app only after you confirm it.</p>
               </div>
             </div>
             {contentEdits.data && (pending.length > 0
@@ -197,7 +201,7 @@ export function AdminDashboardPage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {CATEGORIES.map((item) => <CategoryTile key={item.id} category={item} requests={requests} onOpen={() => openCategory(item)} />)}
               </div>
             </section>
@@ -285,12 +289,13 @@ function SummaryTile({ icon: Icon, label, hint, value, tone }: { icon: typeof Cl
   );
 }
 
-const ENTITY_ICONS: Record<ContentEntityType, typeof Bot> = { agent: Bot, placement: CalendarDays, topic: Layers3 };
+const ENTITY_ICONS: Record<ContentEntityType, typeof Bot> = { agent: Bot, placement: CalendarDays, topic: Layers3, hubGuide: Users, hubGuideShared: Users, facilitatorGuide: Presentation, facilitatorGuideShared: Presentation };
 
 /** Where a confirmed edit applies, in words, so the admin knows how far it reaches. */
 function scopeText(request: ContentChangeRequest): string {
   if (request.entityType === "agent") return "Applies to this AI tool everywhere it appears";
-  if (request.entityType === "placement") return request.contextLabel ? `Applies to ${request.contextLabel} only` : "Applies to this week only";
+  if (request.entityType === "placement" || request.entityType === "hubGuide" || request.entityType === "facilitatorGuide") return request.contextLabel ? `Applies to ${request.contextLabel} only` : "Applies to this week only";
+  if (request.entityType === "hubGuideShared" || request.entityType === "facilitatorGuideShared") return request.contextLabel ? `Shared week: applies to ${request.contextLabel}` : "Shared week: applies to every role's copy";
   return "Applies everywhere this Huddle appears";
 }
 

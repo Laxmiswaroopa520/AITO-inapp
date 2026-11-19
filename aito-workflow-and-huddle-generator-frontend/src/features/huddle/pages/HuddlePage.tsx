@@ -13,7 +13,6 @@ import { HuddleCatalog, HuddleDownvoteDialog, HuddleFilterBar } from "../compone
 import { HuddleDetailPanel, /* HuddleGuideImageDialog, */ HuddlePreviewDialog, HuddleWorkspace } from "../components/generated";
 import { MeetCoachDialog } from "../components/coach";
 import { SuggestAgentEditDialog } from "../components/agents/SuggestAgentEditDialog";
-import { MANAGER_EDIT_ENABLED } from "@/config/featureFlags";
 import type { HuddleHubKind } from "../components/talk-track";
 import { HuddleOnboardingExperience } from "../components/onboarding";
 import { HuddleInABoxDialog } from "../components/huddleInABox";
@@ -113,8 +112,11 @@ export function HuddlePage() {
   const queryClient = useQueryClient();
   const apiClient = useApiClient();
   const [coachContext, setCoachContext] = useState<{ externalId: string; name: string } | null>(null);
-  // Admin PoC: the Manager-only Suggest edits form for the selected Huddle (see SuggestAgentEditDialog).
+  // Admin PoC: the Suggest edits form for the selected Huddle, for every role (see SuggestAgentEditDialog).
   const [agentEditOpen, setAgentEditOpen] = useState(false);
+  // Which Hub opened the form, if any: it then also offers that Hub's own guidance (null = the side card).
+  const [agentEditHub, setAgentEditHub] = useState<HuddleHubKind | null>(null);
+  const openAgentEdit = (hub: HuddleHubKind | null) => { setAgentEditHub(hub); setAgentEditOpen(true); };
   const [persona, setPersona] = useAtom(huddlePersonaAtom);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [huddleInABoxOpen, setHuddleInABoxOpen] = useState(false);
@@ -401,7 +403,7 @@ export function HuddlePage() {
     const roleName = roles.find((role) => role.externalId === selectedRoleExternalId)?.name;
     return roleName ? `Week ${week} · ${roleName}` : `Week ${week}`;
   })();
-  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} hub={hubEntry} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={persona === "team-member" ? undefined : () => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })}  onSuggestAgentEdit={MANAGER_EDIT_ENABLED && persona === "manager" ? () => setAgentEditOpen(true) : undefined} />;
+  const detailPanel = <HuddleDetailPanel data={detailQuery.data} isLoading={detailQuery.isLoading} error={detailQuery.error} hasSelection={Boolean(selectedExternalId)} exportPending={exportPending} onRetry={() => void detailQuery.refetch()} hub={hubEntry} onOpenWorkspace={() => setWorkspaceOpen(true)} onPreview={() => setPreviewOpen(true)} onExportHtml={() => void exportSelectedHuddleHtml()} onExportPowerPoint={() => void exportSelectedHuddlePowerPoint()} onMeetCoach={persona === "team-member" ? undefined : () => detailQuery.data && setCoachContext({ externalId: detailQuery.data.externalId, name: detailQuery.data.name })}  onSuggestAgentEdit={persona ? () => openAgentEdit(null) : undefined} />;
 
   return (
     <div className="mx-auto max-w-[1540px] space-y-6 p-4 [font-family:var(--aito-font-sans)] lg:p-6">
@@ -562,13 +564,16 @@ export function HuddlePage() {
     {persona && viewMode !== "orientation" && <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_420px]"><div data-tour="huddle-list" className="min-w-0">{viewMode === "guided" ? <RecommendedPath data={recommendedPathQuery.data} roleName={presentationAudience.roleName} catalog={rolePathCatalog} isLoading={recommendedPathQuery.isLoading} error={recommendedPathQuery.error} mutationError={savePlanMutation.error ?? resetPlanMutation.error} selectedExternalId={selectedExternalId} selectedPlacementExternalId={selectedPlacementExternalId} hasRole={Boolean(selectedRoleExternalId)} votes={votes} votePending={voteMutation.isPending} savePending={savePlanMutation.isPending || resetPlanMutation.isPending} onSelect={selectCatalogCard} onVote={setVote} htmlExportExternalId={cardHtmlExportId} onExportHtml={(huddle) => void exportRolePathHuddleHtml(huddle)} onSave={savePlan} onReset={resetPlan} onRetry={() => void recommendedPathQuery.refetch()} /> : <HuddleCatalog data={evergreenQuery.data} isLoading={evergreenQuery.isLoading} error={evergreenQuery.error} selectedExternalId={selectedExternalId} selectedPlacementExternalId={selectedPlacementExternalId} audienceRoleIds={audienceRoleIds} audienceAlignedRoleIds={audienceAlignedRoleIds} filterKey={filterKey} filtersActive={Boolean(filters.focusArea || filters.agent || filters.search)} votes={votes} votePending={voteMutation.isPending} continueLearning={incompleteSessionsQuery.data} plan={customLearningPlan} planAudienceLabel={personaLabel} onSelect={selectCatalogCard} onVote={setVote} onRetry={() => void evergreenQuery.refetch()} onContinue={continueLearning} onCloseDetails={() => { setCatalogSelection(null); setSelectedExternalId(null); }} onCreateOwnHuddle={() => setHuddleInABoxOpen(true)} htmlExportExternalId={cardHtmlExportId} onExportHtml={(huddle) => void exportRolePathHuddleHtml(huddle)} />}</div><div data-tour="huddle-detail">{detailPanel}</div></div>}
       {/* Week guide popup paused. {openGuide && <HuddleGuideImageDialog title={openGuide.title} imageSrc={openGuide.imageSrc} onClose={() => setOpenGuide(null)} />} */}
       {downvoteTarget && <HuddleDownvoteDialog huddleName={downvoteTarget.name} onCancel={() => setDownvoteTarget(null)} onSubmit={(downvoteReasons, comment) => { voteMutation.mutate({ externalId: downvoteTarget.id, request: { value: -1, downvoteReasons, comment } }, { onSuccess: () => setFeedback({ kind: "success", message: "Feedback submitted successfully." }), onError: () => setFeedback({ kind: "error", message: "Unable to submit your feedback." }) }); setDownvoteTarget(null); }} />}
-      {workspaceOpen && presentationModel && !sessionQuery.isLoading && <HuddleWorkspace key={presentationModel.identity.externalId} model={presentationModel} session={sessionQuery.data} sessionLoading={sessionQuery.isLoading} sessionError={sessionError} mutationPending={saveSessionMutation.isPending || activityCompletionMutation.isPending || completeSessionMutation.isPending} onRefreshSession={async () => (await sessionQuery.refetch()).data} onSaveSession={saveSession} onSetActivityCompletion={setActivityCompletion} onCompleteSession={completeSession} onMeetCoach={persona === "team-member" ? undefined : () => setCoachContext({ externalId: presentationModel.identity.externalId, name: presentationModel.identity.name })} onPreviewSlides={() => setPreviewOpen(true)} onClose={() => setWorkspaceOpen(false)} hub={hubEntry?.kind} />}
+      {workspaceOpen && presentationModel && !sessionQuery.isLoading && <HuddleWorkspace key={presentationModel.identity.externalId} model={presentationModel} session={sessionQuery.data} sessionLoading={sessionQuery.isLoading} sessionError={sessionError} mutationPending={saveSessionMutation.isPending || activityCompletionMutation.isPending || completeSessionMutation.isPending} onRefreshSession={async () => (await sessionQuery.refetch()).data} onSaveSession={saveSession} onSetActivityCompletion={setActivityCompletion} onCompleteSession={completeSession} onMeetCoach={persona === "team-member" ? undefined : () => setCoachContext({ externalId: presentationModel.identity.externalId, name: presentationModel.identity.name })} onPreviewSlides={() => setPreviewOpen(true)} onClose={() => setWorkspaceOpen(false)} hub={hubEntry?.kind} onSuggestEdit={persona ? () => openAgentEdit(hubEntry?.kind ?? null) : undefined} />}
       {previewOpen && presentationModel && <HuddlePreviewDialog open model={presentationModel} onClose={() => setPreviewOpen(false)} />}
       {coachContext && <MeetCoachDialog open huddleExternalId={coachContext.externalId} huddleName={coachContext.name} onClose={() => setCoachContext(null)} />}
-      {agentEditOpen && persona === "manager" && detailQuery.data && <SuggestAgentEditDialog
+      {agentEditOpen && persona && detailQuery.data && <SuggestAgentEditDialog
         key={`${detailQuery.data.externalId}-${detailQuery.data.placementExternalId ?? ""}`}
         detail={detailQuery.data}
         contextLabel={editContextLabel}
+        submittedBy={personaLabel ?? "Manager"}
+        showManagerHub={agentEditHub === "manager"}
+        showFacilitatorHub={agentEditHub === "facilitator"}
         onClose={() => setAgentEditOpen(false)}
         onSubmitted={(message) => setFeedback({ kind: "success", message })}
       />}

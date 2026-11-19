@@ -201,6 +201,13 @@ export interface HuddleDetailResponse {
   phases: HuddlePhaseResponse[];
   facilitatorGuide: HuddleFacilitatorGuideResponse | null;
   managerGuide?: HuddleManagerGuideResponse | null;
+  /**
+   * In-app only: how many role paths carry this same Manager Hub guidance (32 for the shared Week 1
+   * and Week 9), or absent when this week has its own. Set by the local data client.
+   */
+  sharedHubGuideRoleCount?: number | null;
+  /** In-app only: the same for the Facilitator Hub guide (32 for the shared Week 1 and Week 9). */
+  sharedFacilitatorGuideRoleCount?: number | null;
   topicResources: HuddleResourceResponse[];
   reflectionPrompt: string | null;
   commitmentPrompt: string | null;

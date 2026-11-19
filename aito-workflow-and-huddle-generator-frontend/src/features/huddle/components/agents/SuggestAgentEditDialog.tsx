@@ -1,12 +1,16 @@
 import { useMemo, useState } from "react";
-import { Bot, CalendarDays, Info, Layers3, Loader2, Send } from "lucide-react";
+import { Bot, CalendarDays, Info, Layers3, Loader2, Presentation, Send, Users } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { useSubmitContentChange } from "@/features/admin/hooks/useContentEdits";
 import {
   EDITABLE_AGENT_FIELDS,
+  EDITABLE_FACILITATOR_HUB_FIELDS,
+  EDITABLE_MANAGER_HUB_FIELDS,
   EDITABLE_TOPIC_FIELDS,
   EDITABLE_WEEK_FIELDS,
+  FACILITATOR_LIST_KEYS,
+  MANAGER_GUIDE_KEYS,
   type ContentEntityType,
   type EditableField,
   type FieldValues,
@@ -17,11 +21,17 @@ interface SuggestAgentEditDialogProps {
   detail: HuddleDetailResponse;
   /** Where week edits apply, for example "Week 5 · Account Executive"; null when not known. */
   contextLabel: string | null;
+  /** The role suggesting the edit (Manager, Facilitator or Team Member), shown on the Admin dashboard. */
+  submittedBy: string;
+  /** Opened from the Manager Hub: adds a "Manager Hub" tab for that Hub's own guidance, and opens on it. */
+  showManagerHub?: boolean;
+  /** Opened from the Facilitator Hub: adds a "Facilitator Hub" tab for that Hub's own guide, and opens on it. */
+  showFacilitatorHub?: boolean;
   onClose: () => void;
   onSubmitted: (message: string) => void;
 }
 
-type Tab = "week" | "tools";
+type Tab = "manager" | "facilitator" | "week" | "tools";
 
 /** One editable item in the form: this week, the shared Huddle content, or one AI tool. */
 interface EditTarget {
@@ -39,12 +49,12 @@ function targetKey(target: Pick<EditTarget, "type" | "id">) {
 }
 
 /**
- * Manager-only form for suggesting edits to the selected Huddle: its week content and its AI tools.
+ * Form for suggesting edits to the selected Huddle (any role): its week content and its AI tools.
  * Nothing changes in the app when it is submitted: each edited item is saved as a Pending version and
  * reaches users only after an admin confirms it on the Admin dashboard.
  */
-export function SuggestAgentEditDialog({ detail, contextLabel, onClose, onSubmitted }: SuggestAgentEditDialogProps) {
-  const [tab, setTab] = useState<Tab>("week");
+export function SuggestAgentEditDialog({ detail, contextLabel, submittedBy, showManagerHub = false, showFacilitatorHub = false, onClose, onSubmitted }: SuggestAgentEditDialogProps) {
+  const [tab, setTab] = useState<Tab>(showManagerHub ? "manager" : showFacilitatorHub ? "facilitator" : "week");
   // Edited values per item, so switching tabs or tools keeps what was typed.
   const [drafts, setDrafts] = useState<Record<string, Record<string, string>>>({});
   const [sending, setSending] = useState(false);
@@ -87,16 +97,72 @@ export function SuggestAgentEditDialog({ detail, contextLabel, onClose, onSubmit
     }));
   }, [detail]);
 
+  // Manager Hub guidance. A shared week (Week 1 Orientation, Week 9 Transition) carries the same text
+  // in every role's path, so its edit is keyed by Huddle and applies to all of those copies.
+  const sharedRoleCount = detail.sharedHubGuideRoleCount ?? 0;
+  const isSharedWeek = sharedRoleCount > 1;
+  const weekPart = contextLabel?.split(" · ")[0] ?? null;
+  const managerTarget = useMemo<EditTarget | null>(() => {
+    if (!showManagerHub) return null;
+    const id = isSharedWeek ? detail.externalId : detail.placementExternalId;
+    if (!id) return null;
+    const read = (key: string) => {
+      const source = (MANAGER_GUIDE_KEYS.has(key) ? detail.managerGuide : detail.facilitatorGuide) as Record<string, unknown> | null | undefined;
+      return textOf(source?.[key]);
+    };
+    return {
+      type: isSharedWeek ? "hubGuideShared" : "hubGuide",
+      id,
+      name: title,
+      fields: EDITABLE_MANAGER_HUB_FIELDS,
+      original: Object.fromEntries(EDITABLE_MANAGER_HUB_FIELDS.map(({ key }) => [key, read(key)])),
+    };
+  }, [showManagerHub, isSharedWeek, detail, title]);
+
+  // Facilitator Hub guide, by the same rule: a shared week's edit applies to every role's copy.
+  // List fields (talking points, questions...) are edited one item per line.
+  const facilitatorSharedCount = detail.sharedFacilitatorGuideRoleCount ?? 0;
+  const isFacilitatorShared = facilitatorSharedCount > 1;
+  const facilitatorTarget = useMemo<EditTarget | null>(() => {
+    if (!showFacilitatorHub || !detail.facilitatorGuide) return null;
+    const id = isFacilitatorShared ? detail.externalId : detail.placementExternalId;
+    if (!id) return null;
+    const guide = detail.facilitatorGuide as unknown as Record<string, unknown>;
+    const read = (key: string) => {
+      const value = guide[key];
+      return FACILITATOR_LIST_KEYS.has(key) && Array.isArray(value) ? value.join("\n") : textOf(value);
+    };
+    return {
+      type: isFacilitatorShared ? "facilitatorGuideShared" : "facilitatorGuide",
+      id,
+      name: title,
+      fields: EDITABLE_FACILITATOR_HUB_FIELDS,
+      original: Object.fromEntries(EDITABLE_FACILITATOR_HUB_FIELDS.map(({ key }) => [key, read(key)])),
+    };
+  }, [showFacilitatorHub, isFacilitatorShared, detail, title]);
+
   const [selectedAgentId, setSelectedAgentId] = useState(agentTargets[0]?.id ?? "");
   const selectedAgent = agentTargets.find((target) => target.id === selectedAgentId) ?? agentTargets[0];
 
-  const allTargets = useMemo(() => [...(weekTarget ? [weekTarget] : []), topicTarget, ...agentTargets], [weekTarget, topicTarget, agentTargets]);
+  const allTargets = useMemo(
+    () => [...(managerTarget ? [managerTarget] : []), ...(facilitatorTarget ? [facilitatorTarget] : []), ...(weekTarget ? [weekTarget] : []), topicTarget, ...agentTargets],
+    [managerTarget, facilitatorTarget, weekTarget, topicTarget, agentTargets],
+  );
   const valueOf = (target: EditTarget, key: string) => drafts[targetKey(target)]?.[key] ?? target.original[key] ?? "";
   const changedKeys = (target: EditTarget) => target.fields.map(({ key }) => key).filter((key) => valueOf(target, key).trim() !== (target.original[key] ?? "").trim());
   const changedTargets = allTargets.filter((target) => changedKeys(target).length > 0);
   const changedFieldCount = changedTargets.reduce((total, target) => total + changedKeys(target).length, 0);
   const weekTabChanges = [weekTarget, topicTarget].filter((target): target is EditTarget => target !== null).reduce((total, target) => total + changedKeys(target).length, 0);
   const toolsTabChanges = agentTargets.reduce((total, target) => total + changedKeys(target).length, 0);
+  const managerTabChanges = managerTarget ? changedKeys(managerTarget).length : 0;
+  const facilitatorTabChanges = facilitatorTarget ? changedKeys(facilitatorTarget).length : 0;
+  // Shown on the Admin dashboard: which weeks the edit reaches.
+  const contextFor = (target: EditTarget) => {
+    if (target.type === "placement" || target.type === "hubGuide" || target.type === "facilitatorGuide") return contextLabel;
+    if (target.type === "facilitatorGuideShared") return `${weekPart ?? "Shared week"} · all ${facilitatorSharedCount} roles`;
+    if (target.type === "hubGuideShared") return `${weekPart ?? "Shared week"} · all ${sharedRoleCount} roles`;
+    return null;
+  };
 
   const update = (target: EditTarget, key: string, value: string) => {
     setDrafts((current) => ({ ...current, [targetKey(target)]: { ...(current[targetKey(target)] ?? {}), [key]: value } }));
@@ -121,7 +187,8 @@ export function SuggestAgentEditDialog({ detail, contextLabel, onClose, onSubmit
           entityName: target.name,
           topicExternalId: detail.externalId,
           topicName: title,
-          contextLabel: target.type === "placement" ? contextLabel : null,
+          contextLabel: contextFor(target),
+          submittedBy,
           before,
           proposed,
         });
@@ -141,22 +208,28 @@ export function SuggestAgentEditDialog({ detail, contextLabel, onClose, onSubmit
 
   const renderFields = (target: EditTarget) => (
     <div className="space-y-4">
-      {target.fields.map(({ key, label, multiline }) => {
+      {target.fields.map(({ key, label, multiline, group, hint }, index) => {
         const changed = changedKeys(target).includes(key);
         const fieldClass = cn(
           "w-full rounded-lg border bg-white px-3 py-2 text-sm leading-6 outline-none transition-colors focus:border-[#0F6CBD] focus:ring-2 focus:ring-[#0F6CBD]/20",
           changed && "border-[#0F6CBD] bg-[#F7FBFF]",
         );
+        // A heading each time the Hub stage changes (Before, During, After Huddle).
+        const startsGroup = group && group !== target.fields[index - 1]?.group;
         return (
-          <label key={key} className="block">
+          <div key={key} className="space-y-4">
+          {startsGroup && <p className={cn("text-xs font-bold uppercase tracking-wide text-[#0F6CBD]", index > 0 && "border-t pt-4")}>{group}</p>}
+          <label className="block">
             <span className="flex items-center gap-2 text-sm font-semibold text-[#16233A]">
               {label}
               {changed && <span className="rounded bg-[#E8F2FF] px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#0F6CBD]">Edited</span>}
             </span>
+            {hint && <span className="mt-0.5 block text-xs text-muted-foreground">{hint}</span>}
             {multiline
               ? <textarea value={valueOf(target, key)} onChange={(event) => update(target, key, event.target.value)} rows={3} className={cn(fieldClass, "mt-1.5 resize-y")} />
               : <input value={valueOf(target, key)} onChange={(event) => update(target, key, event.target.value)} className={cn(fieldClass, "mt-1.5 h-10")} />}
           </label>
+          </div>
         );
       })}
     </div>
@@ -174,7 +247,12 @@ export function SuggestAgentEditDialog({ detail, contextLabel, onClose, onSubmit
           <h2 className="text-lg font-semibold text-[#16233A]">Suggest edits</h2>
           <p className="mt-1 text-sm text-muted-foreground">Changes go to an admin for review. Nothing changes in the app until an admin confirms them.</p>
           <div className="mt-4 inline-flex rounded-lg border bg-[#F7F9FB] p-1" role="tablist" aria-label="What to edit">
-            {([["week", "Week content", weekTabChanges], ["tools", "AI tools", toolsTabChanges]] as const).map(([value, label, count]) => (
+            {([
+              ...(showManagerHub ? [["manager", "Manager Hub", managerTabChanges] as const] : []),
+              ...(showFacilitatorHub ? [["facilitator", "Facilitator Hub", facilitatorTabChanges] as const] : []),
+              ["week", "Week content", weekTabChanges] as const,
+              ["tools", "AI tools", toolsTabChanges] as const,
+            ]).map(([value, label, count]) => (
               <button
                 key={value}
                 type="button"
@@ -190,7 +268,31 @@ export function SuggestAgentEditDialog({ detail, contextLabel, onClose, onSubmit
         </header>
 
         <div className="space-y-6 px-6 py-5">
-          {tab === "week" ? (
+          {tab === "manager" ? (
+            <section>
+              <h3 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#424242]"><Users className="h-3.5 w-3.5" aria-hidden="true" />Manager Hub guidance</h3>
+              {managerTarget ? (
+                <>
+                  {isSharedWeek
+                    ? scopeNote(Info, `This is a shared week: your edit applies to ${weekPart ?? "this week"} for all ${sharedRoleCount} roles, so every role keeps the same Manager guidance.`)
+                    : scopeNote(Info, `Applies to this week only${contextLabel ? ` (${contextLabel})` : ""}. Other weeks keep their own Manager guidance.`)}
+                  {renderFields(managerTarget)}
+                </>
+              ) : scopeNote(Info, "Open this Huddle from a week card to edit its Manager Hub guidance.")}
+            </section>
+          ) : tab === "facilitator" ? (
+            <section>
+              <h3 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#424242]"><Presentation className="h-3.5 w-3.5" aria-hidden="true" />Facilitator Hub guide</h3>
+              {facilitatorTarget ? (
+                <>
+                  {isFacilitatorShared
+                    ? scopeNote(Info, `This is a shared week: your edit applies to ${weekPart ?? "this week"} for all ${facilitatorSharedCount} roles, so every role keeps the same Facilitator guide.`)
+                    : scopeNote(Info, `Applies to this week only${contextLabel ? ` (${contextLabel})` : ""}. Other weeks and roles keep their own Facilitator guide, even where their text is currently the same.`)}
+                  {renderFields(facilitatorTarget)}
+                </>
+              ) : scopeNote(Info, "Open this Huddle from a week card to edit its Facilitator Hub guide.")}
+            </section>
+          ) : tab === "week" ? (
             <>
               <section>
                 <h3 className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#424242]"><CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />This week</h3>

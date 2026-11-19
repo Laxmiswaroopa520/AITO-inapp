@@ -23,21 +23,64 @@ import type { Plugin, ViteDevServer } from "vite";
 const ROUTE = "/__admin/content-edits";
 const MAX_BODY_BYTES = 1024 * 1024;
 const MAX_FIELD_LENGTH = 4000;
+/** Roles that can suggest edits (there is no sign-in in the PoC, so the role picker decides). */
+const SUBMITTER_ROLES = new Set(["Manager", "Facilitator", "Team Member"]);
 
-type EntityType = "agent" | "placement" | "topic";
+type EntityType = "agent" | "placement" | "topic" | "hubGuide" | "hubGuideShared" | "facilitatorGuide" | "facilitatorGuideShared";
+type Section = "agents" | "placements" | "topics" | "hubGuides" | "hubGuidesShared" | "facilitatorGuides" | "facilitatorGuidesShared";
+
+/** List fields arrive as one item per line, so they are plain text here like every other field. */
+const FACILITATOR_HUB_FIELDS = new Set([
+  "roleWorkflowContext",
+  "facilitatorPreparation",
+  "managerFacilitatorAlignment",
+  "exampleScenario",
+  "preparationChecklist",
+  "sessionIntroduction",
+  "keyTalkingPoints",
+  "discussionQuestions",
+  "facilitatorQuestions",
+  "listenFor",
+  "suggestedTransitions",
+  "facilitationWatchouts",
+  "fallbackGuidance",
+  "wrapUpGuidance",
+  "reflectPrompt",
+  "commitPrompt",
+  "bringBackEvidence",
+]);
+
+const MANAGER_HUB_FIELDS = new Set([
+  "managerTeamRelevance",
+  "managerPreparationGuidance",
+  "managerFacilitatorAlignment",
+  "exampleScenario",
+  "managerDuringHuddleGuidance",
+  "managerFollowThroughQuestions",
+]);
 
 /** Must match EDITABLE_FIELDS_BY_TYPE in src/features/admin/types/contentEdits.types.ts. */
 const EDITABLE_FIELDS: Record<EntityType, ReadonlySet<string>> = {
   agent: new Set(["shortDescription", "whatItIs", "whatItHelpsYouDo", "whenToUseIt", "accessLinkLabel", "accessUrl"]),
   placement: new Set(["roleTopicName", "roleTopicDescription", "desiredOutcome", "todayObjective"]),
   topic: new Set(["keyTakeaway", "reflectionPrompt", "commitmentPrompt"]),
+  hubGuide: MANAGER_HUB_FIELDS,
+  hubGuideShared: MANAGER_HUB_FIELDS,
+  facilitatorGuide: FACILITATOR_HUB_FIELDS,
+  facilitatorGuideShared: FACILITATOR_HUB_FIELDS,
 };
 
-const SECTION: Record<EntityType, "agents" | "placements" | "topics"> = {
+const SECTION: Record<EntityType, Section> = {
   agent: "agents",
   placement: "placements",
   topic: "topics",
+  hubGuide: "hubGuides",
+  hubGuideShared: "hubGuidesShared",
+  facilitatorGuide: "facilitatorGuides",
+  facilitatorGuideShared: "facilitatorGuidesShared",
 };
+
+const isEntityType = (value: unknown): value is EntityType => typeof value === "string" && value in SECTION;
 
 type FieldValues = Record<string, string | null>;
 
@@ -73,11 +116,7 @@ interface RequestsFile {
   requests: ChangeRequest[];
 }
 
-interface ApprovedFile {
-  agents: Record<string, ApprovedEdit>;
-  placements: Record<string, ApprovedEdit>;
-  topics: Record<string, ApprovedEdit>;
-}
+type ApprovedFile = Record<Section, Record<string, ApprovedEdit>>;
 
 class HttpError extends Error {
   readonly status: number;
@@ -106,7 +145,15 @@ export function contentEditsDevPlugin(dataDirectory: string): Plugin {
 
   const readApproved = async (): Promise<ApprovedFile> => {
     const file = await readJson<Partial<ApprovedFile>>(approvedFile, {});
-    return { agents: file.agents ?? {}, placements: file.placements ?? {}, topics: file.topics ?? {} };
+    return {
+      agents: file.agents ?? {},
+      placements: file.placements ?? {},
+      topics: file.topics ?? {},
+      hubGuides: file.hubGuides ?? {},
+      hubGuidesShared: file.hubGuidesShared ?? {},
+      facilitatorGuides: file.facilitatorGuides ?? {},
+      facilitatorGuidesShared: file.facilitatorGuidesShared ?? {},
+    };
   };
 
   async function handle(server: ViteDevServer, request: IncomingMessage, response: ServerResponse): Promise<boolean> {
@@ -142,8 +189,8 @@ export function contentEditsDevPlugin(dataDirectory: string): Plugin {
   async function createRequest(body: unknown): Promise<ChangeRequest> {
     const input = asRecord(body);
     const entityType = input.entityType;
-    if (entityType !== "agent" && entityType !== "placement" && entityType !== "topic") {
-      throw new HttpError(400, "entityType must be agent, placement or topic.");
+    if (!isEntityType(entityType)) {
+      throw new HttpError(400, `entityType must be one of: ${Object.keys(SECTION).join(", ")}.`);
     }
     const entityExternalId = requiredText(input.entityExternalId, "entityExternalId");
     const entityName = requiredText(input.entityName, "entityName");
@@ -164,7 +211,7 @@ export function contentEditsDevPlugin(dataDirectory: string): Plugin {
       before,
       proposed,
       status: "Pending",
-      submittedBy: "Manager",
+      submittedBy: typeof input.submittedBy === "string" && SUBMITTER_ROLES.has(input.submittedBy) ? input.submittedBy : "Manager",
       submittedAtUtc: new Date().toISOString(),
       confirmedAtUtc: null,
       confirmedVersion: null,

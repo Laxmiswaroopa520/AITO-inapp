@@ -2,7 +2,7 @@ import staticApiData from "@/data/static-api-data.json";
 import commonRolePathWeeks from "@/data/commonRolePathWeeks.json";
 import approvedContentEdits from "@/data/approvedContentEdits.json";
 import type { ApprovedContentEdits } from "@/features/admin/types/contentEdits.types";
-import { applyApprovedContentEdits } from "./applyContentEdits";
+import { applyApprovedContentEdits, markSharedHubGuides } from "./applyContentEdits";
 import type { CurrentUser } from "@/auth/auth.types";
 import type { Activity, ActivityFilters } from "@/features/workflow-builder/types/activity.types";
 import type { AiTool } from "@/features/workflow-builder/types/aiTool.types";
@@ -76,6 +76,8 @@ const DATA = staticApiData as unknown as StaticApiData;
 // Admin-confirmed content edits (AI tools, week content, shared Huddle content) live in their own
 // file (src/data/approvedContentEdits.json) and are layered over the generated data here, so every
 // screen and export shows the confirmed values.
+// Shared weeks are found on the original data, before edits, so a confirmed edit never changes the answer.
+markSharedHubGuides(DATA.huddle as unknown as Record<string, unknown>);
 applyApprovedContentEdits(DATA.huddle as unknown as Record<string, unknown>, approvedContentEdits as ApprovedContentEdits);
 // Hand-maintained weeks shared by every audience (src/data/commonRolePathWeeks.json). Kept out of
 // static-api-data.json, which is generated from the SQL seed scripts and would lose hand edits.

@@ -5,7 +5,7 @@
  */
 
 /** Admin App: the "Admin" button on the home page and the /admin dashboard (redirects home while off). */
-export const ADMIN_APP_ENABLED = false;
+export const ADMIN_APP_ENABLED = true;
 
 /** Manager role: the "Edit" button on the selected Huddle panel that opens the Suggest edits form. */
 export const MANAGER_EDIT_ENABLED = false;

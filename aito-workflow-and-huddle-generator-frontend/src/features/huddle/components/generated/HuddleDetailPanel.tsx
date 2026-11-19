@@ -27,7 +27,7 @@ interface HuddleDetailPanelProps {
   onExportPowerPoint: () => void;
   /** Absent for Team Members, who are not offered a coach; the button is then hidden. */
   onMeetCoach?: () => void;
-  /** Admin PoC, Manager only: opens the edit form for this Huddle's week content and AI tools. Hidden when absent. */
+  /** Admin PoC, any role: opens the edit form for this Huddle's week content and AI tools. Hidden when absent. */
   onSuggestAgentEdit?: () => void;
 }
 

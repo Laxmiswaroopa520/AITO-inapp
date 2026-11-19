@@ -83,6 +83,27 @@
       "submittedAtUtc": "2026-11-17T09:41:57.546Z",
       "confirmedAtUtc": null,
       "confirmedVersion": null
+    },
+    {
+      "id": "86ec67bd-6c35-40bb-8c3c-b1d20188dcdf",
+      "entityType": "placement",
+      "entityExternalId": "AE-PLAN",
+      "entityName": "Prioritize Accounts and Build an Actionable Account Plan",
+      "topicExternalId": "WF-X-PLAN-01",
+      "topicName": "Prioritize Accounts and Build an Actionable Account Plan",
+      "contextLabel": "Week 2 · Account Executive",
+      "baseVersion": 0,
+      "before": {
+        "roleTopicDescription": "Turn customer priorities, pipeline, renewals, whitespace, partner coverage, and investment signals into a short account plan built on decisions rather than an inventory."
+      },
+      "proposed": {
+        "roleTopicDescription": "Turn customer priorities, pipeline, renewals, whitespace, partner coverage, and investment signals into a short account plan built on decisions rather than an inventory item."
+      },
+      "status": "Pending",
+      "submittedBy": "Facilitator",
+      "submittedAtUtc": "2026-11-19T07:46:12.342Z",
+      "confirmedAtUtc": null,
+      "confirmedVersion": null
     }
   ]
 }
